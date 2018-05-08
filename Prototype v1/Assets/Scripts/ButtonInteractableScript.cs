@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivateButtonScript : InteractableScript
+public class ButtonInteractableScript : InteractableScript
 {
-    public Button button;
+    Button thisButton;
 
     void Start()
     {
-
+        thisButton = GetComponent<Button>();
     }
 
     void Update()
@@ -19,11 +19,12 @@ public class ActivateButtonScript : InteractableScript
 
     public override void RespondSelect()
     {
-        button.gameObject.SetActive(true);
+        thisButton.onClick.Invoke();
+        Debug.Log("Activated");
     }
 
     public override void RespondDeselect()
     {
-        //button.gameObject.SetActive(false);
+
     }
 }
