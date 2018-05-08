@@ -26,26 +26,30 @@ public class GameObjectSelectorScript : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                if (_hasSelection && hit.collider.tag == "Deselector")
+                {
+                    Deselect();
+                }
                 if (hit.collider.GetComponent<InteractableScript>() != null)
                 {
                     if (_selection == hit.collider.gameObject) //Early exit, no need for clicking on the same object again
                         return; 
                     if (_hasSelection) //If selecting a new selectable, deselect the old one and select the next
                     {
-                        _selection.GetComponent<InteractableScript>().RespondDeselect();
-                        _selection = null;
+                        Deselect();
                     }
                     _selection = hit.collider.gameObject;
                     _selection.GetComponent<InteractableScript>().RespondSelect();
                     _hasSelection = true;
                 }
-                else if (_hasSelection) //If clicking a non-interactable, deselect current selection
-                {
-                    _selection.GetComponent<InteractableScript>().RespondDeselect();
-                    _hasSelection = false;
-                    _selection = null;
-                }
             }
         }
+    }
+
+    void Deselect()
+    {
+        _selection.GetComponent<InteractableScript>().RespondDeselect();
+        _hasSelection = false;
+        _selection = null;
     }
 }
