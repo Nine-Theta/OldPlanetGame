@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script holding a reference to a button, setting the gameobject to active using RespondSelect and RespondDeselect
+/// </summary>
 public class ActivateButtonScript : InteractableScript
 {
     public Button button;

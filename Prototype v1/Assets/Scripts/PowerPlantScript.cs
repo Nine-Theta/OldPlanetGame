@@ -8,6 +8,8 @@ public class PowerPlantScript : MonoBehaviour
     private float _energyGenerated = 0;
     private float _energyGenPerTick = 0.1f;
 
+
+    public int maxTier = 3;
     public GameObject tier2Upgrade;
 
     void Start()
@@ -21,6 +23,11 @@ public class PowerPlantScript : MonoBehaviour
 
     public void Upgrade()
     {
+        if(_tier >= maxTier)
+        {
+            _tier = maxTier;
+            return;
+        }
         _tier++;
         if (_tier >= 2)
         {
