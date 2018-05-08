@@ -12,7 +12,6 @@ public class PowerPlantScript : MonoBehaviour
 
     void Start()
     {
-
     }
 
     void Update()
