@@ -55,15 +55,19 @@ public class PowerPlantScript : MonoBehaviour
     void Degrade()
     {
         _currentHP -= Random.Range(0, _degradeRange);
+        if (_currentHP <= 0)
+        {
+            BreakDown();
+        }
     }
 
     void GenerateWaste()
     {
         _wasteStored += _wasteGenPerTick;
-        if(_wasteStored > _maxWaste)
+        if (_wasteStored > _maxWaste)
         {
             //Warn player before this happens, give feedback on how to solve it
-            BreakDown();
+
         }
     }
 
@@ -72,10 +76,18 @@ public class PowerPlantScript : MonoBehaviour
         affectedCity.RespondToBreakdown();
     }
 
-    public float DisposeOfWaste()
+    public float DisposeOfWaste(float remainingCapacity)
     {
         float tempWaste = _wasteStored;
-        _wasteStored = 0;
-        return tempWaste;
+        if (remainingCapacity >= _wasteStored)
+        {
+            _wasteStored = 0;
+            return tempWaste;
+        }
+        else
+        {
+            _wasteStored -= remainingCapacity;
+            return remainingCapacity;
+        }
     }
 }
