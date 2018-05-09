@@ -27,6 +27,6 @@ public class ActivateButtonScript : InteractableScript
 
     public override void RespondDeselect()
     {
-        //button.gameObject.SetActive(false);
+        button.gameObject.SetActive(false);
     }
 }
