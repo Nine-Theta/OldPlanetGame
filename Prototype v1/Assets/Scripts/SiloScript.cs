@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiloScript : MonoBehaviour {
+public class SiloScript : InteractableScript
+{
 
     private int _tier = 0;
 
@@ -25,15 +26,27 @@ public class SiloScript : MonoBehaviour {
 
     }
 
+    public override void RespondSelect()
+    {
+        //Debug.Log("Selected");
+        StoreWaste();
+    }
+
+    public override void RespondDeselect()
+    {
+        //Debug.Log("Deselected");
+
+    }
+
     public void StoreWaste()
     {
-        _wasteStored += _powerPlantScript.DisposeOfWaste(_wasteCapacity-_wasteStored);
-        if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 0.5f * _wasteStored, 0.3f);
+        _wasteStored += _powerPlantScript.DisposeOfWaste(_wasteCapacity - _wasteStored);
+        if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
     }
 
     public void Upgrade()
     {
-        if (_tier >= _tiers.Length-1)
+        if (_tier >= _tiers.Length - 1)
         {
             _tier = _tiers.Length;
             return;

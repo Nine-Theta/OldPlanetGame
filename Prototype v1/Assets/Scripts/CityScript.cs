@@ -44,7 +44,7 @@ public class CityScript : MonoBehaviour
 
     void UpdateDebugInfo()
     {
-        debugHappyText.text = _happiness.ToString();
+        debugHappyText.text = Mathf.Floor(_happiness).ToString();
     }
 
     void IncreaseHappiness()
@@ -61,6 +61,11 @@ public class CityScript : MonoBehaviour
 
     public void RespondToBreakdown()
     {
+        cityLight.color = Color.black;
+    }
 
+    public void RespondToRepairs()
+    {
+        cityLight.color = Color.white;
     }
 }

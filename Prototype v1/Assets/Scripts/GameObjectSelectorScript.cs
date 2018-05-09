@@ -32,8 +32,8 @@ public class GameObjectSelectorScript : MonoBehaviour
                 }
                 if (hit.collider.GetComponent<InteractableScript>() != null)
                 {
-                    if (_selection == hit.collider.gameObject) //Early exit, no need for clicking on the same object again
-                        return; 
+                    //if (_selection == hit.collider.gameObject) //Early exit, no need for clicking on the same object again
+                    //    return; 
                     if (_hasSelection) //If selecting a new selectable, deselect the old one and select the next
                     {
                         Deselect();

@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 33346115495343216}
   - component: {fileID: 23202332729302618}
   - component: {fileID: 65916975280644434}
-  - component: {fileID: 114798452258368316}
   m_Layer: 0
   m_Name: Base Plate
   m_TagString: Untagged
@@ -131,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4528658762142152}
   - component: {fileID: 114033269324078698}
+  - component: {fileID: 65588465164644420}
   m_Layer: 0
   m_Name: Silo
   m_TagString: Untagged
@@ -440,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256746644980834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10.441299, y: 1.1663496, z: 16.47612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4422399372441604}
@@ -1228,6 +1228,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65588465164644420
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256746644980834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: 0, y: -1.21, z: 0}
 --- !u!65 &65916975280644434
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1236,7 +1248,7 @@ BoxCollider:
   m_GameObject: {fileID: 1183003600587984}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1340,18 +1352,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047547004231446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
---- !u!114 &114798452258368316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183003600587984}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
