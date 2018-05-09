@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))] //The orbiting body also requires a RigidBody in most cases.
 public class OrbitScript : MonoBehaviour {
 
-    public Rigidbody _focusBody;
-    public float speed = 0.1f;
+    private Rigidbody _focusBody;
 
-	private void Awake () {
-        //_focusBody = gameObject.GetComponent<Rigidbody>();
+    [SerializeField] private float _speed = 0.1f;
+    [SerializeField] private Vector3 _direction = Vector3.zero;
 
-        //GetComponent<Rigidbody>().AddTorque(0, 1, 0);
-        //_focusBody.AddTorque(0,1,0);
-        //_focusBody.
-    }
-    private void Update()
-    {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, speed, 0));
+	private void Start () {
+        _focusBody = GetComponent<Rigidbody>();
+        _focusBody.AddRelativeTorque(_direction.normalized * _speed);
     }
 }
