@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SiloScript : InteractableScript
 {
@@ -15,6 +16,8 @@ public class SiloScript : InteractableScript
     [SerializeField] private Transform _storageMeter;
     [SerializeField] private Transform _storageCapPole;
 
+    [SerializeField] private Text _debugWasteText;
+
     [SerializeField] private GameObject[] _tiers = new GameObject[0];
 
     private void Start()
@@ -23,7 +26,7 @@ public class SiloScript : InteractableScript
 
     private void Update()
     {
-
+        UpdateDebugInfo();
     }
 
     public override void RespondSelect()
@@ -57,5 +60,10 @@ public class SiloScript : InteractableScript
         _wasteCapacity = _tier * _upgradeStorageMod;
 
         _tiers[_tier].SetActive(true);
+    }
+
+    void UpdateDebugInfo()
+    {
+        _debugWasteText.text = Mathf.Floor(_wasteStored).ToString();
     }
 }

@@ -375,56 +375,11 @@ Prefab:
       propertyPath: _powerPlantScript
       value: 
       objectReference: {fileID: 1526345116}
-    - target: {fileID: 136104334504563646, guid: 4158cf8f838e36e45a6933f7a8651dda,
+    - target: {fileID: 114033269324078698, guid: 4158cf8f838e36e45a6933f7a8651dda,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136336284366191340, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65450760514460122, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65512624858576700, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65370995663097128, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65420133596730176, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136187368382311834, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136087855693240742, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136938284355163830, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136629537245257366, guid: 4158cf8f838e36e45a6933f7a8651dda,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: _debugWasteText
+      value: 
+      objectReference: {fileID: 1379914461}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4158cf8f838e36e45a6933f7a8651dda, type: 2}
   m_IsPrefabParent: 0
@@ -434,6 +389,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1249540931}
   m_Script: {fileID: 11500000, guid: dcf0c65ce55f9974cb4b8d9e1ed9bf2e, type: 3}
+--- !u!114 &1379914461 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114012846418815698, guid: 2028b5cc28626b44c851a58de8394743,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511895323}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1511895323
 Prefab:
   m_ObjectHideFlags: 0
@@ -541,26 +502,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1249540932}
-    - target: {fileID: 224252999835215710, guid: 2028b5cc28626b44c851a58de8394743,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -194
-      objectReference: {fileID: 0}
-    - target: {fileID: 224252999835215710, guid: 2028b5cc28626b44c851a58de8394743,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -138.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224929271820649598, guid: 2028b5cc28626b44c851a58de8394743,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -194
-      objectReference: {fileID: 0}
-    - target: {fileID: 224929271820649598, guid: 2028b5cc28626b44c851a58de8394743,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -89
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2028b5cc28626b44c851a58de8394743, type: 2}
   m_IsPrefabParent: 0

@@ -9,9 +9,11 @@ public class PowerPlantScript : InteractableScript
     private Light _light;
     private float _maxWaste = 30.0f;
     private float _wasteStored = 0;
-    private float _wasteGenPerTick = 0.03f;
-    private float _degradeRange = 1.0f;
-    private float _currentHP = 100; //Current status, broken if 0
+    [SerializeField] private float _wasteGenPerTick = 0.03f;
+    [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
+    [SerializeField] private float _degradeRange = 3.0f;
+    [SerializeField] private float _maxHP = 200;
+    private float _currentHP = 200; //Current status, broken if 0
 
     public int maxTier = 3;
     public GameObject tier2Upgrade;
@@ -83,6 +85,7 @@ public class PowerPlantScript : InteractableScript
         if (_wasteStored > _maxWaste)
         {
             //Warn player before this happens, give feedback on how to solve it
+            _wasteStored = _maxWaste;
             Degrade(); //Breaks down faster
         }
     }
@@ -97,7 +100,7 @@ public class PowerPlantScript : InteractableScript
     {
         affectedCity.RespondToRepairs();
         _light.color = Color.white;
-        _currentHP = 100;
+        _currentHP = _maxHP;
     }
 
     public float DisposeOfWaste(float remainingCapacity)

@@ -629,6 +629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a51b934d05baa43a7abeae2ef2c8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wasteGenPerTick: 0.1
+  _degradeRange: 1
+  _maxHP: 200
   maxTier: 3
   tier2Upgrade: {fileID: 1723257382583744}
   affectedCity: {fileID: 0}
