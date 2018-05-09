@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitialVelocity : MonoBehaviour {
+public class OrbitScript : MonoBehaviour {
 
     public Rigidbody _focusBody;
     public float speed = 0.1f;
