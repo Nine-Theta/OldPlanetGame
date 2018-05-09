@@ -34,7 +34,7 @@ public class GameObjectSelectorScript : MonoBehaviour
                 {
                     //if (_selection == hit.collider.gameObject) //Early exit, no need for clicking on the same object again
                     //    return; 
-                    if (_hasSelection) //If selecting a new selectable, deselect the old one and select the next
+                    if (_hasSelection && _selection.tag != "Dragable") //If selecting a new selectable, deselect the old one and select the next
                     {
                         Deselect();
                     }
@@ -43,6 +43,26 @@ public class GameObjectSelectorScript : MonoBehaviour
                     _hasSelection = true;
                 }
             }
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            if (_selection.tag == "Dragable")
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    _selection.GetComponent<BarrelScript>().SetPosition(hit.point);
+                }
+                else
+                {
+                    Deselect();
+                }
+            }
+        }
+        else if(Input.GetMouseButtonUp(0) && _hasSelection)
+        {
+            Deselect();
         }
     }
 

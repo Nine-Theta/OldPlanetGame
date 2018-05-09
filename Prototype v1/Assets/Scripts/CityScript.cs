@@ -21,10 +21,8 @@ public class CityScript : MonoBehaviour
 
     void Update()
     {
-        if(cityLight.intensity >= 5.0f)
-        {
-            IncreaseHappiness();
-        }
+        IncreaseHappiness();
+        
         UpdateDebugInfo();
     }
 
@@ -44,7 +42,7 @@ public class CityScript : MonoBehaviour
 
     void UpdateDebugInfo()
     {
-        debugHappyText.text = Mathf.Floor(_happiness).ToString();
+        debugHappyText.text = _happiness.ToString("F2");
     }
 
     void IncreaseHappiness()
@@ -56,16 +54,18 @@ public class CityScript : MonoBehaviour
 
     public void RespondToUpgrade()
     {
-        happinessPerTick += 0.05f;
+        happinessPerTick += 0.25f;
     }
 
     public void RespondToBreakdown()
     {
         cityLight.color = Color.black;
+        happinessPerTick *= -1;
     }
 
     public void RespondToRepairs()
     {
         cityLight.color = Color.white;
+        happinessPerTick *= -1;
     }
 }

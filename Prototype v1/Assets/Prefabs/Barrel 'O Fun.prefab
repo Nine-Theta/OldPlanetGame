@@ -106,13 +106,14 @@ GameObject:
   - component: {fileID: 4711449695828460}
   - component: {fileID: 54496218111397372}
   - component: {fileID: 136430536506606750}
+  - component: {fileID: 114680660226351660}
   m_Layer: 0
   m_Name: Barrel 'O Fun
-  m_TagString: Untagged
+  m_TagString: Dragable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1835905705312760
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,8 +307,8 @@ Transform:
   m_GameObject: {fileID: 1761779165933620}
   m_LocalRotation: {x: 0.000000013009412, y: -0.0000000055879346, z: -2.2737368e-13,
     w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 5.4866486, y: 1.06, z: 9.597061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4194834437421110}
   - {fileID: 4344015118462420}
@@ -709,11 +710,22 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114680660226351660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761779165933620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2fed7900dad0242990b4fae1243e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136430536506606750
 CapsuleCollider:
   m_ObjectHideFlags: 1
