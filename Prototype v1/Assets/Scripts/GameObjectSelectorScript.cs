@@ -16,7 +16,7 @@ public class GameObjectSelectorScript : MonoBehaviour
 
     public void TestCollider(RaycastHit pHit)
     {
-        if(_hasSelection && pHit.collider.tag == "Deselector")
+        if (_hasSelection && pHit.collider.tag == "Deselector")
         {
             Deselect();
             return;
@@ -29,13 +29,20 @@ public class GameObjectSelectorScript : MonoBehaviour
             }
             _selection = pHit.collider.gameObject;
             _selection.GetComponent<InteractableScript>().RespondSelect();
-            _hasSelection = true;        
+            _hasSelection = true;
         }
     }
 
     public void DragGameObject(RaycastHit pHit)
     {
         _selection.GetComponent<BarrelScript>().SetPosition(pHit.point);
+        if (pHit.collider.tag == "Silo")
+        {
+            pHit.collider.GetComponent<SiloScript>().StoreBarrel(_selection);
+            _hasSelection = false;
+            _selection = null;
+            return;
+        }
     }
 
     void GetInput()
@@ -65,7 +72,7 @@ public class GameObjectSelectorScript : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetMouseButton(0))
+        else if (_hasSelection && Input.GetMouseButton(0))
         {
             if (_selection.tag == "Dragable")
             {
@@ -73,7 +80,18 @@ public class GameObjectSelectorScript : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    _selection.GetComponent<BarrelScript>().SetPosition(hit.point);
+                    string tempTag = hit.collider.tag;
+                    Debug.Log(tempTag);
+                    if (tempTag != "Dragable")
+                    {
+                        _selection.GetComponent<BarrelScript>().SetPosition(hit.point);
+                    }
+                    if (tempTag == "Silo")
+                    {
+                        hit.collider.GetComponent<SiloScript>().StoreBarrel(_selection);
+                        _hasSelection = false;
+                        _selection = null;
+                    }
                 }
                 else
                 {
@@ -81,7 +99,7 @@ public class GameObjectSelectorScript : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetMouseButtonUp(0) && _hasSelection)
+        else if (Input.GetMouseButtonUp(0) && _hasSelection)
         {
             Deselect();
         }
@@ -89,8 +107,10 @@ public class GameObjectSelectorScript : MonoBehaviour
 
     public void Deselect()
     {
-        _selection.GetComponent<InteractableScript>().RespondDeselect();
         _hasSelection = false;
+        if (_selection == null)
+            return;
+        _selection.GetComponent<InteractableScript>().RespondDeselect();
         _selection = null;
     }
 }

@@ -22,6 +22,7 @@ public class SiloScript : InteractableScript
 
     private void Start()
     {
+        Upgrade();
     }
 
     private void Update()

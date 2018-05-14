@@ -19,18 +19,22 @@ public class MouseInputInterpreter : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0) && _selectorScript.HasSelection)
+        {
+            _selectorScript.Deselect();
+            return;
+        }
+        else if (Input.GetMouseButtonDown(0))
         {
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+            Debug.DrawRay(_mainCamera.transform.position, ray.direction * 10, Color.red, 2.0f);
             if (Physics.Raycast(ray, out hit))
             {
                 _selectorScript.TestCollider(hit);
             }
         }
-
-        if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
             if (_selectorScript.HasSelection && _selectorScript.SelectionTag == "Dragable")
             {
@@ -42,14 +46,11 @@ public class MouseInputInterpreter : MonoBehaviour
                     _selectorScript.Deselect();
             }
             else
-            {               
+            {
                 _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && _selectorScript.HasSelection)
-        {
-            _selectorScript.Deselect();
-        }
+
     }
 }
