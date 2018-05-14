@@ -5,6 +5,13 @@ using UnityEngine;
 public class BarrelScript : InteractableScript
 {
     private Collider _collider;
+    [SerializeField] private float _wasteStored = 30.0f;
+
+    public float WasteStored
+    {
+        get { return _wasteStored; }
+    }
+
 
     void Start()
     {
@@ -32,4 +39,5 @@ public class BarrelScript : InteractableScript
         //Debug.Log("Deselected");
         _collider.enabled = true;
     }
+
 }

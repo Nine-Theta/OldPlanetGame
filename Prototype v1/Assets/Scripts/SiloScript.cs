@@ -63,6 +63,16 @@ public class SiloScript : InteractableScript
         if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
     }
 
+    public void StoreBarrel(GameObject barrel)
+    {
+        if (_wasteStored + barrel.GetComponent<BarrelScript>().WasteStored < _wasteCapacity)
+        {
+            _wasteStored += barrel.GetComponent<BarrelScript>().WasteStored;
+            if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
+            Destroy(barrel);
+        }
+    }
+
     void UpdateDebugInfo()
     {
         _debugWasteText.text = Mathf.Floor(_wasteStored).ToString();

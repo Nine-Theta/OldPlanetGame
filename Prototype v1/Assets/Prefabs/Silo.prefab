@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 65588465164644420}
   m_Layer: 0
   m_Name: Silo
-  m_TagString: Untagged
+  m_TagString: Silo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

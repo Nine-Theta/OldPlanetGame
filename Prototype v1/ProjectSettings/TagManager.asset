@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Deselector
   - Dragable
+  - Silo
   layers:
   - Default
   - TransparentFX

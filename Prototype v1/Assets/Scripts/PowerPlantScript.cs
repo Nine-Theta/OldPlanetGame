@@ -12,13 +12,14 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private float _wasteGenPerTick = 0.03f;
     [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
     [SerializeField] private float _degradeRange = 3.0f;
-    [SerializeField] private float _maxHP = 200;
-    private float _currentHP = 200; //Current status, broken if 0
+    [SerializeField] private float _maxDurability = 200;
+    private float _currentDurability = 200; //Current status, broken if 0
 
-    public int maxTier = 3;
-    public GameObject tier2Upgrade;
-    public CityScript affectedCity;
-    public Text debugWasteText;
+    [SerializeField] private int maxTier = 3;
+    [SerializeField] private GameObject tier2Upgrade;
+    [SerializeField] private CityScript affectedCity;
+    [SerializeField] private Text debugWasteText;
+    [SerializeField] private GameObject _wasteBarrelPrefab;
     //public Text debugWasteText;
 
     void Start()
@@ -28,7 +29,7 @@ public class PowerPlantScript : InteractableScript
 
     void Update()
     {
-        if (_currentHP <= 0)
+        if (_currentDurability <= 0)
             return;
         if (_tier < 2)
             Degrade();
@@ -40,7 +41,7 @@ public class PowerPlantScript : InteractableScript
     public override void RespondSelect()
     {
         //Debug.Log("Selected PP");
-        if(_currentHP <= 0)
+        if(_currentDurability <= 0)
         {
             Repair();
         }
@@ -72,8 +73,8 @@ public class PowerPlantScript : InteractableScript
 
     void Degrade()
     {
-        _currentHP -= Random.Range(0, _degradeRange);
-        if (_currentHP <= 0)
+        _currentDurability -= Random.Range(0, _degradeRange);
+        if (_currentDurability <= 0)
         {
             BreakDown();
         }
@@ -84,9 +85,16 @@ public class PowerPlantScript : InteractableScript
         _wasteStored += _wasteGenPerTick;
         if (_wasteStored > _maxWaste)
         {
-            //Warn player before this happens, give feedback on how to solve it
-            _wasteStored = _maxWaste;
-            Degrade(); //Breaks down faster
+            _wasteStored = 0;
+            //Degrade(); //Breaks down faster
+            Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known
+            offset.y = 0; //TODO: Remove this
+            offset.Normalize(); //TODO: Remove this
+            offset *= 3.0f;
+            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, GetComponent<BoxCollider>().center + transform.position, transform.rotation);
+            barrelRef.transform.position += offset;
+            //Set Object position offset from the plant at surface of planet
+            //Set Object's proper rotation
         }
     }
 
@@ -100,7 +108,7 @@ public class PowerPlantScript : InteractableScript
     {
         affectedCity.RespondToRepairs();
         _light.color = Color.white;
-        _currentHP = _maxHP;
+        _currentDurability = _maxDurability;
     }
 
     public float DisposeOfWaste(float remainingCapacity)
