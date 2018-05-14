@@ -4,17 +4,38 @@ using UnityEngine;
 
 public class GameObjectSelectorScript : MonoBehaviour
 {
-    bool _hasSelection = false;
-    GameObject _selection = null;
+    private GameObject _selection = null;
 
-    void Start()
+    private bool _hasSelection = false;
+
+    public bool HasSelection
+    { get { return _hasSelection; } }
+
+    public string SelectionTag
+    { get { return _selection.tag; } }
+
+    public void TestCollider(RaycastHit pHit)
     {
-
+        if(_hasSelection && pHit.collider.tag == "Deselector")
+        {
+            Deselect();
+            return;
+        }
+        if (pHit.collider.GetComponent<InteractableScript>() != null)
+        {
+            if (_hasSelection && _selection.tag != "Dragable") //If selecting a new selectable, deselect the old one and select the next
+            {
+                Deselect();
+            }
+            _selection = pHit.collider.gameObject;
+            _selection.GetComponent<InteractableScript>().RespondSelect();
+            _hasSelection = true;        
+        }
     }
 
-    void Update()
+    public void DragGameObject(RaycastHit pHit)
     {
-        GetInput();
+        _selection.GetComponent<BarrelScript>().SetPosition(pHit.point);
     }
 
     void GetInput()
@@ -66,7 +87,7 @@ public class GameObjectSelectorScript : MonoBehaviour
         }
     }
 
-    void Deselect()
+    public void Deselect()
     {
         _selection.GetComponent<InteractableScript>().RespondDeselect();
         _hasSelection = false;
