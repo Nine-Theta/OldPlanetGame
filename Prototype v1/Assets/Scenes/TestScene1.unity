@@ -354,6 +354,8 @@ GameObject:
   - component: {fileID: 1142057657}
   - component: {fileID: 1142057656}
   - component: {fileID: 1142057655}
+  - component: {fileID: 1142057660}
+  - component: {fileID: 1142057659}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -424,6 +426,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 79.921005, y: 0, z: 0}
+--- !u!114 &1142057659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1142057654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c5014c924f8d742b83f677665e7946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1142057660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1142057654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eac666bf48bded4ab5306946eb5ad28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1249540931
 Prefab:
   m_ObjectHideFlags: 0
@@ -600,7 +624,8 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1249540932}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114966779580448962, guid: 2028b5cc28626b44c851a58de8394743, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2028b5cc28626b44c851a58de8394743, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1526345116 stripped

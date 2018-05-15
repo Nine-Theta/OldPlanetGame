@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class CityScript : MonoBehaviour
 {
-    float maxIntensity = 7.0f;
+    float _maxIntensity = 7.0f;
     float _happiness = 0.0f;
     Light cityLight;
 
     public float startHappiness = 0.0f;
     public float happinessPerTick = 0.00f;
+    public float wasteHappinessPenaltyPerTick = 0.01f;
     public Text debugHappyText;
 
     void Start()
@@ -21,7 +22,7 @@ public class CityScript : MonoBehaviour
 
     void Update()
     {
-        IncreaseHappiness();
+        ChangeHappiness();
         
         UpdateDebugInfo();
     }
@@ -29,8 +30,8 @@ public class CityScript : MonoBehaviour
     public void IncreaseLightIntensity(float value)
     {
         cityLight.intensity += value;
-        if (cityLight.intensity > maxIntensity)
-            cityLight.intensity = maxIntensity;
+        if (cityLight.intensity > _maxIntensity)
+            cityLight.intensity = _maxIntensity;
     }
 
     void DecreaseLightIntensity(float value)
@@ -45,11 +46,11 @@ public class CityScript : MonoBehaviour
         debugHappyText.text = _happiness.ToString("F2");
     }
 
-    void IncreaseHappiness()
+    void ChangeHappiness()
     {
-        _happiness += happinessPerTick;
-        if (_happiness >= 100)
-            _happiness = 100;
+        _happiness += happinessPerTick - (wasteHappinessPenaltyPerTick * BarrelScript.GetBarrelCount());
+        if (_happiness >= 10)
+            _happiness = 10;
     }
 
     public void RespondToUpgrade()
