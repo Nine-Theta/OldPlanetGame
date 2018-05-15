@@ -41,7 +41,6 @@ public class GameObjectSelectorScript : MonoBehaviour
             pHit.collider.GetComponent<SiloScript>().StoreBarrel(_selection);
             _hasSelection = false;
             _selection = null;
-            return;
         }
     }
 
