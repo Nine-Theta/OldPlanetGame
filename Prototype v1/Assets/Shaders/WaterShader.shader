@@ -2,11 +2,15 @@
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
+		_MainTex("Texture", 2D) = "white" {}
+		_MainTex2("Texture", 2D) = "white" {}
+		_MainTex3("Texture", 2D) = "white" {}
+		_MainTex4("Texture", 2D) = "white" {}
+		_SplatMap("Texture", 2D) = "white" {}
 	}
-	SubShader
+		SubShader
 	{
-		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
 		LOD 100
 
 		Blend SrcAlpha OneMinusSrcAlpha
@@ -19,12 +23,13 @@
 			#pragma fragment frag
 			// make fog work
 			#pragma multi_compile_fog
-			
+
 			#include "UnityCG.cginc"
 
 			struct appdata
 			{
 				float4 vertex : POSITION;
+				float3 normal : NORMAL;
 				float2 uv : TEXCOORD0;
 			};
 
@@ -32,36 +37,59 @@
 			{
 				float2 uv : TEXCOORD0;
 				float4 vertex : SV_POSITION;
+				float3 normal : NORMAL;
 				float4 local : TEXCOORD1;
 			};
 
 			sampler2D _MainTex;
+			sampler2D _MainTex2;
+			sampler2D _MainTex3;
+			sampler2D _MainTex4;
+			sampler2D _SplatMap;
+			float _offset;
 
-			v2f vert (appdata v)
+			v2f vert(appdata v)
 			{
-				//The following line is Etienne van der Kaap's pattented CG random value
-				float random = frac(sin(dot(v.uv, float3(12.9898, 78.233, 45.5432))) * 43758.5453);
-				
+
 				v2f projection;
 				v2f world;
 
 				world.vertex = mul(UNITY_MATRIX_M, v.vertex);
+				world.normal = UnityObjectToWorldNormal(v.normal);
 
-				world.vertex.y = world.vertex.y * (sin((_Time[1]) + world.vertex.x * world.vertex.z));
+				if (tex2D(_SplatMap, v.uv, 0, 0).g >= 0.5f)
+				{
+					//world.vertex.y = world.vertex.y + (sin((_Time[1]) + world.vertex.x * world.vertex.z));
+					float scale = v.vertex.x * world.normal.x + v.vertex.y * world.normal.y + v.vertex.z * world.normal.z;
+					float3 offset = fmod(sin(_Time[1]) * 0.2f, 1) * scale;
+					world.vertex += float4(offset,0);
+				}
+
 
 				projection.vertex = mul(UNITY_MATRIX_VP, world.vertex);
+				projection.normal = mul(UNITY_MATRIX_VP, world.normal);
 
-				projection.uv = v.uv;
+				projection.uv = v.uv;// + fmod(_Time[1] * 0.2f, 1);
 
 				//To complete initialisation
 				projection.local = float4(0, 0, 0, 1);
 
+				projection.normal = UnityObjectToWorldNormal(v.normal);
+
 				return projection;
 			}
-			
-			fixed4 frag (v2f i) : SV_Target
+
+			fixed4 frag(v2f i) : SV_Target
 			{
 				float4 color = tex2D(_MainTex, i.uv, 0, 0);
+				float2 uv2 = i.uv;
+				uv2.y += _Time[1] * 0.2f; //For water shader
+				float4 color2 = tex2D(_MainTex2, uv2, 0, 0);
+				float4 color3 = tex2D(_MainTex3, i.uv, 0, 0);
+				float4 color4 = tex2D(_MainTex4, i.uv, 0, 0);
+				float4 splatMap = tex2D(_SplatMap, i.uv, 0, 0);
+
+				color = ((splatMap.r * color) + (splatMap.g * color2) + (splatMap.b * color3));// +(splatMap.a * color4)); // (splatMap.r + splatMap.g + splatMap.b + splatMap.a);
 				color.a = 0.5;
 				return color;
 			}
