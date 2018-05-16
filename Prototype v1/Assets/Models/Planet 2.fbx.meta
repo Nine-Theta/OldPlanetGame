@@ -229,6 +229,7 @@ ModelImporter:
     100446: pCube160
     100448: pCube70
     100450: //RootNode
+    100452: pPlatonic3
     400000: FFPP
     400002: FFPP1
     400004: FFPP2
@@ -455,6 +456,7 @@ ModelImporter:
     400446: pCube160
     400448: pCube70
     400450: //RootNode
+    400452: pPlatonic3
     2100000: lambert1
     2100002: lambert3
     2100004: lambert4
@@ -686,6 +688,7 @@ ModelImporter:
     2300442: pasted__pCube99
     2300444: pCube160
     2300446: pCube70
+    2300448: pPlatonic3
     3300000: FFPP
     3300002: FFPP1
     3300004: FFPP2
@@ -910,6 +913,7 @@ ModelImporter:
     3300442: pasted__pCube99
     3300444: pCube160
     3300446: pCube70
+    3300448: pPlatonic3
     4300000: pCube70
     4300002: House6
     4300004: House7
@@ -1134,6 +1138,7 @@ ModelImporter:
     4300442: pasted__pCube191
     4300444: pasted__pCube192
     4300446: pasted__pCube193
+    4300448: pPlatonic3
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
