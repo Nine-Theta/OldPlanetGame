@@ -9,10 +9,27 @@ public class CityScript : MonoBehaviour
     float _happiness = 0.0f;
     Light cityLight;
 
-    public float startHappiness = 0.0f;
-    public float happinessPerTick = 0.00f;
-    public float wasteHappinessPenaltyPerTick = 0.01f;
-    public Text debugHappyText;
+    [SerializeField] private float startHappiness = 0.0f;
+    [SerializeField] private float happinessPerTick = 0.00f;
+    [SerializeField] private float wasteHappinessPenaltyPerTick = 0.01f;
+
+    [SerializeField] private float researchHappinessThreshold = 5.0f;
+    private float researchPointsGained;
+    private int researchPointsSpend;
+    [SerializeField] private int researchPointCap;
+    [SerializeField] private float researchPointPerTick;
+    [SerializeField] private int recycleThreshold;
+
+    [SerializeField] private Button recycleButton;
+    [SerializeField] private Text debugHappyText;
+
+    public int ResearchPoints
+    {
+        get
+        {
+            return Mathf.FloorToInt(researchPointsGained) - researchPointsSpend;
+        }
+    }
 
     void Start()
     {
@@ -23,32 +40,44 @@ public class CityScript : MonoBehaviour
     void Update()
     {
         ChangeHappiness();
-        
+        Research();
         UpdateDebugInfo();
     }
 
-    public void IncreaseLightIntensity(float value)
+    private void IncreaseLightIntensity(float value)
     {
         cityLight.intensity += value;
         if (cityLight.intensity > _maxIntensity)
             cityLight.intensity = _maxIntensity;
     }
 
-    void DecreaseLightIntensity(float value)
+    private void DecreaseLightIntensity(float value)
     {
         cityLight.intensity -= value;
         if (cityLight.intensity < 0)
             cityLight.intensity = 0;
     }
 
-    void UpdateDebugInfo()
+    private void Research()
     {
-        debugHappyText.text = _happiness.ToString("F2");
+        if(_happiness >= researchHappinessThreshold && researchPointsGained < researchPointCap)
+        {
+            researchPointsGained += researchPointPerTick;
+        }
+    }
+
+    private void UpdateDebugInfo()
+    {
+        debugHappyText.text = ResearchPoints.ToString();
     }
 
     void ChangeHappiness()
     {
         _happiness += happinessPerTick - (wasteHappinessPenaltyPerTick * BarrelScript.GetBarrelCount());
+        if (ResearchPoints >= recycleThreshold)
+            recycleButton.enabled = true;
+        else
+            recycleButton.enabled = false;
         if (_happiness >= 10)
             _happiness = 10;
     }
@@ -68,5 +97,23 @@ public class CityScript : MonoBehaviour
     {
         cityLight.color = Color.white;
         happinessPerTick *= -1;
+    }
+
+    /// <summary>
+    /// Returns true if upgrade successful
+    /// </summary>
+    /// <param name="points"></param>
+    /// <returns></returns>
+    public bool SpendResearch(int points)
+    {
+        if(ResearchPoints >= points)
+        {
+            researchPointsSpend += points;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -41,9 +41,13 @@ public class PowerPlantScript : InteractableScript
     public override void RespondSelect()
     {
         //Debug.Log("Selected PP");
-        if(_currentDurability <= 0)
+        if (_currentDurability <= 0)
         {
             Repair();
+        }
+        else
+        {
+            Upgrade();
         }
     }
 
@@ -59,6 +63,9 @@ public class PowerPlantScript : InteractableScript
 
     public void Upgrade()
     {
+        if (affectedCity.ResearchPoints <= 0)
+            return;
+        affectedCity.SpendResearch(1);
         if (_tier >= maxTier)
         {
             _tier = maxTier;
@@ -69,6 +76,7 @@ public class PowerPlantScript : InteractableScript
         {
             tier2Upgrade.SetActive(true);
         }
+        _wasteStored = 0;
     }
 
     void Degrade()

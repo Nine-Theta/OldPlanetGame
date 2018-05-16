@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class SiloScript : InteractableScript
 {
-
     private int _tier = 0;
 
     [SerializeField] private float _wasteStored = 0;
     [SerializeField] private float _wasteCapacity = 0;
     [SerializeField] private float _upgradeStorageMod = 100;
+    [SerializeField] private float recycleAmount = 30;
 
-    [SerializeField] private PowerPlantScript _powerPlantScript;
+    [SerializeField] private CityScript affectedCity;
     [SerializeField] private Transform _storageMeter;
     [SerializeField] private Transform _storageCapPole;
 
@@ -22,18 +22,21 @@ public class SiloScript : InteractableScript
 
     private void Start()
     {
-        Upgrade();
+        Upgrade(true);
     }
 
     private void Update()
     {
-        UpdateDebugInfo();
+        if (_debugWasteText != null)
+            UpdateDebugInfo();
     }
 
     public override void RespondSelect()
     {
         //Debug.Log("Selected");
-        StoreWaste();
+        //StoreWaste();
+        Upgrade();
+
     }
 
     public override void RespondDeselect()
@@ -42,14 +45,19 @@ public class SiloScript : InteractableScript
 
     }
 
-    public void StoreWaste()
-    {
-        _wasteStored += _powerPlantScript.DisposeOfWaste(_wasteCapacity - _wasteStored);
-        if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
-    }
+    //public void StoreWaste()
+    //{
+    //    //_wasteStored += _powerPlantScript.DisposeOfWaste(_wasteCapacity - _wasteStored);
+    //    if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
+    //}
 
-    public void Upgrade()
+    public void Upgrade(bool bypassResearchPoints = false)
     {
+        if (affectedCity.ResearchPoints <= 0 && !bypassResearchPoints)
+            return;
+        else if (!bypassResearchPoints)
+            affectedCity.SpendResearch(1);
+
         if (_tier >= _tiers.Length - 1)
         {
             _tier = _tiers.Length;
@@ -62,6 +70,14 @@ public class SiloScript : InteractableScript
 
         _tiers[_tier].SetActive(true);
         if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
+    }
+
+    public void RecycleWaste()
+    {
+        affectedCity.SpendResearch(1);
+        _wasteStored -= recycleAmount;
+        if (_wasteStored <= 0)
+            _wasteStored = 0;
     }
 
     public void StoreBarrel(GameObject barrel)

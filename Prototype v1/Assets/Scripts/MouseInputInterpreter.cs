@@ -33,7 +33,7 @@ public class MouseInputInterpreter : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 _selectorScript.TestCollider(hit);
-                Debug.Log("RayHit Name: " + hit.collider.name);
+                //Debug.Log("RayHit Name: " + hit.collider.name);
             }
         }
         else if (Input.GetMouseButton(0))
