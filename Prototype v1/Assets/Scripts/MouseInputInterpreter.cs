@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(GameObjectSelectorScript), typeof(Camera))]
 public class MouseInputInterpreter : MonoBehaviour
 {
+    [SerializeField]private float _cameraDragSpeed = 1.0f;
 
     private Rigidbody _focusbody;
     private Camera _mainCamera;
@@ -48,10 +49,8 @@ public class MouseInputInterpreter : MonoBehaviour
             }
             else
             {
-                _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
+                _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y")*_cameraDragSpeed, Input.GetAxis("Mouse X")*_cameraDragSpeed, 0);
             }
         }
-
-
     }
 }
