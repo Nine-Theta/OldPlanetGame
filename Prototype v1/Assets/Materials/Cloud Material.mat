@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Cloud Material
-  m_Shader: {fileID: 4800000, guid: d7508ff74524f034eb286846a49503ca, type: 3}
+  m_Shader: {fileID: 4800000, guid: 21189607cb82c6e468ace1c80f60f1d8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -71,6 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AnimationSpeed: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -78,6 +79,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _InputAlpha: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

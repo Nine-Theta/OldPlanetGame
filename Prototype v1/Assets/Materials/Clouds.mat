@@ -19,10 +19,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 46d7f001ef9125f4aafc3aa80030d7ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3279ea0bcd0a23749a73927187308397, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AnimationSpeed: 1
+    - _AnimationSpeed: 0.1
     - _InputAlpha: 1
     m_Colors: []

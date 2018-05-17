@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex2:
-        m_Texture: {fileID: 2800000, guid: 46d7f001ef9125f4aafc3aa80030d7ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3edc73cfcc23cdd469ada65efdcd7509, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex3:
@@ -67,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SplatMap:
-        m_Texture: {fileID: 2800000, guid: a0a6b33eea1edbc498a8902e56a10da0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 496e970d1b3206241a045af6516d006a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
