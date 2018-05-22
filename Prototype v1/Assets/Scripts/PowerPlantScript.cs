@@ -99,7 +99,12 @@ public class PowerPlantScript : InteractableScript
             offset.y = 0; //TODO: Remove this
             offset.Normalize(); //TODO: Remove this
             offset *= 3.0f;
-            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, GetComponent<BoxCollider>().center + transform.position + offset, transform.rotation);
+            Vector3 worldPos = ((transform.localPosition + offset));
+            worldPos.x *= transform.localScale.x;
+            worldPos.y *= transform.localScale.y;
+            worldPos.z *= transform.localScale.z;
+            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, GetComponent<BoxCollider>().center + worldPos, transform.rotation);
+
             //Set Object position offset from the plant at surface of planet
             //Set Object's proper rotation
         }
