@@ -2718,32 +2718,87 @@ Prefab:
     - target: {fileID: 224968359347969820, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 106
+      value: 147.00005
       objectReference: {fileID: 0}
     - target: {fileID: 224858727312571698, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 86
+      value: 127.000046
       objectReference: {fileID: 0}
     - target: {fileID: 224567543006066420, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 106
+      value: 147.00005
       objectReference: {fileID: 0}
     - target: {fileID: 224348228037095726, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 86
+      value: 127.000046
       objectReference: {fileID: 0}
     - target: {fileID: 224278429150642534, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 127
+      value: 166.00005
       objectReference: {fileID: 0}
     - target: {fileID: 224914330612888204, guid: 2028b5cc28626b44c851a58de8394743,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 127
+      value: 166.20004
+      objectReference: {fileID: 0}
+    - target: {fileID: 114040038106237720, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224914330612888204, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -298.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 224189960093842318, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -297.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 224500751056817964, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -169
+      objectReference: {fileID: 0}
+    - target: {fileID: 224278429150642534, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -168.49997
+      objectReference: {fileID: 0}
+    - target: {fileID: 224968359347969820, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -169.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 224189960093842318, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 184.00005
+      objectReference: {fileID: 0}
+    - target: {fileID: 224567543006066420, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -297.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224500751056817964, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 224858727312571698, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -297.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224348228037095726, guid: 2028b5cc28626b44c851a58de8394743,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -169.09998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2028b5cc28626b44c851a58de8394743, type: 2}
@@ -4822,10 +4877,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHappiness: 0
-  happinessPerTick: 0.03
+  maxHappiness: 10
+  happinessPerTick: 0.01
   wasteHappinessPenaltyPerTick: 0.01
   researchHappinessThreshold: 5
-  researchPointCap: 25
+  researchPointCap: 100
   researchPointPerTick: 0.3
   recycleThreshold: 1
   recycleButton: {fileID: 393870278}
@@ -5321,7 +5377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &801421232
 Transform:
   m_ObjectHideFlags: 0
@@ -8569,7 +8625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1283761346
 Transform:
   m_ObjectHideFlags: 0
