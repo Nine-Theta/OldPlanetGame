@@ -83,9 +83,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Scalar: 0.016
-    - _ScalarA: 0.0626
-    - _ScalarB: 35.8
-    - _ScalarC: -0.028
+    - _ScalarA: 0.011
+    - _ScalarB: 29.5
+    - _ScalarC: -0.06
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

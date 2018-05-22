@@ -35,6 +35,11 @@ public class BarrelScript : InteractableScript
         transform.position = newPos;
     }
 
+    public void SetRotation(Vector3 newRot)
+    {
+        //transform.rotation = Quaternion.Euler(9,9,9);
+    }
+
     public override void RespondSelect()
     {
         //Debug.Log("Selected");
