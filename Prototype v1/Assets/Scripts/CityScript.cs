@@ -10,6 +10,7 @@ public class CityScript : MonoBehaviour
     Light cityLight;
 
     [SerializeField] private float startHappiness = 0.0f;
+    [SerializeField] private float maxHappiness = 10.0f;
     [SerializeField] private float happinessPerTick = 0.00f;
     [SerializeField] private float wasteHappinessPenaltyPerTick = 0.01f;
 
@@ -70,7 +71,7 @@ public class CityScript : MonoBehaviour
     private void UpdateDebugInfo()
     {
         debugResearchText.text = ResearchPoints.ToString();
-        debugHappyText.text = _happiness.ToString();
+        debugHappyText.text = Mathf.FloorToInt(_happiness).ToString();
     }
 
     void ChangeHappiness()
@@ -80,8 +81,8 @@ public class CityScript : MonoBehaviour
             recycleButton.enabled = true;
         else
             recycleButton.enabled = false;
-        if (_happiness >= 10)
-            _happiness = 10;
+        if (_happiness >= maxHappiness)
+            _happiness = maxHappiness;
     }
 
     public void RespondToUpgrade()
