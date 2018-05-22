@@ -21,6 +21,7 @@ public class CityScript : MonoBehaviour
     [SerializeField] private int recycleThreshold;
 
     [SerializeField] private Button recycleButton;
+    [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
 
     public int ResearchPoints
@@ -68,7 +69,8 @@ public class CityScript : MonoBehaviour
 
     private void UpdateDebugInfo()
     {
-        debugHappyText.text = ResearchPoints.ToString();
+        debugResearchText.text = ResearchPoints.ToString();
+        debugHappyText.text = _happiness.ToString();
     }
 
     void ChangeHappiness()
