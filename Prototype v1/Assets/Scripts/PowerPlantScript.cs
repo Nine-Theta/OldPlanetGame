@@ -96,15 +96,15 @@ public class PowerPlantScript : InteractableScript
             _wasteStored = 0;
             //Degrade(); //Breaks down faster
             Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known
-            offset.y = 0; //TODO: Remove this
-            offset.Normalize(); //TODO: Remove this
-            offset *= 3.0f;
-            Vector3 worldPos = ((transform.localPosition + offset));
-            worldPos.x *= transform.localScale.x;
-            worldPos.y *= transform.localScale.y;
-            worldPos.z *= transform.localScale.z;
-            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, GetComponent<BoxCollider>().center + worldPos, transform.rotation);
-
+            //offset.y = 0; //TODO: Remove this
+            //offset.Normalize(); //TODO: Remove this
+            //offset *= 3.0f;
+            //Vector3 worldPos = ((transform.position + offset));
+            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, offset, transform.rotation, transform);
+            barrelRef.transform.localScale = new Vector3(0.2f / transform.localScale.x, 0.2f / transform.localScale.y, 0.2f / transform.localScale.z);
+            offset = barrelRef.transform.localPosition;
+            offset.y += 0.05f;
+            barrelRef.transform.localPosition = offset;
             //Set Object position offset from the plant at surface of planet
             //Set Object's proper rotation
         }
