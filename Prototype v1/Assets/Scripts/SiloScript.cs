@@ -68,7 +68,7 @@ public class SiloScript : InteractableScript
 
         _wasteCapacity = _tier * _upgradeStorageMod;
 
-        _tiers[_tier].SetActive(true);
+        if (_tiers[_tier] != null) _tiers[_tier].SetActive(true);
         if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
     }
 

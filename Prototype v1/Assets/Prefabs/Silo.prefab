@@ -190,7 +190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1376031133482564
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1915413938833032
 GameObject:
   m_ObjectHideFlags: 1
@@ -402,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 1823805510603828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 2, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 4639428232426714}
   m_RootOrder: 1
@@ -1302,7 +1302,8 @@ MonoBehaviour:
   _wasteStored: 0
   _wasteCapacity: 0
   _upgradeStorageMod: 100
-  _powerPlantScript: {fileID: 0}
+  recycleAmount: 30
+  affectedCity: {fileID: 0}
   _storageMeter: {fileID: 4515947384499356}
   _storageCapPole: {fileID: 4131540915919402}
   _debugWasteText: {fileID: 0}
