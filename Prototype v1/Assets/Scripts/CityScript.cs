@@ -77,6 +77,8 @@ public class CityScript : MonoBehaviour
     void ChangeHappiness()
     {
         _happiness += happinessPerTick - (wasteHappinessPenaltyPerTick * BarrelScript.GetBarrelCount());
+        if (_happiness < 0)
+            _happiness = 0;
         if (ResearchPoints >= recycleThreshold)
             recycleButton.enabled = true;
         else
