@@ -12,6 +12,8 @@ public class OrbitScript : MonoBehaviour {
 
 	private void Start () {
         _focusBody = GetComponent<Rigidbody>();
+        _focusBody.useGravity = false;
+        _focusBody.angularDrag = 0;
         _focusBody.AddRelativeTorque(_direction.normalized * _speed);
     }
 }
