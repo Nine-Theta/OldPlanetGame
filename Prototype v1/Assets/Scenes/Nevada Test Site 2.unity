@@ -4822,10 +4822,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHappiness: 0
-  happinessPerTick: 0.5
+  happinessPerTick: 0.03
   wasteHappinessPenaltyPerTick: 0.01
   researchHappinessThreshold: 5
-  researchPointCap: 0
+  researchPointCap: 25
   researchPointPerTick: 0.3
   recycleThreshold: 1
   recycleButton: {fileID: 393870278}
