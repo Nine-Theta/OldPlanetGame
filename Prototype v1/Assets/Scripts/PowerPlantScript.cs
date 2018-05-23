@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+
+
+[System.Serializable]
+public class CustomEvent : UnityEvent { }
 
 public class PowerPlantScript : InteractableScript
 {
     private int _tier = 1;
     private Light _light;
-    private float _maxWaste = 30.0f;
+    [SerializeField] private float _maxWaste = 30.0f;
     private float _wasteStored = 0;
     [SerializeField] private float _wasteGenPerTick = 0.03f;
     [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
     [SerializeField] private float _degradeRange = 3.0f;
     [SerializeField] private float _maxDurability = 200;
-    private float _currentDurability = 200; //Current status, broken if 0
+    private float _currentDurability = 200; //Current status, broken if >= 0
 
     [SerializeField] private int maxTier = 3;
     [SerializeField] private GameObject tier2Upgrade;
     [SerializeField] private CityScript affectedCity;
     [SerializeField] private Text debugWasteText;
     [SerializeField] private GameObject _wasteBarrelPrefab;
+    [SerializeField] private CustomEvent OnBreakdown;
+    [SerializeField] private CustomEvent OnRepair;
+    [SerializeField] private CustomEvent OnUpgrade;
     //public Text debugWasteText;
+
+    public bool IsFunctional
+    { get { return _currentDurability >= 0; } }
 
     void Start()
     {
@@ -61,11 +73,16 @@ public class PowerPlantScript : InteractableScript
         debugWasteText.text = Mathf.Floor(_wasteStored).ToString();
     }
 
-    public void Upgrade()
+    /// <summary>
+    /// Upgrades the powerplant if the cost is met, exits early otherwise. Calls OnUpgrade() when cost is met
+    /// </summary>
+    /// <param name="cost">Research points that are spend (and need to be met to successfully execute)</param>
+    public void Upgrade(int cost = 1)
     {
-        if (affectedCity.ResearchPoints <= 0)
+        if (affectedCity.ResearchPoints <= cost)
             return;
-        affectedCity.SpendResearch(1);
+        affectedCity.SpendResearch(cost);
+        OnUpgrade.Invoke();
         if (_tier >= maxTier)
         {
             _tier = maxTier;
@@ -90,16 +107,11 @@ public class PowerPlantScript : InteractableScript
 
     void GenerateWaste()
     {
-        _wasteStored += _wasteGenPerTick;
+        _wasteStored += Random.Range(0.0f, _wasteGenPerTick);
         if (_wasteStored > _maxWaste)
         {
             _wasteStored = 0;
-            //Degrade(); //Breaks down faster
             Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known
-            //offset.y = 0; //TODO: Remove this
-            //offset.Normalize(); //TODO: Remove this
-            //offset *= 3.0f;
-            //Vector3 worldPos = ((transform.position + offset));
             GameObject barrelRef = Instantiate(_wasteBarrelPrefab, offset, transform.rotation, transform);
             barrelRef.transform.localScale = new Vector3(0.2f / transform.localScale.x, 0.2f / transform.localScale.y, 0.2f / transform.localScale.z);
             offset = barrelRef.transform.localPosition;
@@ -112,29 +124,31 @@ public class PowerPlantScript : InteractableScript
 
     void BreakDown()
     {
+        OnBreakdown.Invoke();
         affectedCity.RespondToBreakdown();
         _light.color = Color.red;
     }
 
     void Repair()
     {
+        OnRepair.Invoke();
         affectedCity.RespondToRepairs();
         _light.color = Color.white;
         _currentDurability = _maxDurability;
     }
 
-    public float DisposeOfWaste(float remainingCapacity)
-    {
-        float tempWaste = _wasteStored;
-        if (remainingCapacity >= _wasteStored)
-        {
-            _wasteStored = 0;
-            return tempWaste;
-        }
-        else
-        {
-            _wasteStored -= remainingCapacity;
-            return remainingCapacity;
-        }
-    }
+    //public float DisposeOfWaste(float remainingCapacity)
+    //{
+    //    float tempWaste = _wasteStored;
+    //    if (remainingCapacity >= _wasteStored)
+    //    {
+    //        _wasteStored = 0;
+    //        return tempWaste;
+    //    }
+    //    else
+    //    {
+    //        _wasteStored -= remainingCapacity;
+    //        return remainingCapacity;
+    //    }
+    //}
 }
