@@ -30,6 +30,19 @@ public class PlayerStats : IComparable<PlayerStats>
         _feedback = "";
     }
 
+    public PlayerStats(string pStream)
+    {
+        string[] stats = pStream.Split(';');
+
+        _name = pName;
+        _score = pScore;
+        _difficulty = pDifficulty;
+        _date = DateTime.Today;
+        _time = 0.0f;
+        _achievedLevel = 0;
+        _feedback = "";
+    }
+
     public string Name
     { get { return _name; } set { _name = value; } }
 
@@ -95,12 +108,14 @@ public class LeaderboardTracker : MonoBehaviour {
     
     private void TestRun()
     {
-        PlayerStats defaultPlayerEasy = new PlayerStats("TheLegend27", DifficultyMode.EASY, 42);
-        PlayerStats defaultPlayerEasy2 = new PlayerStats("TheLegend26", DifficultyMode.EASY, 40);
+        PlayerStats defaultPlayerEasy = new PlayerStats("TheLegend27", 42, DifficultyMode.EASY);
+        PlayerStats defaultPlayerEasy2 = new PlayerStats("TheLegend26", 40, DifficultyMode.EASY);
         _overallBoardEasy.Add(defaultPlayerEasy);
         _overallBoardEasy.Add(defaultPlayerEasy2);
-        Debug.Log("TestRun");
+        Debug.Log("TestRunSave");
         SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
+        Debug.Log("TestRunRead");
+        ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
     }
 
     /// <summary>
@@ -156,7 +171,7 @@ public class LeaderboardTracker : MonoBehaviour {
         }
     }
 
-    private void ReadBoardFromFileList(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
+    private void ReadBoardFromFile(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
     {
         string filePath = @"/Default.csv";
 
@@ -174,7 +189,16 @@ public class LeaderboardTracker : MonoBehaviour {
         }
 
         TextReader reader = new StreamReader(filePath);
-        //string[] players = reader.
+        string stream = reader.ReadToEnd();
+        string[] players = stream.Split('|');
+
+        for (int i = 0; i < players.Length-1; i++)
+        {
+            Debug.Log("player "+i+": " + players[i]);
+        }
+
+
+        reader.Close();
 
     }
 
@@ -201,7 +225,7 @@ public class LeaderboardTracker : MonoBehaviour {
 
         foreach(PlayerStats player in pBoard)
         {
-            writer.WriteLine(player.ToString()+"|");
+            writer.WriteLine(player.ToString()+'|');
             Debug.Log("writeline: " + player.ToString());
         }
 
