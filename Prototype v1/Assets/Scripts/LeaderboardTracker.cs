@@ -34,13 +34,16 @@ public class PlayerStats : IComparable<PlayerStats>
     {
         string[] stats = pStream.Split(';');
 
-        _name = pName;
-        _score = pScore;
-        _difficulty = pDifficulty;
-        _date = DateTime.Today;
-        _time = 0.0f;
-        _achievedLevel = 0;
-        _feedback = "";
+        _name = stats[0];
+        _score = int.Parse(stats[1]);
+        
+        /*
+        
+        //Enum.TryParse(typeof(DifficultyMode), stats[2]);
+        _date = stats[0];
+        _time = stats[0];
+        _achievedLevel = stats[0];
+        _feedback = stats[0];*/
     }
 
     public string Name
@@ -85,7 +88,7 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private void Start()
     {
-        Debug.Log("start");
+        Debug.Log("EASY");
         TestRun();
 
         /*
