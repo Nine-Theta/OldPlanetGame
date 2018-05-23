@@ -19,6 +19,7 @@ public class PowerPlantScript : InteractableScript
     [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
     [SerializeField] private float _degradeRange = 3.0f;
     [SerializeField] private float _maxDurability = 200;
+    [SerializeField] private int _upgradeCost = 1;
     private float _currentDurability = 200; //Current status, broken if >= 0
 
     [SerializeField] private int maxTier = 3;
@@ -60,7 +61,7 @@ public class PowerPlantScript : InteractableScript
         }
         else
         {
-            Upgrade();
+            Upgrade(_upgradeCost);
         }
     }
 
