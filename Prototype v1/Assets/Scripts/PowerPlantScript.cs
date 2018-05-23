@@ -26,6 +26,7 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CityScript affectedCity;
     [SerializeField] private Text debugWasteText;
     [SerializeField] private GameObject _wasteBarrelPrefab;
+    [SerializeField] private Transform _wasteBarrelSpawn;
     [SerializeField] private CustomEvent OnBreakdown;
     [SerializeField] private CustomEvent OnRepair;
     [SerializeField] private CustomEvent OnUpgrade;
@@ -111,12 +112,23 @@ public class PowerPlantScript : InteractableScript
         if (_wasteStored > _maxWaste)
         {
             _wasteStored = 0;
-            Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known
-            GameObject barrelRef = Instantiate(_wasteBarrelPrefab, offset, transform.rotation, transform);
-            barrelRef.transform.localScale = new Vector3(0.2f / transform.localScale.x, 0.2f / transform.localScale.y, 0.2f / transform.localScale.z);
-            offset = barrelRef.transform.localPosition;
-            offset.y += 0.05f;
-            barrelRef.transform.localPosition = offset;
+            if (_wasteBarrelSpawn != null)
+            {
+                GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawn.position, _wasteBarrelSpawn.rotation, _wasteBarrelSpawn);
+            }
+            else
+            {
+                #region oldspawn
+                /**/
+                Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known
+                GameObject barrelRef = Instantiate(_wasteBarrelPrefab, offset, transform.rotation, transform);
+                barrelRef.transform.localScale = new Vector3(0.2f / transform.localScale.x, 0.2f / transform.localScale.y, 0.2f / transform.localScale.z);
+                offset = barrelRef.transform.localPosition;
+                offset.y += 0.05f;
+                barrelRef.transform.localPosition = offset;
+                /**/
+                #endregion
+            }
             //Set Object position offset from the plant at surface of planet
             //Set Object's proper rotation
         }
