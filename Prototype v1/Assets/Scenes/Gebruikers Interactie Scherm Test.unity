@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 116163130}
   - component: {fileID: 116163129}
   - component: {fileID: 116163133}
+  - component: {fileID: 116163134}
   m_Layer: 5
   m_Name: Naam Selectie Doek
   m_TagString: Untagged
@@ -759,6 +760,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameField: {fileID: 1379854828}
   _maxNameLength: 10
+--- !u!114 &116163134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116163128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301301e8aa92b0644a147130c74d0573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &121690055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,8 +1591,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 515, y: -100}
-  m_SizeDelta: {x: 150, y: 80}
+  m_AnchoredPosition: {x: 380, y: -200}
+  m_SizeDelta: {x: 180, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286660728
 MonoBehaviour:
@@ -1817,7 +1829,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 784065284}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3264,7 +3276,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.99999}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8781,7 +8793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 550, y: 0}
+  m_AnchoredPosition: {x: 480, y: -100}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143694282
