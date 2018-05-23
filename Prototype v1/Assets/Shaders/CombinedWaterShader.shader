@@ -65,11 +65,6 @@
 
 				if (tex2D(_SplatMap, v.uv, 0, 0).g >= 0.5f)
 				{
-					//world.vertex.y = world.vertex.y + (sin((_Time[1]) + world.vertex.x * world.vertex.z));
-					//float scale = v.vertex.x * world.normal.x + v.vertex.y * world.normal.y + v.vertex.z * world.normal.z;
-					//float3 offset = fmod(sin(_Time[1]) * 0.2f, 1) * scale;
-					//world.vertex += float4(offset,0);
-
 					float x = world.vertex.x;
 					float y = world.vertex.y;
 					float z = world.vertex.z;

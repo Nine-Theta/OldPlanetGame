@@ -84,8 +84,6 @@ public class GameObjectSelectorScript : MonoBehaviour
                     if (tempTag != "Dragable")
                     {
                         _selection.GetComponent<BarrelScript>().SetPosition(hit.point);
-                        Vector3 pos = _selection.GetComponent<Transform>().position;
-                        //Vector3 normal = Vector3.Cross();
                     }
                     if (tempTag == "Silo")
                     {
