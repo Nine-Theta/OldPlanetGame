@@ -7,7 +7,7 @@ public class CityScript : MonoBehaviour
 {
     float _maxIntensity = 7.0f;
     float _happiness = 0.0f;
-    List<Light> cityLights;
+    List<Light> cityLights = new List<Light>();
 
     [SerializeField] private float startHappiness = 0.0f;
     [SerializeField] private float maxHappiness = 10.0f;
