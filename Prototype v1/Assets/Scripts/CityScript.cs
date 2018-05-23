@@ -7,7 +7,7 @@ public class CityScript : MonoBehaviour
 {
     float _maxIntensity = 7.0f;
     float _happiness = 0.0f;
-    Light cityLight;
+    List<Light> cityLights;
 
     [SerializeField] private float startHappiness = 0.0f;
     [SerializeField] private float maxHappiness = 10.0f;
@@ -20,6 +20,9 @@ public class CityScript : MonoBehaviour
     [SerializeField] private int researchPointCap;
     [SerializeField] private float researchPointPerTick;
     [SerializeField] private int recycleThreshold;
+
+    [SerializeField] private CustomEvent OnResearchpointUp;
+    [SerializeField] private CustomEvent OnHappinessUp;
 
     [SerializeField] private Button recycleButton;
     [SerializeField] private Text debugResearchText;
@@ -35,7 +38,7 @@ public class CityScript : MonoBehaviour
 
     void Start()
     {
-        cityLight = GetComponentInChildren<Light>();
+        GetComponentsInChildren<Light>(cityLights);
         _happiness = startHappiness;
     }
 
@@ -46,25 +49,38 @@ public class CityScript : MonoBehaviour
         UpdateDebugInfo();
     }
 
-    private void IncreaseLightIntensity(float value)
+    public void IncreaseLightIntensity(float value)
     {
-        cityLight.intensity += value;
-        if (cityLight.intensity > _maxIntensity)
-            cityLight.intensity = _maxIntensity;
+        for (int i = 0; i < cityLights.Count; i++)
+        {
+            Light cityLight = cityLights[i];
+            cityLight.intensity += value;
+            if (cityLight.intensity > _maxIntensity)
+                cityLight.intensity = _maxIntensity;
+        }
     }
 
-    private void DecreaseLightIntensity(float value)
+    public void DecreaseLightIntensity(float value)
     {
-        cityLight.intensity -= value;
-        if (cityLight.intensity < 0)
-            cityLight.intensity = 0;
+        for (int i = 0; i < cityLights.Count; i++)
+        {
+            Light cityLight = cityLights[i];
+            cityLight.intensity -= value;
+            if (cityLight.intensity < 0)
+                cityLight.intensity = 0;
+        }
     }
 
     private void Research()
     {
         if(_happiness >= researchHappinessThreshold && researchPointsGained < researchPointCap)
         {
+            int oldPoints = ResearchPoints;
             researchPointsGained += researchPointPerTick;
+            if(oldPoints < ResearchPoints)
+            {
+                OnResearchpointUp.Invoke();
+            }
         }
     }
 
@@ -76,6 +92,7 @@ public class CityScript : MonoBehaviour
 
     void ChangeHappiness()
     {
+        int oldHappiness = Mathf.FloorToInt(_happiness);
         _happiness += happinessPerTick - (wasteHappinessPenaltyPerTick * BarrelScript.GetBarrelCount());
         if (_happiness < 0)
             _happiness = 0;
@@ -85,30 +102,42 @@ public class CityScript : MonoBehaviour
             recycleButton.enabled = false;
         if (_happiness >= maxHappiness)
             _happiness = maxHappiness;
+        if(oldHappiness < Mathf.FloorToInt(_happiness))
+        {
+            OnHappinessUp.Invoke();
+        }
     }
 
     public void RespondToUpgrade()
     {
-        happinessPerTick += 0.25f;
+        //happinessPerTick += 0.25f;
     }
 
     public void RespondToBreakdown()
     {
-        cityLight.color = Color.black;
-        happinessPerTick *= -1;
+        for (int i = 0; i < cityLights.Count; i++)
+        {
+            Light cityLight = cityLights[i];
+            cityLight.color = Color.black;
+            happinessPerTick *= -1;
+        }
     }
 
     public void RespondToRepairs()
     {
-        cityLight.color = Color.white;
-        happinessPerTick *= -1;
+        for (int i = 0; i < cityLights.Count; i++)
+        {
+            Light cityLight = cityLights[i];
+            cityLight.color = Color.white;
+            happinessPerTick *= -1;
+        }
     }
 
     /// <summary>
     /// Returns true if upgrade successful
     /// </summary>
     /// <param name="points"></param>
-    /// <returns></returns>
+    /// <returns>True if succesful, false if insufficient points</returns>
     public bool SpendResearch(int points)
     {
         if(ResearchPoints >= points)
