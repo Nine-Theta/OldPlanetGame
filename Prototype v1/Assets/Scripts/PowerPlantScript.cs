@@ -20,7 +20,7 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private float _degradeRange = 3.0f;
     [SerializeField] private float _maxDurability = 200;
     [SerializeField] private int _upgradeCost = 1;
-    private float _currentDurability = 200; //Current status, broken if >= 0
+    private float _currentDurability = 0; //Current status, broken if >= 0
 
     [SerializeField] private int maxTier = 3;
     [SerializeField] private GameObject tier2Upgrade;
@@ -39,6 +39,7 @@ public class PowerPlantScript : InteractableScript
     void Start()
     {
         _light = GetComponentInChildren<Light>();
+        BreakDown();
     }
 
     void Update()
