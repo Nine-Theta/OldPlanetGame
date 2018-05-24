@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractableScript : MonoBehaviour
 {
+    [SerializeField] protected CustomEvent OnTap;
+
     void Start()
     {
 
@@ -16,7 +18,8 @@ public class InteractableScript : MonoBehaviour
 
     public virtual void RespondSelect()
     {
-        Debug.Log("Selected");
+        Debug.Log("Selected " + gameObject.name);
+        OnTap.Invoke();
     }
 
     public virtual void RespondDeselect()

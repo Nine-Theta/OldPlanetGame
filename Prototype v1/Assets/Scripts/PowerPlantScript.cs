@@ -20,6 +20,7 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private float _degradeRange = 3.0f;
     [SerializeField] private float _maxDurability = 200;
     [SerializeField] private int _upgradeCost = 1;
+    [SerializeField] private float _repairPerTap = 5;
     private float _currentDurability = 0; //Current status, broken if >= 0
 
     [SerializeField] private int maxTier = 3;
@@ -30,7 +31,8 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private Transform _wasteBarrelSpawn;
     [SerializeField] private CustomEvent OnBreakdown;
     [SerializeField] private CustomEvent OnRepair;
-    [SerializeField] private CustomEvent OnUpgrade;
+    [SerializeField] private CustomEvent OnTier2Upgrade;
+    [SerializeField] private CustomEvent OnTier3Upgrade;
     //public Text debugWasteText;
 
     public bool IsFunctional
@@ -56,9 +58,10 @@ public class PowerPlantScript : InteractableScript
     public override void RespondSelect()
     {
         //Debug.Log("Selected PP");
-        if (_currentDurability <= 0)
+        OnTap.Invoke();
+        if (_currentDurability <= _maxDurability - 5)
         {
-            Repair();
+            Repair(_repairPerTap);
         }
         else
         {
@@ -84,18 +87,18 @@ public class PowerPlantScript : InteractableScript
     {
         if (affectedCity.ResearchPoints <= cost)
             return;
-        affectedCity.SpendResearch(cost);
-        OnUpgrade.Invoke();
         if (_tier >= maxTier)
         {
             _tier = maxTier;
             return;
         }
+
         _tier++;
-        if (_tier >= 2)
-        {
-            tier2Upgrade.SetActive(true);
-        }
+        if (_tier == 2)
+            OnTier2Upgrade.Invoke();
+        else if (_tier == 3)
+            OnTier3Upgrade.Invoke();
+        affectedCity.SpendResearch(cost);
         _wasteStored = 0;
     }
 
@@ -149,6 +152,14 @@ public class PowerPlantScript : InteractableScript
         affectedCity.RespondToRepairs();
         _light.color = Color.white;
         _currentDurability = _maxDurability;
+    }
+
+    void Repair(float amount)
+    {
+        OnRepair.Invoke();
+        affectedCity.RespondToRepairs();
+        _light.color = Color.white;
+        _currentDurability += amount;
     }
 
     //public float DisposeOfWaste(float remainingCapacity)
