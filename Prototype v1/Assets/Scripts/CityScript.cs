@@ -12,7 +12,10 @@ public class CityScript : MonoBehaviour
     [SerializeField] private float startHappiness = 0.0f;
     [SerializeField] private float maxHappiness = 10.0f;
     [SerializeField] private float happinessPerTick = 0.00f;
-    [SerializeField] private float wasteHappinessPenaltyPerTick = 0.01f;
+    [SerializeField] private float wastePenaltyPerBarrel = 0.01f;
+    [SerializeField] private float pollutionPenalty = 0.01f;
+
+    [SerializeField] private float researchHappinessMultiplier = 1.0f;
 
     [SerializeField] private float researchHappinessThreshold = 5.0f;
     private float researchPointsGained;
@@ -41,6 +44,11 @@ public class CityScript : MonoBehaviour
     {
         GetComponentsInChildren<Light>(cityLights);
         _happiness = startHappiness;
+
+        if(LevelStatsScript.Exists)
+        {
+            SetVariables(LevelStatsScript.CityStats);
+        }
     }
 
     void Update()
@@ -72,16 +80,31 @@ public class CityScript : MonoBehaviour
         }
     }
 
+    private void SetVariables(CityStats stats)
+    {
+        startHappiness = stats.startHappiness;
+        maxHappiness = stats.maxHappiness;
+        happinessPerTick = stats.happinessPerTick;
+        wastePenaltyPerBarrel = stats.wastePenaltyPerBarrel;
+        pollutionPenalty = stats.pollutionPenalty;
+
+        researchHappinessMultiplier = stats.researchHappinessMultiplier;
+        researchHappinessThreshold = stats.researchHappinessThreshold;
+        researchPointCap = stats.researchPointCap;
+        researchPointPerTick = stats.researchPointPerTick;
+        recycleThreshold = stats.recycleThreshold;
+    }
+
     private void Research()
     {
-        if(_happiness >= researchHappinessThreshold && researchPointsGained < researchPointCap)
+        if (_happiness >= researchHappinessThreshold && researchPointsGained < researchPointCap)
         {
             int oldPoints = ResearchPoints;
             researchPointsGained += researchPointPerTick;
-            if(oldPoints < ResearchPoints)
+            if (oldPoints < ResearchPoints)
             {
                 OnResearchpointUp.Invoke();
-                if(ResearchPoints == researchHappinessThreshold)
+                if (ResearchPoints == researchHappinessThreshold)
                 {
                     OnResearchThresholdReached.Invoke();
                 }
@@ -98,7 +121,7 @@ public class CityScript : MonoBehaviour
     void ChangeHappiness()
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
-        _happiness += happinessPerTick - (wasteHappinessPenaltyPerTick * BarrelScript.GetBarrelCount());
+        _happiness += happinessPerTick - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.pollution);
         if (_happiness < 0)
             _happiness = 0;
         if (ResearchPoints >= recycleThreshold)
@@ -107,7 +130,7 @@ public class CityScript : MonoBehaviour
             recycleButton.enabled = false;
         if (_happiness >= maxHappiness)
             _happiness = maxHappiness;
-        if(oldHappiness < Mathf.FloorToInt(_happiness))
+        if (oldHappiness < Mathf.FloorToInt(_happiness))
         {
             OnHappinessUp.Invoke();
         }
@@ -145,7 +168,7 @@ public class CityScript : MonoBehaviour
     /// <returns>True if succesful, false if insufficient points</returns>
     public bool SpendResearch(int points)
     {
-        if(ResearchPoints >= points)
+        if (ResearchPoints >= points)
         {
             researchPointsSpend += points;
             return true;

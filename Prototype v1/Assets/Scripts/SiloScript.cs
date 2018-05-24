@@ -23,12 +23,24 @@ public class SiloScript : InteractableScript
     private void Start()
     {
         Upgrade(true);
+        if(LevelStatsScript.Exists)
+        {
+            SetVariables(LevelStatsScript.SiloStats);
+        }
     }
 
     private void Update()
     {
         if (_debugWasteText != null)
             UpdateDebugInfo();
+    }
+
+    private void SetVariables(SiloStats stats)
+    {
+        _wasteStored = stats.wasteStored;
+        _wasteCapacity = stats.wasteCapacity;
+        _upgradeStorageMod = stats.upgradeStorageMod;
+        recycleAmount = stats.recycleAmount;
     }
 
     public override void RespondSelect()

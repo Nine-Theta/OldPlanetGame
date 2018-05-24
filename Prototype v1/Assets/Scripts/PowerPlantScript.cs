@@ -17,9 +17,10 @@ public class PowerPlantScript : InteractableScript
     private float _wasteStored = 0;
     [SerializeField] private float _wasteGenPerTick = 0.03f;
     [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
-    [SerializeField] private float _degradeRange = 3.0f;
+    [SerializeField]
+    private float _degradeRange = 3.0f;
     [SerializeField] private float _maxDurability = 200;
-    [SerializeField] private int _upgradeCost = 1;
+    private int _upgradeCost = 1;
     [SerializeField] private float _repairPerTap = 5;
     private float _currentDurability = 0; //Current status, broken if >= 0
 
@@ -42,6 +43,10 @@ public class PowerPlantScript : InteractableScript
     {
         _light = GetComponentInChildren<Light>();
         BreakDown();
+        if (LevelStatsScript.Exists)
+        {
+            SetVariables(LevelStatsScript.NuclearPowerPlantStats);
+        }
     }
 
     void Update()
@@ -55,6 +60,7 @@ public class PowerPlantScript : InteractableScript
         UpdateDebugInfo();
     }
 
+    #region interactableScript
     public override void RespondSelect()
     {
         //Debug.Log("Selected PP");
@@ -72,6 +78,17 @@ public class PowerPlantScript : InteractableScript
     public override void RespondDeselect()
     {
         //Debug.Log("Deselected PP");
+    }
+    #endregion
+
+    private void SetVariables(NPPStats stats)
+    {
+        _maxWaste = stats.maxWaste;
+        _wasteGenPerTick = stats.wasteGenPerTick;
+        _degradeRange = stats.degradeRange;
+        _maxDurability = stats.maxDurability;
+        _upgradeCost = stats.Tier2UpgradeCost;
+        _repairPerTap = stats.repairPerTap;
     }
 
     void UpdateDebugInfo()

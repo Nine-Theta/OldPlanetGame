@@ -5,7 +5,7 @@ using UnityEngine;
 public class FFPPScript : MonoBehaviour
 {
     [SerializeField] private float pollutionPerTick = 0.1f;
-    [SerializeField] private float currentPollution = 0.0f;
+    [SerializeField] private static float currentPollution = 0.0f;
     [SerializeField] private bool startActive = false;
     [SerializeField] private CustomEvent OnPollutionPercentageUp;
     [SerializeField] private CustomEvent OnPollutionPercentageDown;
@@ -14,6 +14,10 @@ public class FFPPScript : MonoBehaviour
     void Start()
     {
         isActive = startActive;
+        if (LevelStatsScript.Exists)
+        {
+            SetVariables(LevelStatsScript.FossilFuelPowerPlantStats);
+        }
     }
 
     void Update()
@@ -45,6 +49,16 @@ public class FFPPScript : MonoBehaviour
             }
         }
     }
+
+    private void SetVariables(FFPPStats stats)
+    {
+        pollutionPerTick = stats.pollutionPerTick;
+        currentPollution = stats.currentPollution;
+        startActive = stats.startActive;
+    }
+
+    public static float pollution
+    { get { return currentPollution; } }
 
     public void SetPlantActive(bool value)
     {
