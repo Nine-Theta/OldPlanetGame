@@ -9,8 +9,7 @@ public class NPPStats
     public float wasteGenPerTick = 0.03f;
     public float degradeRange = 3.0f;
     public float maxDurability = 200;
-    public int Tier2UpgradeCost = 1;
-    public int Tier3UpgradeCost = 1;
+    public int UpgradeCost = 1;
     public float repairPerTap = 5;
 }
 
@@ -49,9 +48,13 @@ public class CityStats
 
 public class LevelStatsScript : MonoBehaviour
 {
-    [SerializeField] private NPPStats NuclearPowerPlant;
+    [SerializeField] private NPPStats NuclearPowerPlantTier1;
+    [SerializeField] private NPPStats NuclearPowerPlantTier2;
+    [SerializeField] private NPPStats NuclearPowerPlantTier3;
     [SerializeField] private SiloStats Silo;
-    [SerializeField] private FFPPStats FossilFuelPowerPlant;
+    [SerializeField] private FFPPStats FossilFuelPowerPlantTier1;
+    [SerializeField] private FFPPStats FossilFuelPowerPlantTier2;
+    [SerializeField] private FFPPStats FossilFuelPowerPlantTier3;
     [SerializeField] private CityStats City;
     [HideInInspector] private static LevelStatsScript instance;
 
@@ -65,8 +68,12 @@ public class LevelStatsScript : MonoBehaviour
     public static bool Exists
     { get { return instance != null; } }
 
-    public static NPPStats NuclearPowerPlantStats
-    { get { return instance.NuclearPowerPlant; } }
+    public static NPPStats NuclearPowerPlantStatsTier1
+    { get { return instance.NuclearPowerPlantTier1; } }
+    public static NPPStats NuclearPowerPlantStatsTier2
+    { get { return instance.NuclearPowerPlantTier2; } }
+    public static NPPStats NuclearPowerPlantStatsTier3
+    { get { return instance.NuclearPowerPlantTier3; } }
 
 
     public static SiloStats SiloStats
@@ -77,6 +84,10 @@ public class LevelStatsScript : MonoBehaviour
     { get { return instance.City; } }
 
 
-    public static FFPPStats FossilFuelPowerPlantStats
-    { get { return instance.FossilFuelPowerPlant; } }
+    public static FFPPStats FossilFuelPowerPlantStatsTier1
+    { get { return instance.FossilFuelPowerPlantTier1; } }
+    public static FFPPStats FossilFuelPowerPlantStatsTier2
+    { get { return instance.FossilFuelPowerPlantTier2; } }
+    public static FFPPStats FossilFuelPowerPlantStatsTier3
+    { get { return instance.FossilFuelPowerPlantTier3; } }
 }

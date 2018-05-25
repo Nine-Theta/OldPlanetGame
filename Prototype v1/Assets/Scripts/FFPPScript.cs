@@ -16,7 +16,7 @@ public class FFPPScript : MonoBehaviour
         isActive = startActive;
         if (LevelStatsScript.Exists)
         {
-            SetVariables(LevelStatsScript.FossilFuelPowerPlantStats);
+            SetVariables(LevelStatsScript.FossilFuelPowerPlantStatsTier1);
         }
     }
 
@@ -57,7 +57,7 @@ public class FFPPScript : MonoBehaviour
         startActive = stats.startActive;
     }
 
-    public static float pollution
+    public static float Pollution
     { get { return currentPollution; } }
 
     public void SetPlantActive(bool value)

@@ -45,7 +45,7 @@ public class PowerPlantScript : InteractableScript
         BreakDown();
         if (LevelStatsScript.Exists)
         {
-            SetVariables(LevelStatsScript.NuclearPowerPlantStats);
+            SetVariables(LevelStatsScript.NuclearPowerPlantStatsTier1);
         }
     }
 
@@ -87,7 +87,7 @@ public class PowerPlantScript : InteractableScript
         _wasteGenPerTick = stats.wasteGenPerTick;
         _degradeRange = stats.degradeRange;
         _maxDurability = stats.maxDurability;
-        _upgradeCost = stats.Tier2UpgradeCost;
+        _upgradeCost = stats.UpgradeCost;
         _repairPerTap = stats.repairPerTap;
     }
 
@@ -112,11 +112,18 @@ public class PowerPlantScript : InteractableScript
 
         _tier++;
         if (_tier == 2)
+        {
             OnTier2Upgrade.Invoke();
+            if (LevelStatsScript.Exists)
+                SetVariables(LevelStatsScript.NuclearPowerPlantStatsTier2);
+        }
         else if (_tier == 3)
+        {
             OnTier3Upgrade.Invoke();
+            if (LevelStatsScript.Exists)
+                SetVariables(LevelStatsScript.NuclearPowerPlantStatsTier3);
+        }
         affectedCity.SpendResearch(cost);
-        _wasteStored = 0;
     }
 
     void Degrade()
