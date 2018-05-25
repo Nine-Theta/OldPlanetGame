@@ -144,6 +144,7 @@ public class PowerPlantScript : InteractableScript
             if (_wasteBarrelSpawn != null)
             {
                 GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawn.position, _wasteBarrelSpawn.rotation, _wasteBarrelSpawn);
+                barrelRef.transform.rotation = transform.rotation;
             }
             else
             {

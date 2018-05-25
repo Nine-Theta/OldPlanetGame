@@ -121,7 +121,7 @@ public class CityScript : MonoBehaviour
     void ChangeHappiness()
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
-        _happiness += happinessPerTick - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
+        _happiness += (happinessPerTick * researchHappinessMultiplier) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
         if (_happiness < 0)
             _happiness = 0;
         if (ResearchPoints >= recycleThreshold)
@@ -138,7 +138,7 @@ public class CityScript : MonoBehaviour
 
     public void RespondToUpgrade()
     {
-        happinessPerTick += 0.25f;
+        //happinessPerTick += 0.25f;
     }
 
     public void RespondToBreakdown()
@@ -147,7 +147,7 @@ public class CityScript : MonoBehaviour
         {
             Light cityLight = cityLights[i];
             cityLight.color = Color.black;
-            happinessPerTick *= -1;
+            //happinessPerTick *= -1;
         }
     }
 
@@ -157,7 +157,7 @@ public class CityScript : MonoBehaviour
         {
             Light cityLight = cityLights[i];
             cityLight.color = Color.white;
-            happinessPerTick *= -1;
+            //happinessPerTick *= -1;
         }
     }
 

@@ -22,11 +22,12 @@ public class SiloScript : InteractableScript
 
     private void Start()
     {
-        Upgrade(true);
         if(LevelStatsScript.Exists)
         {
             SetVariables(LevelStatsScript.SiloStats);
         }
+        Upgrade(true);
+
     }
 
     private void Update()
