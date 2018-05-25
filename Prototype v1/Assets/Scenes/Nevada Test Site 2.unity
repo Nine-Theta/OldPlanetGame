@@ -8987,6 +8987,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596532392}
   m_Mesh: {fileID: 4300070, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
+--- !u!1 &1662212037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1662212039}
+  - component: {fileID: 1662212038}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1662212038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662212037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48e6d139115d574690059924b3bad33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NuclearPowerPlant:
+    maxWaste: 30
+    wasteGenPerTick: 0.03
+    degradeRange: 3
+    maxDurability: 200
+    Tier2UpgradeCost: 1
+    Tier3UpgradeCost: 1
+    repairPerTap: 5
+  Silo:
+    wasteStored: 0
+    wasteCapacity: 0
+    upgradeStorageMod: 10000
+    recycleAmount: 30
+  FossilFuelPowerPlant:
+    pollutionPerTick: 0.1
+    currentPollution: 0
+    startActive: 0
+  City:
+    startHappiness: 0
+    maxHappiness: 10
+    happinessPerTick: 0
+    wastePenaltyPerBarrel: 0.01
+    pollutionPenalty: 0.01
+    researchHappinessMultiplier: 1
+    researchHappinessThreshold: 5
+    researchPointCap: 100
+    researchPointPerTick: 0.1
+    recycleThreshold: 1
+--- !u!4 &1662212039
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662212037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20879686, y: 5.8499804, z: 3.2416196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673223675
 GameObject:
   m_ObjectHideFlags: 0
