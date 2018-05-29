@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class CityScript : MonoBehaviour
 {
-    float _maxIntensity = 7.0f;
+    //float _maxIntensity = 7.0f;
     float _happiness = 0.0f;
-    List<Light> cityLights = new List<Light>();
+    //List<Light> cityLights = new List<Light>();
 
     [SerializeField] private float startHappiness = 0.0f;
     [SerializeField] private float maxHappiness = 10.0f;
@@ -42,7 +42,7 @@ public class CityScript : MonoBehaviour
 
     void Start()
     {
-        GetComponentsInChildren<Light>(cityLights);
+        //GetComponentsInChildren<Light>(cityLights);
         _happiness = startHappiness;
 
         if(LevelStatsScript.Exists)
@@ -58,27 +58,27 @@ public class CityScript : MonoBehaviour
         UpdateDebugInfo();
     }
 
-    public void IncreaseLightIntensity(float value)
-    {
-        for (int i = 0; i < cityLights.Count; i++)
-        {
-            Light cityLight = cityLights[i];
-            cityLight.intensity += value;
-            if (cityLight.intensity > _maxIntensity)
-                cityLight.intensity = _maxIntensity;
-        }
-    }
+    //public void IncreaseLightIntensity(float value)
+    //{
+    //    for (int i = 0; i < cityLights.Count; i++)
+    //    {
+    //        Light cityLight = cityLights[i];
+    //        cityLight.intensity += value;
+    //        if (cityLight.intensity > _maxIntensity)
+    //            cityLight.intensity = _maxIntensity;
+    //    }
+    //}
 
-    public void DecreaseLightIntensity(float value)
-    {
-        for (int i = 0; i < cityLights.Count; i++)
-        {
-            Light cityLight = cityLights[i];
-            cityLight.intensity -= value;
-            if (cityLight.intensity < 0)
-                cityLight.intensity = 0;
-        }
-    }
+    //public void DecreaseLightIntensity(float value)
+    //{
+    //    for (int i = 0; i < cityLights.Count; i++)
+    //    {
+    //        Light cityLight = cityLights[i];
+    //        cityLight.intensity -= value;
+    //        if (cityLight.intensity < 0)
+    //            cityLight.intensity = 0;
+    //    }
+    //}
 
     private void SetVariables(CityStats stats)
     {
@@ -143,22 +143,22 @@ public class CityScript : MonoBehaviour
 
     public void RespondToBreakdown()
     {
-        for (int i = 0; i < cityLights.Count; i++)
-        {
-            Light cityLight = cityLights[i];
-            cityLight.color = Color.black;
-            //happinessPerTick *= -1;
-        }
+        //for (int i = 0; i < cityLights.Count; i++)
+        //{
+        //    Light cityLight = cityLights[i];
+        //    cityLight.color = Color.black;
+        //    //happinessPerTick *= -1;
+        //}
     }
 
     public void RespondToRepairs()
     {
-        for (int i = 0; i < cityLights.Count; i++)
-        {
-            Light cityLight = cityLights[i];
-            cityLight.color = Color.white;
-            //happinessPerTick *= -1;
-        }
+        //for (int i = 0; i < cityLights.Count; i++)
+        //{
+        //    Light cityLight = cityLights[i];
+        //    cityLight.color = Color.white;
+        //    //happinessPerTick *= -1;
+        //}
     }
 
     /// <summary>

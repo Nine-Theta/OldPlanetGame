@@ -12,7 +12,6 @@ public class CustomEvent : UnityEvent { }
 public class PowerPlantScript : InteractableScript
 {
     private int _tier = 1;
-    private Light _light;
     private float _maxWaste = 30.0f;
     private float _wasteStored = 0;
     private float _wasteGenPerTick = 0.03f;
@@ -45,7 +44,6 @@ public class PowerPlantScript : InteractableScript
 
     void Start()
     {
-        _light = GetComponentInChildren<Light>();
         BreakDown();
         if (LevelStatsScript.Exists)
         {
@@ -182,7 +180,6 @@ public class PowerPlantScript : InteractableScript
         OnBreakdown.Invoke();
         affectedCity.RespondToBreakdown();
         _isBroken = true;
-        _light.color = Color.red;
     }
 
     void Repair()
@@ -190,7 +187,6 @@ public class PowerPlantScript : InteractableScript
         _isBroken = false;
         OnRepair.Invoke();
         affectedCity.RespondToRepairs();
-        _light.color = Color.white;
         _currentDurability = _maxDurability;
     }
 
@@ -209,7 +205,6 @@ public class PowerPlantScript : InteractableScript
                 OnMaintained.Invoke();
             }
             affectedCity.RespondToRepairs();
-            _light.color = Color.white;
             _isBroken = false;
         }
     }
