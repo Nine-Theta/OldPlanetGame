@@ -13,22 +13,20 @@ public class PowerPlantScript : InteractableScript
 {
     private int _tier = 1;
     private Light _light;
-    [SerializeField] private float _maxWaste = 30.0f;
+    private float _maxWaste = 30.0f;
     private float _wasteStored = 0;
-    [SerializeField] private float _wasteGenPerTick = 0.03f;
-    [Tooltip("A random floating point number between 0 and this variable will be substracted from hp every update call")]
-    [SerializeField]
+    private float _wasteGenPerTick = 0.03f;
     private float _degradeRange = 3.0f;
-    [SerializeField] private float _maxDurability = 200;
+    private float _maxDurability = 200;
     private int _upgradeCost = 1;
-    [SerializeField] private float _repairPerTap = 5;
+    private float _repairPerTap = 5;
     private float _currentDurability = 0; //Current status, broken if >= 0
-    [SerializeField] private float _repairThreshold = 150;
-    [SerializeField] private float _maintenanceAlertThreshold = 150;
+    private float _repairThreshold = 150;
+    private float _maintenanceAlertThreshold = 150;
 
     private bool _isBroken = false;
 
-    [SerializeField] private int maxTier = 3;
+    private int maxTier = 3;
     [SerializeField] private GameObject tier2Upgrade;
     [SerializeField] private CityScript affectedCity;
     [SerializeField] private Text debugWasteText;
