@@ -27,23 +27,28 @@ public class PlayerStats : IComparable<PlayerStats>
         _date = DateTime.Today;
         _time = 0.0f;
         _achievedLevel = 0;
-        _feedback = "";
+        _feedback = "Needs more salt";
     }
 
     public PlayerStats(string pStream)
     {
-        string[] stats = pStream.Split(';');
+        string[] stats = pStream.Split(',');
+
+        Debug.Log("stream: " + pStream);
+        for (int i = 0; i < stats.Length; i++)
+        {
+            Debug.Log("stats [" +i+"] : " +stats[i]);
+        }
 
         _name = stats[0];
-        _score = int.Parse(stats[1]);
-        
-        /*
-        
-        //Enum.TryParse(typeof(DifficultyMode), stats[2]);
-        _date = stats[0];
-        _time = stats[0];
-        _achievedLevel = stats[0];
-        _feedback = stats[0];*/
+        int.TryParse(stats[1], out _score);
+        _difficulty =  (DifficultyMode)Enum.Parse(typeof(DifficultyMode), stats[2]);
+        _date = DateTime.Parse(stats[3]);
+        _time = float.Parse(stats[4]);
+        _achievedLevel = int.Parse(stats[5]);
+        _feedback = stats[6];
+
+        Debug.Log("Created PlayerStats with stats: "+ pStream);
     }
 
     public string Name
@@ -57,6 +62,9 @@ public class PlayerStats : IComparable<PlayerStats>
 
     public DateTime Date
     { get { return _date; } set { _date = value; } }
+
+    public string Day
+    { get { return _date.ToShortDateString(); } }
 
     public float Time
     { get { return _time; } set { _time = value; } }
@@ -72,41 +80,91 @@ public class PlayerStats : IComparable<PlayerStats>
 
     public override string ToString()
     {
-        return _name + ";" + _score + ";" + _difficulty + ";" + _date + ";" + _time + ";" + _achievedLevel + ";" + _feedback;
+        return _name + "," + _score + "," + _difficulty + "," + _date + "," + _time + "," + _achievedLevel + "," + _feedback;
     }
 }
 
 public class LeaderboardTracker : MonoBehaviour {
 
-    private List<PlayerStats> _dailyBoardEasy = new List<PlayerStats>();
-    private List<PlayerStats> _dailyBoardMed = new List<PlayerStats>(); 
-    private List<PlayerStats> _dailyBoardHard = new List<PlayerStats>();
+    private static LeaderboardTracker _instance;
+    public static LeaderboardTracker Instance { get { return _instance; } }
+    
+    private List<PlayerStats> _dailyBoardEasy = new List<PlayerStats>(10);
+    private List<PlayerStats> _dailyBoardMed = new List<PlayerStats>(10);
+    private List<PlayerStats> _dailyBoardHard = new List<PlayerStats>(10);
 
-    private List<PlayerStats> _overallBoardEasy = new List<PlayerStats>();
-    private List<PlayerStats> _overallBoardMed = new List<PlayerStats>();
-    private List<PlayerStats> _overallBoardHard = new List<PlayerStats>();
+    private List<PlayerStats> _overallBoardEasy = new List<PlayerStats>(10);
+    private List<PlayerStats> _overallBoardMed = new List<PlayerStats>(10);
+    private List<PlayerStats> _overallBoardHard = new List<PlayerStats>(10);
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        InitializeBoards();
+
+        TryAddPlayer(new PlayerStats("GARY OAK", 9001, DifficultyMode.HARD));
+    }
+
+    private int _boardSize = 10;
+
+    private PlayerStats _currentPlayer;
 
     private void Start()
     {
-        Debug.Log("EASY");
-        TestRun();
+        _currentPlayer = new PlayerStats("NAAM", 1, DifficultyMode.MEDIUM);
+    }
 
-        /*
-        PlayerStats defaultPlayerEasy = new PlayerStats("TheLegend27", DifficultyMode.EASY, 42);
-        PlayerStats defaultPlayerMed = new PlayerStats("TheLegend27", DifficultyMode.MEDIUM, 42);
-        PlayerStats defaultPlayerHard = new PlayerStats("TheLegend27", DifficultyMode.HARD, 42);
+    public PlayerStats CurrentPlayer
+    {
+        get { return _currentPlayer; }
+    }
 
-        if (_dailyBoardEasy.Count == 0)
-            _dailyBoardEasy.Add(defaultPlayerEasy);
-        if (_dailyBoardMed.Count == 0)
-            _dailyBoardMed.Add(defaultPlayerMed);
-        if (_dailyBoardHard.Count == 0)
-            _dailyBoardHard.Add(defaultPlayerHard);
+    private void InitializeBoards()
+    {
+        EmptyBoard(_dailyBoardEasy, DifficultyMode.EASY);
+        EmptyBoard(_dailyBoardMed, DifficultyMode.MEDIUM);
+        EmptyBoard(_dailyBoardHard, DifficultyMode.HARD);
 
-        if (_overallBoardEasy.Count == 0)
-            _overallBoardEasy.Add(defaultPlayerEasy);
-            */
+        if (!File.Exists(@"/EasyBoard.csv"))
+        {
+            EmptyBoard(_overallBoardEasy, DifficultyMode.EASY);
+            SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
+        }
+        else
+            ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
 
+        if (!File.Exists(@"/MediumBoard.csv"))
+        {
+            EmptyBoard(_overallBoardMed, DifficultyMode.MEDIUM);
+            SaveBoardToFile(_overallBoardMed, DifficultyMode.MEDIUM);
+        }
+        else
+            ReadBoardFromFile(_overallBoardMed, DifficultyMode.MEDIUM);
+
+        if (!File.Exists(@"/HardBoard.csv"))
+        {
+            EmptyBoard(_overallBoardHard, DifficultyMode.HARD);
+            SaveBoardToFile(_overallBoardHard, DifficultyMode.HARD);
+        }
+        else
+            ReadBoardFromFile(_overallBoardHard, DifficultyMode.HARD);
+    }
+
+    private void EmptyBoard(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
+    {
+        pBoard.Clear();
+
+        for (int i = 0; i < pBoard.Capacity; i++)
+        {
+            Debug.Log("capacity: "+pBoard.Capacity+" count: " +pBoard.Count);
+            Debug.Log("Added playerStat[" + i + "] to board: " + pBoard);
+            pBoard.Insert(0, new PlayerStats("NULL", 0, pDifficulty));
+        }
     }
     
     private void TestRun()
@@ -119,6 +177,33 @@ public class LeaderboardTracker : MonoBehaviour {
         SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
         Debug.Log("TestRunRead");
         ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
+    }
+
+    public PlayerStats GetPlayerInfo(DifficultyMode pDifficulty, int pPlayerRank, bool pIsDaily = false)
+    {
+        Debug.Log("easyboard count: " + _dailyBoardEasy.Count);
+
+        foreach(PlayerStats p in _dailyBoardEasy)
+        {
+            Debug.Log("stats: " + p.ToString());
+        }
+
+        switch (pDifficulty)
+        {
+            case DifficultyMode.EASY:
+                if (pIsDaily) return _dailyBoardEasy[pPlayerRank];
+                return _overallBoardEasy[pPlayerRank];
+
+            case DifficultyMode.MEDIUM:
+                if (pIsDaily) return _dailyBoardMed[pPlayerRank];
+                return _overallBoardMed[pPlayerRank];
+
+            case DifficultyMode.HARD:
+                if (pIsDaily) return _dailyBoardHard[pPlayerRank];
+                return _overallBoardHard[pPlayerRank];
+            default:
+                return new PlayerStats("TheLegend27", 42, DifficultyMode.EASY); //Will never actually get called, just here to please the error CS0161.
+        }
     }
 
     /// <summary>
@@ -159,6 +244,7 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private bool CheckPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
+        Debug.Log("checked player: " +pPlayer.Name);
         return pBoard[pBoard.Count-1].Score < pPlayer.Score;
     }
 
@@ -168,7 +254,10 @@ public class LeaderboardTracker : MonoBehaviour {
         {
             if(pBoard[i].Score < pPlayer.Score)
             {
-                pBoard.Insert(i, pPlayer);
+                pBoard[i] = pPlayer;
+                Debug.Log("Added Player: "+pPlayer.Name);
+                //pBoard.RemoveAt(pBoard.Capacity-1);
+                //pBoard.Insert(i, pPlayer);
                 return;
             }
         }
@@ -193,13 +282,19 @@ public class LeaderboardTracker : MonoBehaviour {
 
         TextReader reader = new StreamReader(filePath);
         string stream = reader.ReadToEnd();
-        string[] players = stream.Split('|');
+        string[] players = stream.Split(';');
+
+        List<PlayerStats> list = new List<PlayerStats>();
+
+        pBoard.Clear();
 
         for (int i = 0; i < players.Length-1; i++)
         {
             Debug.Log("player "+i+": " + players[i]);
+            pBoard.Add(new PlayerStats(players[i]));
         }
 
+        // = list;
 
         reader.Close();
 
@@ -228,15 +323,11 @@ public class LeaderboardTracker : MonoBehaviour {
 
         foreach(PlayerStats player in pBoard)
         {
-            writer.WriteLine(player.ToString()+'|');
+            writer.Write(player.ToString()+";");
             Debug.Log("writeline: " + player.ToString());
         }
 
         writer.Close();
         //File.WriteAllText(filePath, nom + ";" + prenom + ";" + age + ";" + classe,);
     }
-	
-	private void Update () {
-		
-	}
 }
