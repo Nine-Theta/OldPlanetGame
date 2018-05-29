@@ -9,6 +9,8 @@ public class NPPStats
     public float wasteGenPerTick = 0.03f;
     public float degradeRange = 0.3f;
     public float maxDurability = 200;
+    public float repairThreshold = 150;
+    public float maintenanceAlertThreshold = 150;
     public int UpgradeCost = 1;
     public float repairPerTap = 5;
 }

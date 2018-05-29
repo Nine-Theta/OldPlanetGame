@@ -23,6 +23,10 @@ public class PowerPlantScript : InteractableScript
     private int _upgradeCost = 1;
     [SerializeField] private float _repairPerTap = 5;
     private float _currentDurability = 0; //Current status, broken if >= 0
+    [SerializeField] private float _repairThreshold = 150;
+    [SerializeField] private float _maintenanceAlertThreshold = 150;
+
+    private bool _isBroken = false;
 
     [SerializeField] private int maxTier = 3;
     [SerializeField] private GameObject tier2Upgrade;
@@ -32,6 +36,8 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private Transform _wasteBarrelSpawn;
     [SerializeField] private CustomEvent OnBreakdown;
     [SerializeField] private CustomEvent OnRepair;
+    [SerializeField] private CustomEvent OnMaintained;
+    [SerializeField] private CustomEvent OnMaintenanceAlert;
     [SerializeField] private CustomEvent OnTier2Upgrade;
     [SerializeField] private CustomEvent OnTier3Upgrade;
     //public Text debugWasteText;
@@ -54,9 +60,14 @@ public class PowerPlantScript : InteractableScript
         if (_currentDurability <= 0)
             return;
         if (_tier < 2)
-            Degrade();
+        {
+            if (!_isBroken)
+                Degrade();
+        }
         if (_tier < 3)
+        {
             GenerateWaste();
+        }
         UpdateDebugInfo();
     }
 
@@ -89,6 +100,8 @@ public class PowerPlantScript : InteractableScript
         _maxDurability = stats.maxDurability;
         _upgradeCost = stats.UpgradeCost;
         _repairPerTap = stats.repairPerTap;
+        _repairThreshold = stats.repairThreshold;
+        _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
     }
 
     void UpdateDebugInfo()
@@ -129,6 +142,10 @@ public class PowerPlantScript : InteractableScript
     void Degrade()
     {
         _currentDurability -= Random.Range(0, _degradeRange);
+        if (_currentDurability <= _maintenanceAlertThreshold)
+        {
+            OnMaintenanceAlert.Invoke();
+        }
         if (_currentDurability <= 0)
         {
             BreakDown();
@@ -144,7 +161,7 @@ public class PowerPlantScript : InteractableScript
             if (_wasteBarrelSpawn != null)
             {
                 GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawn.position, _wasteBarrelSpawn.rotation, _wasteBarrelSpawn);
-                barrelRef.transform.rotation = transform.rotation;
+                //barrelRef.transform.rotation = transform.rotation;
             }
             else
             {
@@ -159,8 +176,6 @@ public class PowerPlantScript : InteractableScript
                 /**/
                 #endregion
             }
-            //Set Object position offset from the plant at surface of planet
-            //Set Object's proper rotation
         }
     }
 
@@ -168,11 +183,13 @@ public class PowerPlantScript : InteractableScript
     {
         OnBreakdown.Invoke();
         affectedCity.RespondToBreakdown();
+        _isBroken = true;
         _light.color = Color.red;
     }
 
     void Repair()
     {
+        _isBroken = false;
         OnRepair.Invoke();
         affectedCity.RespondToRepairs();
         _light.color = Color.white;
@@ -181,24 +198,21 @@ public class PowerPlantScript : InteractableScript
 
     void Repair(float amount)
     {
-        OnRepair.Invoke();
-        affectedCity.RespondToRepairs();
-        _light.color = Color.white;
         _currentDurability += amount;
+        if (_currentDurability >= _repairThreshold)
+        {
+            _currentDurability = _maxDurability;
+            if (_isBroken)
+            {
+                OnRepair.Invoke();
+            }
+            else
+            {
+                OnMaintained.Invoke();
+            }
+            affectedCity.RespondToRepairs();
+            _light.color = Color.white;
+            _isBroken = false;
+        }
     }
-
-    //public float DisposeOfWaste(float remainingCapacity)
-    //{
-    //    float tempWaste = _wasteStored;
-    //    if (remainingCapacity >= _wasteStored)
-    //    {
-    //        _wasteStored = 0;
-    //        return tempWaste;
-    //    }
-    //    else
-    //    {
-    //        _wasteStored -= remainingCapacity;
-    //        return remainingCapacity;
-    //    }
-    //}
 }
