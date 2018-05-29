@@ -111,4 +111,4 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1334404855539978}
-  m_Mesh: {fileID: 4300000, guid: 9f64cd7699dfbe2488182953bec1f6f6, type: 3}
+  m_Mesh: {fileID: 4300000, guid: dc3ab0a569061cc4ea7f21c64e97de7d, type: 3}
