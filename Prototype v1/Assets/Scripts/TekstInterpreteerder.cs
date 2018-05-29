@@ -29,6 +29,17 @@ public class TekstInterpreteerder : MonoBehaviour {
     public void SetName()
     {
         if (_name == "") _name = "NAAM";
-        //TODO: Set name
+        LeaderboardTracker.Instance.CurrentPlayer.Name = _name;
+    }
+
+    public void SetDifficulty(int pDifficulty)
+    {
+        LeaderboardTracker.Instance.CurrentPlayer.Difficulty = (DifficultyMode)pDifficulty;
+    }
+
+    public void LoadLevel()
+    {
+        Debug.Log("TODO: Load level here");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
