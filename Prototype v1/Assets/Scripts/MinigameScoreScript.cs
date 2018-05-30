@@ -21,10 +21,13 @@ public class MinigameScoreScript : MonoBehaviour
 
     private void Update()
     {
-        _minigameTimeLeft -= Time.deltaTime;
+        _minigameTimeLeft -= Time.unscaledDeltaTime;
         if(_minigameTimeLeft <= 0.0f)
         {
-            
+            AddScoreToPlayer();
+            GameObject.Find("Cloud_PS").SetActive(false);
+            Time.timeScale = 1;
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
         }
 
         _debugText.text = "Time left: " + Mathf.FloorToInt(_minigameTimeLeft).ToString();
@@ -38,5 +41,13 @@ public class MinigameScoreScript : MonoBehaviour
     public void ScorePoints(int value)
     {
         _score += value;
+    }
+
+    public void AddScoreToPlayer()
+    {
+        if (LeaderboardTracker.Exists)
+        {
+            LeaderboardTracker.Instance.CurrentPlayer.Score += _score;
+        }
     }
 }

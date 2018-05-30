@@ -88,7 +88,11 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private static LeaderboardTracker _instance;
     public static LeaderboardTracker Instance { get { return _instance; } }
-    
+
+    private int _boardSize = 10;
+
+    private PlayerStats _currentPlayer;
+
     private List<PlayerStats> _dailyBoardEasy = new List<PlayerStats>(10);
     private List<PlayerStats> _dailyBoardMed = new List<PlayerStats>(10);
     private List<PlayerStats> _dailyBoardHard = new List<PlayerStats>(10);
@@ -110,9 +114,8 @@ public class LeaderboardTracker : MonoBehaviour {
         TryAddPlayer(new PlayerStats("GARY OAK", 9001, DifficultyMode.HARD));
     }
 
-    private int _boardSize = 10;
-
-    private PlayerStats _currentPlayer;
+    public static bool Exists
+    { get{ return Instance != null; } }
 
     private void Start()
     {
@@ -130,7 +133,7 @@ public class LeaderboardTracker : MonoBehaviour {
         EmptyBoard(_dailyBoardMed, DifficultyMode.MEDIUM);
         EmptyBoard(_dailyBoardHard, DifficultyMode.HARD);
 
-        if (!File.Exists(@"/EasyBoard.csv"))
+        if (!File.Exists(@"/PowerPlanet_Leaderboard_"+DateTime.Today.Year+"_Easy.csv"))
         {
             EmptyBoard(_overallBoardEasy, DifficultyMode.EASY);
             SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
@@ -138,7 +141,7 @@ public class LeaderboardTracker : MonoBehaviour {
         else
             ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
 
-        if (!File.Exists(@"/MediumBoard.csv"))
+        if (!File.Exists(@"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Medium.csv"))
         {
             EmptyBoard(_overallBoardMed, DifficultyMode.MEDIUM);
             SaveBoardToFile(_overallBoardMed, DifficultyMode.MEDIUM);
@@ -146,7 +149,7 @@ public class LeaderboardTracker : MonoBehaviour {
         else
             ReadBoardFromFile(_overallBoardMed, DifficultyMode.MEDIUM);
 
-        if (!File.Exists(@"/HardBoard.csv"))
+        if (!File.Exists(@"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Hard.csv"))
         {
             EmptyBoard(_overallBoardHard, DifficultyMode.HARD);
             SaveBoardToFile(_overallBoardHard, DifficultyMode.HARD);
@@ -254,10 +257,9 @@ public class LeaderboardTracker : MonoBehaviour {
         {
             if(pBoard[i].Score < pPlayer.Score)
             {
-                pBoard[i] = pPlayer;
-                Debug.Log("Added Player: "+pPlayer.Name);
-                //pBoard.RemoveAt(pBoard.Capacity-1);
-                //pBoard.Insert(i, pPlayer);
+                pBoard.RemoveAt(pBoard.Capacity-1);
+                pBoard.Insert(i, pPlayer);
+                Debug.Log("Added Player: " + pPlayer.Name);
                 return;
             }
         }
@@ -270,13 +272,13 @@ public class LeaderboardTracker : MonoBehaviour {
         switch (pDifficulty)
         {
             case DifficultyMode.EASY:
-                filePath = @"/EasyBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Easy.csv";
                 break;
             case DifficultyMode.MEDIUM:
-                filePath = @"/MediumBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Medium.csv";
                 break;
             case DifficultyMode.HARD:
-                filePath = @"/HardBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Hard.csv";
                 break;
         }
 
@@ -309,13 +311,13 @@ public class LeaderboardTracker : MonoBehaviour {
         switch (pDifficulty)
         {
             case DifficultyMode.EASY:
-                filePath = @"/EasyBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Easy.csv";
                 break;
             case DifficultyMode.MEDIUM:
-                filePath = @"/MediumBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Medium.csv";
                 break;
             case DifficultyMode.HARD:
-                filePath = @"/HardBoard.csv";
+                filePath = @"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Hard.csv";
                 break;
         }
 

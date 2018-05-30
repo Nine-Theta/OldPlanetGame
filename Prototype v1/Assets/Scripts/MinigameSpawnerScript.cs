@@ -18,11 +18,12 @@ public class MinigameSpawnerScript : MonoBehaviour
         _currentSpawnTime = _spawnTime;
     }
 
-    void Update()
+    private void Update()
     {
-        _currentSpawnTime -= Time.deltaTime;
+        _currentSpawnTime -= Time.unscaledDeltaTime;
         if (_currentSpawnTime <= 0.0f)
         {
+            Debug.Log("spawned");
             if (_randomizeSpawnTime)
                 _currentSpawnTime = Random.Range(0.0f, _spawnTime);
             else

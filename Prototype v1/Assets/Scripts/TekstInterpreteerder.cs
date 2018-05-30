@@ -8,6 +8,7 @@ public class TekstInterpreteerder : MonoBehaviour {
     private string _name = "";
     [SerializeField] private Text _nameField;
     [SerializeField] private int _maxNameLength = 10;
+    [SerializeField] private string _sceneToLoad; 
 
     void Start () {
 		
@@ -40,6 +41,7 @@ public class TekstInterpreteerder : MonoBehaviour {
     public void LoadLevel()
     {
         Debug.Log("TODO: Load level here");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad,UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad);
     }
 }
