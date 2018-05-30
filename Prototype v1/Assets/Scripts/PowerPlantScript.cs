@@ -26,7 +26,6 @@ public class PowerPlantScript : InteractableScript
     private bool _isBroken = false;
 
     private int maxTier = 3;
-    [SerializeField] private GameObject tier2Upgrade;
     [SerializeField] private CityScript affectedCity;
     [SerializeField] private Text debugWasteText;
     [SerializeField] private GameObject _wasteBarrelPrefab;
@@ -39,11 +38,14 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CustomEvent OnTier3Upgrade;
     //public Text debugWasteText;
 
+    private ParticleSystem _particleSystem;
+
     public bool IsFunctional
     { get { return _currentDurability >= 0; } }
 
     void Start()
     {
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
         BreakDown();
         if (LevelStatsScript.Exists)
         {
@@ -178,7 +180,6 @@ public class PowerPlantScript : InteractableScript
     void BreakDown()
     {
         OnBreakdown.Invoke();
-        affectedCity.RespondToBreakdown();
         _isBroken = true;
     }
 
@@ -186,7 +187,6 @@ public class PowerPlantScript : InteractableScript
     {
         _isBroken = false;
         OnRepair.Invoke();
-        affectedCity.RespondToRepairs();
         _currentDurability = _maxDurability;
     }
 
@@ -204,8 +204,15 @@ public class PowerPlantScript : InteractableScript
             {
                 OnMaintained.Invoke();
             }
-            affectedCity.RespondToRepairs();
             _isBroken = false;
+        }
+    }
+
+    public void ParticlePlayCheck()
+    {
+        if(_currentDurability <= _repairThreshold)
+        {
+            _particleSystem.Play();
         }
     }
 }
