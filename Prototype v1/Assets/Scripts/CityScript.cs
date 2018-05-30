@@ -27,6 +27,7 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnResearchpointUp;
     [SerializeField] private CustomEvent OnHappinessUp;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
+    [SerializeField] private CustomEvent OnUpgradeAvailable;
 
     [SerializeField] private Button recycleButton;
     [SerializeField] private Text debugResearchText;
@@ -108,6 +109,10 @@ public class CityScript : MonoBehaviour
                 {
                     OnResearchThresholdReached.Invoke();
                 }
+                if(ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
+                {
+                    OnUpgradeAvailable.Invoke();
+                }
             }
         }
     }
@@ -135,31 +140,7 @@ public class CityScript : MonoBehaviour
             OnHappinessUp.Invoke();
         }
     }
-
-    public void RespondToUpgrade()
-    {
-        //happinessPerTick += 0.25f;
-    }
-
-    public void RespondToBreakdown()
-    {
-        //for (int i = 0; i < cityLights.Count; i++)
-        //{
-        //    Light cityLight = cityLights[i];
-        //    cityLight.color = Color.black;
-        //    //happinessPerTick *= -1;
-        //}
-    }
-
-    public void RespondToRepairs()
-    {
-        //for (int i = 0; i < cityLights.Count; i++)
-        //{
-        //    Light cityLight = cityLights[i];
-        //    cityLight.color = Color.white;
-        //    //happinessPerTick *= -1;
-        //}
-    }
+    
 
     /// <summary>
     /// Returns true if upgrade successful
