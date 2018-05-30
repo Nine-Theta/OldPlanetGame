@@ -45,7 +45,7 @@ public class PowerPlantScript : InteractableScript
 
     void Start()
     {
-        _particleSystem = GetComponentInChildren<ParticleSystem>();
+        //_particleSystem = GetComponentInChildren<ParticleSystem>();
         BreakDown();
         if (LevelStatsScript.Exists)
         {
@@ -208,11 +208,11 @@ public class PowerPlantScript : InteractableScript
         }
     }
 
-    public void ParticlePlayCheck()
+    public void ParticleRepairCheck(ParticleSystem pPsystem)
     {
         if(_currentDurability <= _repairThreshold)
         {
-            _particleSystem.Play();
+            pPsystem.Play();
         }
     }
 }
