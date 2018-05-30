@@ -20,4 +20,10 @@ public class LoadSceneTest : MonoBehaviour {
             SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
         }
 	}
+
+    public void LoadScene()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+    }
 }
