@@ -40,8 +40,8 @@ public class TekstInterpreteerder : MonoBehaviour {
 
     public void LoadLevel()
     {
-        Debug.Log("TODO: Load level here");
-        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad,UnityEngine.SceneManagement.LoadSceneMode.Additive);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad);
+        //Debug.Log("TODO: Load level here");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad,UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad);
     }
 }

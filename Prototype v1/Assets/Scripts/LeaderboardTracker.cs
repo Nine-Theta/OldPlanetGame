@@ -184,13 +184,6 @@ public class LeaderboardTracker : MonoBehaviour {
 
     public PlayerStats GetPlayerInfo(DifficultyMode pDifficulty, int pPlayerRank, bool pIsDaily = false)
     {
-        Debug.Log("easyboard count: " + _dailyBoardEasy.Count);
-
-        foreach(PlayerStats p in _dailyBoardEasy)
-        {
-            Debug.Log("stats: " + p.ToString());
-        }
-
         switch (pDifficulty)
         {
             case DifficultyMode.EASY:
@@ -247,7 +240,6 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private bool CheckPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
-        Debug.Log("checked player: " +pPlayer.Name);
         return pBoard[pBoard.Count-1].Score < pPlayer.Score;
     }
 
@@ -259,7 +251,6 @@ public class LeaderboardTracker : MonoBehaviour {
             {
                 pBoard.RemoveAt(pBoard.Capacity-1);
                 pBoard.Insert(i, pPlayer);
-                Debug.Log("Added Player: " + pPlayer.Name);
                 return;
             }
         }
@@ -292,21 +283,15 @@ public class LeaderboardTracker : MonoBehaviour {
 
         for (int i = 0; i < players.Length-1; i++)
         {
-            Debug.Log("player "+i+": " + players[i]);
             pBoard.Add(new PlayerStats(players[i]));
         }
 
-        // = list;
-
         reader.Close();
-
     }
 
     private void SaveBoardToFile(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
     {
         string filePath = @"/Default.csv";
-
-        Debug.Log("filepath");
 
         switch (pDifficulty)
         {
@@ -330,6 +315,5 @@ public class LeaderboardTracker : MonoBehaviour {
         }
 
         writer.Close();
-        //File.WriteAllText(filePath, nom + ";" + prenom + ";" + age + ";" + classe,);
     }
 }
