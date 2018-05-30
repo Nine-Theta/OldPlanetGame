@@ -57,14 +57,19 @@ public class PowerPlantScript : InteractableScript
     {
         if (_currentDurability <= 0)
             return;
-        if (_tier < 2)
+        //if (_tier < 2)
         {
             if (!_isBroken)
                 Degrade();
         }
-        if (_tier < 3)
+        //if (_tier < 3)
         {
-            GenerateWaste();
+            if (!_isBroken)
+                GenerateWaste();
+        }
+        if(CheckWinConditions())
+        {
+            EndConditionScript.WinGame();
         }
         UpdateDebugInfo();
     }
@@ -214,5 +219,10 @@ public class PowerPlantScript : InteractableScript
         {
             pPsystem.Play();
         }
+    }
+
+    private bool CheckWinConditions()
+    {
+        return (_tier == maxTier && affectedCity.EndConditionMet());
     }
 }

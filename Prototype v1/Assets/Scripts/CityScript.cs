@@ -159,4 +159,10 @@ public class CityScript : MonoBehaviour
             return false;
         }
     }
+
+
+    public bool EndConditionMet()
+    {
+        return (researchPointsGained >= researchPointCap);
+    }
 }
