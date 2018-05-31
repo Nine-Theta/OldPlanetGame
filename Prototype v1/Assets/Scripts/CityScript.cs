@@ -126,7 +126,8 @@ public class CityScript : MonoBehaviour
     void ChangeHappiness()
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
-        _happiness += (happinessPerTick * researchHappinessMultiplier) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
+        _happiness += (happinessPerTick) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
+        Debug.Log(-(pollutionPenalty * FFPPScript.Pollution));
         if (_happiness < 0)
             _happiness = 0;
         if (ResearchPoints >= recycleThreshold)

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EndConditionScript : MonoBehaviour
 {
-    [SerializeField] private GameObject WinScreen;
-    [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private CustomEvent OnLevel1Complete;
+    [SerializeField] private CustomEvent OnLevel1Lost;
+    [SerializeField] private CustomEvent OnLevel2Complete;
+    [SerializeField] private CustomEvent OnLevel2Lost;
+    [SerializeField] private CustomEvent OnLevel3Complete;
+    [SerializeField] private CustomEvent OnLevel3Lost;
 
     private static EndConditionScript instance;
 
@@ -23,13 +27,29 @@ public class EndConditionScript : MonoBehaviour
 
     }
 
-    public static void WinGame()
+    public static void WinLevel()
     {
-        instance.WinScreen.SetActive(true);
+        switch(LevelStatsScript.Level)
+        {
+            case 1:
+                instance.OnLevel1Complete.Invoke();
+                goto default;
+            case 2:
+                instance.OnLevel2Complete.Invoke();
+                goto default;
+            case 3:
+                instance.OnLevel3Complete.Invoke();
+                goto default;
+
+            default:
+                LevelStatsScript.SetLevel(LevelStatsScript.Level + 1);
+                break;
+        }
     }
 
-    public static void LoseGame()
+
+    public static void LoseLevel()
     {
-        instance.LoseScreen.SetActive(true);
+
     }
 }

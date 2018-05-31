@@ -69,7 +69,8 @@ public class PowerPlantScript : InteractableScript
         }
         if(CheckWinConditions())
         {
-            EndConditionScript.WinGame();
+            EndConditionScript.WinLevel();
+            enabled = false;
         }
         UpdateDebugInfo();
     }
@@ -168,6 +169,7 @@ public class PowerPlantScript : InteractableScript
             }
             else
             {
+                Debug.LogError("BARRELSPAWN IS NULL! USING BAD SPAWN MECHANIC INSTEAD! FIX ASAP!");
                 #region oldspawn
                 /**/
                 Vector3 offset = Random.onUnitSphere; //Multiply onUnitSphere by planet radius once it is known

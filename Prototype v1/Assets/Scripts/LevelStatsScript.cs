@@ -49,16 +49,45 @@ public class CityStats
     public int recycleThreshold = 1;
 }
 
+[System.Serializable]
+public class DifficultyLevel
+{
+    public NPPStats NuclearPowerPlantTier1;
+    public NPPStats NuclearPowerPlantTier2;
+    public NPPStats NuclearPowerPlantTier3;
+    public SiloStats Silo;
+    public FFPPStats FossilFuelPowerPlantTier1;
+    public FFPPStats FossilFuelPowerPlantTier2;
+    public FFPPStats FossilFuelPowerPlantTier3;
+    public CityStats City;
+}
+
+[System.Serializable]
+public class Level
+{
+    public DifficultyLevel easy;
+    public DifficultyLevel medium;
+    public DifficultyLevel hard;
+}
+
 public class LevelStatsScript : MonoBehaviour
 {
-    [SerializeField] private NPPStats NuclearPowerPlantTier1;
-    [SerializeField] private NPPStats NuclearPowerPlantTier2;
-    [SerializeField] private NPPStats NuclearPowerPlantTier3;
-    [SerializeField] private SiloStats Silo;
-    [SerializeField] private FFPPStats FossilFuelPowerPlantTier1;
-    [SerializeField] private FFPPStats FossilFuelPowerPlantTier2;
-    [SerializeField] private FFPPStats FossilFuelPowerPlantTier3;
-    [SerializeField] private CityStats City;
+    //[SerializeField] private DifficultyLevel easy;
+    //[SerializeField] private DifficultyLevel medium;
+    //[SerializeField] private DifficultyLevel hard;
+    //[SerializeField] private NPPStats NuclearPowerPlantTier1;
+    //[SerializeField] private NPPStats NuclearPowerPlantTier2;
+    //[SerializeField] private NPPStats NuclearPowerPlantTier3;
+    //[SerializeField] private SiloStats Silo;
+    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier1;
+    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier2;
+    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier3;
+    //[SerializeField] private CityStats City;
+    [SerializeField] private Level level1;
+    [SerializeField] private Level level2;
+    [SerializeField] private Level level3;
+    private int difficultyLevel = 1; //0 = undefined, 1 = easy, 2 = medium, 3 = hard
+    private int level = 1; //0 = undefined, etc
     private static LevelStatsScript instance;
 
     private void Awake()
@@ -77,25 +106,341 @@ public class LevelStatsScript : MonoBehaviour
     { get { return instance != null; } }
 
     public static NPPStats NuclearPowerPlantStatsTier1
-    { get { return instance.NuclearPowerPlantTier1; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.NuclearPowerPlantTier1;
+                        case 2:
+                            return instance.level1.medium.NuclearPowerPlantTier1;
+                        case 3:
+                            return instance.level1.hard.NuclearPowerPlantTier1;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.NuclearPowerPlantTier1;
+                        case 2:
+                            return instance.level2.medium.NuclearPowerPlantTier1;
+                        case 3:
+                            return instance.level2.hard.NuclearPowerPlantTier1;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.NuclearPowerPlantTier1;
+                        case 2:
+                            return instance.level3.medium.NuclearPowerPlantTier1;
+                        case 3:
+                            return instance.level3.hard.NuclearPowerPlantTier1;
+                    }
+
+            }
+        }
+    }
     public static NPPStats NuclearPowerPlantStatsTier2
-    { get { return instance.NuclearPowerPlantTier2; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.NuclearPowerPlantTier2;
+                        case 2:
+                            return instance.level1.medium.NuclearPowerPlantTier2;
+                        case 3:
+                            return instance.level1.hard.NuclearPowerPlantTier2;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.NuclearPowerPlantTier2;
+                        case 2:
+                            return instance.level2.medium.NuclearPowerPlantTier2;
+                        case 3:
+                            return instance.level2.hard.NuclearPowerPlantTier2;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.NuclearPowerPlantTier2;
+                        case 2:
+                            return instance.level3.medium.NuclearPowerPlantTier2;
+                        case 3:
+                            return instance.level3.hard.NuclearPowerPlantTier2;
+                    }
+
+            }
+        }
+    }
     public static NPPStats NuclearPowerPlantStatsTier3
-    { get { return instance.NuclearPowerPlantTier3; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.NuclearPowerPlantTier3;
+                        case 2:
+                            return instance.level1.medium.NuclearPowerPlantTier3;
+                        case 3:
+                            return instance.level1.hard.NuclearPowerPlantTier3;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.NuclearPowerPlantTier3;
+                        case 2:
+                            return instance.level2.medium.NuclearPowerPlantTier3;
+                        case 3:
+                            return instance.level2.hard.NuclearPowerPlantTier3;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.NuclearPowerPlantTier3;
+                        case 2:
+                            return instance.level3.medium.NuclearPowerPlantTier3;
+                        case 3:
+                            return instance.level3.hard.NuclearPowerPlantTier3;
+                    }
+
+            }
+        }
+    }
 
 
     public static SiloStats SiloStats
-    { get { return instance.Silo; } }
+    { get { return instance.level1.easy.Silo; } }
 
 
     public static CityStats CityStats
-    { get { return instance.City; } }
+    { get { return instance.level1.easy.City; } }
 
 
     public static FFPPStats FossilFuelPowerPlantStatsTier1
-    { get { return instance.FossilFuelPowerPlantTier1; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.FossilFuelPowerPlantTier1;
+                        case 2:
+                            return instance.level1.medium.FossilFuelPowerPlantTier1;
+                        case 3:
+                            return instance.level1.hard.FossilFuelPowerPlantTier1;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.FossilFuelPowerPlantTier1;
+                        case 2:
+                            return instance.level2.medium.FossilFuelPowerPlantTier1;
+                        case 3:
+                            return instance.level2.hard.FossilFuelPowerPlantTier1;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.FossilFuelPowerPlantTier1;
+                        case 2:
+                            return instance.level3.medium.FossilFuelPowerPlantTier1;
+                        case 3:
+                            return instance.level3.hard.FossilFuelPowerPlantTier1;
+                    }
+
+            }
+        }
+    }
     public static FFPPStats FossilFuelPowerPlantStatsTier2
-    { get { return instance.FossilFuelPowerPlantTier2; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.FossilFuelPowerPlantTier2;
+                        case 2:
+                            return instance.level1.medium.FossilFuelPowerPlantTier2;
+                        case 3:
+                            return instance.level1.hard.FossilFuelPowerPlantTier2;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.FossilFuelPowerPlantTier2;
+                        case 2:
+                            return instance.level2.medium.FossilFuelPowerPlantTier2;
+                        case 3:
+                            return instance.level2.hard.FossilFuelPowerPlantTier2;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.FossilFuelPowerPlantTier2;
+                        case 2:
+                            return instance.level3.medium.FossilFuelPowerPlantTier2;
+                        case 3:
+                            return instance.level3.hard.FossilFuelPowerPlantTier2;
+                    }
+
+            }
+        }
+    }
     public static FFPPStats FossilFuelPowerPlantStatsTier3
-    { get { return instance.FossilFuelPowerPlantTier3; } }
+    {
+        get
+        {
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.FossilFuelPowerPlantTier3;
+                        case 2:
+                            return instance.level1.medium.FossilFuelPowerPlantTier3;
+                        case 3:
+                            return instance.level1.hard.FossilFuelPowerPlantTier3;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.FossilFuelPowerPlantTier3;
+                        case 2:
+                            return instance.level2.medium.FossilFuelPowerPlantTier3;
+                        case 3:
+                            return instance.level2.hard.FossilFuelPowerPlantTier3;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.FossilFuelPowerPlantTier3;
+                        case 2:
+                            return instance.level3.medium.FossilFuelPowerPlantTier3;
+                        case 3:
+                            return instance.level3.hard.FossilFuelPowerPlantTier3;
+                    }
+
+            }
+        }
+    }
+
+    public static int Level
+    { get { return instance.level; } }
+
+    public static int Difficulty
+    { get { return instance.difficultyLevel; } }
+
+    public static void SetLevel(int pLevel)
+    {
+        instance.level = pLevel;
+    }
+
+    public static void SetDifficulty(DifficultyMode pDifficulty)
+    {
+        instance.difficultyLevel = (int)(pDifficulty) + 1;
+    }
 }
