@@ -25,7 +25,7 @@ public class MinigameScoreScript : MonoBehaviour
         if(_minigameTimeLeft <= 0.0f)
         {
             AddScoreToPlayer();
-            GameObject.Find("Cloud_PS").SetActive(false);
+            GameObject.Find("Clouds_PS").SetActive(false);
             Time.timeScale = 1;
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
         }
