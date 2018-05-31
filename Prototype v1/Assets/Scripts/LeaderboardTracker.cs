@@ -76,7 +76,12 @@ public class PlayerStats : IComparable<PlayerStats>
     { get { return _feedback; } set { _feedback = value; } }
 
     public int CompareTo(PlayerStats pOther)
-    { return (_score.CompareTo(pOther.Score)); }
+    {
+        if (_score == pOther.Score)
+            return (_time.CompareTo(pOther.Time));
+        else
+            return (_score.CompareTo(pOther.Score));
+    }
 
     public override string ToString()
     {
