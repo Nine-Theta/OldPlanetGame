@@ -5,22 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class NPPStats
 {
-    public float maxWaste = 30.0f;
-    public float wasteGenPerTick = 0.03f;
+    public float maxWaste = 100.0f;
+    public float wasteGenPerTick = 0.5f;
     public float degradeRange = 0.3f;
     public float maxDurability = 200;
     public float repairThreshold = 150;
     public float maintenanceAlertThreshold = 150;
-    public int UpgradeCost = 1;
-    public float repairPerTap = 5;
+    public int UpgradeCost = 20;
+    public float repairPerTap = 10;
 }
 
 [System.Serializable]
 public class SiloStats
 {
     public float wasteStored = 0;
-    public float wasteCapacity = 1000000;
-    public float upgradeStorageMod = 100;
+    public float wasteCapacity = 0;
+    public float upgradeStorageMod = 100000;
     public float recycleAmount = 30;
 }
 
@@ -37,13 +37,13 @@ public class FFPPStats
 public class CityStats
 {
     public float startHappiness = 0.0f;
-    public float maxHappiness = 10.0f;
-    public float happinessPerTick = 0.25f;
+    public float maxHappiness = 100.0f;
+    public float happinessPerTick = 0.01f;
     public float wastePenaltyPerBarrel = 0.01f;
-    public float pollutionPenalty = 0.01f;
+    public float pollutionPenalty = 0.1f;
 
     public float researchHappinessMultiplier = 1.0f;
-    public float researchHappinessThreshold = 5.0f;
+    public float researchHappinessThreshold = 20.0f;
     public int researchPointCap = 100;
     public float researchPointPerTick = 0.1f;
     public int recycleThreshold = 1;
