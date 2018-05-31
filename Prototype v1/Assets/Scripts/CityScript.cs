@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class CityScript : MonoBehaviour
 {
-    //float _maxIntensity = 7.0f;
     float _happiness = 0.0f;
-    //List<Light> cityLights = new List<Light>();
 
     [SerializeField] private float startHappiness = 0.0f;
     [SerializeField] private float maxHappiness = 10.0f;
@@ -43,7 +41,6 @@ public class CityScript : MonoBehaviour
 
     void Start()
     {
-        //GetComponentsInChildren<Light>(cityLights);
         _happiness = startHappiness;
 
         if (LevelStatsScript.Exists)
@@ -59,27 +56,6 @@ public class CityScript : MonoBehaviour
         UpdateDebugInfo();
     }
 
-    //public void IncreaseLightIntensity(float value)
-    //{
-    //    for (int i = 0; i < cityLights.Count; i++)
-    //    {
-    //        Light cityLight = cityLights[i];
-    //        cityLight.intensity += value;
-    //        if (cityLight.intensity > _maxIntensity)
-    //            cityLight.intensity = _maxIntensity;
-    //    }
-    //}
-
-    //public void DecreaseLightIntensity(float value)
-    //{
-    //    for (int i = 0; i < cityLights.Count; i++)
-    //    {
-    //        Light cityLight = cityLights[i];
-    //        cityLight.intensity -= value;
-    //        if (cityLight.intensity < 0)
-    //            cityLight.intensity = 0;
-    //    }
-    //}
 
     private void SetVariables(CityStats stats)
     {
@@ -109,9 +85,27 @@ public class CityScript : MonoBehaviour
                 {
                     OnResearchThresholdReached.Invoke();
                 }
-                if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
+                switch (LevelStatsScript.MostRecentTierNPPAccessed)
                 {
-                    OnUpgradeAvailable.Invoke();
+                    default:
+                    case 1:
+                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
+                        {
+                            OnUpgradeAvailable.Invoke();
+                        }
+                        break;
+                    case 2:
+                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier2.UpgradeCost)
+                        {
+                            OnUpgradeAvailable.Invoke();
+                        }
+                        break;
+                    case 3:
+                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier3.UpgradeCost)
+                        {
+                            OnUpgradeAvailable.Invoke();
+                        }
+                        break;
                 }
             }
         }

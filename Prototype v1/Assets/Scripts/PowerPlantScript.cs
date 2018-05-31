@@ -106,6 +106,8 @@ public class PowerPlantScript : InteractableScript
         _repairPerTap = stats.repairPerTap;
         _repairThreshold = stats.repairThreshold;
         _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
+
+        Debug.Log(_upgradeCost);
     }
 
     void UpdateDebugInfo()
