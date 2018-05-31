@@ -72,21 +72,10 @@ public class Level
 
 public class LevelStatsScript : MonoBehaviour
 {
-    //[SerializeField] private DifficultyLevel easy;
-    //[SerializeField] private DifficultyLevel medium;
-    //[SerializeField] private DifficultyLevel hard;
-    //[SerializeField] private NPPStats NuclearPowerPlantTier1;
-    //[SerializeField] private NPPStats NuclearPowerPlantTier2;
-    //[SerializeField] private NPPStats NuclearPowerPlantTier3;
-    //[SerializeField] private SiloStats Silo;
-    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier1;
-    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier2;
-    //[SerializeField] private FFPPStats FossilFuelPowerPlantTier3;
-    //[SerializeField] private CityStats City;
     [SerializeField] private Level level1;
     [SerializeField] private Level level2;
     [SerializeField] private Level level3;
-    private int difficultyLevel = 1; //0 = undefined, 1 = easy, 2 = medium, 3 = hard
+    private int difficultyLevel = 2; //0 = undefined, 1 = easy, 2 = medium, 3 = hard
     private int level = 1; //0 = undefined, etc
     private static LevelStatsScript instance;
 
