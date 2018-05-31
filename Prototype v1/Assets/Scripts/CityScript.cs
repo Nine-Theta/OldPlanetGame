@@ -98,7 +98,7 @@ public class CityScript : MonoBehaviour
 
     private void Research()
     {
-        if (_happiness >= researchHappinessThreshold && researchPointsGained < researchPointCap)
+        if (_happiness >= researchHappinessThreshold && ResearchPoints < researchPointCap)
         {
             int oldPoints = ResearchPoints;
             researchPointsGained += researchPointPerTick;
@@ -127,7 +127,6 @@ public class CityScript : MonoBehaviour
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
         _happiness += (happinessPerTick) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
-        Debug.Log(-(pollutionPenalty * FFPPScript.Pollution));
         if (_happiness < 0)
             _happiness = 0;
         if (ResearchPoints >= recycleThreshold)
@@ -165,5 +164,13 @@ public class CityScript : MonoBehaviour
     public bool EndConditionMet()
     {
         return (researchPointsGained >= researchPointCap);
+    }
+
+    public void CheckParticleThreshold50(ParticleSystem pSystem)
+    {
+        if(_happiness >= 50.0f)
+        {
+            pSystem.Play();
+        }
     }
 }
