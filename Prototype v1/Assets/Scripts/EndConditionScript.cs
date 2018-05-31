@@ -29,7 +29,7 @@ public class EndConditionScript : MonoBehaviour
 
     public static void WinLevel()
     {
-        switch(LevelStatsScript.Level)
+        switch (LevelStatsScript.Level)
         {
             case 1:
                 instance.OnLevel1Complete.Invoke();
@@ -50,6 +50,20 @@ public class EndConditionScript : MonoBehaviour
 
     public static void LoseLevel()
     {
+        switch (LevelStatsScript.Level)
+        {
+            case 1:
+                instance.OnLevel1Lost.Invoke();
+                goto default;
+            case 2:
+                instance.OnLevel2Lost.Invoke();
+                goto default;
+            case 3:
+                instance.OnLevel3Lost.Invoke();
+                goto default;
 
+            default:
+                break;
+        }
     }
 }

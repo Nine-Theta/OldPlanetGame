@@ -64,4 +64,9 @@ public class FFPPScript : MonoBehaviour
     {
         isActive = value;
     }
+
+    public static void RespondToMinigameWin()
+    {
+        currentPollution = -50;
+    }
 }
