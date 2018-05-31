@@ -46,7 +46,7 @@ public class CityScript : MonoBehaviour
         //GetComponentsInChildren<Light>(cityLights);
         _happiness = startHappiness;
 
-        if(LevelStatsScript.Exists)
+        if (LevelStatsScript.Exists)
         {
             SetVariables(LevelStatsScript.CityStats);
         }
@@ -109,7 +109,7 @@ public class CityScript : MonoBehaviour
                 {
                     OnResearchThresholdReached.Invoke();
                 }
-                if(ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
+                if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
                 {
                     OnUpgradeAvailable.Invoke();
                 }
@@ -140,7 +140,7 @@ public class CityScript : MonoBehaviour
             OnHappinessUp.Invoke();
         }
     }
-    
+
 
     /// <summary>
     /// Returns true if upgrade successful
@@ -168,7 +168,7 @@ public class CityScript : MonoBehaviour
 
     public void CheckParticleThreshold50(ParticleSystem pSystem)
     {
-        if(_happiness >= 50.0f)
+        if (_happiness >= 50.0f)
         {
             pSystem.Play();
         }

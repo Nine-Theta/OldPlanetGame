@@ -22,15 +22,26 @@ public class MinigameScoreScript : MonoBehaviour
     private void Update()
     {
         _minigameTimeLeft -= Time.unscaledDeltaTime;
-        if(_minigameTimeLeft <= 0.0f)
+        if (_minigameTimeLeft <= 0.0f)
         {
-            AddScoreToPlayer();
-            GameObject.Find("Clouds_PS").SetActive(false);
-            Time.timeScale = 1;
-            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
+            EndMinigame();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SkipMinigame();
         }
 
         _debugText.text = "Time left: " + Mathf.FloorToInt(_minigameTimeLeft).ToString();
+    }
+
+    private void EndMinigame()
+    {
+        AddScoreToPlayer();
+        if (GameObject.Find("Clouds_PS") != null)
+            GameObject.Find("Clouds_PS").SetActive(false);
+        Time.timeScale = 1;
+        FFPPScript.RespondToMinigameWin();
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
     }
 
     public int Score
@@ -49,5 +60,10 @@ public class MinigameScoreScript : MonoBehaviour
         {
             LeaderboardTracker.Instance.CurrentPlayer.Score += _score;
         }
+    }
+
+    public void SkipMinigame()
+    {
+        EndMinigame();
     }
 }

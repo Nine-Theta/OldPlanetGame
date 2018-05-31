@@ -29,7 +29,7 @@ public class EndConditionScript : MonoBehaviour
 
     public static void WinLevel()
     {
-        switch(LevelStatsScript.Level)
+        switch (LevelStatsScript.Level)
         {
             case 1:
                 instance.OnLevel1Complete.Invoke();

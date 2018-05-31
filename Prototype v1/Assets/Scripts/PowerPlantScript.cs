@@ -67,7 +67,7 @@ public class PowerPlantScript : InteractableScript
             if (!_isBroken)
                 GenerateWaste();
         }
-        if(CheckWinConditions())
+        if (CheckWinConditions())
         {
             EndConditionScript.WinLevel();
             enabled = false;
@@ -117,7 +117,7 @@ public class PowerPlantScript : InteractableScript
     /// Upgrades the powerplant if the cost is met, exits early otherwise. Calls OnUpgrade() when cost is met
     /// </summary>
     /// <param name="cost">Research points that are spend (and need to be met to successfully execute)</param>
-    public void Upgrade(int cost = 1)
+    private void Upgrade(int cost = 1)
     {
         if (affectedCity.ResearchPoints <= cost)
             return;
@@ -217,7 +217,7 @@ public class PowerPlantScript : InteractableScript
 
     public void ParticleRepairCheck(ParticleSystem pPsystem)
     {
-        if(_currentDurability <= _repairThreshold)
+        if (_currentDurability <= _repairThreshold)
         {
             pPsystem.Play();
         }
