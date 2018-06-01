@@ -22,7 +22,7 @@ public class FFPPScript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isActive);
+        //Debug.Log(isActive);
         if (isActive)
         {
             int oldPollution = Mathf.FloorToInt(currentPollution);

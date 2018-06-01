@@ -7,20 +7,29 @@ public class CityScript : MonoBehaviour
 {
     float _happiness = 0.0f;
 
-    [SerializeField] private float startHappiness = 0.0f;
-    [SerializeField] private float maxHappiness = 10.0f;
-    [SerializeField] private float happinessPerTick = 0.00f;
-    [SerializeField] private float wastePenaltyPerBarrel = 0.01f;
-    [SerializeField] private float pollutionPenalty = 0.01f;
+    private float startHappiness = 0.0f;
+    private float maxHappiness = 10.0f;
+    private float happinessPerTick = 0.00f;
+    private float wastePenaltyPerBarrel = 0.01f;
+    private float pollutionPenalty = 0.01f;
 
-    [SerializeField] private float researchHappinessMultiplier = 1.0f;
+    private float researchHappinessMultiplier = 1.0f;
 
-    [SerializeField] private float researchHappinessThreshold = 5.0f;
+    private float researchHappinessThreshold = 5.0f;
     private float researchPointsGained;
     private int researchPointsSpend;
-    [SerializeField] private int researchPointCap;
-    [SerializeField] private float researchPointPerTick;
-    [SerializeField] private int recycleThreshold;
+    private int researchPointCap;
+    private float researchPointPerTick;
+    private int recycleThreshold;
+
+
+    [SerializeField] private ParticleSystem particleSystem1;
+    [SerializeField] private ParticleSystem particleSystem2;
+    [SerializeField] private ParticleSystem particleSystem3;
+
+    [SerializeField] private float particle1Threshold = 0;
+    [SerializeField] private float particle2Threshold = 30;
+    [SerializeField] private float particle3Threshold = 70;
 
     [SerializeField] private CustomEvent OnResearchpointUp;
     [SerializeField] private CustomEvent OnHappinessUp;
@@ -47,6 +56,7 @@ public class CityScript : MonoBehaviour
         {
             SetVariables(LevelStatsScript.CityStats);
         }
+
     }
 
     void Update()
@@ -121,6 +131,7 @@ public class CityScript : MonoBehaviour
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
         _happiness += (happinessPerTick) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
+        //Debug.Log("_happiness: "+ _happiness + ", happinessPerTick: " + happinessPerTick + ", BarrelReduction: " + (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) + ", PollutionPenalty: " + (pollutionPenalty * FFPPScript.Pollution));
         if (_happiness < 0)
             _happiness = 0;
         if (ResearchPoints >= recycleThreshold)
@@ -160,11 +171,19 @@ public class CityScript : MonoBehaviour
         return (researchPointsGained >= researchPointCap);
     }
 
-    public void CheckParticleThreshold50(ParticleSystem pSystem)
+    public void CheckParticleThresholds()
     {
-        if (_happiness >= 50.0f)
+        if(_happiness >= particle1Threshold && _happiness < particle2Threshold) //particle 1
         {
-            pSystem.Play();
+            particleSystem1.Play();
+        }
+        else if(_happiness < particle3Threshold) // Particle 2
+        {
+            particleSystem2.Play();
+        }
+        else // particle 3
+        {
+            particleSystem3.Play();
         }
     }
 }
