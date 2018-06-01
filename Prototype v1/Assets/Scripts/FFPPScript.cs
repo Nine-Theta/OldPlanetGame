@@ -22,6 +22,7 @@ public class FFPPScript : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isActive);
         if (isActive)
         {
             int oldPollution = Mathf.FloorToInt(currentPollution);
@@ -54,7 +55,7 @@ public class FFPPScript : MonoBehaviour
     {
         pollutionPerTick = stats.pollutionPerTick;
         currentPollution = stats.currentPollution;
-        startActive = stats.startActive;
+        isActive = stats.startActive;
     }
 
     public static float Pollution
@@ -62,11 +63,12 @@ public class FFPPScript : MonoBehaviour
 
     public void SetPlantActive(bool value)
     {
+        //Debug.Log("I'm being called! I am now " + value);
         isActive = value;
     }
 
     public static void RespondToMinigameWin()
     {
-        currentPollution = -50;
+        //currentPollution = -50;
     }
 }
