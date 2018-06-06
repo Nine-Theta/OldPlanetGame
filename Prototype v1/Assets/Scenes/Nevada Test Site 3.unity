@@ -274,6 +274,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57902929}
   m_Mesh: {fileID: 4300108, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
+--- !u!114 &68574348 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114084110257673818, guid: 2028b5cc28626b44c851a58de8394743,
+    type: 2}
+  m_PrefabInternal: {fileID: 393870274}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &74672893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +1941,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.079
       objectReference: {fileID: 0}
+    - target: {fileID: 114406509511536858, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c,
+        type: 2}
+      propertyPath: debugWasteText
+      value: 
+      objectReference: {fileID: 68574348}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c, type: 2}
   m_IsPrefabParent: 0
@@ -2569,12 +2580,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2028b5cc28626b44c851a58de8394743, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &393870275 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114012846418815698, guid: 2028b5cc28626b44c851a58de8394743,
-    type: 2}
-  m_PrefabInternal: {fileID: 393870274}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &393870277 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114108089215953412, guid: 2028b5cc28626b44c851a58de8394743,
@@ -12379,14 +12384,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  _wasteStored: 0
-  _wasteCapacity: 1000
-  _upgradeStorageMod: 1000
-  recycleAmount: 30
-  affectedCity: {fileID: 758082502}
-  _storageMeter: {fileID: 987202282}
-  _storageCapPole: {fileID: 96690734}
-  _debugWasteText: {fileID: 393870275}
   OnBarrelSelect:
     m_PersistentCalls:
       m_Calls: []
