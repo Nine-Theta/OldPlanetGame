@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameField: {fileID: 1379854828}
   _maxNameLength: 10
-  _sceneToLoad: Nevada Test Site 3
+  _sceneToLoad: Nevada Test Site 2
 --- !u!1 &146314296
 GameObject:
   m_ObjectHideFlags: 0
