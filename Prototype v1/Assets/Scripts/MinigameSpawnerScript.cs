@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class MinigameSpawnerScript : MonoBehaviour
 {
-    [SerializeField] private float _spawnTime = 3.0f;
-    [SerializeField] private bool _randomizeSpawnTime = false;
+
+    [SerializeField] private float _spawnMinTime = 3.0f;
+    [SerializeField] private float _spawnMaxTime = 3.0f;
     [SerializeField] private bool _randomizeDirection = true;
     [Tooltip("Sets spawned nodes' speed to this variable, or randomizes them if 0")]
-    [SerializeField] private float _speed = 0.0f;
+    [SerializeField]
+    private float _speed = 0.0f;
     [SerializeField] private GameObject _prefab;
 
     private float _currentSpawnTime;
 
     void Start()
     {
-        _currentSpawnTime = _spawnTime;
+        _currentSpawnTime = _spawnMaxTime;
     }
 
     private void Update()
@@ -23,10 +25,7 @@ public class MinigameSpawnerScript : MonoBehaviour
         _currentSpawnTime -= Time.unscaledDeltaTime;
         if (_currentSpawnTime <= 0.0f)
         {
-            if (_randomizeSpawnTime)
-                _currentSpawnTime = Random.Range(0.0f, _spawnTime);
-            else
-                _currentSpawnTime = _spawnTime;
+            _currentSpawnTime = Random.Range(_spawnMinTime, _spawnMaxTime);
             GameObject newInstance = Instantiate(_prefab, transform);
             if (_randomizeDirection)
             {
