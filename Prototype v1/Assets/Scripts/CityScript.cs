@@ -36,7 +36,6 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnResearchThresholdReached;
     [SerializeField] private CustomEvent OnUpgradeAvailable;
 
-    [SerializeField] private Button recycleButton;
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
 
@@ -134,10 +133,6 @@ public class CityScript : MonoBehaviour
         //Debug.Log("_happiness: "+ _happiness + ", happinessPerTick: " + happinessPerTick + ", BarrelReduction: " + (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) + ", PollutionPenalty: " + (pollutionPenalty * FFPPScript.Pollution));
         if (_happiness < 0)
             _happiness = 0;
-        if (ResearchPoints >= recycleThreshold)
-            recycleButton.enabled = true;
-        else
-            recycleButton.enabled = false;
         if (_happiness >= maxHappiness)
             _happiness = maxHappiness;
         if (oldHappiness < Mathf.FloorToInt(_happiness))
