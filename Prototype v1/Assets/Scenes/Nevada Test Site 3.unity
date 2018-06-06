@@ -153,6 +153,48 @@ Transform:
   m_Father: {fileID: 866491451}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &57088317
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.20879686
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.8499804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.2416196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116634094524896, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &57902929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1960,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 337446918}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &356146368
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1145516062}
+    m_Modifications:
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.0375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.06406335
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.0031160973
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.057325576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99629307
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b48f0380f38e7c74fa9ac39d0503d01d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &360708567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,7 +3479,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 758082503}
+    m_TransformParent: {fileID: 1357208408}
     m_Modifications:
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3407,11 +3491,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.084
+      value: 0.08400002
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.6291338
+      value: -0.6291339
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalRotation.y
@@ -3427,7 +3511,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_IsActive
@@ -3435,11 +3519,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.4524613
+      value: 0.4524612
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.4524613
+      value: 0.4524612
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.x
@@ -3455,9 +3539,19 @@ Prefab:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.32941177
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &670946155 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 670946154}
 --- !u!1 &673678859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,16 +4484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20a5ac2f2c2ea64796a00d8092490b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHappiness: 0
-  maxHappiness: 100
-  happinessPerTick: 0.01
-  wastePenaltyPerBarrel: 0.01
-  pollutionPenalty: 0.01
-  researchHappinessMultiplier: 1
-  researchHappinessThreshold: 20
-  researchPointCap: 100
-  researchPointPerTick: 0.1
-  recycleThreshold: 1
+  particleSystem1: {fileID: 1085922170}
+  particleSystem2: {fileID: 1153181775}
+  particleSystem3: {fileID: 1187505330}
+  particle1Threshold: 0
+  particle2Threshold: 30
+  particle3Threshold: 70
   OnResearchpointUp:
     m_PersistentCalls:
       m_Calls: []
@@ -4407,8 +4497,8 @@ MonoBehaviour:
   OnHappinessUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1085922170}
-        m_MethodName: Play
+      - m_Target: {fileID: 758082502}
+        m_MethodName: CheckParticleThresholds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6163,6 +6253,11 @@ Transform:
   m_Father: {fileID: 1441003201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1037875580 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4144171428784256, guid: b48f0380f38e7c74fa9ac39d0503d01d,
+    type: 2}
+  m_PrefabInternal: {fileID: 356146368}
 --- !u!1 &1044857659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,7 +6920,7 @@ Prefab:
     - target: {fileID: 198551329823773362, guid: 53acd4aa3cd203a499679c9f5c66cd4f,
         type: 2}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.7607843
+      value: 0.63529414
       objectReference: {fileID: 0}
     - target: {fileID: 198551329823773362, guid: 53acd4aa3cd203a499679c9f5c66cd4f,
         type: 2}
@@ -11663,6 +11758,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1141235245}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1145516061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1145516062}
+  m_Layer: 0
+  m_Name: Lamps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145516062
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145516061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1037875580}
+  m_Father: {fileID: 758082503}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1149848987
 GameObject:
   m_ObjectHideFlags: 0
@@ -11737,6 +11861,93 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1149848987}
   m_Mesh: {fileID: 4300194, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
+--- !u!1001 &1153181774
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1357208408}
+    m_Modifications:
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.1325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.08400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.62913394
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.77729696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.45246243
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.45246243
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.45246
+      objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_Name
+      value: Happiness (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+  m_IsPrefabParent: 0
+--- !u!198 &1153181775 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1153181774}
+--- !u!4 &1153181776 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1153181774}
 --- !u!1001 &1159503314
 Prefab:
   m_ObjectHideFlags: 0
@@ -11898,6 +12109,88 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1175994755}
   m_Mesh: {fileID: 4300162, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
+--- !u!1001 &1187505329
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1357208408}
+    m_Modifications:
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.1325
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.08400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.62913394
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7772969
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.45246267
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.45246267
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.45246
+      objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+      propertyPath: m_Name
+      value: Happiness (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
+  m_IsPrefabParent: 0
+--- !u!198 &1187505330 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1187505329}
+--- !u!4 &1187505331 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1187505329}
 --- !u!1 &1187934005
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,6 +13502,38 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345744241}
   m_Mesh: {fileID: 4300060, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
+--- !u!1 &1357208407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1357208408}
+  m_Layer: 0
+  m_Name: Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357208408
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357208407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1590542871}
+  - {fileID: 670946155}
+  - {fileID: 1153181776}
+  - {fileID: 1187505331}
+  m_Father: {fileID: 758082503}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377818378
 GameObject:
   m_ObjectHideFlags: 0
@@ -13839,7 +14164,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 758082503}
+    m_TransformParent: {fileID: 1357208408}
     m_Modifications:
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalPosition.x
@@ -13855,7 +14180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.6291339
+      value: -0.62913394
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalRotation.y
@@ -13871,7 +14196,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_IsActive
@@ -13879,11 +14204,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.4524624
+      value: 0.45246243
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.4524624
+      value: 0.45246243
       objectReference: {fileID: 0}
     - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_LocalScale.x
@@ -13911,6 +14236,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1590542871 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 1590542870}
 --- !u!1 &1596532392
 GameObject:
   m_ObjectHideFlags: 0
@@ -13985,629 +14315,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596532392}
   m_Mesh: {fileID: 4300070, guid: 31fb3c5ad71fbf94f9acf9b0d379916e, type: 3}
---- !u!1 &1662212037
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1662212039}
-  - component: {fileID: 1662212040}
-  - component: {fileID: 1662212041}
-  - component: {fileID: 1662212038}
-  m_Layer: 0
-  m_Name: GM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1662212038
+--- !u!114 &1662212041 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662212037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d48e6d139115d574690059924b3bad33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level1:
-    easy:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 101
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 100
-        upgradeCost: 1
-        startActive: 1
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    medium:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.3
-        degradeRange: 0.1
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 50
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0
-        degradeRange: 0
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 101
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 100
-        upgradeCost: 1
-        startActive: 1
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 100
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    hard:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 101
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 100
-        upgradeCost: 1
-        startActive: 1
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-  level2:
-    easy:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 50
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 101
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    medium:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    hard:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-  level3:
-    easy:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    medium:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
-    hard:
-      NuclearPowerPlantTier1:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier2:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      NuclearPowerPlantTier3:
-        maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
-        maxDurability: 200
-        repairThreshold: 150
-        maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
-      Silo:
-        wasteStored: 0
-        wasteCapacity: 0
-        upgradeStorageMod: 100000
-        recycleAmount: 30
-      FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier2:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      FossilFuelPowerPlantTier3:
-        pollutionPerTick: 0.1
-        currentPollution: 0
-        upgradeCost: 1
-        startActive: 0
-      City:
-        startHappiness: 0
-        maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
-        pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
-        researchHappinessThreshold: 20
-        researchPointCap: 100
-        researchPointPerTick: 0.1
-        recycleThreshold: 1
---- !u!4 &1662212039
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662212037}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.20879686, y: 5.8499804, z: 3.2416196}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1662212040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662212037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c22e57b06926ae4d9237418ee6d6b0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnLevel1Complete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  OnLevel1Lost:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  OnLevel2Complete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  OnLevel2Lost:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  OnLevel3Complete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  OnLevel3Lost:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &1662212041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1662212037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114763245431731830, guid: 5865af93ab2704d42bd8a6046ae3965d,
+    type: 2}
+  m_PrefabInternal: {fileID: 57088317}
   m_Script: {fileID: 11500000, guid: 542e62a47a7eb1f46925c3a06cb1e00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: Minigame
 --- !u!1 &1673223675
 GameObject:
   m_ObjectHideFlags: 0
@@ -15920,6 +15633,16 @@ Prefab:
       propertyPath: OnBreakdown.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 33796493108123568, guid: d6bc5e355640e83408447ed38dac305c,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: e0cbc4d721ee35243b6e1e854677f90c, type: 3}
+    - target: {fileID: 23679996280505490, guid: d6bc5e355640e83408447ed38dac305c,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0cbc4d721ee35243b6e1e854677f90c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6bc5e355640e83408447ed38dac305c, type: 2}
   m_IsPrefabParent: 0

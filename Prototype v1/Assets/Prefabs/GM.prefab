@@ -1,0 +1,636 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1757477957020528}
+  m_IsPrefabParent: 1
+--- !u!1 &1757477957020528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4116634094524896}
+  - component: {fileID: 114081401135996572}
+  - component: {fileID: 114763245431731830}
+  - component: {fileID: 114572652342474878}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4116634094524896
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757477957020528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.20879686, y: 5.8499804, z: 3.2416196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114081401135996572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757477957020528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c22e57b06926ae4d9237418ee6d6b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLevel1Complete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnLevel1Lost:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnLevel2Complete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnLevel2Lost:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnLevel3Complete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnLevel3Lost:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114572652342474878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757477957020528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48e6d139115d574690059924b3bad33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level1:
+    easy:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 101
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 100
+        upgradeCost: 1
+        startActive: 1
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    medium:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.3
+        degradeRange: 0.1
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 50
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0
+        degradeRange: 0
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 101
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 100
+        upgradeCost: 1
+        startActive: 1
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 100
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    hard:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 101
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 100
+        upgradeCost: 1
+        startActive: 1
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+  level2:
+    easy:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 50
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 101
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    medium:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    hard:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+  level3:
+    easy:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    medium:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+    hard:
+      NuclearPowerPlantTier1:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier2:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      NuclearPowerPlantTier3:
+        maxWaste: 100
+        wasteGenPerTick: 0.5
+        degradeRange: 0.3
+        maxDurability: 200
+        repairThreshold: 150
+        maintenanceAlertThreshold: 150
+        UpgradeCost: 20
+        repairPerTap: 10
+      Silo:
+        wasteStored: 0
+        wasteCapacity: 0
+        upgradeStorageMod: 100000
+        recycleAmount: 30
+      FossilFuelPowerPlantTier1:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier2:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      FossilFuelPowerPlantTier3:
+        pollutionPerTick: 0.1
+        currentPollution: 0
+        upgradeCost: 1
+        startActive: 0
+      City:
+        startHappiness: 0
+        maxHappiness: 100
+        happinessPerTick: 0.01
+        wastePenaltyPerBarrel: 0.01
+        pollutionPenalty: 0.1
+        researchHappinessMultiplier: 1
+        researchHappinessThreshold: 20
+        researchPointCap: 100
+        researchPointPerTick: 0.1
+        recycleThreshold: 1
+--- !u!114 &114763245431731830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757477957020528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542e62a47a7eb1f46925c3a06cb1e00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Minigame
