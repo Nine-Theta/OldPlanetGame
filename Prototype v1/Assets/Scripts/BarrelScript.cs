@@ -44,12 +44,14 @@ public class BarrelScript : InteractableScript
     {
         //Debug.Log("Selected");
         _collider.enabled = false;
+        SiloScript.RespondToBarrelSelection();
     }
 
     public override void RespondDeselect()
     {
         //Debug.Log("Deselected");
         _collider.enabled = true;
+        SiloScript.RespondToBarrelDeselection();
     }
 
     /// <summary>

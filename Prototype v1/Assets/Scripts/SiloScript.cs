@@ -18,16 +18,18 @@ public class SiloScript : InteractableScript
 
     [SerializeField] private Text _debugWasteText;
 
+    [SerializeField] private CustomEvent OnBarrelSelect;
+    [SerializeField] private CustomEvent OnBarrelDeselect;
+
     [SerializeField] private GameObject[] _tiers = new GameObject[0];
 
     private void Start()
     {
-        if(LevelStatsScript.Exists)
+        if (LevelStatsScript.Exists)
         {
             SetVariables(LevelStatsScript.SiloStats);
         }
         Upgrade(true);
-
     }
 
     private void Update()
@@ -95,16 +97,30 @@ public class SiloScript : InteractableScript
 
     public void StoreBarrel(GameObject barrel)
     {
-        if (_wasteStored + barrel.GetComponent<BarrelScript>().WasteStored < _wasteCapacity)
+        Destroy(barrel);
+        RespondToBarrelDeselection();
+    }
+
+    private void UpdateDebugInfo()
+    {
+        _debugWasteText.text = Mathf.Floor(_wasteStored).ToString();
+    }
+
+    public static void RespondToBarrelSelection()
+    {
+        GameObject[] silos = GameObject.FindGameObjectsWithTag("Silo");
+        foreach (GameObject silo in silos)
         {
-            _wasteStored += barrel.GetComponent<BarrelScript>().WasteStored;
-            if (_wasteStored != 0) _storageMeter.localScale = new Vector3(0.3f, 1.5f * (_wasteStored / _wasteCapacity), 0.3f);
-            Destroy(barrel);
+            silo.GetComponent<SiloScript>().OnBarrelSelect.Invoke();
         }
     }
 
-    void UpdateDebugInfo()
+    public static void RespondToBarrelDeselection()
     {
-        _debugWasteText.text = Mathf.Floor(_wasteStored).ToString();
+        GameObject[] silos = GameObject.FindGameObjectsWithTag("Silo");
+        foreach (GameObject silo in silos)
+        {
+            silo.GetComponent<SiloScript>().OnBarrelDeselect.Invoke();
+        }
     }
 }

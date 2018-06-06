@@ -8,8 +8,7 @@ public class MinigameSpawnerScript : MonoBehaviour
     [SerializeField] private bool _randomizeSpawnTime = false;
     [SerializeField] private bool _randomizeDirection = true;
     [Tooltip("Sets spawned nodes' speed to this variable, or randomizes them if 0")]
-    [SerializeField]
-    private float _speed = 0.0f;
+    [SerializeField] private float _speed = 0.0f;
     [SerializeField] private GameObject _prefab;
 
     private float _currentSpawnTime;
