@@ -36,13 +36,13 @@ public class MouseInputInterpreter : MonoBehaviour
                 //Debug.Log("RayHit Name: " + hit.collider.name);
             }
         }
-        else if (Input.GetMouseButton(0) || Input.touchCount > 0)
+        else if (Input.GetMouseButton(0) || (Input.touchSupported && Input.touchCount > 0))
         {
             if (_selectorScript.HasSelection && _selectorScript.SelectionTag == "Dragable")
             {
                 Ray ray;
 
-                if (Input.touchCount > 0)
+                if (Input.touchSupported && Input.touchCount > 0)
                     ray = _mainCamera.ScreenPointToRay(Input.GetTouch(0).position);
                 else
                     ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -53,7 +53,7 @@ public class MouseInputInterpreter : MonoBehaviour
                 else { }
                     //_selectorScript.Deselect();
             }
-            else if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            else if (Input.touchSupported && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Vector2 touchDeltaPos = Input.GetTouch(0).deltaPosition;
                 _focusbody.AddRelativeTorque(-touchDeltaPos.y * _cameraDragSpeed, touchDeltaPos.x * _cameraDragSpeed, 0);
