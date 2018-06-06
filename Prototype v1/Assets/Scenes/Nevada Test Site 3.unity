@@ -1923,6 +1923,18 @@ Prefab:
       propertyPath: affectedCity
       value: 
       objectReference: {fileID: 758082502}
+    - target: {fileID: 4257270893842124, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257270893842124, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257270893842124, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.079
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beede5c1a8e6d0e4ba0b17dcf1fcf95c, type: 2}
   m_IsPrefabParent: 0

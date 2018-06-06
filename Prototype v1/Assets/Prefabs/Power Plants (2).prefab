@@ -1066,7 +1066,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821759965502374}
-  m_LocalRotation: {x: -0.31705406, y: -0, z: -0.0000000037252903, w: 0.9484075}
+  m_LocalRotation: {x: -0.2862889, y: -0.40754426, z: 0.13624266, w: 0.8563787}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1075,7 +1075,7 @@ Transform:
   - {fileID: 4562183146060468}
   m_Father: {fileID: 4693087113792746}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -36.853, y: -3.1660001, z: 5.269}
+  m_LocalEulerAnglesHint: {x: -22.29, y: -57.004, z: 30.291002}
 --- !u!4 &4343281366132462
 Transform:
   m_ObjectHideFlags: 1
@@ -1405,7 +1405,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261887893669322}
-  m_LocalRotation: {x: 0.013566794, y: 0.012410825, z: -0.013455262, w: 0.9997404}
+  m_LocalRotation: {x: -0.48694035, y: 0.60485154, z: 0.6257971, w: 0.07363327}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2945,6 +2945,14 @@ MonoBehaviour:
   _storageMeter: {fileID: 0}
   _storageCapPole: {fileID: 0}
   _debugWasteText: {fileID: 0}
+  OnBarrelSelect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnBarrelDeselect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   _tiers:
   - {fileID: 0}
   - {fileID: 0}
