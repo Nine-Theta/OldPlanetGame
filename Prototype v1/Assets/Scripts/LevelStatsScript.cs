@@ -55,7 +55,7 @@ public class DifficultyLevel
     public NPPStats NuclearPowerPlantTier1;
     public NPPStats NuclearPowerPlantTier2;
     public NPPStats NuclearPowerPlantTier3;
-    public SiloStats Silo;
+    //public SiloStats Silo;
     public FFPPStats FossilFuelPowerPlantTier1;
     public FFPPStats FossilFuelPowerPlantTier2;
     public FFPPStats FossilFuelPowerPlantTier3;
@@ -260,8 +260,8 @@ public class LevelStatsScript : MonoBehaviour
     }
 
 
-    public static SiloStats SiloStats
-    { get { return instance.level1.easy.Silo; } }
+    //public static SiloStats SiloStats
+    //{ get { return instance.level1.easy.Silo; } }
 
 
     public static CityStats CityStats
