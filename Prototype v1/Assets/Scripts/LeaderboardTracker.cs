@@ -99,11 +99,11 @@ public class LeaderboardTracker : MonoBehaviour {
     private PlayerStats _currentPlayer;
 
     private List<PlayerStats> _dailyBoardEasy = new List<PlayerStats>(10);
-    private List<PlayerStats> _dailyBoardMed = new List<PlayerStats>(10);
+    private List<PlayerStats> _dailyBoardMedium = new List<PlayerStats>(10);
     private List<PlayerStats> _dailyBoardHard = new List<PlayerStats>(10);
 
     private List<PlayerStats> _overallBoardEasy = new List<PlayerStats>(10);
-    private List<PlayerStats> _overallBoardMed = new List<PlayerStats>(10);
+    private List<PlayerStats> _overallBoardMedium = new List<PlayerStats>(10);
     private List<PlayerStats> _overallBoardHard = new List<PlayerStats>(10);
 
     private void Awake()
@@ -135,7 +135,7 @@ public class LeaderboardTracker : MonoBehaviour {
     private void InitializeBoards()
     {
         EmptyBoard(_dailyBoardEasy, DifficultyMode.EASY);
-        EmptyBoard(_dailyBoardMed, DifficultyMode.MEDIUM);
+        EmptyBoard(_dailyBoardMedium, DifficultyMode.MEDIUM);
         EmptyBoard(_dailyBoardHard, DifficultyMode.HARD);
 
         if (!File.Exists(@"/PowerPlanet_Leaderboard_"+DateTime.Today.Year+"_Easy.csv"))
@@ -144,15 +144,15 @@ public class LeaderboardTracker : MonoBehaviour {
             SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
         }
         else
-            ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
+            _overallBoardEasy = ReadBoardFromFile(DifficultyMode.EASY);
 
         if (!File.Exists(@"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Medium.csv"))
         {
-            EmptyBoard(_overallBoardMed, DifficultyMode.MEDIUM);
-            SaveBoardToFile(_overallBoardMed, DifficultyMode.MEDIUM);
+            EmptyBoard(_overallBoardMedium, DifficultyMode.MEDIUM);
+            SaveBoardToFile(_overallBoardMedium, DifficultyMode.MEDIUM);
         }
         else
-            ReadBoardFromFile(_overallBoardMed, DifficultyMode.MEDIUM);
+            _overallBoardMedium = ReadBoardFromFile(DifficultyMode.MEDIUM);
 
         if (!File.Exists(@"/PowerPlanet_Leaderboard_" + DateTime.Today.Year + "_Hard.csv"))
         {
@@ -160,7 +160,7 @@ public class LeaderboardTracker : MonoBehaviour {
             SaveBoardToFile(_overallBoardHard, DifficultyMode.HARD);
         }
         else
-            ReadBoardFromFile(_overallBoardHard, DifficultyMode.HARD);
+            _overallBoardHard = ReadBoardFromFile(DifficultyMode.HARD);
     }
 
     private void EmptyBoard(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
@@ -169,8 +169,8 @@ public class LeaderboardTracker : MonoBehaviour {
 
         for (int i = 0; i < pBoard.Capacity; i++)
         {
-            Debug.Log("capacity: "+pBoard.Capacity+" count: " +pBoard.Count);
-            Debug.Log("Added playerStat[" + i + "] to board: " + pBoard);
+            //Debug.Log("capacity: "+pBoard.Capacity+" count: " +pBoard.Count);
+            //Debug.Log("Added playerStat[" + i + "] to board: " + pBoard);
             pBoard.Insert(0, new PlayerStats("NULL", 0, pDifficulty));
         }
     }
@@ -184,7 +184,7 @@ public class LeaderboardTracker : MonoBehaviour {
         Debug.Log("TestRunSave");
         SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
         Debug.Log("TestRunRead");
-        ReadBoardFromFile(_overallBoardEasy, DifficultyMode.EASY);
+        _overallBoardEasy = ReadBoardFromFile(DifficultyMode.EASY);
     }
 
     public PlayerStats GetPlayerInfo(DifficultyMode pDifficulty, int pPlayerRank, bool pIsDaily = false)
@@ -196,8 +196,8 @@ public class LeaderboardTracker : MonoBehaviour {
                 return _overallBoardEasy[pPlayerRank];
 
             case DifficultyMode.MEDIUM:
-                if (pIsDaily) return _dailyBoardMed[pPlayerRank];
-                return _overallBoardMed[pPlayerRank];
+                if (pIsDaily) return _dailyBoardMedium[pPlayerRank];
+                return _overallBoardMedium[pPlayerRank];
 
             case DifficultyMode.HARD:
                 if (pIsDaily) return _dailyBoardHard[pPlayerRank];
@@ -224,11 +224,11 @@ public class LeaderboardTracker : MonoBehaviour {
                 break;
 
             case DifficultyMode.MEDIUM:
-                if (CheckPlayer(pCurrentPlayer, _dailyBoardMed))
+                if (CheckPlayer(pCurrentPlayer, _dailyBoardMedium))
                 {
-                    AddPlayer(pCurrentPlayer, _dailyBoardMed);
-                    if (CheckPlayer(pCurrentPlayer, _overallBoardMed))
-                        AddPlayer(pCurrentPlayer, _overallBoardMed);
+                    AddPlayer(pCurrentPlayer, _dailyBoardMedium);
+                    if (CheckPlayer(pCurrentPlayer, _overallBoardMedium))
+                        AddPlayer(pCurrentPlayer, _overallBoardMedium);
                 }
                 break;
 
@@ -252,16 +252,15 @@ public class LeaderboardTracker : MonoBehaviour {
     {
         for(int i = 0; i < pBoard.Count; i++)
         {
-            if(pBoard[i].Score < pPlayer.Score)
+            if (pBoard[i].Score < pPlayer.Score)
             {
                 pBoard.RemoveAt(pBoard.Capacity-1);
                 pBoard.Insert(i, pPlayer);
-                return;
             }
         }
     }
 
-    private void ReadBoardFromFile(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
+    private List<PlayerStats> ReadBoardFromFile(DifficultyMode pDifficulty)
     {
         string filePath = @"/Default.csv";
 
@@ -280,18 +279,20 @@ public class LeaderboardTracker : MonoBehaviour {
 
         TextReader reader = new StreamReader(filePath);
         string stream = reader.ReadToEnd();
-        string[] players = stream.Split(';');
+        string[] players = stream.Split('\n');
 
-        List<PlayerStats> list = new List<PlayerStats>();
+        //Debug.Log("full stream: " + stream);
 
-        pBoard.Clear();
+        List<PlayerStats> list = new List<PlayerStats>(10);
 
         for (int i = 0; i < players.Length-1; i++)
         {
-            pBoard.Add(new PlayerStats(players[i]));
+            list.Add(new PlayerStats(players[i]));
         }
 
         reader.Close();
+
+        return list;
     }
 
     private void SaveBoardToFile(List<PlayerStats> pBoard, DifficultyMode pDifficulty)
@@ -315,10 +316,9 @@ public class LeaderboardTracker : MonoBehaviour {
 
         foreach(PlayerStats player in pBoard)
         {
-            writer.Write(player.ToString()+";");
-            Debug.Log("writeline: " + player.ToString());
+            writer.WriteLine(player.ToString());
+            //Debug.Log("writeline: " + player.ToString());
         }
-
         writer.Close();
     }
 }

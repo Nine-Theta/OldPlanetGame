@@ -47,6 +47,11 @@ public class MouseInputInterpreter : MonoBehaviour
                 else { }
                     //_selectorScript.Deselect();
             }
+            else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector2 touchDeltaPos = Input.GetTouch(0).deltaPosition;
+                _focusbody.AddRelativeTorque(-touchDeltaPos.y * _cameraDragSpeed, touchDeltaPos.x * _cameraDragSpeed, 0);
+            }
             else
             {
                 _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y")*_cameraDragSpeed, Input.GetAxis("Mouse X")*_cameraDragSpeed, 0);
