@@ -33,6 +33,7 @@ public class CityScript : MonoBehaviour
 
     [SerializeField] private CustomEvent OnResearchpointUp;
     [SerializeField] private CustomEvent OnHappinessUp;
+    [SerializeField] private CustomEvent OnHappinessDown;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
     [SerializeField] private CustomEvent OnUpgradeAvailable;
 
@@ -138,6 +139,10 @@ public class CityScript : MonoBehaviour
         if (oldHappiness < Mathf.FloorToInt(_happiness))
         {
             OnHappinessUp.Invoke();
+        }
+        if (oldHappiness > Mathf.FloorToInt(_happiness))
+        {
+            OnHappinessDown.Invoke();
         }
     }
 
