@@ -53,17 +53,19 @@ public class TapNodeScript : MonoBehaviour
         transform.position += (Vector3)((_direction * _speed));
     }
 
-    public void RandomizeVariables(bool noDelay = true)
+    public void RandomizeDirection(bool noDelay = true)
     {
         if (noDelay)
             _delayBeforeShowing = 0.001f;
-        else
-            _delayBeforeShowing = Random.Range(_randomMin,_randomMax);
         Vector3 randomDir = Random.onUnitSphere;
         randomDir.z = 0;
         _direction = randomDir.normalized;
-        _timeOnScreen = Random.Range(_randomMin, _randomMax);
         _speed = Random.Range(_randomMin, _randomMax);
+    }
+
+    public void SetDirection(Vector3 pDir)
+    {
+        _direction = pDir;
     }
 
     public void SetSpeed(float pSpeed)
