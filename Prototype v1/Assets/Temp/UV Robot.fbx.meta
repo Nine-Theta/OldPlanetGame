@@ -201,6 +201,20 @@ ModelImporter:
     2300012: polySurface54
     2300014: polySurface57
     2300016: //RootNode
+    2300018: Arms
+    2300020: Eyes
+    2300022: Forearms
+    2300024: Hips
+    2300026: Index
+    2300028: Knees
+    2300030: Lower_legs
+    2300032: Middle
+    2300034: Pinky
+    2300036: Ring
+    2300038: Shoulders
+    2300040: Thumbs
+    2300042: Toes
+    2300044: Upper_legs
     3300000: Chest
     3300002: Elbows
     3300004: Head
@@ -210,6 +224,20 @@ ModelImporter:
     3300012: polySurface54
     3300014: polySurface57
     3300016: //RootNode
+    3300018: Arms
+    3300020: Eyes
+    3300022: Forearms
+    3300024: Hips
+    3300026: Index
+    3300028: Knees
+    3300030: Lower_legs
+    3300032: Middle
+    3300034: Pinky
+    3300036: Ring
+    3300038: Shoulders
+    3300040: Thumbs
+    3300042: Toes
+    3300044: Upper_legs
     4300000: Chest
     4300002: Neck
     4300004: polySurface53
@@ -219,6 +247,20 @@ ModelImporter:
     4300012: Head
     4300014: Jetpack1
     4300016: Robot1
+    4300018: Eyes
+    4300020: Ring
+    4300022: Pinky
+    4300024: Index
+    4300026: Middle
+    4300028: Toes
+    4300030: Lower_legs
+    4300032: Knees
+    4300034: Upper_legs
+    4300036: Hips
+    4300038: Thumbs
+    4300040: Forearms
+    4300042: Arms
+    4300044: Shoulders
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
