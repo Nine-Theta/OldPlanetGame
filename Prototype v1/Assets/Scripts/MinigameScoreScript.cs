@@ -40,7 +40,6 @@ public class MinigameScoreScript : MonoBehaviour
         if (GameObject.Find("Clouds_PS") != null)
             GameObject.Find("Clouds_PS").SetActive(false);
         Time.timeScale = 1;
-        FFPPScript.RespondToMinigameWin();
         MinigameResponseScript.MinigameWon();
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
     }
