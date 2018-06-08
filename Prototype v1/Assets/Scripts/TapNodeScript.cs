@@ -10,21 +10,18 @@ public class TapNodeScript : MonoBehaviour
     [SerializeField] private float _randomMin = 2.0f;
     [SerializeField] private float _randomMax = 5.0f;
     [SerializeField] private float _speed = 1.0f;
-    [SerializeField] private int _tapsToKill = 1;
+    [SerializeField] protected int _tapsToKill = 1;
     private Vector2 _direction = new Vector2(1, 0);
     [SerializeField] private CustomEvent OnPopped;
     [SerializeField] private CustomEvent OnDisappear;
-
-    private Button _button;
-    private Image _image;
+    
 
     private void Start()
     {
-        _button = GetComponent<Button>();
-        _image = GetComponent<Image>();
+        
     }
 
-    public void OnTap()
+    public virtual void OnTap()
     {
         _tapsToKill--;
         if(_tapsToKill <= 0)
@@ -35,7 +32,7 @@ public class TapNodeScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         _timeOnScreen -= Time.deltaTime;
         if (_timeOnScreen <= 0.0f)

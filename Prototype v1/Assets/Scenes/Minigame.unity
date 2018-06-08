@@ -683,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudSpawnList:
   - prefabs:
-    - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+    - {fileID: 1367380591432846, guid: e599d990521721040854b1cbab9ba2e8, type: 2}
     delayBeforeSpawn: 0
     baseSpawnTime: 3
     spawnTimeDecreasePerSpawn: 0.5
@@ -818,110 +818,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 7.69, y: 0, z: 0}
---- !u!1001 &1057284407
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224389747391614842, guid: df2e47601e6b4564abc08335bb5a12d8,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-      propertyPath: m_Name
-      value: MinigameDoubleTapable
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1110624796
 Prefab:
   m_ObjectHideFlags: 0

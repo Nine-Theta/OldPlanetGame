@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114651024705854522}
   - component: {fileID: 114044044302473558}
   m_Layer: 5
-  m_Name: MinigameDoubleTapable
+  m_Name: (old)MinigameDoubleTapable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,12 +62,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   _timeOnScreen: 2.5
-  _delayBeforeShowing: 0.005
   _randomMin: 2
   _randomMax: 5
   _speed: 1
-  _direction: {x: 1, y: 0}
-  OnAppear:
+  _tapsToKill: 1
+  OnPopped:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -88,12 +87,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 5
   _timeOnScreen: 2.5
-  _delayBeforeShowing: 0.005
   _randomMin: 2
   _randomMax: 10
   _speed: 0.5
-  _direction: {x: 1, y: 0}
-  OnAppear:
+  _tapsToKill: 1
+  OnPopped:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
