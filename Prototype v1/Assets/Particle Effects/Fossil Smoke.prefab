@@ -63,14 +63,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1027397550221406}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.06, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.70987713, y: 0.087530255, z: -0.00057376723, w: 0.69886523}
+  m_LocalPosition: {x: 0.1295, y: 1.5788, z: 0.0481}
+  m_LocalScale: {x: 0.1, y: 0.100000106, z: 0.10000011}
   m_Children:
   - {fileID: 4646757474063634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -97.199, y: -79.34299, z: 86.408}
 --- !u!108 &108849869276149590
 Light:
   m_ObjectHideFlags: 1
@@ -82,7 +82,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.6, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 17.123808
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -186,7 +186,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -239,7 +239,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7.673378
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -355,7 +355,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1316,10 +1316,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.022058845, g: 0.021325042, b: 0.015408752, a: 0}
-        key1: {r: 0.04587861, g: 0.05272258, b: 0.036911674, a: 1}
-        key2: {r: 0.0505071, g: 0.058823526, b: 0.041089963, a: 1}
-        key3: {r: 0.3763811, g: 0.38235295, b: 0.362673, a: 0}
+        key0: {r: 0.3372549, g: 0.34509805, b: 0.42352942, a: 0}
+        key1: {r: 0.3372549, g: 0.34509805, b: 0.42352942, a: 1}
+        key2: {r: 0.3372549, g: 0.34509805, b: 0.42352942, a: 1}
+        key3: {r: 0.3372549, g: 0.34509805, b: 0.42352945, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -4654,7 +4654,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d46588f8e63c60845808267b7428f27b, type: 2}
+  - {fileID: 2100000, guid: a6722c62ac1d707469e8c5ea84598130, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
