@@ -7,9 +7,12 @@ public class FFPPScript : MonoBehaviour
     [SerializeField] private float pollutionPerTick = 0.1f;
     [SerializeField] private static float currentPollution = 0.0f;
     [SerializeField] private bool startActive = false;
+    [SerializeField] private CustomEvent OnPollutionMax;
+    [SerializeField] private CustomEvent OnPollutionCleared;
     [SerializeField] private CustomEvent OnPollutionPercentageUp;
     [SerializeField] private CustomEvent OnPollutionPercentageDown;
     private bool isActive = false;
+    private bool _eventCalled = false;
 
     void Start()
     {
@@ -30,6 +33,11 @@ public class FFPPScript : MonoBehaviour
             if (currentPollution >= 100)
             {
                 currentPollution = 100;
+                if(!_eventCalled)
+                {
+                    _eventCalled = true;
+                    OnPollutionMax.Invoke();
+                }
             }
             if (oldPollution < Mathf.FloorToInt(currentPollution))
             {
@@ -47,6 +55,11 @@ public class FFPPScript : MonoBehaviour
             if (oldPollution > Mathf.FloorToInt(currentPollution))
             {
                 OnPollutionPercentageDown.Invoke();
+                if(!_eventCalled)
+                {
+                    _eventCalled = true;
+                    OnPollutionCleared.Invoke();
+                }
             }
         }
     }
@@ -65,10 +78,11 @@ public class FFPPScript : MonoBehaviour
     {
         //Debug.Log("I'm being called! I am now " + value);
         isActive = value;
+        _eventCalled = false;
     }
 
-    public static void RespondToMinigameWin()
+    public void SetPollution(float value)
     {
-        //currentPollution = -50;
+        currentPollution = value;
     }
 }
