@@ -191,6 +191,7 @@ ModelImporter:
     400184: //RootNode
     2100000: Robot_level_1
     2100002: Jetpack_1
+    2100004: Default_Material
     2300000: Chest
     2300002: Elbows
     2300004: Head
@@ -199,6 +200,7 @@ ModelImporter:
     2300010: polySurface53
     2300012: polySurface54
     2300014: polySurface57
+    2300016: //RootNode
     3300000: Chest
     3300002: Elbows
     3300004: Head
@@ -207,6 +209,7 @@ ModelImporter:
     3300010: polySurface53
     3300012: polySurface54
     3300014: polySurface57
+    3300016: //RootNode
     4300000: Chest
     4300002: Neck
     4300004: polySurface53
@@ -215,6 +218,7 @@ ModelImporter:
     4300010: Elbows
     4300012: Head
     4300014: Jetpack1
+    4300016: Robot1
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
