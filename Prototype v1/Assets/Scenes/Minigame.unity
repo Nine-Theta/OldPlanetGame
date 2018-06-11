@@ -681,11 +681,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab68f39a5cae5345865bdcd67c73073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnMinTime: 0
-  _spawnMaxTime: 3
-  _randomizeDirection: 1
+  CloudSpawnList:
+  - prefabs:
+    - {fileID: 1367380591432846, guid: e599d990521721040854b1cbab9ba2e8, type: 2}
+    delayBeforeSpawn: 0
+    baseSpawnTime: 3
+    spawnTimeDecreasePerSpawn: 0.5
+    minSpawnTime: 1
+    stopSpawningAt: 14
+  - prefabs:
+    - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+    - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
+    delayBeforeSpawn: 14
+    baseSpawnTime: 1
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 1
+    stopSpawningAt: 30
+  distanceFromCenter: 3
   _speed: 0
-  _prefab: {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
 --- !u!1 &794171177
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +935,10 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.7254902
       objectReference: {fileID: 0}
+    - target: {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
   m_IsPrefabParent: 0
@@ -1156,11 +1173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab68f39a5cae5345865bdcd67c73073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnMinTime: 4
-  _spawnMaxTime: 9
-  _randomizeDirection: 1
+  CloudSpawnList: []
+  distanceFromCenter: 3
   _speed: 0
-  _prefab: {fileID: 1432366105824074, guid: de5357660e2904f49b8a273dbe833898, type: 2}
 --- !u!1 &1531295240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,8 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab68f39a5cae5345865bdcd67c73073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnMinTime: 5
-  _spawnMaxTime: 8
-  _randomizeDirection: 1
+  CloudSpawnList: []
+  distanceFromCenter: 3
   _speed: 0
-  _prefab: {fileID: 1619246134054988, guid: ce2bdc1815ac4e742ab1f8361a433530, type: 2}

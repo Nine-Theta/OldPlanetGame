@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 795f86340a0c412479abbbc2a0cccc28, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f6fd6c138e091ae4e8b5e75acbbb7735, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1311926986}
-  m_IndirectSpecularColor: {r: 0.085821845, g: 0.1724768, b: 0.2162309, a: 1}
+  m_IndirectSpecularColor: {r: 0.005874752, g: 0.017954461, b: 0.026492441, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2988,6 +2988,7 @@ Transform:
   - {fileID: 546347203}
   - {fileID: 647505794}
   - {fileID: 1405512518}
+  - {fileID: 670550846}
   m_Father: {fileID: 1577623323}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4639,6 +4640,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4053466444201792, guid: e22b5fa697ed408408221c64bd407628,
     type: 2}
   m_PrefabInternal: {fileID: 647505793}
+--- !u!1 &670550845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 670550846}
+  - component: {fileID: 670550847}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670550846
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670550845}
+  m_LocalRotation: {x: -0.47268432, y: -0.23655409, z: -0.08828706, w: 0.844285}
+  m_LocalPosition: {x: 0.192, y: 1.359, z: -0.615}
+  m_LocalScale: {x: 0.4845029, y: 0.48450306, z: 0.4845029}
+  m_Children: []
+  m_Father: {fileID: 409996047}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: -57.133003, y: -35.608, z: 7.8960004}
+--- !u!114 &670550847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670550845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47295aa27a2a9ec4096e3ab33c22ce47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Kind: 0
+  m_Material: {fileID: 2100000, guid: 0e762fafcaf90dc4e91a5a3fd0af2471, type: 2}
 --- !u!1001 &670946154
 Prefab:
   m_ObjectHideFlags: 0
@@ -15368,6 +15411,7 @@ GameObject:
   - component: {fileID: 1286061550}
   - component: {fileID: 1286061549}
   - component: {fileID: 1286061551}
+  - component: {fileID: 1286061552}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Deselector
@@ -15444,6 +15488,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.99999994
   m_Center: {x: 0, y: -0.000000059604645, z: 0.000000059604645}
+--- !u!114 &1286061552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1286061547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473e7faac7a7b8844886f0e8ea4a4257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CubeMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1290195063
 Prefab:
   m_ObjectHideFlags: 0
@@ -15839,11 +15895,11 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -16563,7 +16619,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1329866648216924, guid: 53acd4aa3cd203a499679c9f5c66cd4f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198551329823773362, guid: 53acd4aa3cd203a499679c9f5c66cd4f,
         type: 2}
@@ -16875,7 +16931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1329866648216924, guid: 53acd4aa3cd203a499679c9f5c66cd4f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198551329823773362, guid: 53acd4aa3cd203a499679c9f5c66cd4f,
         type: 2}
