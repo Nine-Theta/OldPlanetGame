@@ -23,13 +23,35 @@ GameObject:
   - component: {fileID: 114191807665954282}
   - component: {fileID: 114907705049701784}
   - component: {fileID: 114649486990459936}
+  - component: {fileID: 114112140180372888}
   m_Layer: 5
-  m_Name: MinigameTapable
+  m_Name: MinigameSpawnCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114112140180372888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367380591432846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab68f39a5cae5345865bdcd67c73073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudSpawnList:
+  - prefabs:
+    - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+    delayBeforeSpawn: 1
+    baseSpawnTime: 1
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 1
+    stopSpawningAt: 15
+  distanceFromCenter: 0
+  _speed: 0
 --- !u!114 &114191807665954282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,11 +91,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 5
-  _timeOnScreen: 15
+  _timeOnScreen: 2.5
   _randomMin: 2
   _randomMax: 5
   _speed: 1
-  _tapsToKill: 1
+  _tapsToKill: 5
   OnPopped:
     m_PersistentCalls:
       m_Calls: []

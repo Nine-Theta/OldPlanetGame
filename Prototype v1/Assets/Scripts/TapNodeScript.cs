@@ -11,14 +11,17 @@ public class TapNodeScript : MonoBehaviour
     [SerializeField] private float _randomMax = 5.0f;
     [SerializeField] private float _speed = 1.0f;
     [SerializeField] protected int _tapsToKill = 1;
-    private Vector2 _direction = new Vector2(1, 0);
+    [SerializeField] private Vector2 _direction = new Vector2(1, 0);
     [SerializeField] private CustomEvent OnPopped;
     [SerializeField] private CustomEvent OnDisappear;
     
 
     private void Start()
     {
-        
+        if(_direction.magnitude != 1.0f)
+        {
+            _direction.Normalize();
+        }
     }
 
     public virtual void OnTap()
@@ -28,6 +31,15 @@ public class TapNodeScript : MonoBehaviour
         {
             MinigameScoreScript.instance.ScorePoints(_score);
             OnPopped.Invoke();
+            TapNodeScript[] children = gameObject.GetComponentsInChildren<TapNodeScript>(true);
+            if (children.Length > 0)
+            {
+                foreach(TapNodeScript child in children)
+                {
+                    child.gameObject.SetActive(true);
+                    child.transform.SetParent(transform.parent);
+                }
+            }
             gameObject.SetActive(false);
         }
     }

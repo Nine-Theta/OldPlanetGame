@@ -111,11 +111,13 @@ public class MinigameSpawnerScript : MonoBehaviour
                         break;
                 }
                 if (newInstance.GetComponent<TapNodeScript>() != null)
-                    newInstance.GetComponent<TapNodeScript>().SetDirection(direction);
-                if (_speed != 0.0f)
                 {
-                    if (newInstance.GetComponent<TapNodeScript>() != null)
-                        newInstance.GetComponent<TapNodeScript>().SetSpeed(_speed);
+                    newInstance.GetComponent<TapNodeScript>().SetDirection(direction);
+                    newInstance.transform.localPosition = (direction * distanceFromCenter);
+                    if (_speed != 0.0f)
+                    {
+                            newInstance.GetComponent<TapNodeScript>().SetSpeed(_speed);
+                    }
                 }
             }
         }

@@ -683,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudSpawnList:
   - prefabs:
-    - {fileID: 1367380591432846, guid: e599d990521721040854b1cbab9ba2e8, type: 2}
+    - {fileID: 1367380591432846, guid: eee75d87f733bd243bb11587cbbed031, type: 2}
     delayBeforeSpawn: 0
     baseSpawnTime: 3
     spawnTimeDecreasePerSpawn: 0.5
@@ -1143,7 +1143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1400808858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1616354012
 RectTransform:
   m_ObjectHideFlags: 0
