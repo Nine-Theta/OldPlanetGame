@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MinigameScoreScript : MonoBehaviour
 {
     [SerializeField] private float _minigameDuration = 60.0f;
+    [SerializeField] private string _sceneName = "Minigame";
     [SerializeField] private Text _debugText;
 
     private float _minigameTimeLeft;
@@ -41,7 +42,7 @@ public class MinigameScoreScript : MonoBehaviour
             GameObject.Find("Clouds_PS").SetActive(false);
         Time.timeScale = 1;
         MinigameResponseScript.MinigameWon();
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Minigame");
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(_sceneName);
     }
 
     public int Score

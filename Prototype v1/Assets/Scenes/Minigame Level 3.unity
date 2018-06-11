@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minigameDuration: 30
+  _sceneName: Minigame Level 3
   _debugText: {fileID: 199772384}
 --- !u!224 &419866080
 RectTransform:
