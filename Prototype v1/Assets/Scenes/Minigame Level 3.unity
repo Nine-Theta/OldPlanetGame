@@ -574,19 +574,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloudSpawnList:
   - prefabs:
-    - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+    - {fileID: 1367380591432846, guid: a0dc90a51d7a12747a2c69a7d3599d3d, type: 2}
     delayBeforeSpawn: 0
-    baseSpawnTime: 2.5
-    spawnTimeDecreasePerSpawn: 0.5
-    minSpawnTime: 1
-    stopSpawningAt: 14
-  - prefabs:
-    - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-    delayBeforeSpawn: 14
-    baseSpawnTime: 2
+    baseSpawnTime: 1
     spawnTimeDecreasePerSpawn: 0
-    minSpawnTime: 2
-    stopSpawningAt: 30
+    minSpawnTime: 1
+    stopSpawningAt: 2.1
+  - prefabs:
+    - {fileID: 1367380591432846, guid: eee75d87f733bd243bb11587cbbed031, type: 2}
+    delayBeforeSpawn: 5
+    baseSpawnTime: 1
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 1
+    stopSpawningAt: 6.1
+  - prefabs:
+    - {fileID: 1367380591432846, guid: a0dc90a51d7a12747a2c69a7d3599d3d, type: 2}
+    - {fileID: 1367380591432846, guid: eee75d87f733bd243bb11587cbbed031, type: 2}
+    delayBeforeSpawn: 10
+    baseSpawnTime: 3
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 3
+    stopSpawningAt: 45
+  - prefabs:
+    - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
+    - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
+    delayBeforeSpawn: 10
+    baseSpawnTime: 1
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 1
+    stopSpawningAt: 45
   distanceFromCenter: 3
   _speed: 0
 --- !u!1 &794171177

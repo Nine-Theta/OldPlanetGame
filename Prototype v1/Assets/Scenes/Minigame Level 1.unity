@@ -575,17 +575,11 @@ MonoBehaviour:
   CloudSpawnList:
   - prefabs:
     - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
-    delayBeforeSpawn: 0
-    baseSpawnTime: 2.5
-    spawnTimeDecreasePerSpawn: 0.5
-    minSpawnTime: 1
-    stopSpawningAt: 14
-  - prefabs:
     - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-    delayBeforeSpawn: 14
-    baseSpawnTime: 2
+    delayBeforeSpawn: 0
+    baseSpawnTime: 1
     spawnTimeDecreasePerSpawn: 0
-    minSpawnTime: 2
+    minSpawnTime: 1
     stopSpawningAt: 30
   distanceFromCenter: 3
   _speed: 0
