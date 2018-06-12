@@ -43,10 +43,6 @@ public class SpawnerType
         else
         {
             _spawnTime -= deltaTime;
-            if (_spawnTime <= 0.0f)
-            {
-                //
-            }
         }
         _totalTime += deltaTime;
     }
@@ -69,6 +65,8 @@ public class MinigameSpawnerScript : MonoBehaviour
 
     private void Update()
     {
+        if (Time.unscaledDeltaTime >= 1.0f)
+            return;
         for (int i = 0; i < CloudSpawnList.Length; i++)
         {
             CloudSpawnList[i].SubstractTimers(Time.unscaledDeltaTime);

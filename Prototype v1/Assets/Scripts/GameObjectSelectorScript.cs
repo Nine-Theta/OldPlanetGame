@@ -21,7 +21,7 @@ public class GameObjectSelectorScript : MonoBehaviour
             Deselect();
             return;
         }
-        if (pHit.collider.GetComponent<InteractableScript>() != null)
+        if (pHit.collider.GetComponent<InteractableScript>() != null && pHit.collider.GetComponent<InteractableScript>().enabled)
         {
             if (_hasSelection && _selection.tag != "Dragable") //If selecting a new selectable, deselect the old one and select the next
             {

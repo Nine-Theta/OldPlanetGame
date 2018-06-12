@@ -27,7 +27,6 @@ public class PowerPlantScript : InteractableScript
 
     private int maxTier = 3;
     [SerializeField] private CityScript affectedCity;
-    [SerializeField] private Text debugWasteText;
     [SerializeField] private GameObject _wasteBarrelPrefab;
     [SerializeField] private Transform _wasteBarrelSpawn;
     [SerializeField] private CustomEvent OnBreakdown;
@@ -72,7 +71,6 @@ public class PowerPlantScript : InteractableScript
             EndConditionScript.WinLevel();
             enabled = false;
         }
-        UpdateDebugInfo();
     }
 
     #region interactableScript
@@ -108,11 +106,6 @@ public class PowerPlantScript : InteractableScript
         _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
 
         //Debug.Log(_upgradeCost);
-    }
-
-    void UpdateDebugInfo()
-    {
-        debugWasteText.text = Mathf.Floor(_wasteStored).ToString();
     }
 
     /// <summary>
