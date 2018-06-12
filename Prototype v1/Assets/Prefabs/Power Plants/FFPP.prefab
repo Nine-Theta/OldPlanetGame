@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1122111641641622
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671220688179072}
   m_LocalRotation: {x: 0.85143626, y: 0.12541841, z: 0.20798573, w: 0.4648317}
-  m_LocalPosition: {x: -0.053338695, y: 1.5105362, z: 0.025565505}
+  m_LocalPosition: {x: -0.014, y: 1.511, z: 0.027}
   m_LocalScale: {x: 23.672573, y: 24.701962, z: 25.631596}
   m_Children: []
   m_Father: {fileID: 4881118538947804}
@@ -451,7 +451,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998268249461814}
-  m_LocalRotation: {x: 0.08415343, y: -0.620054, z: -0.03913808, w: 0.7790504}
+  m_LocalRotation: {x: 0.096672095, y: -0.6196607, z: -0.039238825, w: 0.77790445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -463,7 +463,7 @@ Transform:
   - {fileID: 4325828412503088}
   m_Father: {fileID: 4881118538947804}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -3.696, y: -77.090004, z: 26.479002}
+  m_LocalEulerAnglesHint: {x: 5.841, y: -77.616005, z: -10.475}
 --- !u!4 &4444835452644356
 Transform:
   m_ObjectHideFlags: 1
@@ -918,7 +918,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.6, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 2
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -949,12 +949,12 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671220688179072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.5471698, g: 0.03355288, b: 0.03355288, a: 1}
   m_Intensity: 10
-  m_Range: 3
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -990,7 +990,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.6, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 2
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1028,6 +1028,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pollutionPerTick: 0.1
   startActive: 0
+  OnPollutionMax:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnPollutionCleared:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnPollutionPercentageUp:
     m_PersistentCalls:
       m_Calls: []
