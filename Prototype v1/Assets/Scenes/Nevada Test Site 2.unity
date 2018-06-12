@@ -3641,45 +3641,14 @@ Prefab:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.45246243
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.45246243
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.45246
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_Name
       value: Happiness (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    - target: {fileID: 199569965335537494, guid: b7d0bb95aab006e4496a5fdc822cbb75,
         type: 2}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 1.6
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e83e1f1a1f1ded41a7aec788b372a31, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
   m_IsPrefabParent: 0
@@ -4598,19 +4567,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.6625762
+      value: 0.6565877
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.094503395
+      value: 0.09484673
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.043046225
+      value: 0.042284686
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7417607
+      value: 0.7470667
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_RootOrder
@@ -4622,15 +4591,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 77.11201
+      value: 76.658005
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 62.170002
+      value: 58.728004
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 57.973003
+      value: 54.439003
       objectReference: {fileID: 0}
     - target: {fileID: 4643152918951264, guid: ae5c64ed1d9402345aeea50638dd86fe, type: 2}
       propertyPath: m_LocalScale.x
@@ -7756,45 +7725,14 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.45246267
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.45246267
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.45246
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_Name
       value: Happiness (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    - target: {fileID: 199569965335537494, guid: b7d0bb95aab006e4496a5fdc822cbb75,
         type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.7058824
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e83e1f1a1f1ded41a7aec788b372a31, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
   m_IsPrefabParent: 0
@@ -13909,6 +13847,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4392885964326320, guid: 45f542353723e104682bc85003784895,
     type: 2}
   m_PrefabInternal: {fileID: 574814804}
+--- !u!198 &578652477 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
+    type: 2}
+  m_PrefabInternal: {fileID: 880018702}
 --- !u!1001 &586798050
 Prefab:
   m_ObjectHideFlags: 0
@@ -19934,7 +19877,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 78cfb84a8c13a4b47ba40ef574da8cbf, type: 2}
+  - {fileID: 2100000, guid: 7e8d41260e678f54f9aa399a072f6557, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21823,24 +21766,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 199569965335537494, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3ff1d517f84b26d489e1a44b686cc81d, type: 2}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_Name
       value: UnHappiness
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
@@ -31482,40 +31410,9 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.45246243
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.45246243
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862715480256980, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.45246
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198392004254740232, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1876559145027464, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
       propertyPath: m_Name
       value: Research
       objectReference: {fileID: 0}
-    - target: {fileID: 199569965335537494, guid: b7d0bb95aab006e4496a5fdc822cbb75,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5b7f124aa28f69641b174e6f4bc88937, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d0bb95aab006e4496a5fdc822cbb75, type: 2}
   m_IsPrefabParent: 0
@@ -32685,7 +32582,7 @@ MonoBehaviour:
   particleSystem1: {fileID: 149624136}
   particleSystem2: {fileID: 149624136}
   particleSystem3: {fileID: 311208364}
-  sadParticleSystem: {fileID: 0}
+  sadParticleSystem: {fileID: 578652477}
   particle1Threshold: 0
   particle2Threshold: 30
   particle3Threshold: 70
@@ -32710,7 +32607,18 @@ MonoBehaviour:
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnHappinessDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 578652477}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnResearchThresholdReached:
     m_PersistentCalls:
@@ -53876,6 +53784,10 @@ Prefab:
     - target: {fileID: 135582653470290366, guid: 316c9fa79795f8640b4f51efcceaa6d2,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735178663070576, guid: 316c9fa79795f8640b4f51efcceaa6d2, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
