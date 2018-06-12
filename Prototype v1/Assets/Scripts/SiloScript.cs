@@ -12,23 +12,23 @@ public class SiloScript : InteractableScript
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
     {
     }
-    
+
     public override void RespondSelect()
     {
-        
+
     }
 
     public override void RespondDeselect()
     {
-        
+
     }
-    
+
     #region oldshite
     //public void Upgrade(bool bypassResearchPoints = false)
     //{
@@ -65,14 +65,15 @@ public class SiloScript : InteractableScript
         Destroy(barrel);
         RespondToBarrelDeselection();
     }
-    
+
 
     public static void RespondToBarrelSelection()
     {
         GameObject[] silos = GameObject.FindGameObjectsWithTag("Silo");
         foreach (GameObject silo in silos)
         {
-            silo.GetComponent<SiloScript>().OnBarrelSelect.Invoke();
+            if (silo.GetComponent<SiloScript>().enabled)
+                silo.GetComponent<SiloScript>().OnBarrelSelect.Invoke();
         }
     }
 
@@ -81,7 +82,8 @@ public class SiloScript : InteractableScript
         GameObject[] silos = GameObject.FindGameObjectsWithTag("Silo");
         foreach (GameObject silo in silos)
         {
-            silo.GetComponent<SiloScript>().OnBarrelDeselect.Invoke();
+            if (silo.GetComponent<SiloScript>().enabled)
+                silo.GetComponent<SiloScript>().OnBarrelDeselect.Invoke();
         }
     }
 }
