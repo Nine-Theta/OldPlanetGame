@@ -306,7 +306,7 @@ MonoBehaviour:
         UpgradeCost: 101
         repairPerTap: 30
       FossilFuelPowerPlantTier1:
-        pollutionPerTick: 0.1
+        pollutionPerTick: 0.05
         currentPollution: 100
         upgradeCost: 1
         startActive: 1
@@ -323,8 +323,8 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
+        happinessPerTick: 0.5
+        wastePenaltyPerBarrel: 0.3
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -377,10 +377,10 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.1
-        wastePenaltyPerBarrel: 0.02
+        happinessPerTick: 0.05
+        wastePenaltyPerBarrel: 0.03
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
