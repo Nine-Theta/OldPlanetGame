@@ -27,6 +27,8 @@ public class CityScript : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem2;
     [SerializeField] private ParticleSystem particleSystem3;
 
+    [SerializeField] private ParticleSystem sadParticleSystem;
+
     [SerializeField] private float particle1Threshold = 0;
     [SerializeField] private float particle2Threshold = 30;
     [SerializeField] private float particle3Threshold = 70;
@@ -184,6 +186,14 @@ public class CityScript : MonoBehaviour
         else // particle 3
         {
             particleSystem3.Play();
+        }
+    }
+
+    public void CheckSadParticleThreshold()
+    {
+        if(_happiness <= 0.0f)
+        {
+            sadParticleSystem.Play();
         }
     }
 }
