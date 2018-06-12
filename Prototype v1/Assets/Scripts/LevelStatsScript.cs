@@ -265,7 +265,58 @@ public class LevelStatsScript : MonoBehaviour
 
 
     public static CityStats CityStats
-    { get { return instance.level1.easy.City; } }
+    {
+        get
+        {
+            instance._mostRecentTierNPPAccessed = 1;
+            switch (instance.level)
+            {
+                default:
+                    Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    goto case 1;
+                case 1:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level1.easy.City;
+                        case 2:
+                            return instance.level1.medium.City;
+                        case 3:
+                            return instance.level1.hard.City;
+                    }
+                case 2:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level2.easy.City;
+                        case 2:
+                            return instance.level2.medium.City;
+                        case 3:
+                            return instance.level2.hard.City;
+                    }
+                case 3:
+                    switch (instance.difficultyLevel)
+                    {
+                        default:
+                            Debug.Log("instance.Difficultylevel is not 1, 2 or 3, falling through to case 1");
+                            goto case 1;
+                        case 1:
+                            return instance.level3.easy.City;
+                        case 2:
+                            return instance.level3.medium.City;
+                        case 3:
+                            return instance.level3.hard.City;
+                    }
+
+            }
+        }
+    }
 
 
     public static FFPPStats FossilFuelPowerPlantStatsTier1
