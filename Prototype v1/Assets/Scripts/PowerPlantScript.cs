@@ -28,7 +28,7 @@ public class PowerPlantScript : InteractableScript
     private int maxTier = 3;
     [SerializeField] private CityScript affectedCity;
     [SerializeField] private GameObject _wasteBarrelPrefab;
-    [SerializeField] private Transform _wasteBarrelSpawn;
+    [SerializeField] private Transform[] _wasteBarrelSpawns;
     [SerializeField] private CustomEvent OnBreakdown;
     [SerializeField] private CustomEvent OnRepair;
     [SerializeField] private CustomEvent OnMaintained;
@@ -157,9 +157,10 @@ public class PowerPlantScript : InteractableScript
         if (_wasteStored > _maxWaste)
         {
             _wasteStored = 0;
-            if (_wasteBarrelSpawn != null)
+            if (_wasteBarrelSpawns != null)
             {
-                GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawn.position, _wasteBarrelSpawn.rotation, _wasteBarrelSpawn);
+                int index = Mathf.FloorToInt(Random.Range(0.0f, _wasteBarrelSpawns.Length - 0.1f)); 
+                GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawns[index].position, _wasteBarrelSpawns[index].rotation, _wasteBarrelSpawns[index]);
                 //barrelRef.transform.rotation = transform.rotation;
             }
             else
