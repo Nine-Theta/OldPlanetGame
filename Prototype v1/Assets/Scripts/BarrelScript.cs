@@ -74,4 +74,17 @@ public class BarrelScript : InteractableScript
         return _activeBarrels.Count;
     }
 
+    public static int GetDecayingBarrelCount()
+    {
+        int number = 0;
+        foreach(BarrelScript barrel in _activeBarrels)
+        {
+            if(barrel.Decaying)
+            {
+                number++;
+            }
+        }
+        return number;
+    }
+
 }

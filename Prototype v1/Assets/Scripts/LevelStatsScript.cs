@@ -40,6 +40,7 @@ public class CityStats
     public float maxHappiness = 100.0f;
     public float happinessPerTick = 0.01f;
     public float wastePenaltyPerBarrel = 0.01f;
+    public float decayingBarrelPenalty = 1.0f;
     public float pollutionPenalty = 0.1f;
 
     public float researchHappinessMultiplier = 1.0f;
