@@ -38,7 +38,6 @@ public class BarrelScript : InteractableScript
     private void Decay()
     {
         OnDecay.Invoke();
-        //Extra logic here
     }
 
     public void SetPosition(Vector3 newPos)
