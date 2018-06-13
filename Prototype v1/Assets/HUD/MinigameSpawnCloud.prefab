@@ -91,11 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 5
-  _timeOnScreen: 2.5
+  _timeOnScreen: 7.5
   _randomMin: 2
   _randomMax: 5
   _speed: 1
   _tapsToKill: 5
+  _direction: {x: 1, y: 0}
   OnPopped:
     m_PersistentCalls:
       m_Calls: []

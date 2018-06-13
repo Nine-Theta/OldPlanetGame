@@ -5,14 +5,12 @@ using UnityEngine;
 public class BarrelScript : InteractableScript
 {
     private Collider _collider;
-    [SerializeField] private float _wasteStored = 30.0f;
-    static List<BarrelScript> _activeBarrels = new List<BarrelScript>();
+    [SerializeField] private float _decayTimer = 7.0f;
+    [SerializeField] private CustomEvent OnDecay;
+    private static List<BarrelScript> _activeBarrels = new List<BarrelScript>();
 
-    public float WasteStored
-    {
-        get { return _wasteStored; }
-    }
-
+    private bool Decaying
+    { get { return _decayTimer <= 0.0f; } }
 
     void Start()
     {
@@ -22,12 +20,25 @@ public class BarrelScript : InteractableScript
 
     void Update()
     {
-
+        if (!Decaying)
+        {
+            _decayTimer -= Time.deltaTime;
+            if (_decayTimer <= 0.0f)
+            {
+                Decay();
+            }
+        }
     }
 
     private void OnDestroy()
     {
         _activeBarrels.Remove(this);
+    }
+    
+    private void Decay()
+    {
+        OnDecay.Invoke();
+        //Extra logic here
     }
 
     public void SetPosition(Vector3 newPos)
@@ -35,9 +46,9 @@ public class BarrelScript : InteractableScript
         transform.position = newPos;
     }
 
-    public void SetRotation(Vector3 newRot)
+    private void SetRotation(Vector3 newRot)
     {
-        //transform.rotation = Quaternion.Euler(9,9,9);
+        //transform.rotation = Quaternion.Euler(newRot);
     }
 
     public override void RespondSelect()
