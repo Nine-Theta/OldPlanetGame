@@ -11,6 +11,7 @@ public class CityScript : MonoBehaviour
     private float maxHappiness = 10.0f;
     private float happinessPerTick = 0.00f;
     private float wastePenaltyPerBarrel = 0.01f;
+    private float decayingBarrelPenalty = 1.0f;
     private float pollutionPenalty = 0.01f;
 
     private float researchHappinessMultiplier = 1.0f;
@@ -75,6 +76,7 @@ public class CityScript : MonoBehaviour
         maxHappiness = stats.maxHappiness;
         happinessPerTick = stats.happinessPerTick;
         wastePenaltyPerBarrel = stats.wastePenaltyPerBarrel;
+        decayingBarrelPenalty = stats.decayingBarrelPenalty;
         pollutionPenalty = stats.pollutionPenalty;
 
         researchHappinessMultiplier = stats.researchHappinessMultiplier;
@@ -132,7 +134,7 @@ public class CityScript : MonoBehaviour
     void ChangeHappiness()
     {
         int oldHappiness = Mathf.FloorToInt(_happiness);
-        _happiness += (happinessPerTick) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
+        _happiness += (happinessPerTick) - (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) - (decayingBarrelPenalty * BarrelScript.GetDecayingBarrelCount()) - (pollutionPenalty * FFPPScript.Pollution);
         //Debug.Log("_happiness: "+ _happiness + ", happinessPerTick: " + happinessPerTick + ", BarrelReduction: " + (wastePenaltyPerBarrel * BarrelScript.GetBarrelCount()) + ", PollutionPenalty: " + (pollutionPenalty * FFPPScript.Pollution));
         if (_happiness < 0)
             _happiness = 0;
