@@ -39,6 +39,48 @@ ModelImporter:
     100066: transform24
     100068: transform8
     100070: transform9
+    100072: polySurface17
+    100074: polySurface18
+    100076: polySurface19
+    100078: polySurface20
+    100080: polySurface21
+    100082: polySurface21 1
+    100084: polySurface22
+    100086: polySurface23
+    100088: polySurface24
+    100090: polySurface25
+    100092: polySurface26
+    100094: polySurface27
+    100096: polySurface28
+    100098: polySurface29
+    100100: polySurface3 1
+    100102: polySurface30
+    100104: polySurface31
+    100106: polySurface32
+    100108: polySurface33
+    100110: polySurface4 1
+    100112: polySurface6
+    100114: polySurface9 1
+    100116: transform1
+    100118: transform2
+    100120: transform25
+    100122: transform26
+    100124: transform27
+    100126: transform28
+    100128: transform29
+    100130: transform3
+    100132: transform30
+    100134: transform31
+    100136: transform32
+    100138: transform33
+    100140: transform34
+    100142: transform35
+    100144: transform36
+    100146: transform37
+    100148: transform4
+    100150: transform5
+    100152: transform6
+    100154: transform7
     400000: //RootNode
     400002: polySurface1
     400004: polySurface10
@@ -75,12 +117,58 @@ ModelImporter:
     400066: transform24
     400068: transform8
     400070: transform9
+    400072: polySurface17
+    400074: polySurface18
+    400076: polySurface19
+    400078: polySurface20
+    400080: polySurface21
+    400082: polySurface21 1
+    400084: polySurface22
+    400086: polySurface23
+    400088: polySurface24
+    400090: polySurface25
+    400092: polySurface26
+    400094: polySurface27
+    400096: polySurface28
+    400098: polySurface29
+    400100: polySurface3 1
+    400102: polySurface30
+    400104: polySurface31
+    400106: polySurface32
+    400108: polySurface33
+    400110: polySurface4 1
+    400112: polySurface6
+    400114: polySurface9 1
+    400116: transform1
+    400118: transform2
+    400120: transform25
+    400122: transform26
+    400124: transform27
+    400126: transform28
+    400128: transform29
+    400130: transform3
+    400132: transform30
+    400134: transform31
+    400136: transform32
+    400138: transform33
+    400140: transform34
+    400142: transform35
+    400144: transform36
+    400146: transform37
+    400148: transform4
+    400150: transform5
+    400152: transform6
+    400154: transform7
     2100000: lambert1
+    2100002: Power_plant2
     2300000: polySurface16
     2300002: //RootNode
+    2300004: polySurface21
     3300000: polySurface16
     3300002: //RootNode
+    3300004: polySurface21
     4300000: polySurface16
+    4300002: polySurface21
   externalObjects: {}
   materials:
     importMaterials: 1
