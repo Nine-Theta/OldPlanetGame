@@ -25681,6 +25681,11 @@ Prefab:
       propertyPath: ResponseEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 285846409}
+    - target: {fileID: 114763245431731830, guid: 5865af93ab2704d42bd8a6046ae3965d,
+        type: 2}
+      propertyPath: SceneName
+      value: Minigame Level 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
   m_IsPrefabParent: 0

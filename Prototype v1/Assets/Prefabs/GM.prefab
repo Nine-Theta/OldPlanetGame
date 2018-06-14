@@ -325,6 +325,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.5
         wastePenaltyPerBarrel: 0.3
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -379,6 +380,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.05
         wastePenaltyPerBarrel: 0.03
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
@@ -433,6 +435,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -488,6 +491,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -542,6 +546,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -596,6 +601,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -651,6 +657,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -705,6 +712,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -759,6 +767,7 @@ MonoBehaviour:
         maxHappiness: 100
         happinessPerTick: 0.01
         wastePenaltyPerBarrel: 0.01
+        decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 1
         researchHappinessThreshold: 20
@@ -846,4 +855,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542e62a47a7eb1f46925c3a06cb1e00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Minigame
+  SceneName: Minigame Level 1
