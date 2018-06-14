@@ -89,21 +89,22 @@ public class PlayerStats : IComparable<PlayerStats>
     }
 }
 
+[RequireComponent(typeof(CompactTracker))]
 public class LeaderboardTracker : MonoBehaviour {
 
     private static LeaderboardTracker _instance;
     public static LeaderboardTracker Instance { get { return _instance; } }
 
-    private int _boardSize = 10;
+    private int _boardSize = 100;
 
     private PlayerStats _currentPlayer;
 
-    private List<PlayerStats> _dailyBoardEasy = new List<PlayerStats>(10);
-    private List<PlayerStats> _dailyBoardMedium = new List<PlayerStats>(10);
-    private List<PlayerStats> _dailyBoardHard = new List<PlayerStats>(10);
+    private List<PlayerStats> _dailyBoardEasy;
+    private List<PlayerStats> _dailyBoardMedium;
+    private List<PlayerStats> _dailyBoardHard;
 
-    private List<PlayerStats> _overallBoardEasy = new List<PlayerStats>(10);
-    private List<PlayerStats> _overallBoardMedium = new List<PlayerStats>(10);
+    private List<PlayerStats> _overallBoardEasy;
+    private List<PlayerStats> _overallBoardMedium;
     private List<PlayerStats> _overallBoardHard = new List<PlayerStats>(10);
 
     private void Awake()
@@ -114,9 +115,18 @@ public class LeaderboardTracker : MonoBehaviour {
             _instance = this;
         DontDestroyOnLoad(gameObject);
 
+        _dailyBoardEasy = new List<PlayerStats>(_boardSize);
+        _dailyBoardMedium = new List<PlayerStats>(_boardSize);
+        _dailyBoardHard = new List<PlayerStats>(_boardSize);
+
+        _overallBoardEasy = new List<PlayerStats>(_boardSize);
+        _overallBoardMedium = new List<PlayerStats>(_boardSize);
+        _overallBoardHard = new List<PlayerStats>(_boardSize);
+
         InitializeBoards();
 
-        TryAddPlayer(new PlayerStats("GARY OAK", 9001, DifficultyMode.HARD));
+        //TryAddPlayer(new PlayerStats("GARY OAK", 151, DifficultyMode.HARD));
+        //SaveBoardToFile(_overallBoardHard, DifficultyMode.HARD);
     }
 
     public static bool Exists
@@ -219,7 +229,10 @@ public class LeaderboardTracker : MonoBehaviour {
                 {
                     AddPlayer(pCurrentPlayer, _dailyBoardEasy);
                     if (CheckPlayer(pCurrentPlayer, _overallBoardEasy))
+                    {
                         AddPlayer(pCurrentPlayer, _overallBoardEasy);
+                        SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
+                    }
                 }
                 break;
 
@@ -228,7 +241,10 @@ public class LeaderboardTracker : MonoBehaviour {
                 {
                     AddPlayer(pCurrentPlayer, _dailyBoardMedium);
                     if (CheckPlayer(pCurrentPlayer, _overallBoardMedium))
+                    {
                         AddPlayer(pCurrentPlayer, _overallBoardMedium);
+                        SaveBoardToFile(_overallBoardMedium, DifficultyMode.MEDIUM);
+                    }
                 }
                 break;
 
@@ -237,7 +253,10 @@ public class LeaderboardTracker : MonoBehaviour {
                 {
                     AddPlayer(pCurrentPlayer, _dailyBoardHard);
                     if (CheckPlayer(pCurrentPlayer, _overallBoardHard))
+                    {
                         AddPlayer(pCurrentPlayer, _overallBoardHard);
+                        SaveBoardToFile(_overallBoardHard, DifficultyMode.HARD);
+                    }
                 }
                 break;
         }
@@ -256,6 +275,7 @@ public class LeaderboardTracker : MonoBehaviour {
             {
                 pBoard.RemoveAt(pBoard.Capacity-1);
                 pBoard.Insert(i, pPlayer);
+                return;
             }
         }
     }
@@ -283,7 +303,7 @@ public class LeaderboardTracker : MonoBehaviour {
 
         //Debug.Log("full stream: " + stream);
 
-        List<PlayerStats> list = new List<PlayerStats>(10);
+        List<PlayerStats> list = new List<PlayerStats>(_boardSize);
 
         for (int i = 0; i < players.Length-1; i++)
         {
@@ -316,7 +336,7 @@ public class LeaderboardTracker : MonoBehaviour {
 
         foreach(PlayerStats player in pBoard)
         {
-            writer.WriteLine(player.ToString());
+            writer.Write(player.ToString() + '\n');
             //Debug.Log("writeline: " + player.ToString());
         }
         writer.Close();

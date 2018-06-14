@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(GameObjectSelectorScript), typeof(Camera))]
 public class MouseInputInterpreter : MonoBehaviour
 {
-    [SerializeField]private float _cameraDragSpeed = 1.0f;
+    [SerializeField] private float _mouseCameraSpeed = 1.0f;
+    [SerializeField] private float _touchCameraSpeed = 1.0f;
 
     private Rigidbody _focusbody;
     private Camera _mainCamera;
@@ -51,16 +52,26 @@ public class MouseInputInterpreter : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                     _selectorScript.DragGameObject(hit);
                 else { }
-                    //_selectorScript.Deselect();
-            }
-            else if (Input.touchSupported && Input.GetTouch(0).phase == TouchPhase.Moved)
-            {
-                Vector2 touchDeltaPos = Input.GetTouch(0).deltaPosition;
-                _focusbody.AddRelativeTorque(-touchDeltaPos.y * _cameraDragSpeed, touchDeltaPos.x * _cameraDragSpeed, 0);
+                //_selectorScript.Deselect();
             }
             else
             {
-                _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y")*_cameraDragSpeed, Input.GetAxis("Mouse X")*_cameraDragSpeed, 0);
+                Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                Debug.DrawRay(_mainCamera.transform.position, ray.direction * 50, new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)), 2.0f);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    return;
+                }
+                else if (Input.touchSupported && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+                {
+                    Vector2 touchDeltaPos = Input.GetTouch(0).deltaPosition;
+                    _focusbody.AddRelativeTorque(-touchDeltaPos.y * _touchCameraSpeed, touchDeltaPos.x * _touchCameraSpeed, 0);
+                }
+                else
+                {
+                    _focusbody.AddRelativeTorque(-Input.GetAxis("Mouse Y") * _mouseCameraSpeed, Input.GetAxis("Mouse X") * _mouseCameraSpeed, 0);
+                }
             }
         }
     }
