@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nevada Test Site 2.unity
     guid: bf7f5303bc8ad9c45abb3067ff6c0cf4
+  - enabled: 1
+    path: Assets/Scenes/Minigame Tutorial.unity
+    guid: 0eca1c536d7953c4f97a6a52ad2be31a
+  - enabled: 1
+    path: Assets/Scenes/Minigame Level 1.unity
+    guid: 3b357a66eeb7ce74aa91ae068aad9eb0
   m_configObjects: {}
