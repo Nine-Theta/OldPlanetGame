@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129e761476f6cd843aef77448488676f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameDuration: 30
+  _minigameDuration: 37
   _sceneName: Minigame Level 2
   _debugText: {fileID: 199772384}
 --- !u!224 &419866080
