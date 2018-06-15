@@ -34609,7 +34609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Terug naar beginscherm
+  m_Text: Volgend level
 --- !u!222 &1178993765
 CanvasRenderer:
   m_ObjectHideFlags: 0
