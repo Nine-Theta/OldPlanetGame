@@ -111,6 +111,11 @@
 
 	sampler2D _MainTex;
 	sampler2D _Normal;
+	sampler2D _SplatMap;
+
+	float _ScalarA;
+	float _ScalarB;
+	float _ScalarC;
 
 	struct Input {
 		float2 uv_MainTex;
@@ -121,6 +126,16 @@
 	void vert(inout appdata_full v, out Input o)
 	{
 		UNITY_INITIALIZE_OUTPUT(Input, o);
+		if (tex2D(_SplatMap, o.uv_MainTex, 0, 0).g >= 0.5f)
+		{
+			float x = v.vertex.x;
+			float y = v.vertex.y;
+			float z = v.vertex.z;
+
+			v.vertex.x = x + (sin((_Time[1]) + y * z * _ScalarB)*_ScalarA);
+			v.vertex.y = y + (sin((_Time[1]) + x * z * _ScalarB)*_ScalarA);
+			v.vertex.z = z + (sin((_Time[1]) + x * y * _ScalarB)*_ScalarA);
+		}
 		o.color = v.color;
 	}
 
