@@ -6956,6 +6956,11 @@ Prefab:
       propertyPath: _partOfLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114356814549369056, guid: 01d7d24ca0d8d2248a4b618d8b021f2a,
+        type: 2}
+      propertyPath: affectedCity
+      value: 
+      objectReference: {fileID: 409996048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01d7d24ca0d8d2248a4b618d8b021f2a, type: 2}
   m_IsPrefabParent: 0
