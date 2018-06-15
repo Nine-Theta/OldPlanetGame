@@ -12,6 +12,13 @@ public class CustomEvent : UnityEvent { }
 public class PowerPlantScript : InteractableScript
 {
     private int _tier = 1;
+
+    #region PartOfLevels
+    [SerializeField] private int _partOfLevel = 1;
+    public int PartOfLevel
+    { get { return _partOfLevel; } }
+    #endregion
+
     private float _maxWaste = 30.0f;
     private float _wasteStored = 0;
     private float _wasteGenPerTick = 0.03f;
@@ -38,6 +45,7 @@ public class PowerPlantScript : InteractableScript
     //public Text debugWasteText;
 
     private ParticleSystem _particleSystem;
+
 
     public bool IsFunctional
     { get { return _currentDurability >= 0; } }
@@ -159,7 +167,7 @@ public class PowerPlantScript : InteractableScript
             _wasteStored = 0;
             if (_wasteBarrelSpawns != null)
             {
-                int index = Mathf.FloorToInt(Random.Range(0.0f, _wasteBarrelSpawns.Length - 0.1f)); 
+                int index = Mathf.FloorToInt(Random.Range(0.0f, _wasteBarrelSpawns.Length - 0.1f));
                 GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawns[index].position, _wasteBarrelSpawns[index].rotation, _wasteBarrelSpawns[index]);
                 //barrelRef.transform.rotation = transform.rotation;
             }

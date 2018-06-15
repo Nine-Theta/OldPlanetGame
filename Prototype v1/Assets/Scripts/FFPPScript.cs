@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class FFPPScript : MonoBehaviour
 {
-    [SerializeField] private float pollutionPerTick = 0.1f;
-    [SerializeField] private static float currentPollution = 0.0f;
-    [SerializeField] private bool startActive = false;
+    #region PartOfLevels
+    [SerializeField] private int _partOfLevel = 1;
+    public int PartOfLevel
+    { get { return _partOfLevel; } }
+    #endregion
+    private float pollutionPerTick = 0.1f;
+    private static float currentPollution = 0.0f;
+    private bool startActive = false;
     [SerializeField] private CustomEvent OnPollutionMax;
     [SerializeField] private CustomEvent OnPollutionCleared;
     [SerializeField] private CustomEvent OnPollutionPercentageUp;

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class SiloScript : InteractableScript
 {
+    #region PartOfLevels
+    [SerializeField] private int _partOfLevel = 1;
+    public int PartOfLevel
+    { get { return _partOfLevel; } }
+    #endregion
+
     [SerializeField] private CustomEvent OnBarrelSelect;
     [SerializeField] private CustomEvent OnBarrelDeselect;
 

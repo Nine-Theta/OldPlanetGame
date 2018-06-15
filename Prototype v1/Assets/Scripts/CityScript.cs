@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class CityScript : MonoBehaviour
 {
+
+    #region PartOfLevels
+    [SerializeField] private int _partOfLevel = 1;
+    public int PartOfLevel
+    { get { return _partOfLevel; } }
+    #endregion
+
     float _happiness = 0.0f;
 
     private float startHappiness = 0.0f;
@@ -127,8 +134,10 @@ public class CityScript : MonoBehaviour
 
     private void UpdateDebugInfo()
     {
-        debugResearchText.text = ResearchPoints.ToString();
-        debugHappyText.text = Mathf.FloorToInt(_happiness).ToString();
+        if (debugResearchText != null)
+            debugResearchText.text = ResearchPoints.ToString();
+        if (debugHappyText != null)
+            debugHappyText.text = Mathf.FloorToInt(_happiness).ToString();
     }
 
     void ChangeHappiness()
@@ -177,11 +186,11 @@ public class CityScript : MonoBehaviour
 
     public void CheckParticleThresholds()
     {
-        if(_happiness >= particle1Threshold && _happiness < particle2Threshold) //particle 1
+        if (_happiness >= particle1Threshold && _happiness < particle2Threshold) //particle 1
         {
             particleSystem1.Play();
         }
-        else if(_happiness < particle3Threshold) // Particle 2
+        else if (_happiness < particle3Threshold) // Particle 2
         {
             particleSystem2.Play();
         }
@@ -193,7 +202,7 @@ public class CityScript : MonoBehaviour
 
     public void CheckSadParticleThreshold()
     {
-        if(_happiness <= 0.0f)
+        if (_happiness <= 0.0f)
         {
             sadParticleSystem.Play();
         }

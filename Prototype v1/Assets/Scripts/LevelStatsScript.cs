@@ -483,9 +483,29 @@ public class LevelStatsScript : MonoBehaviour
     public static int Difficulty
     { get { return instance.difficultyLevel; } }
 
-    public static void SetLevel(int pLevel)
+    public void LevelUp()
     {
-        instance.level = pLevel;
+        instance.level++;
+        PowerPlantScript[] NPPS = (PowerPlantScript[])(Resources.FindObjectsOfTypeAll(typeof(PowerPlantScript)));
+        foreach(PowerPlantScript NPP in NPPS)
+        {
+            NPP.enabled = (NPP.PartOfLevel == instance.level);
+        }
+        SiloScript[] silos = (SiloScript[])(Resources.FindObjectsOfTypeAll(typeof(SiloScript)));
+        foreach (SiloScript silo in silos)
+        {
+            silo.enabled = (silo.PartOfLevel == instance.level);
+        }
+        FFPPScript[] FFPPS = (FFPPScript[])(Resources.FindObjectsOfTypeAll(typeof(FFPPScript)));
+        foreach (FFPPScript FFPP in FFPPS)
+        {
+            FFPP.enabled = (FFPP.PartOfLevel == instance.level);
+        }
+        CityScript[] cities = (CityScript[])(Resources.FindObjectsOfTypeAll(typeof(CityScript)));
+        foreach (CityScript city in cities)
+        {
+            city.enabled = (city.PartOfLevel == instance.level);
+        }
     }
 
     public static void SetDifficulty(DifficultyMode pDifficulty)

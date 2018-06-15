@@ -1294,19 +1294,24 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256746644980834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcf0c65ce55f9974cb4b8d9e1ed9bf2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wasteStored: 0
-  _wasteCapacity: 0
-  _upgradeStorageMod: 100
-  recycleAmount: 30
-  affectedCity: {fileID: 0}
-  _storageMeter: {fileID: 4515947384499356}
-  _storageCapPole: {fileID: 4131540915919402}
-  _debugWasteText: {fileID: 0}
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _partOfLevel: 1
+  OnBarrelSelect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnBarrelDeselect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   _tiers:
   - {fileID: 1837628484305522}
   - {fileID: 1841217693286654}
@@ -1323,6 +1328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   button: {fileID: 0}
 --- !u!114 &114442434606608828
 MonoBehaviour:
@@ -1335,6 +1344,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   button: {fileID: 0}
 --- !u!114 &114663780120152032
 MonoBehaviour:
@@ -1347,6 +1360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   button: {fileID: 0}
 --- !u!114 &114692596415681052
 MonoBehaviour:
@@ -1359,6 +1376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84300f140a8b54d4d99b1c1c0d4eb7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   button: {fileID: 0}
 --- !u!136 &136087855693240742
 CapsuleCollider:
