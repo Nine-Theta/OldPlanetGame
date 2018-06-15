@@ -32,10 +32,6 @@ public class LoadSceneTest : MonoBehaviour {
 
     public void LoadSceneNonAdditive(string sceneName)
     {
-        //Early return to prevent duplicate scenes
-        //if (SceneManager.GetSceneByName(SceneName) != null)
-        //    return;
-        Time.timeScale = 0;
         SceneManager.LoadScene(sceneName);
     }
 }

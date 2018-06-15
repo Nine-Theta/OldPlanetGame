@@ -43,7 +43,7 @@ public class EndConditionScript : MonoBehaviour
 
             default:
                 //LevelStatsScript.SetLevel();
-                Debug.Log("Level up!");
+                //Debug.Log("Level up!");
                 break;
         }
     }
