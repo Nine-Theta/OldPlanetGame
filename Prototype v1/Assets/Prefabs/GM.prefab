@@ -335,7 +335,7 @@ MonoBehaviour:
     medium:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
+        wasteGenPerTick: 1
         degradeRange: 0.3
         maxDurability: 200
         repairThreshold: 150
@@ -344,7 +344,7 @@ MonoBehaviour:
         repairPerTap: 30
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.3
+        wasteGenPerTick: 0.5
         degradeRange: 0.1
         maxDurability: 200
         repairThreshold: 150
@@ -358,7 +358,7 @@ MonoBehaviour:
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 101
+        UpgradeCost: 100
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
