@@ -113,6 +113,7 @@ public class PowerPlantScript : InteractableScript
         _repairThreshold = stats.repairThreshold;
         _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
 
+        affectedCity.SetUpgradeCost(_upgradeCost);
         //Debug.Log(_upgradeCost);
     }
 

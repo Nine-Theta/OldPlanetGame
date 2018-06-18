@@ -78,7 +78,6 @@ public class LevelStatsScript : MonoBehaviour
     [SerializeField] private Level level3;
     private int difficultyLevel = 2; //0 = undefined, 1 = easy, 2 = medium, 3 = hard
     private int level = 1; //0 = undefined, etc
-    private int _mostRecentTierNPPAccessed = 1;
     private static LevelStatsScript instance;
 
 
@@ -97,14 +96,11 @@ public class LevelStatsScript : MonoBehaviour
     public static bool Exists
     { get { return instance != null; } }
 
-    public static int MostRecentTierNPPAccessed
-    { get { return instance._mostRecentTierNPPAccessed; } }
 
     public static NPPStats NuclearPowerPlantStatsTier1
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 1;
             switch (instance.level)
             {
                 default:
@@ -157,7 +153,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 2;
             switch (instance.level)
             {
                 default:
@@ -210,7 +205,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 3;
             switch (instance.level)
             {
                 default:
@@ -269,7 +263,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 1;
             switch (instance.level)
             {
                 default:

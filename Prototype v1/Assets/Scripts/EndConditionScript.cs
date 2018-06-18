@@ -31,6 +31,7 @@ public class EndConditionScript : MonoBehaviour
     {
         switch (LevelStatsScript.Level)
         {
+            //goto defaults for debugging and previously for setlevel, which is now to be called from the button
             case 1:
                 instance.OnLevel1Complete.Invoke();
                 goto default;

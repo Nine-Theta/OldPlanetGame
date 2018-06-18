@@ -30,6 +30,8 @@ public class CityScript : MonoBehaviour
     private float researchPointPerTick;
     private int recycleThreshold;
 
+    private int currentUpgradeCost = 20;
+
 
     [SerializeField] private ParticleSystem particleSystem1;
     [SerializeField] private ParticleSystem particleSystem2;
@@ -49,6 +51,11 @@ public class CityScript : MonoBehaviour
 
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
+
+    public void SetUpgradeCost(int value)
+    {
+        currentUpgradeCost = value;
+    }
 
     public int ResearchPoints
     {
@@ -106,27 +113,9 @@ public class CityScript : MonoBehaviour
                 {
                     OnResearchThresholdReached.Invoke();
                 }
-                switch (LevelStatsScript.MostRecentTierNPPAccessed)
+                if (ResearchPoints >= currentUpgradeCost)
                 {
-                    default:
-                    case 1:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
-                    case 2:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier2.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
-                    case 3:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier3.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
+                    OnUpgradeAvailable.Invoke();
                 }
             }
         }
