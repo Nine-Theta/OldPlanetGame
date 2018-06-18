@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM, DOTHING, MOVETOCAM, MOVETOIDLE }
+[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM, NARRATE, MOVETOCAM, MOVETOIDLE }
 
-public class RobotScript : MonoBehaviour {
+public class RobotScript : InteractableScript {
 
     [SerializeField] private Transform _camFocus;
     [SerializeField] private Transform _botFocus;
 
-    [SerializeField] private Vector3 _idleDirection = new Vector3(-1,-1,0);
-    [SerializeField] private float _idleDireChange = 0.001f;
+    //[SerializeField] private Vector3 _idleDirection = new Vector3(-1,-1,0);
+    //[SerializeField] private float _idleDirChange = 0.001f;
     [SerializeField] private float _idleSpeed = 8.0f;
     [SerializeField] private float _idleHeight = 8.0f;
     [SerializeField] private float _moveToIdleSpeed = 0.01f;
+    //[SerializeField] private Vector2 _idleDirection = new Vector2(0, 1);
 
     private Quaternion _oldCamPos;
     private Quaternion _olderCamPos;
@@ -28,6 +29,12 @@ public class RobotScript : MonoBehaviour {
         //Debug.Log("f: " +_botFocus.gameObject.name);
 	}
 
+    public void SetStateIDLE() { _state = RobotBehaviour.IDLE; }
+    public void SetStateFOLLOWCAM() { _state = RobotBehaviour.FOLLOWCAM; }
+    public void SetStateNARRATE() { _state = RobotBehaviour.NARRATE; }
+    public void SetStateMOVETOCAM() { _state = RobotBehaviour.MOVETOCAM; }
+    public void SetStateMOVETOIDLE() { _state = RobotBehaviour.MOVETOIDLE; }
+
     private void FollowCamera()
     {
         _botFocus.rotation = _olderCamPos;
@@ -39,8 +46,31 @@ public class RobotScript : MonoBehaviour {
 
     private void Idle()
     {
-        _botFocus.GetComponent<Rigidbody>().AddRelativeTorque(_idleDirection.normalized * _idleSpeed);
-        _idleDirection.y -= _idleDireChange;
+        _botFocus.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0, _idleSpeed, 0));
+        transform.rotation = Quaternion.Euler(_botFocus.rotation.eulerAngles.x, _botFocus.rotation.eulerAngles.y + 90, 0);
+        
+        /**
+        if(_idleDirection.y >= 1)
+        {
+            if (_idleDirection.x < 1)
+                _idleDirection.x += _idleDirChange;
+            else
+                _idleDirection.y -= _idleDirChange;
+        }
+        else if (_idleDirection.y <= -1)
+        {
+            if (_idleDirection.x > -1)
+                _idleDirection.x -= _idleDirChange;
+            else
+                _idleDirection.y += _idleDirChange;
+        }
+        else
+        {
+            if (_idleDirection.x >= 1)
+                _idleDirection.y -= _idleDirChange;
+            else
+                _idleDirection.y += _idleDirChange;
+        }/**/
     }
 
     private void MoveToIdle()
@@ -120,7 +150,7 @@ public class RobotScript : MonoBehaviour {
                 FollowCamera();
                 break;
 
-            case RobotBehaviour.DOTHING:
+            case RobotBehaviour.NARRATE:
                 break;
 
             case RobotBehaviour.MOVETOCAM:
@@ -131,4 +161,15 @@ public class RobotScript : MonoBehaviour {
                 break;
         }
 	}
+
+    public override void RespondSelect()
+    {
+        Debug.Log("Selected " + gameObject.name);
+        OnTap.Invoke();
+    }
+
+    public override void RespondDeselect()
+    {
+        Debug.Log("Deselected");
+    }
 }
