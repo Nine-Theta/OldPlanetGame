@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: d851afd49a1aa284daafc985680668c1
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: riganims:riganims:riganims:Arms
+    100004: riganims:riganims:riganims:Chest
+    100006: riganims:riganims:riganims:ctrl_head
+    100008: riganims:riganims:riganims:ctrl_hips
+    100010: riganims:riganims:riganims:ctrl_jetpack
+    100012: riganims:riganims:riganims:ctrl_left_arm
+    100014: riganims:riganims:riganims:ctrl_left_foot
+    100016: riganims:riganims:riganims:ctrl_left_hand
+    100018: riganims:riganims:riganims:ctrl_left_index
+    100020: riganims:riganims:riganims:ctrl_left_index1
+    100022: riganims:riganims:riganims:ctrl_left_leg
+    100024: riganims:riganims:riganims:ctrl_left_middle
+    100026: riganims:riganims:riganims:ctrl_left_middle1
+    100028: riganims:riganims:riganims:ctrl_left_pinky
+    100030: riganims:riganims:riganims:ctrl_left_pinky1
+    100032: riganims:riganims:riganims:ctrl_left_ring
+    100034: riganims:riganims:riganims:ctrl_left_ring1
+    100036: riganims:riganims:riganims:ctrl_left_thumb
+    100038: riganims:riganims:riganims:ctrl_left_toe
+    100040: riganims:riganims:riganims:ctrl_main
+    100042: riganims:riganims:riganims:ctrl_right_arm
+    100044: riganims:riganims:riganims:ctrl_right_foot
+    100046: riganims:riganims:riganims:ctrl_right_hand
+    100048: riganims:riganims:riganims:ctrl_right_index
+    100050: riganims:riganims:riganims:ctrl_right_index2
+    100052: riganims:riganims:riganims:ctrl_right_leg
+    100054: riganims:riganims:riganims:ctrl_right_middle
+    100056: riganims:riganims:riganims:ctrl_right_middle2
+    100058: riganims:riganims:riganims:ctrl_right_pinky
+    100060: riganims:riganims:riganims:ctrl_right_pinky2
+    100062: riganims:riganims:riganims:ctrl_right_ring
+    100064: riganims:riganims:riganims:ctrl_right_ring2
+    100066: riganims:riganims:riganims:ctrl_right_thumb
+    100068: riganims:riganims:riganims:ctrl_right_toe
+    100070: riganims:riganims:riganims:ctrl_torso
+    100072: riganims:riganims:riganims:Elbows
+    100074: riganims:riganims:riganims:Eyes
+    100076: riganims:riganims:riganims:Forearms
+    100078: riganims:riganims:riganims:Head
+    100080: riganims:riganims:riganims:Hips
+    100082: riganims:riganims:riganims:hips
+    100084: riganims:riganims:riganims:Index
+    100086: riganims:riganims:riganims:Jetpack1
+    100088: riganims:riganims:riganims:joint1
+    100090: riganims:riganims:riganims:Knees
+    100092: riganims:riganims:riganims:left
+    100094: riganims:riganims:riganims:left_arm
+    100096: riganims:riganims:riganims:left_elbow
+    100098: riganims:riganims:riganims:left_elbow_point
+    100100: riganims:riganims:riganims:left_foot
+    100102: riganims:riganims:riganims:left_forearm
+    100104: riganims:riganims:riganims:left_hand
+    100106: riganims:riganims:riganims:left_hand 1
+    100108: riganims:riganims:riganims:left_index
+    100110: riganims:riganims:riganims:left_index_2
+    100112: riganims:riganims:riganims:left_index_3
+    100114: riganims:riganims:riganims:left_knee
+    100116: riganims:riganims:riganims:left_knee 1
+    100118: riganims:riganims:riganims:left_knee_point
+    100120: riganims:riganims:riganims:left_leg
+    100122: riganims:riganims:riganims:left_middle
+    100124: riganims:riganims:riganims:left_middle_2
+    100126: riganims:riganims:riganims:left_middle_3
+    100128: riganims:riganims:riganims:left_pinky
+    100130: riganims:riganims:riganims:left_pinky_2
+    100132: riganims:riganims:riganims:left_pinky_3
+    100134: riganims:riganims:riganims:left_ring
+    100136: riganims:riganims:riganims:left_ring_2
+    100138: riganims:riganims:riganims:left_ring_3
+    100140: riganims:riganims:riganims:left_shoulder
+    100142: riganims:riganims:riganims:left_thumb
+    100144: riganims:riganims:riganims:left_thumb_2
+    100146: riganims:riganims:riganims:left_thumb_3
+    100148: riganims:riganims:riganims:left_toe
+    100150: riganims:riganims:riganims:Lower_legs
+    100152: riganims:riganims:riganims:Middle
+    100154: riganims:riganims:riganims:Neck
+    100156: riganims:riganims:riganims:neck
+    100158: riganims:riganims:riganims:Pinky
+    100160: riganims:riganims:riganims:polySurface53
+    100162: riganims:riganims:riganims:polySurface54
+    100164: riganims:riganims:riganims:polySurface57
+    100166: riganims:riganims:riganims:right_arm
+    100168: riganims:riganims:riganims:right_elbow
+    100170: riganims:riganims:riganims:right_elbow_point
+    100172: riganims:riganims:riganims:right_foot
+    100174: riganims:riganims:riganims:right_forearm
+    100176: riganims:riganims:riganims:right_hand
+    100178: riganims:riganims:riganims:right_hand 1
+    100180: riganims:riganims:riganims:right_index
+    100182: riganims:riganims:riganims:right_index_2
+    100184: riganims:riganims:riganims:right_index_3
+    100186: riganims:riganims:riganims:right_knee
+    100188: riganims:riganims:riganims:right_knee 1
+    100190: riganims:riganims:riganims:right_knee_point
+    100192: riganims:riganims:riganims:right_leg
+    100194: riganims:riganims:riganims:right_middle
+    100196: riganims:riganims:riganims:right_middle_2
+    100198: riganims:riganims:riganims:right_middle_3
+    100200: riganims:riganims:riganims:right_pinky
+    100202: riganims:riganims:riganims:right_pinky_2
+    100204: riganims:riganims:riganims:right_pinky_3
+    100206: riganims:riganims:riganims:right_ring
+    100208: riganims:riganims:riganims:right_ring_2
+    100210: riganims:riganims:riganims:right_ring_3
+    100212: riganims:riganims:riganims:right_shoulder
+    100214: riganims:riganims:riganims:right_thumb
+    100216: riganims:riganims:riganims:right_thumb_2
+    100218: riganims:riganims:riganims:right_thumb_3
+    100220: riganims:riganims:riganims:right_toe
+    100222: riganims:riganims:riganims:Ring
+    100224: riganims:riganims:riganims:Robot
+    100226: riganims:riganims:riganims:Robot_rig_v1:left
+    100228: riganims:riganims:riganims:Robot_rig_v2:left
+    100230: riganims:riganims:riganims:Shoulders
+    100232: riganims:riganims:riganims:spine_1
+    100234: riganims:riganims:riganims:spine_2
+    100236: riganims:riganims:riganims:spine_3
+    100238: riganims:riganims:riganims:spine_4
+    100240: riganims:riganims:riganims:Thumbs
+    100242: riganims:riganims:riganims:Toes
+    100244: riganims:riganims:riganims:Upper_legs
+    400000: //RootNode
+    400002: riganims:riganims:riganims:Arms
+    400004: riganims:riganims:riganims:Chest
+    400006: riganims:riganims:riganims:ctrl_head
+    400008: riganims:riganims:riganims:ctrl_hips
+    400010: riganims:riganims:riganims:ctrl_jetpack
+    400012: riganims:riganims:riganims:ctrl_left_arm
+    400014: riganims:riganims:riganims:ctrl_left_foot
+    400016: riganims:riganims:riganims:ctrl_left_hand
+    400018: riganims:riganims:riganims:ctrl_left_index
+    400020: riganims:riganims:riganims:ctrl_left_index1
+    400022: riganims:riganims:riganims:ctrl_left_leg
+    400024: riganims:riganims:riganims:ctrl_left_middle
+    400026: riganims:riganims:riganims:ctrl_left_middle1
+    400028: riganims:riganims:riganims:ctrl_left_pinky
+    400030: riganims:riganims:riganims:ctrl_left_pinky1
+    400032: riganims:riganims:riganims:ctrl_left_ring
+    400034: riganims:riganims:riganims:ctrl_left_ring1
+    400036: riganims:riganims:riganims:ctrl_left_thumb
+    400038: riganims:riganims:riganims:ctrl_left_toe
+    400040: riganims:riganims:riganims:ctrl_main
+    400042: riganims:riganims:riganims:ctrl_right_arm
+    400044: riganims:riganims:riganims:ctrl_right_foot
+    400046: riganims:riganims:riganims:ctrl_right_hand
+    400048: riganims:riganims:riganims:ctrl_right_index
+    400050: riganims:riganims:riganims:ctrl_right_index2
+    400052: riganims:riganims:riganims:ctrl_right_leg
+    400054: riganims:riganims:riganims:ctrl_right_middle
+    400056: riganims:riganims:riganims:ctrl_right_middle2
+    400058: riganims:riganims:riganims:ctrl_right_pinky
+    400060: riganims:riganims:riganims:ctrl_right_pinky2
+    400062: riganims:riganims:riganims:ctrl_right_ring
+    400064: riganims:riganims:riganims:ctrl_right_ring2
+    400066: riganims:riganims:riganims:ctrl_right_thumb
+    400068: riganims:riganims:riganims:ctrl_right_toe
+    400070: riganims:riganims:riganims:ctrl_torso
+    400072: riganims:riganims:riganims:Elbows
+    400074: riganims:riganims:riganims:Eyes
+    400076: riganims:riganims:riganims:Forearms
+    400078: riganims:riganims:riganims:Head
+    400080: riganims:riganims:riganims:Hips
+    400082: riganims:riganims:riganims:hips
+    400084: riganims:riganims:riganims:Index
+    400086: riganims:riganims:riganims:Jetpack1
+    400088: riganims:riganims:riganims:joint1
+    400090: riganims:riganims:riganims:Knees
+    400092: riganims:riganims:riganims:left
+    400094: riganims:riganims:riganims:left_arm
+    400096: riganims:riganims:riganims:left_elbow
+    400098: riganims:riganims:riganims:left_elbow_point
+    400100: riganims:riganims:riganims:left_foot
+    400102: riganims:riganims:riganims:left_forearm
+    400104: riganims:riganims:riganims:left_hand
+    400106: riganims:riganims:riganims:left_hand 1
+    400108: riganims:riganims:riganims:left_index
+    400110: riganims:riganims:riganims:left_index_2
+    400112: riganims:riganims:riganims:left_index_3
+    400114: riganims:riganims:riganims:left_knee
+    400116: riganims:riganims:riganims:left_knee 1
+    400118: riganims:riganims:riganims:left_knee_point
+    400120: riganims:riganims:riganims:left_leg
+    400122: riganims:riganims:riganims:left_middle
+    400124: riganims:riganims:riganims:left_middle_2
+    400126: riganims:riganims:riganims:left_middle_3
+    400128: riganims:riganims:riganims:left_pinky
+    400130: riganims:riganims:riganims:left_pinky_2
+    400132: riganims:riganims:riganims:left_pinky_3
+    400134: riganims:riganims:riganims:left_ring
+    400136: riganims:riganims:riganims:left_ring_2
+    400138: riganims:riganims:riganims:left_ring_3
+    400140: riganims:riganims:riganims:left_shoulder
+    400142: riganims:riganims:riganims:left_thumb
+    400144: riganims:riganims:riganims:left_thumb_2
+    400146: riganims:riganims:riganims:left_thumb_3
+    400148: riganims:riganims:riganims:left_toe
+    400150: riganims:riganims:riganims:Lower_legs
+    400152: riganims:riganims:riganims:Middle
+    400154: riganims:riganims:riganims:Neck
+    400156: riganims:riganims:riganims:neck
+    400158: riganims:riganims:riganims:Pinky
+    400160: riganims:riganims:riganims:polySurface53
+    400162: riganims:riganims:riganims:polySurface54
+    400164: riganims:riganims:riganims:polySurface57
+    400166: riganims:riganims:riganims:right_arm
+    400168: riganims:riganims:riganims:right_elbow
+    400170: riganims:riganims:riganims:right_elbow_point
+    400172: riganims:riganims:riganims:right_foot
+    400174: riganims:riganims:riganims:right_forearm
+    400176: riganims:riganims:riganims:right_hand
+    400178: riganims:riganims:riganims:right_hand 1
+    400180: riganims:riganims:riganims:right_index
+    400182: riganims:riganims:riganims:right_index_2
+    400184: riganims:riganims:riganims:right_index_3
+    400186: riganims:riganims:riganims:right_knee
+    400188: riganims:riganims:riganims:right_knee 1
+    400190: riganims:riganims:riganims:right_knee_point
+    400192: riganims:riganims:riganims:right_leg
+    400194: riganims:riganims:riganims:right_middle
+    400196: riganims:riganims:riganims:right_middle_2
+    400198: riganims:riganims:riganims:right_middle_3
+    400200: riganims:riganims:riganims:right_pinky
+    400202: riganims:riganims:riganims:right_pinky_2
+    400204: riganims:riganims:riganims:right_pinky_3
+    400206: riganims:riganims:riganims:right_ring
+    400208: riganims:riganims:riganims:right_ring_2
+    400210: riganims:riganims:riganims:right_ring_3
+    400212: riganims:riganims:riganims:right_shoulder
+    400214: riganims:riganims:riganims:right_thumb
+    400216: riganims:riganims:riganims:right_thumb_2
+    400218: riganims:riganims:riganims:right_thumb_3
+    400220: riganims:riganims:riganims:right_toe
+    400222: riganims:riganims:riganims:Ring
+    400224: riganims:riganims:riganims:Robot
+    400226: riganims:riganims:riganims:Robot_rig_v1:left
+    400228: riganims:riganims:riganims:Robot_rig_v2:left
+    400230: riganims:riganims:riganims:Shoulders
+    400232: riganims:riganims:riganims:spine_1
+    400234: riganims:riganims:riganims:spine_2
+    400236: riganims:riganims:riganims:spine_3
+    400238: riganims:riganims:riganims:spine_4
+    400240: riganims:riganims:riganims:Thumbs
+    400242: riganims:riganims:riganims:Toes
+    400244: riganims:riganims:riganims:Upper_legs
+    2000000: riganims:riganims:riganims:left
+    2000002: riganims:riganims:riganims:Robot_rig_v1:left
+    2000004: riganims:riganims:riganims:Robot_rig_v2:left
+    2100000: riganims_riganims_riganims_Robot_level_1
+    2100002: riganims_riganims_riganims_Jetpack_1
+    4300000: riganims:riganims:riganims:Head
+    4300002: riganims:riganims:riganims:Jetpack1
+    4300004: riganims:riganims:riganims:Eyes
+    4300006: riganims:riganims:riganims:Ring
+    4300008: riganims:riganims:riganims:Pinky
+    4300010: riganims:riganims:riganims:Index
+    4300012: riganims:riganims:riganims:Middle
+    4300014: riganims:riganims:riganims:Toes
+    4300016: riganims:riganims:riganims:Lower_legs
+    4300018: riganims:riganims:riganims:Knees
+    4300020: riganims:riganims:riganims:Upper_legs
+    4300022: riganims:riganims:riganims:Hips
+    4300024: riganims:riganims:riganims:Thumbs
+    4300026: riganims:riganims:riganims:Forearms
+    4300028: riganims:riganims:riganims:Arms
+    4300030: riganims:riganims:riganims:Shoulders
+    4300032: riganims:riganims:riganims:Elbows
+    4300034: riganims:riganims:riganims:Neck
+    4300036: riganims:riganims:riganims:Chest
+    4300038: riganims:riganims:riganims:polySurface54
+    4300040: riganims:riganims:riganims:polySurface57
+    4300042: riganims:riganims:riganims:polySurface53
+    7400000: Fly Up
+    7400002: Idle
+    7400004: Fly Forward
+    7400006: Pointing
+    7400008: Wave
+    7400010: So and So
+    7400012: Cheer
+    9500000: //RootNode
+    13700000: riganims:riganims:riganims:Arms
+    13700002: riganims:riganims:riganims:Chest
+    13700004: riganims:riganims:riganims:Elbows
+    13700006: riganims:riganims:riganims:Eyes
+    13700008: riganims:riganims:riganims:Forearms
+    13700010: riganims:riganims:riganims:Head
+    13700012: riganims:riganims:riganims:Hips
+    13700014: riganims:riganims:riganims:Index
+    13700016: riganims:riganims:riganims:Jetpack1
+    13700018: riganims:riganims:riganims:Knees
+    13700020: riganims:riganims:riganims:Lower_legs
+    13700022: riganims:riganims:riganims:Middle
+    13700024: riganims:riganims:riganims:Neck
+    13700026: riganims:riganims:riganims:Pinky
+    13700028: riganims:riganims:riganims:polySurface53
+    13700030: riganims:riganims:riganims:polySurface54
+    13700032: riganims:riganims:riganims:polySurface57
+    13700034: riganims:riganims:riganims:Ring
+    13700036: riganims:riganims:riganims:Shoulders
+    13700038: riganims:riganims:riganims:Thumbs
+    13700040: riganims:riganims:riganims:Toes
+    13700042: riganims:riganims:riganims:Upper_legs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fly Up
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fly Forward
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 128
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pointing
+      takeName: Take 001
+      firstFrame: 128
+      lastFrame: 186
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Wave
+      takeName: Take 001
+      firstFrame: 186
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: So and So
+      takeName: Take 001
+      firstFrame: 276
+      lastFrame: 317
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cheer
+      takeName: Take 001
+      firstFrame: 318
+      lastFrame: 365
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
