@@ -4,7 +4,8 @@ using UnityEngine;
 
 [System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM, NARRATE, MOVETOCAM, MOVETOIDLE }
 
-public class RobotScript : InteractableScript {
+public class RobotScript : InteractableScript
+{
 
     [SerializeField] private Transform _camFocus;
     [SerializeField] private Transform _botFocus;
@@ -24,13 +25,14 @@ public class RobotScript : InteractableScript {
     private Quaternion _oldestCamPos;
 
     [SerializeField] private RobotBehaviour _state = RobotBehaviour.FOLLOWCAM;
-    
+
     [SerializeField] private CustomEvent OnIdleReached;
     [SerializeField] private CustomEvent OnPollutionMax;
     [SerializeField] private CustomEvent OnMinigameReady;
 
-    private void Start () {
-	}
+    private void Start()
+    {
+    }
 
     public void SetStateIDLE() { _state = RobotBehaviour.IDLE; }
     public void SetStateFOLLOWCAM() { _state = RobotBehaviour.FOLLOWCAM; }
@@ -49,7 +51,7 @@ public class RobotScript : InteractableScript {
     {
         _botFocus.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0, _idleSpeed, 0));
         transform.rotation = Quaternion.Euler(_botFocus.rotation.eulerAngles.x, _botFocus.rotation.eulerAngles.y + 90, 0);
-        
+
         /**
         if(_idleDirection.y >= 1)
         {
@@ -81,7 +83,7 @@ public class RobotScript : InteractableScript {
 
         if (transform.position.magnitude > _idleHeight)
         {
-            transform.position -= transform.position.normalized*_moveToIdleSpeed;
+            transform.position -= transform.position.normalized * _moveToIdleSpeed;
         }
         else
         {
@@ -119,7 +121,7 @@ public class RobotScript : InteractableScript {
         }
         else z = 0;
 
-        _botFocus.rotation = Quaternion.Euler(x,y,z);
+        _botFocus.rotation = Quaternion.Euler(x, y, z);
     }
 
     private void MoveToPoint(Vector3 pPoint, float pSpeed = 0.05f)
@@ -139,12 +141,13 @@ public class RobotScript : InteractableScript {
 
         transform.position = pos;
     }
-	
-	private void FixedUpdate () {
+
+    private void FixedUpdate()
+    {
 
         if (FFPPScript.Pollution == 100) OnPollutionMax.Invoke();
 
-            switch (_state)
+        switch (_state)
         {
             case RobotBehaviour.IDLE:
                 Idle();
@@ -164,7 +167,7 @@ public class RobotScript : InteractableScript {
                 MoveToIdle();
                 break;
         }
-	}
+    }
 
     public override void RespondSelect()
     {
@@ -178,7 +181,7 @@ public class RobotScript : InteractableScript {
             switch (LevelStatsScript.Level)
             {
                 case 0:
-                LoadSceneTest.LoadSceneAdditive(_tutorialMinigameName);
+                    LoadSceneTest.LoadSceneAdditive(_tutorialMinigameName);
                     break;
                 case 1:
                     LoadSceneTest.LoadSceneAdditive(_minigameLevel1Name);
