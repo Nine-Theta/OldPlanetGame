@@ -23,6 +23,8 @@ public class RobotScript : InteractableScript {
     [SerializeField] private RobotBehaviour _state = RobotBehaviour.FOLLOWCAM;
     
     [SerializeField] private CustomEvent OnIdleReached;
+    [SerializeField] private CustomEvent OnPollutionMax;
+    [SerializeField] private CustomEvent OnMinigameReady;
 
     private void Start () {
         //_botFocus = gameObject.GetComponentInParent<Rigidbody>().GetComponentInParent<Transform>();
@@ -140,7 +142,9 @@ public class RobotScript : InteractableScript {
 	
 	private void FixedUpdate () {
 
-        switch (_state)
+        if (FFPPScript.Pollution == 100) OnPollutionMax.Invoke();
+
+            switch (_state)
         {
             case RobotBehaviour.IDLE:
                 Idle();
@@ -165,7 +169,11 @@ public class RobotScript : InteractableScript {
     public override void RespondSelect()
     {
         Debug.Log("Selected " + gameObject.name);
-        OnTap.Invoke();
+
+        if (FFPPScript.Pollution != 100)
+            OnTap.Invoke();
+        else
+            OnMinigameReady.Invoke();
     }
 
     public override void RespondDeselect()
