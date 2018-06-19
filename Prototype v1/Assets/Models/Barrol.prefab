@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 224697435692290622}
   - component: {fileID: 222405780237000894}
   - component: {fileID: 114760041429664136}
+  - component: {fileID: 114584635928968982}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -167,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181533116279830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9282746, y: 2.7013376, z: 4.2789116}
+  m_LocalPosition: {x: -3.9573333, y: -6.997093, z: 6.001293}
   m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children:
   - {fileID: 4229836510813760}
@@ -367,6 +368,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fd3396222594c4cb091484a9afc2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114584635928968982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655715036671112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  - {fileID: 21300002, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  - {fileID: 21300004, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  - {fileID: 21300006, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  - {fileID: 21300008, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  - {fileID: 21300010, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114719819076682890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,7 +417,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 757234acdce6aba479289996d04e1334, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ceb5300308e87543a05e61c42b1abf5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5080,5 +5100,5 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.3, y: 0.3}
+  m_SizeDelta: {x: 0.7, y: 0.7}
   m_Pivot: {x: 0.5, y: 0.5}
