@@ -178,25 +178,27 @@ public class RobotScript : InteractableScript
         else
         {
             OnMinigameReady.Invoke();
+            /**
             switch (LevelStatsScript.Level)
             {
                 case 0:
-                    LoadSceneTest.LoadSceneAdditive(_tutorialMinigameName);
+                    LoadSceneTest.StaticLoadSceneAdditive(_tutorialMinigameName);
                     break;
                 case 1:
-                    LoadSceneTest.LoadSceneAdditive(_minigameLevel1Name);
+                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel1Name);
                     break;
                 case 2:
-                    LoadSceneTest.LoadSceneAdditive(_minigameLevel2Name);
+                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel2Name);
                     break;
                 case 3:
-                    LoadSceneTest.LoadSceneAdditive(_minigameLevel3Name);
+                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel3Name);
                     break;
                 default:
 
                     Debug.Log("Shit broke yo");
                     break;
             }
+            /**/
         }
     }
 
