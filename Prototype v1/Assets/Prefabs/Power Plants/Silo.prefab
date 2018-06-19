@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 224058124400453580}
   - component: {fileID: 222510508170971600}
   - component: {fileID: 114096822898879210}
+  - component: {fileID: 114437253255425926}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1034,6 +1035,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fd3396222594c4cb091484a9afc2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114437253255425926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798165232713524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  - {fileID: 21300002, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  - {fileID: 21300004, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  - {fileID: 21300006, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  - {fileID: 21300008, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  - {fileID: 21300010, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114628323492294246
 MonoBehaviour:
   m_ObjectHideFlags: 1
