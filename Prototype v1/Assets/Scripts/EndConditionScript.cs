@@ -11,6 +11,15 @@ public class EndConditionScript : MonoBehaviour
     [SerializeField] private CustomEvent OnLevel3Complete;
     [SerializeField] private CustomEvent OnLevel3Lost;
 
+    private int NPPsToCheck = 1;
+    private int NPPsChecked = 0;
+
+    public static int NPPCount
+    {
+        get { return instance.NPPsToCheck; }
+        set { instance.NPPsToCheck = value; }
+    }
+
     private static EndConditionScript instance;
 
     private void Start()
@@ -25,6 +34,15 @@ public class EndConditionScript : MonoBehaviour
     private void Update()
     {
 
+    }
+
+    public static void SignalNPPDone()
+    {
+        instance.NPPsChecked++;
+        if(instance.NPPsChecked >= instance.NPPsToCheck)
+        {
+            WinLevel();
+        }
     }
 
     public static void WinLevel()
