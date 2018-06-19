@@ -2833,52 +2833,52 @@ Prefab:
     - target: {fileID: 224063504193615050, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.6976048
       objectReference: {fileID: 0}
     - target: {fileID: 224063504193615050, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224063504193615050, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224080949304051544, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224080949304051544, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224776377945381914, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224776377945381914, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224776377945381914, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 224351330674001890, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224351330674001890, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 224080949304051544, guid: dad70c187df24a549b38d43289c38366,
         type: 2}
@@ -8492,7 +8492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1127509735
 MonoBehaviour:
   m_ObjectHideFlags: 0
