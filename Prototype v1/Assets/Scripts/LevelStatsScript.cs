@@ -480,8 +480,10 @@ public class LevelStatsScript : MonoBehaviour
     {
         instance.level++;
         PowerPlantScript[] NPPS = (PowerPlantScript[])(Resources.FindObjectsOfTypeAll(typeof(PowerPlantScript)));
+        EndConditionScript.NPPCount = 0;
         foreach(PowerPlantScript NPP in NPPS)
         {
+            EndConditionScript.NPPCount++;
             NPP.enabled = (NPP.PartOfLevel == instance.level);
         }
         SiloScript[] silos = (SiloScript[])(Resources.FindObjectsOfTypeAll(typeof(SiloScript)));

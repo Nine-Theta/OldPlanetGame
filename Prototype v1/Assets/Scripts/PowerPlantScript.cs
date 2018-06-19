@@ -31,6 +31,7 @@ public class PowerPlantScript : InteractableScript
     private float _maintenanceAlertThreshold = 150;
 
     private bool _isBroken = false;
+    private bool _winConditionMet = false;
 
     private int maxTier = 3;
     [SerializeField] private CityScript affectedCity;
@@ -74,10 +75,11 @@ public class PowerPlantScript : InteractableScript
             if (!_isBroken)
                 GenerateWaste();
         }
-        if (CheckWinConditions())
+        if (!_winConditionMet && CheckWinConditions())
         {
-            EndConditionScript.WinLevel();
+            EndConditionScript.SignalNPPDone();
             enabled = false;
+            _winConditionMet = false;
         }
     }
 
