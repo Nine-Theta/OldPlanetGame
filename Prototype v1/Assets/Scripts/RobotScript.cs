@@ -9,12 +9,15 @@ public class RobotScript : InteractableScript {
     [SerializeField] private Transform _camFocus;
     [SerializeField] private Transform _botFocus;
 
-    //[SerializeField] private Vector3 _idleDirection = new Vector3(-1,-1,0);
-    //[SerializeField] private float _idleDirChange = 0.001f;
     [SerializeField] private float _idleSpeed = 8.0f;
     [SerializeField] private float _idleHeight = 8.0f;
     [SerializeField] private float _moveToIdleSpeed = 0.01f;
-    //[SerializeField] private Vector2 _idleDirection = new Vector2(0, 1);
+
+    [SerializeField] private string _tutorialMinigameName = "Minigame Tutorial";
+    [SerializeField] private string _minigameLevel1Name = "Minigame Level 1";
+    [SerializeField] private string _minigameLevel2Name = "Minigame Level 2";
+    [SerializeField] private string _minigameLevel3Name = "Minigame Level 3";
+
 
     private Quaternion _oldCamPos;
     private Quaternion _olderCamPos;
@@ -27,8 +30,6 @@ public class RobotScript : InteractableScript {
     [SerializeField] private CustomEvent OnMinigameReady;
 
     private void Start () {
-        //_botFocus = gameObject.GetComponentInParent<Rigidbody>().GetComponentInParent<Transform>();
-        //Debug.Log("f: " +_botFocus.gameObject.name);
 	}
 
     public void SetStateIDLE() { _state = RobotBehaviour.IDLE; }
@@ -40,8 +41,6 @@ public class RobotScript : InteractableScript {
     private void FollowCamera()
     {
         _botFocus.rotation = _olderCamPos;
-        //transform.rotation = _oldestCamPos;
-        //_oldestCamPos = _olderCamPos;
         _olderCamPos = _oldCamPos;
         _oldCamPos = _camFocus.rotation;
     }
@@ -72,7 +71,8 @@ public class RobotScript : InteractableScript {
                 _idleDirection.y -= _idleDirChange;
             else
                 _idleDirection.y += _idleDirChange;
-        }/**/
+        }
+        /**/
     }
 
     private void MoveToIdle()
@@ -168,16 +168,37 @@ public class RobotScript : InteractableScript {
 
     public override void RespondSelect()
     {
-        Debug.Log("Selected " + gameObject.name);
+        //Debug.Log("Selected " + gameObject.name);
 
         if (FFPPScript.Pollution != 100)
             OnTap.Invoke();
         else
+        {
             OnMinigameReady.Invoke();
+            switch (LevelStatsScript.Level)
+            {
+                case 0:
+                LoadSceneTest.LoadSceneAdditive(_tutorialMinigameName);
+                    break;
+                case 1:
+                    LoadSceneTest.LoadSceneAdditive(_minigameLevel1Name);
+                    break;
+                case 2:
+                    LoadSceneTest.LoadSceneAdditive(_minigameLevel2Name);
+                    break;
+                case 3:
+                    LoadSceneTest.LoadSceneAdditive(_minigameLevel3Name);
+                    break;
+                default:
+
+                    Debug.Log("Shit broke yo");
+                    break;
+            }
+        }
     }
 
     public override void RespondDeselect()
     {
-        Debug.Log("Deselected");
+        //Debug.Log("Deselected");
     }
 }
