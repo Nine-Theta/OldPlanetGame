@@ -11,6 +11,11 @@ public class MinigameScoreScript : MonoBehaviour
 
     private float _minigameTimeLeft;
     private int _score;
+    private int _totalCloudsSpawned = 0;
+    private int _totalCloudsPopped = 0;
+    private int _minCloudsSpawned = 20; //magic value for now, should be made to be gotten from some other script at some later date.
+
+    [SerializeField, Tooltip("The Minimum amount of Clouds that need to be popped for the minigame to be won")] private int _minPoppedForClear = 15;
 
     public static MinigameScoreScript instance;
 
@@ -50,9 +55,29 @@ public class MinigameScoreScript : MonoBehaviour
         get { return _score; }
     }
 
+    public float GetPercentageCloudsCleared()
+    {
+        return ((float)_totalCloudsPopped/(float)_totalCloudsSpawned)*100;
+    }
+
+    public bool MinimumCloudsCleared()
+    {
+        return _totalCloudsSpawned > _minPoppedForClear;
+    }
+
     public void ScorePoints(int value)
     {
         _score += value;
+    }
+
+    public void CloudSpawned(int pCloudValue)
+    {
+        _totalCloudsSpawned += pCloudValue;
+    }
+
+    public void CloudPopped(int pCloudValue)
+    {
+        _totalCloudsPopped += pCloudValue;
     }
 
     public void AddScoreToPlayer()
