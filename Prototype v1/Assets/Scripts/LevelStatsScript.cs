@@ -502,6 +502,7 @@ public class LevelStatsScript : MonoBehaviour
         {
             city.enabled = (city.PartOfLevel == instance.level);
         }
+        //Debug.Log(EndConditionScript.NPPCount);
     }
 
     public static void SetDifficulty(DifficultyMode pDifficulty)
