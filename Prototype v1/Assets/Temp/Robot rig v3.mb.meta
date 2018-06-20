@@ -128,6 +128,7 @@ ModelImporter:
     100244: Thumbs
     100246: Toes
     100248: Upper_legs
+    100250: head
     400000: Arms
     400002: Chest
     400004: ctrl_head
@@ -253,6 +254,7 @@ ModelImporter:
     400244: Thumbs
     400246: Toes
     400248: Upper_legs
+    400250: head
     2000000: left
     2000002: Robot_rig_v1:left
     2000004: Robot_rig_v2:left
