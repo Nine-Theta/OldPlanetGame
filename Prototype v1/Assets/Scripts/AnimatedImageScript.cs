@@ -23,7 +23,14 @@ public class AnimatedImageScript : MonoBehaviour
             _currentTimer = _timePerFrame;
             _currentFrame++;
             if (_currentFrame >= sprites.Length)
+            {
+                if (GetComponent<TapNodeScript>() != null)
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
                 _currentFrame = 0;
+            }
             GetComponent<Image>().sprite = sprites[_currentFrame]; 
         }
     }
