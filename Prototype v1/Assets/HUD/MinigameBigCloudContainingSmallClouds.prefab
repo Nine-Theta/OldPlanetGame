@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114788604505997384}
   - component: {fileID: 114902309931656562}
   - component: {fileID: 114366419774487000}
+  - component: {fileID: 114103563598905878}
   m_Layer: 5
   m_Name: MinigameTapable (3)
   m_TagString: Untagged
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 114068168227709204}
   - component: {fileID: 114500869978835076}
   - component: {fileID: 114383728025490852}
+  - component: {fileID: 114089403771328734}
   m_Layer: 5
   m_Name: MinigameTapable (2)
   m_TagString: Untagged
@@ -61,6 +63,7 @@ GameObject:
   - component: {fileID: 114384995164926038}
   - component: {fileID: 114783035415013764}
   - component: {fileID: 114512828316981604}
+  - component: {fileID: 114352192002964920}
   m_Layer: 5
   m_Name: MinigameTapable (4)
   m_TagString: Untagged
@@ -100,6 +103,7 @@ GameObject:
   - component: {fileID: 114986689329061000}
   - component: {fileID: 114520344434488676}
   - component: {fileID: 114986116155226488}
+  - component: {fileID: 114618444391846582}
   m_Layer: 5
   m_Name: MinigameTapable (1)
   m_TagString: Untagged
@@ -119,6 +123,7 @@ GameObject:
   - component: {fileID: 114825986205014218}
   - component: {fileID: 114870509796140548}
   - component: {fileID: 114745299557021746}
+  - component: {fileID: 114509929413483202}
   m_Layer: 5
   m_Name: MinigameTapable
   m_TagString: Untagged
@@ -153,6 +158,48 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114089403771328734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141570299581644}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
+--- !u!114 &114103563598905878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074958073573592}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114191807665954282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +233,28 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367380591432846}
-  m_Enabled: 1
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
+--- !u!114 &114352192002964920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282843628102344}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
   m_Name: 
@@ -221,7 +289,19 @@ MonoBehaviour:
   _direction: {x: -0.5, y: -0.6}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
+          type: 2}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
@@ -247,7 +327,19 @@ MonoBehaviour:
   _direction: {x: 0.5, y: -0.6}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
+          type: 2}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
@@ -332,6 +424,27 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114509929413483202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1599137892274458}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114512828316981604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,7 +465,19 @@ MonoBehaviour:
   _direction: {x: -0.8, y: 0.2}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
+          type: 2}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
@@ -410,6 +535,27 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114618444391846582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1477501150522930}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114649486990459936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +613,19 @@ MonoBehaviour:
   _direction: {x: 0, y: 1}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
+          type: 2}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
@@ -619,8 +777,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114745299557021746}
-        m_MethodName: OnTap
-        m_Mode: 1
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -755,7 +913,19 @@ MonoBehaviour:
   _direction: {x: 0.8, y: 0.2}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
+          type: 2}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
@@ -867,7 +1037,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367380591432846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1723.3619}
+  m_LocalPosition: {x: 0, y: 0, z: -1808.3824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224587254792171270}
@@ -880,7 +1050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 862.77856, y: 755.7442}
+  m_AnchoredPosition: {x: 874.78467, y: 769.565}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224587254792171270
