@@ -6,10 +6,18 @@ public class SwitchTextureScript : MonoBehaviour
 {
 
     [SerializeField] private Texture[] _textures;
-    [SerializeField] private Renderer _target;
+    [SerializeField] private Renderer[] _targets;
 
-    public void ChangeTexture(int pIndex)
+    public void ChangeTextureForAll(int pIndex)
     {
-        _target.material.mainTexture = _textures[pIndex];
+        for (int i = 0; i < _targets.Length; i++)
+        {
+            _targets[i].material.mainTexture = _textures[pIndex];
+        }
+    }
+
+    public void ChangeTexture(int pTargetIndex, int pTextureIndex)
+    {
+        _targets[pTextureIndex].material.mainTexture = _textures[pTextureIndex];
     }
 }
