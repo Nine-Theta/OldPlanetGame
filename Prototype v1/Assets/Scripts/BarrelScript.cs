@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BarrelScript : InteractableScript
 {
     private Collider _collider;
+    [SerializeField] private Color _decayColor = Color.red;
     [SerializeField] private float _decayTimer = 7.0f;
+    private float _currentTimer = 7.0f;
     [SerializeField] private CustomEvent OnDecay;
     private static List<BarrelScript> _activeBarrels = new List<BarrelScript>();
+    private Image _image;
 
     private bool Decaying
     { get { return _decayTimer <= 0.0f; } }
 
     void Start()
     {
+        _currentTimer = _decayTimer;
         _collider = GetComponent<Collider>();
+        _image = GetComponentInChildren<Image>();
         _activeBarrels.Add(this);
     }
 
@@ -22,8 +28,9 @@ public class BarrelScript : InteractableScript
     {
         if (!Decaying)
         {
-            _decayTimer -= Time.deltaTime;
-            if (_decayTimer <= 0.0f)
+            _currentTimer -= Time.deltaTime;
+            _image.fillAmount = (_currentTimer / _decayTimer);
+            if (_currentTimer <= 0.0f)
             {
                 Decay();
             }
@@ -38,6 +45,8 @@ public class BarrelScript : InteractableScript
     private void Decay()
     {
         OnDecay.Invoke();
+        _image.color = _decayColor;
+        _image.fillAmount = 1.0f;
     }
 
     public void SetPosition(Vector3 newPos)
