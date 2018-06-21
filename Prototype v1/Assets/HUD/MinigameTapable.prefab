@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114191807665954282}
   - component: {fileID: 114907705049701784}
   - component: {fileID: 114649486990459936}
+  - component: {fileID: 114903175104834536}
   m_Layer: 5
   m_Name: MinigameTapable
   m_TagString: Untagged
@@ -74,14 +75,47 @@ MonoBehaviour:
   _randomMax: 5
   _speed: 1
   _tapsToKill: 1
+  _direction: {x: 1, y: 0}
   OnPopped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114903175104834536}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDisappear:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114903175104834536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367380591432846}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c94603d190618c7429ee719637719510, type: 3}
+  - {fileID: 21300000, guid: ba47b25dbe4c86c4685d1017ace38530, type: 3}
+  - {fileID: 21300000, guid: 1d3a44ac3c571fb479395bbb8d8a6edd, type: 3}
+  - {fileID: 21300000, guid: 68058e95d5560104b8af4cd3fd6e3a4f, type: 3}
+  - {fileID: 21300000, guid: 33b1eab15d2e74e44afad71fa25452e4, type: 3}
+  - {fileID: 21300000, guid: 2d0771fa201803d41a62f9f69aa8ee6a, type: 3}
+  - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
+  - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114907705049701784
 MonoBehaviour:
   m_ObjectHideFlags: 1
