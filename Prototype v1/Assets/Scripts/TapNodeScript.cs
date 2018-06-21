@@ -40,10 +40,6 @@ public class TapNodeScript : MonoBehaviour
                     child.transform.SetParent(transform.parent);
                 }
             }
-            if (GetComponent<Animator>() == null)
-                gameObject.SetActive(false);
-            else
-                GetComponent<Animator>().enabled = true;
         }
     }
 
