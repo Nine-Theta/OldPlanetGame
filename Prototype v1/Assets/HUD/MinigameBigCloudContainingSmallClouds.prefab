@@ -290,8 +290,7 @@ MonoBehaviour:
   OnPopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
-          type: 2}
+      - m_Target: {fileID: 114103563598905878}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -328,8 +327,7 @@ MonoBehaviour:
   OnPopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
-          type: 2}
+      - m_Target: {fileID: 114089403771328734}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -466,8 +464,7 @@ MonoBehaviour:
   OnPopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
-          type: 2}
+      - m_Target: {fileID: 114352192002964920}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -614,8 +611,7 @@ MonoBehaviour:
   OnPopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
-          type: 2}
+      - m_Target: {fileID: 114509929413483202}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -777,8 +773,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114745299557021746}
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_MethodName: OnTap
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -914,8 +910,7 @@ MonoBehaviour:
   OnPopped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114903175104834536, guid: 78b0a4a1f4d51f146a4a4ba645a9576c,
-          type: 2}
+      - m_Target: {fileID: 114618444391846582}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
