@@ -8,12 +8,13 @@ public class MinigameScoreScript : MonoBehaviour
     [SerializeField] private float _minigameDuration = 60.0f;
     [SerializeField] private string _sceneName = "Minigame";
     [SerializeField] private Text _debugText;
+    [SerializeField] private RectTransform _cloudBar;
 
     private float _minigameTimeLeft;
     private int _score;
     private int _totalCloudsSpawned = 0;
     private int _totalCloudsPopped = 0;
-    private int _minCloudsSpawned = 20; //magic value for now, should be made to be gotten from some other script at some later date.
+    private int _minCloudsSpawned = 32; //magic value for now, should be made to be gotten from some other script at some later date.
 
     [SerializeField, Tooltip("The Minimum amount of Clouds that need to be popped for the minigame to be won")] private int _minPoppedForClear = 15;
 
@@ -35,6 +36,12 @@ public class MinigameScoreScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SkipMinigame();
+        }
+
+        if(_minCloudsSpawned >= _totalCloudsPopped)
+        {
+            _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 632) - 316, 0);
+            Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " totalcloudspopped: " + _totalCloudsPopped + "thing: " + (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 316));
         }
 
         _debugText.text = "Time left: " + Mathf.FloorToInt(_minigameTimeLeft).ToString();

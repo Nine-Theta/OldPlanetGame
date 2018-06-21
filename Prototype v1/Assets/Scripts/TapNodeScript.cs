@@ -30,6 +30,7 @@ public class TapNodeScript : MonoBehaviour
         if (_tapsToKill == 0)
         {
             MinigameScoreScript.instance.ScorePoints(_score);
+            MinigameScoreScript.instance.CloudPopped(1);
             OnPopped.Invoke();
             TapNodeScript[] children = gameObject.GetComponentsInChildren<TapNodeScript>(true);
             if (children.Length > 0)
@@ -39,6 +40,7 @@ public class TapNodeScript : MonoBehaviour
                     child.gameObject.SetActive(true);
                     child.transform.SetParent(transform.parent);
                 }
+                MinigameScoreScript.instance.CloudSpawned(children.Length);
             }
         }
     }
