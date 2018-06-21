@@ -10,7 +10,7 @@ public class AbsoluteHeresyScript : MonoBehaviour
     {
         if (_events[index] != null)
         {
-            Debug.Log("Calling event #" + index.ToString() + " and it is " + _events[index].GetPersistentEventCount().ToString() + " actions long");
+            //Debug.Log("Calling event #" + index.ToString() + " and it is " + _events[index].GetPersistentEventCount().ToString() + " actions long");
             _events[index].Invoke();
         }
         else
