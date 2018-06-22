@@ -95,8 +95,8 @@ MonoBehaviour:
   _timeOnScreen: 7.5
   _randomMin: 2
   _randomMax: 5
-  _speed: 1
-  _tapsToKill: 5
+  _speed: 0.7
+  _tapsToKill: 3
   _direction: {x: 1, y: 0}
   OnPopped:
     m_PersistentCalls:

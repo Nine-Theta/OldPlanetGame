@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -231,7 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c5014c924f8d742b83f677665e7946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraDragSpeed: 1
+  _mouseCameraSpeed: 1
+  _touchCameraSpeed: 1
 --- !u!114 &277515344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +389,8 @@ MonoBehaviour:
   _minigameDuration: 37
   _sceneName: Minigame Level 2
   _debugText: {fileID: 199772384}
+  _cloudBar: {fileID: 0}
+  _minPoppedForClear: 15
 --- !u!224 &419866080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -599,7 +602,7 @@ MonoBehaviour:
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 1
     stopSpawningAt: 30
-  distanceFromCenter: 3
+  distanceFromCenter: 30
   _speed: 0
 --- !u!1 &794171177
 GameObject:

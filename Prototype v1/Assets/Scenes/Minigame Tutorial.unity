@@ -593,8 +593,8 @@ MonoBehaviour:
     stopSpawningAt: 30
   - prefabs:
     - {fileID: 1367380591432846, guid: eee75d87f733bd243bb11587cbbed031, type: 2}
-    delayBeforeSpawn: 26
-    baseSpawnTime: 2
+    delayBeforeSpawn: 24
+    baseSpawnTime: 3
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 2
     stopSpawningAt: 30
