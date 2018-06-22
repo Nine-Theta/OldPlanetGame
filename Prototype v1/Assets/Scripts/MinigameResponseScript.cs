@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MinigameResponseScript : MonoBehaviour
 {
+    [SerializeField] private CustomEvent ResponseEvent0;
     [SerializeField] private CustomEvent ResponseEvent1;
     [SerializeField] private CustomEvent ResponseEvent2;
     [SerializeField] private CustomEvent ResponseEvent3;
@@ -23,7 +24,11 @@ public class MinigameResponseScript : MonoBehaviour
         switch (LevelStatsScript.Level)
         {
             case 0:
-                goto case 1;
+                foreach (GameObject respondObject in GameObject.FindGameObjectsWithTag("Responder"))
+                {
+                    respondObject.GetComponent<MinigameResponseScript>().ResponseEvent0.Invoke();
+                }
+                break;
             case 1:
                 foreach (GameObject respondObject in GameObject.FindGameObjectsWithTag("Responder"))
                 {

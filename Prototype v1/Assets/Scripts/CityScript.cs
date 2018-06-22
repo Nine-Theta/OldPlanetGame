@@ -109,7 +109,8 @@ public class CityScript : MonoBehaviour
             researchPointsGained += researchPointPerTick;
             if (oldPoints < ResearchPoints)
             {
-                OnResearchpointUp.Invoke();
+                if (ResearchPoints % 5 == 0)
+                    OnResearchpointUp.Invoke();
                 if (ResearchPoints == researchHappinessThreshold)
                 {
                     OnResearchThresholdReached.Invoke();
