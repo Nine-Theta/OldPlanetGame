@@ -32,6 +32,7 @@ public class TapNodeScript : MonoBehaviour
             MinigameScoreScript.instance.ScorePoints(_score);
             MinigameScoreScript.instance.CloudPopped(1);
             OnPopped.Invoke();
+            transform.position += new Vector3(0, 0, 5);
             TapNodeScript[] children = gameObject.GetComponentsInChildren<TapNodeScript>(true);
             if (children.Length > 0)
             {

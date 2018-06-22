@@ -7,6 +7,7 @@ public class AnimatedImageScript : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private float _timePerFrame = 0.125f;
+    [SerializeField] private bool _loops = true;
     private float _currentTimer;
     private int _currentFrame = 0;
 
@@ -27,6 +28,11 @@ public class AnimatedImageScript : MonoBehaviour
                 if (GetComponent<TapNodeScript>() != null)
                 {
                     gameObject.SetActive(false);
+                    return;
+                }
+                if (!_loops)
+                {
+                    this.enabled = false;
                     return;
                 }
                 _currentFrame = 0;
