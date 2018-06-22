@@ -121,6 +121,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnLevel1Lost:
     m_PersistentCalls:
@@ -299,7 +310,7 @@ MonoBehaviour:
     medium:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 1
+        wasteGenPerTick: 1.4
         degradeRange: 0.3
         maxDurability: 200
         repairThreshold: 150
@@ -308,7 +319,7 @@ MonoBehaviour:
         repairPerTap: 30
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
+        wasteGenPerTick: 1
         degradeRange: 0.1
         maxDurability: 200
         repairThreshold: 150
@@ -342,8 +353,8 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.05
-        wastePenaltyPerBarrel: 0.03
+        happinessPerTick: 0.1
+        wastePenaltyPerBarrel: 0.05
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 0
@@ -863,7 +874,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: SetActive
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -871,7 +882,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   ResponseEvent2:
