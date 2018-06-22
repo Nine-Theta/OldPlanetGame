@@ -148,7 +148,6 @@ public class RobotScript : InteractableScript
 
     private void FixedUpdate()
     {
-
         if (FFPPScript.Pollution == 100) OnPollutionMax.Invoke();
 
         switch (_state)
@@ -160,9 +159,19 @@ public class RobotScript : InteractableScript
             case RobotBehaviour.FOLLOWCAM:
                 FollowCamera();
                 break;
+            default:
+                break;
+        }
+    }
 
+    private void Update()
+    {
+        switch (_state)
+        {
             case RobotBehaviour.SETCAM:
                 SetToCameraRotation();
+                break;
+            default:
                 break;
         }
     }
