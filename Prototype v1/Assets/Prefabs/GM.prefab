@@ -110,6 +110,17 @@ MonoBehaviour:
           m_StringArgument: Yay
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnLevel1Lost:
     m_PersistentCalls:
@@ -140,6 +151,17 @@ MonoBehaviour:
           m_StringArgument: Yay
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnLevel2Lost:
     m_PersistentCalls:
@@ -149,14 +171,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Yay
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -289,7 +322,7 @@ MonoBehaviour:
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 100
+        UpgradeCost: 101
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
@@ -442,7 +475,7 @@ MonoBehaviour:
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.4
-        degradeRange: 0.1
+        degradeRange: 0.2
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -475,7 +508,7 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.05
+        happinessPerTick: 0.03
         wastePenaltyPerBarrel: 0.03
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
@@ -598,22 +631,22 @@ MonoBehaviour:
     medium:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
+        wasteGenPerTick: 0.7
         degradeRange: 0.3
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 30
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        degradeRange: 0.2
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
+        UpgradeCost: 50
+        repairPerTap: 50
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0.5
@@ -621,7 +654,7 @@ MonoBehaviour:
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
+        UpgradeCost: 101
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
@@ -641,11 +674,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
+        happinessPerTick: 0.05
+        wastePenaltyPerBarrel: 0.03
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -807,27 +840,71 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  ResponseEvent2:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: 
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114572652342474878}
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  ResponseEvent2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
