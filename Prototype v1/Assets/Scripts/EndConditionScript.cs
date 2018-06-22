@@ -39,7 +39,7 @@ public class EndConditionScript : MonoBehaviour
     public static void SignalNPPDone()
     {
         instance.NPPsChecked++;
-        //Debug.Log(instance.NPPsChecked + " out of " + instance.NPPsToCheck);
+        Debug.Log(instance.NPPsChecked + " out of " + instance.NPPsToCheck);
         if(instance.NPPsChecked >= instance.NPPsToCheck)
         {
             WinLevel();

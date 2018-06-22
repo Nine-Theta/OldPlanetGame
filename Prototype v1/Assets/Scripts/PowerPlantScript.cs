@@ -43,6 +43,7 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CustomEvent OnMaintenanceAlert;
     [SerializeField] private CustomEvent OnTier2Upgrade;
     [SerializeField] private CustomEvent OnTier3Upgrade;
+
     //public Text debugWasteText;
 
     private ParticleSystem _particleSystem;

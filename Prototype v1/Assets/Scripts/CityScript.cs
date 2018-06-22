@@ -116,6 +116,7 @@ public class CityScript : MonoBehaviour
                 }
                 if (ResearchPoints >= currentUpgradeCost)
                 {
+                    Debug.Log(ResearchPoints + "<- Research. Cost ->" + currentUpgradeCost);
                     OnUpgradeAvailable.Invoke();
                 }
             }

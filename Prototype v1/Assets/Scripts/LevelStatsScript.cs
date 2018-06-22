@@ -105,6 +105,7 @@ public class LevelStatsScript : MonoBehaviour
             {
                 default:
                     Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    Debug.Log(instance.level);
                     goto case 1;
                 case 1:
                     switch (instance.difficultyLevel)
@@ -479,13 +480,24 @@ public class LevelStatsScript : MonoBehaviour
     public void LevelUp()
     {
         instance.level++;
+        bool LEVELONEFIX = false;
+
         PowerPlantScript[] NPPS = (PowerPlantScript[])(Resources.FindObjectsOfTypeAll(typeof(PowerPlantScript)));
         EndConditionScript.NPPCount = 0;
-        foreach(PowerPlantScript NPP in NPPS)
+        foreach (PowerPlantScript NPP in NPPS)
         {
+            if (LEVELONEFIX)
+            {
+                break;
+            }
             NPP.enabled = (NPP.PartOfLevel == instance.level);
-            if(NPP.enabled)
-                EndConditionScript.NPPCount++; 
+            if (NPP.enabled)
+            {
+                if (instance.level == 1)
+                    LEVELONEFIX = true;
+                Debug.Log("Level" + instance.level + ", " + NPP.PartOfLevel);
+                EndConditionScript.NPPCount++;
+            }
         }
         SiloScript[] silos = (SiloScript[])(Resources.FindObjectsOfTypeAll(typeof(SiloScript)));
         foreach (SiloScript silo in silos)
