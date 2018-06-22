@@ -126,6 +126,7 @@ public class MinigameSpawnerScript : MonoBehaviour
                 {
                     newInstance.GetComponent<TapNodeScript>().SetDirection(direction);
                     newInstance.transform.localPosition = (direction * distanceFromCenter);
+                    MinigameScoreScript.instance.CloudSpawned(1);
                     if (_speed != 0.0f)
                     {
                             newInstance.GetComponent<TapNodeScript>().SetSpeed(_speed);

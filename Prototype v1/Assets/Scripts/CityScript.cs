@@ -48,6 +48,7 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnHappinessDown;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
     [SerializeField] private CustomEvent OnUpgradeAvailable;
+    [SerializeField] private CustomEvent OnResearchSpend;
 
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
@@ -159,6 +160,7 @@ public class CityScript : MonoBehaviour
         if (ResearchPoints >= points)
         {
             researchPointsSpend += points;
+            OnResearchSpend.Invoke();
             return true;
         }
         else
