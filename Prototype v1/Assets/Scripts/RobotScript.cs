@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM, NARRATE, MOVETOCAM, MOVETOIDLE }
+[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM/*, NARRATE, MOVETOCAM, MOVETOIDLE*/}
 
 public class RobotScript : InteractableScript
 {
@@ -36,9 +36,9 @@ public class RobotScript : InteractableScript
 
     public void SetStateIDLE() { _state = RobotBehaviour.IDLE; }
     public void SetStateFOLLOWCAM() { _state = RobotBehaviour.FOLLOWCAM; }
-    public void SetStateNARRATE() { _state = RobotBehaviour.NARRATE; }
-    public void SetStateMOVETOCAM() { _state = RobotBehaviour.MOVETOCAM; }
-    public void SetStateMOVETOIDLE() { _state = RobotBehaviour.MOVETOIDLE; }
+    //public void SetStateNARRATE() { _state = RobotBehaviour.NARRATE; }
+    //public void SetStateMOVETOCAM() { _state = RobotBehaviour.MOVETOCAM; }
+    //public void SetStateMOVETOIDLE() { _state = RobotBehaviour.MOVETOIDLE; }
 
     private void FollowCamera()
     {
@@ -150,21 +150,11 @@ public class RobotScript : InteractableScript
         switch (_state)
         {
             case RobotBehaviour.IDLE:
-                Idle();
+                //Idle();
                 break;
 
             case RobotBehaviour.FOLLOWCAM:
                 FollowCamera();
-                break;
-
-            case RobotBehaviour.NARRATE:
-                break;
-
-            case RobotBehaviour.MOVETOCAM:
-                break;
-
-            case RobotBehaviour.MOVETOIDLE:
-                MoveToIdle();
                 break;
         }
     }
