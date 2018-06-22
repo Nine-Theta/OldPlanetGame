@@ -35,6 +35,7 @@ public class RobotScript : InteractableScript
 
     public void SetStateIDLE() { _state = RobotBehaviour.IDLE; }
     public void SetStateFOLLOWCAM() { _state = RobotBehaviour.FOLLOWCAM; }
+    public void SetStateSETCAM() { _state = RobotBehaviour.SETCAM; }
     //public void SetStateNARRATE() { _state = RobotBehaviour.NARRATE; }
     //public void SetStateMOVETOCAM() { _state = RobotBehaviour.MOVETOCAM; }
     //public void SetStateMOVETOIDLE() { _state = RobotBehaviour.MOVETOIDLE; }
