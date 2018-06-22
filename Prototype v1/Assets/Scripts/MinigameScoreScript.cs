@@ -40,7 +40,7 @@ public class MinigameScoreScript : MonoBehaviour
 
         if(_minCloudsSpawned >= _totalCloudsPopped)
         {
-            _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 330) - 165, 0);
+            _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 909) - 454.5f, 0);
             Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " totalcloudspopped: " + _totalCloudsPopped + "thing: " + (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 316));
         }
 
