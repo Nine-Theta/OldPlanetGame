@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM/*, NARRATE, MOVETOCAM, MOVETOIDLE*/}
+[System.Serializable] public enum RobotBehaviour { IDLE, FOLLOWCAM, SETCAM /*, NARRATE, MOVETOCAM, MOVETOIDLE*/}
 
 public class RobotScript : InteractableScript
 {
@@ -18,7 +18,6 @@ public class RobotScript : InteractableScript
     [SerializeField] private string _minigameLevel1Name = "Minigame Level 1";
     [SerializeField] private string _minigameLevel2Name = "Minigame Level 2";
     [SerializeField] private string _minigameLevel3Name = "Minigame Level 3";
-
 
     private Quaternion _oldCamPos;
     private Quaternion _olderCamPos;
@@ -45,6 +44,11 @@ public class RobotScript : InteractableScript
         _botFocus.rotation = _olderCamPos;
         _olderCamPos = _oldCamPos;
         _oldCamPos = _camFocus.rotation;
+    }
+
+    private void SetToCameraRotation()
+    {
+        _botFocus.rotation = _camFocus.rotation;
     }
 
     private void Idle()
@@ -155,6 +159,10 @@ public class RobotScript : InteractableScript
 
             case RobotBehaviour.FOLLOWCAM:
                 FollowCamera();
+                break;
+
+            case RobotBehaviour.SETCAM:
+                SetToCameraRotation();
                 break;
         }
     }

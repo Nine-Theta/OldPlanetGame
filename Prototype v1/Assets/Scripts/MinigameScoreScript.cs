@@ -11,7 +11,7 @@ public class MinigameScoreScript : MonoBehaviour
     [SerializeField] private RectTransform _cloudBar;
 
     private float _minigameTimeLeft;
-    private int _score;
+    private int _score = 0;
     private int _totalCloudsSpawned = 0;
     private int _totalCloudsPopped = 0;
     private int _minCloudsSpawned = 32; //magic value for now, should be made to be gotten from some other script at some later date.
@@ -49,6 +49,8 @@ public class MinigameScoreScript : MonoBehaviour
 
     private void EndMinigame()
     {
+        if(_minPoppedForClear < 10)
+        _score = 0
         AddScoreToPlayer();
         if (GameObject.Find("Clouds_PS") != null)
             GameObject.Find("Clouds_PS").SetActive(false);
