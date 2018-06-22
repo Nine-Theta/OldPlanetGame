@@ -1054,6 +1054,7 @@ MonoBehaviour:
   - {fileID: 21300008, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
   - {fileID: 21300010, guid: 257b77f915c99c5418e88925de2eb79a, type: 3}
   _timePerFrame: 0.125
+  _loops: 1
 --- !u!114 &114628323492294246
 MonoBehaviour:
   m_ObjectHideFlags: 1
