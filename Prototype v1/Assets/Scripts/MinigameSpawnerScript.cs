@@ -74,7 +74,12 @@ public class MinigameSpawnerScript : MonoBehaviour
             {
                 GameObject newInstance = Instantiate(CloudSpawnList[i].GetSpawnObject(), transform);
                 int dir = Mathf.FloorToInt(Random.Range(0.0f, 7.99f));
+                Vector3 randomRotation = new Vector3(0,0, Random.Range(-180.0f, 180.0f));
+                newInstance.transform.Rotate(randomRotation);
+
                 Vector3 direction;
+                #region octagonal directions
+                /**
                 switch(dir)
                 {
                     default:
@@ -108,6 +113,15 @@ public class MinigameSpawnerScript : MonoBehaviour
                         direction = new Vector3(0.707f, 0.707f);
                         break;
                 }
+                /**/
+                #endregion
+
+                #region Fully Random Directions
+                direction = Random.onUnitSphere;
+                direction.z = 0;
+                direction.Normalize();
+                #endregion
+
                 if (newInstance.GetComponent<TapNodeScript>() != null)
                 {
                     newInstance.GetComponent<TapNodeScript>().SetDirection(direction);

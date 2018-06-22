@@ -17,7 +17,7 @@ public class AnimatedImageScript : MonoBehaviour
 
     void Update()
     {
-        _currentTimer -= Time.deltaTime;
+        _currentTimer -= Time.unscaledDeltaTime;
         if(_currentTimer <= 0.0f)
         {
             _currentTimer = _timePerFrame;
