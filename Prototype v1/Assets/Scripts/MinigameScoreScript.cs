@@ -49,8 +49,10 @@ public class MinigameScoreScript : MonoBehaviour
 
     private void EndMinigame()
     {
-        if(_minPoppedForClear < 10)
-        _score = 0
+        if (_totalCloudsPopped > _minPoppedForClear)
+            _score = 10 + ((_totalCloudsPopped - _minPoppedForClear)/(_minCloudsSpawned - _minPoppedForClear) * 10);
+        else
+            _score = 0;
         AddScoreToPlayer();
         if (GameObject.Find("Clouds_PS") != null)
             GameObject.Find("Clouds_PS").SetActive(false);
