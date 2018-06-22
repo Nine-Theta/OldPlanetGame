@@ -186,7 +186,7 @@ public class RobotScript : InteractableScript
         else
         {
             OnMinigameReady.Invoke();
-            /**
+            /**/
             switch (LevelStatsScript.Level)
             {
                 case 0:
@@ -203,7 +203,7 @@ public class RobotScript : InteractableScript
                     break;
                 default:
 
-                    Debug.Log("Shit broke yo");
+                    Debug.Log("Shit broke yo, robotscript respondselect");
                     break;
             }
             /**/
