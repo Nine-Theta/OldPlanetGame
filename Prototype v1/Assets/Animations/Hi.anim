@@ -35008,22 +35008,29 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: ChangeTexture
+    functionName: ChangeTextureForAll
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 0.375
-    functionName: ChangeTexture
+  - time: 0.6666667
+    functionName: ChangeTextureForAll
     data: 
     objectReferenceParameter: {fileID: 1053640752353320, guid: 0930857f6e122eb43bfb1d1bc94ce93d,
       type: 2}
     floatParameter: 0
-    intParameter: 1
+    intParameter: 0
     messageOptions: 0
-  - time: 2.2916667
-    functionName: ChangeTexture
+  - time: 2.1666667
+    functionName: ChangeTextureForAll
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.375
+    functionName: ChangeTextureForAll
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

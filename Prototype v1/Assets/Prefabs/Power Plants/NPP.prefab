@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 224449876189470154}
   - component: {fileID: 222505259746425660}
   - component: {fileID: 114235053621295406}
+  - component: {fileID: 114235489172770068}
   m_Layer: 5
   m_Name: Broke
   m_TagString: Untagged
@@ -652,6 +653,7 @@ GameObject:
   - component: {fileID: 224007674478280716}
   - component: {fileID: 222304168184558484}
   - component: {fileID: 114652036418708688}
+  - component: {fileID: 114379700115132606}
   m_Layer: 5
   m_Name: Upgrade
   m_TagString: Untagged
@@ -2091,7 +2093,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a81342fec25697942977f9efba1c45b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2099,6 +2101,25 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114235489172770068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1242931336898320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  - {fileID: 21300002, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  - {fileID: 21300004, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  - {fileID: 21300006, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  - {fileID: 21300008, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  - {fileID: 21300010, guid: 686bb569b72af7e479da8dbc93b1788e, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114236254341330432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2198,7 +2219,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1064020124232422}
+      - m_Target: {fileID: 1242931336898320}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2367,7 +2388,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1064020124232422}
+      - m_Target: {fileID: 1242931336898320}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2582,6 +2603,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114379700115132606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833993906338602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  - {fileID: 21300002, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  - {fileID: 21300004, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  - {fileID: 21300006, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  - {fileID: 21300008, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  - {fileID: 21300010, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
+  _timePerFrame: 0.125
 --- !u!114 &114391920772773166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2671,7 +2711,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1b683877e8f9f34a941658334aef355, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c41afaeaf6ebaa3458b6d848f2fdfb2d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67213,7 +67253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.2, y: 0.2}
+  m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224449876189470154
 RectTransform:
@@ -67231,7 +67271,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00000023841858, y: 0.0000014305115}
-  m_SizeDelta: {x: 0.2, y: 0.2}
+  m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224562181138436208
 RectTransform:
