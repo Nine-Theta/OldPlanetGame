@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gebruikers Interactie Scherm Test.unity
     guid: c3876a16e19727146aacd22297b8b8f8
-  - enabled: 0
-    path: Assets/Scenes/Nevada Test Site 3.unity
-    guid: 7ef0fd304589dd641856cdaf7add49a3
-  - enabled: 0
-    path: Assets/Scenes/Minigame.unity
-    guid: 6f79fe8072b9961448f4954e16335930
   - enabled: 1
     path: Assets/Scenes/Nevada Test Site 2.unity
     guid: bf7f5303bc8ad9c45abb3067ff6c0cf4
@@ -23,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame Level 1.unity
     guid: 3b357a66eeb7ce74aa91ae068aad9eb0
+  - enabled: 1
+    path: Assets/Scenes/Minigame Level 2.unity
+    guid: 4fea1c6eefbedde4cbe6b29bf7fdc543
+  - enabled: 1
+    path: Assets/Scenes/Minigame Level 3.unity
+    guid: 88f71c86f6ac3e7459773c02cdf6d605
   m_configObjects: {}
