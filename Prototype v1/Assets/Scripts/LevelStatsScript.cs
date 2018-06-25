@@ -90,7 +90,8 @@ public class LevelStatsScript : MonoBehaviour
         else
         {
             instance = this;
-            SetDifficulty(LeaderboardTracker.Instance.CurrentPlayer.Difficulty)
+            if (LeaderboardTracker.Exists)
+                SetDifficulty(LeaderboardTracker.Instance.CurrentPlayer.Difficulty);
         }
     }
 
