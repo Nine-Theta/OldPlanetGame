@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class TapNodeScript : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class TapNodeScript : MonoBehaviour
     public virtual void OnTap()
     {
         _tapsToKill--;
+        if (gameObject.name == "MinigameDoubleTapable(Clone)" && _tapsToKill == 1)
+        {
+            Debug.Log("Called");
+            GetComponent<Image>().sprite = (Sprite)(AssetDatabase.LoadAssetAtPath("Assets/Particle Effects/cloud.png", typeof(Sprite)));
+            Debug.Log("This is " + GetComponent<Image>().material);
+        }
         if (_tapsToKill == 0)
         {
             MinigameScoreScript.instance.ScorePoints(_score);
