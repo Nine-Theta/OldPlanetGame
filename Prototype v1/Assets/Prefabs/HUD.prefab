@@ -3734,7 +3734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1662603799789792
 GameObject:
   m_ObjectHideFlags: 1
@@ -3838,7 +3838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1684032563906710
 GameObject:
   m_ObjectHideFlags: 1
@@ -4505,6 +4505,7 @@ GameObject:
   - component: {fileID: 224081770996121812}
   - component: {fileID: 222782188897270406}
   - component: {fileID: 114047769754856512}
+  - component: {fileID: 114738774358567348}
   m_Layer: 5
   m_Name: NPP
   m_TagString: Untagged
@@ -5479,7 +5480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1972456407768486
 GameObject:
   m_ObjectHideFlags: 1
@@ -6467,7 +6468,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 67b73ba90b9f42843a1df2bad21c5d3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1920c6a8aba875148abcdfddfe7f3084, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16289,6 +16290,40 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114738774358567348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811054719543336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a23e7c0143047409e5ebd4a144f98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 1920c6a8aba875148abcdfddfe7f3084, type: 3}
+  - {fileID: 21300000, guid: 923cf02b5eb340346b69deb7bd5825d8, type: 3}
+  - {fileID: 21300000, guid: 727e9b92ea4bdf8438dfcc44d0db7bb0, type: 3}
+  - {fileID: 21300000, guid: e57f43600766968498f44ee7ff8fced8, type: 3}
+  - {fileID: 21300000, guid: eb49ece70590e354c98a9c110b329ff2, type: 3}
+  - {fileID: 21300000, guid: 54cff1f98b6ffb8419a21aa721eae6de, type: 3}
+  - {fileID: 21300000, guid: 93b370a433d26f546a96205eabf45c0f, type: 3}
+  - {fileID: 21300000, guid: 637bb31372fb7754885aa0f5c0d6066d, type: 3}
+  - {fileID: 21300000, guid: 086485f3c09a75c46a60592f1ae5b8fb, type: 3}
+  - {fileID: 21300000, guid: a958b6a401e6e6c4297c413d3800b430, type: 3}
+  - {fileID: 21300000, guid: ae1674a470e858046aed0e6b5f5c841a, type: 3}
+  - {fileID: 21300000, guid: a2f4fe4a53a361742881b1537ad73980, type: 3}
+  - {fileID: 21300000, guid: be8f22c8966420c4f823f3af7592396a, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  - {fileID: 21300000, guid: 81d1e862159a25c46a0c9605ce0e3d00, type: 3}
+  _timePerFrame: 0.125
+  _loops: 1
 --- !u!114 &114739326040343164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21760,8 +21795,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.8, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_AnchoredPosition: {x: 3.4, y: 11.1}
+  m_SizeDelta: {x: 200, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224082154542564164
 RectTransform:
