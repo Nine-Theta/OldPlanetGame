@@ -12,12 +12,21 @@ public class FFPPScript : MonoBehaviour
     private float pollutionPerTick = 0.1f;
     private static float currentPollution = 0.0f;
     private bool startActive = false;
+    [SerializeField] private CustomEvent OnPollution40;
+    [SerializeField] private CustomEvent OnPollution70;
     [SerializeField] private CustomEvent OnPollutionMax;
+
     [SerializeField] private CustomEvent OnPollutionCleared;
     [SerializeField] private CustomEvent OnPollutionPercentageUp;
     [SerializeField] private CustomEvent OnPollutionPercentageDown;
     private bool isActive = false;
     private bool _eventCalled = false;
+    private bool paused = false;
+
+    public bool Paused
+    {
+        set { paused = value; }
+    }
 
     void Start()
     {
@@ -30,14 +39,17 @@ public class FFPPScript : MonoBehaviour
 
     void Update()
     {
+        if (paused)
+            return;
+        /**/
         //Debug.Log(isActive);
         if (isActive)
         {
             int oldPollution = Mathf.FloorToInt(currentPollution);
             currentPollution += pollutionPerTick;
-            if (currentPollution >= 100)
+            if (currentPollution >= 99)
             {
-                currentPollution = 100;
+                currentPollution = 99;
                 if(!_eventCalled)
                 {
                     _eventCalled = true;
@@ -67,6 +79,7 @@ public class FFPPScript : MonoBehaviour
                 }
             }
         }
+        /**/
     }
 
     private void SetVariables(FFPPStats stats)
@@ -88,6 +101,6 @@ public class FFPPScript : MonoBehaviour
 
     public void SetPollution(float value)
     {
-        currentPollution = value;
+        //currentPollution = value;
     }
 }
