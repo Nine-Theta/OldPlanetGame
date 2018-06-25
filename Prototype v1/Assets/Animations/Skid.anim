@@ -17059,7 +17059,7 @@ AnimationClip:
     m_KeepOriginalPositionY: 1
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
-    m_Mirror: 0
+    m_Mirror: 1
   m_EditorCurves:
   - curve:
       serializedVersion: 2
@@ -33178,10 +33178,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 1.4166666
+  - time: 0.041666668
     functionName: CallEventByIndex
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 2
     messageOptions: 0

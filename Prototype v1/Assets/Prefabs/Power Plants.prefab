@@ -2401,12 +2401,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060836440983526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c0375b9a52b064a92a6bc348b784a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _partOfLevel: 1
+  OnPollution40:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnPollution70:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnPollutionMax:
     m_PersistentCalls:
       m_Calls: []
@@ -2807,6 +2815,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUpgradeAvailable:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!198 &198114989987167556
 ParticleSystem:
