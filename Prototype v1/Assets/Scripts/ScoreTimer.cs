@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ScoreTimer : MonoBehaviour {
     [Header("Level 1")]
-    [SerializeField, Tooltip("In seconds")] private float _timeForThreeStarsLevelOne = 60;
-    [SerializeField, Tooltip("In seconds")] private float _timeForNoStarsLevelOne = 300; //5min
+    [SerializeField, Tooltip("In seconds")] private float _timeForMaxScoreLevelOne = 60;
+    [SerializeField, Tooltip("In seconds")] private float _timeForNoScoreLevelOne = 300; //5min
 
     [Header("Level 2")]
-    [SerializeField, Tooltip("In seconds")] private float _timeForThreeStarsLevelTwo = 60;
-    [SerializeField, Tooltip("In seconds")] private float _timeForNoStarsLevelTwo = 300; //5min
+    [SerializeField, Tooltip("In seconds")] private float _timeForMaxScoreLevelTwo = 60;
+    [SerializeField, Tooltip("In seconds")] private float _timeForNoScoreLevelTwo = 300; //5min
 
     [Header("Level 3")]
-    [SerializeField, Tooltip("In seconds")] private float _timeForThreeStarsLevelThree = 60;
-    [SerializeField, Tooltip("In seconds")] private float _timeForNoStarsLevelThree = 300; //5min
+    [SerializeField, Tooltip("In seconds")] private float _timeForMaxScoreLevelThree = 60;
+    [SerializeField, Tooltip("In seconds")] private float _timeForNoScoreLevelThree = 300; //5min
 
     private float _timer = 0;
 
@@ -27,20 +27,20 @@ public class ScoreTimer : MonoBehaviour {
 		
 	}
 
-    private void AddScore(float pTimeForThreeStars, float pTimeForNoStars)
+    private void AddScore(float pTimeForMaxScore, float pTimeForNoScore)
     {
-        if (_timer <= pTimeForThreeStars)
+        if (_timer <= pTimeForMaxScore)
         {
             LeaderboardTracker.Instance.CurrentPlayer.Score += _maxScore;
         }
-        else if(_timer > pTimeForNoStars)
+        else if(_timer > pTimeForNoScore)
         {
             LeaderboardTracker.Instance.CurrentPlayer.Score += 0;
         }
         else
         {
-            float deltaStarTime = pTimeForNoStars - pTimeForThreeStars;
-            int score = Mathf.CeilToInt(((deltaStarTime - (_timer - pTimeForThreeStars)) / (deltaStarTime)) * (_maxScore - 1));
+            float deltaStarTime = pTimeForNoScore - pTimeForMaxScore;
+            int score = Mathf.CeilToInt(((deltaStarTime - (_timer - pTimeForMaxScore)) / (deltaStarTime)) * (_maxScore - 1));
             LeaderboardTracker.Instance.CurrentPlayer.Score += score;
         }
     }
@@ -58,13 +58,13 @@ public class ScoreTimer : MonoBehaviour {
         switch (_currentLevel)
         {
             case 1:
-                AddScore(_timeForThreeStarsLevelOne, _timeForNoStarsLevelOne);
+                AddScore(_timeForMaxScoreLevelOne, _timeForNoScoreLevelOne);
                 break;
             case 2:
-                AddScore(_timeForThreeStarsLevelTwo, _timeForNoStarsLevelTwo);
+                AddScore(_timeForMaxScoreLevelTwo, _timeForNoScoreLevelTwo);
                 break;
             case 3:
-                AddScore(_timeForThreeStarsLevelThree, _timeForNoStarsLevelThree);
+                AddScore(_timeForMaxScoreLevelThree, _timeForNoScoreLevelThree);
                 break;
             default:
                 Debug.LogError("Incorrect level for ScoreTimer");
