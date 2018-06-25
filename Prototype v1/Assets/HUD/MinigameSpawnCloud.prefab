@@ -96,7 +96,7 @@ MonoBehaviour:
   _randomMin: 2
   _randomMax: 5
   _speed: 0.7
-  _tapsToKill: 3
+  _tapsToKill: 1
   _direction: {x: 1, y: 0}
   OnPopped:
     m_PersistentCalls:
@@ -138,6 +138,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ccb28d480741f3c4e85b30f831d4e817, type: 3}
   - {fileID: 21300000, guid: b387858815347484289fd09ac026a4d8, type: 3}
   _timePerFrame: 0.125
+  _loops: 1
 --- !u!114 &114907705049701784
 MonoBehaviour:
   m_ObjectHideFlags: 1
