@@ -13,6 +13,8 @@ public class RobotScript : InteractableScript
     [SerializeField] private float _idleSpeed = 8.0f;
     [SerializeField] private float _idleHeight = 8.0f;
     [SerializeField] private float _moveToIdleSpeed = 0.01f;
+    [SerializeField, Tooltip("Delay for the animation when loading a minigame")] private float _animDelay = 1.5f;
+    private float _currentTimer = 0.0f;
 
     [SerializeField] private string _tutorialMinigameName = "Minigame Tutorial";
     [SerializeField] private string _minigameLevel1Name = "Minigame Level 1";
@@ -175,6 +177,40 @@ public class RobotScript : InteractableScript
             default:
                 break;
         }
+        if(_currentTimer > 0)
+        {
+            _currentTimer -= Time.deltaTime;
+            if(_currentTimer <= 0)
+            {
+                LoadMinigame();
+            }
+        }
+    }
+
+    private void LoadMinigame()
+    {
+        /**/
+        switch (LevelStatsScript.Level)
+        {
+            case 0:
+                LoadSceneTest.StaticLoadSceneAdditive(_tutorialMinigameName);
+                break;
+            case 1:
+                LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel1Name);
+                break;
+            case 2:
+                LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel2Name);
+                break;
+            case 3:
+                LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel3Name);
+                break;
+            default:
+
+                Debug.Log("Shit broke yo, robotscript respondselect");
+                break;
+        }
+        /**/
+
     }
 
     public override void RespondSelect()
@@ -186,27 +222,7 @@ public class RobotScript : InteractableScript
         else
         {
             OnMinigameReady.Invoke();
-            /**/
-            switch (LevelStatsScript.Level)
-            {
-                case 0:
-                    LoadSceneTest.StaticLoadSceneAdditive(_tutorialMinigameName);
-                    break;
-                case 1:
-                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel1Name);
-                    break;
-                case 2:
-                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel2Name);
-                    break;
-                case 3:
-                    LoadSceneTest.StaticLoadSceneAdditive(_minigameLevel3Name);
-                    break;
-                default:
-
-                    Debug.Log("Shit broke yo, robotscript respondselect");
-                    break;
-            }
-            /**/
+            _currentTimer = _animDelay;
         }
     }
 
