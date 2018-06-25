@@ -217,6 +217,11 @@ public class LeaderboardTracker : MonoBehaviour {
         }
     }
 
+    public void TryAddCurrentPlayer()
+    {
+        TryAddPlayer(_currentPlayer);
+    }
+
     /// <summary>
     /// Checks if a player is eligible for the leaderboard, and adds them to it if so.
     /// </summary>

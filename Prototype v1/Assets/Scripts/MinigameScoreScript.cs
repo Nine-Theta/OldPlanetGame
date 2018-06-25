@@ -14,7 +14,8 @@ public class MinigameScoreScript : MonoBehaviour
     private int _score = 0;
     private int _totalCloudsSpawned = 0;
     private int _totalCloudsPopped = 0;
-    private int _minCloudsSpawned = 32; //magic value for now, should be made to be gotten from some other script at some later date.
+    [SerializeField] private int _minCloudsSpawned = 32; //magic value for now, should be made to be gotten from some other script at some later date.
+    [SerializeField] private float _screenStartPos = 454.5f;
 
     [SerializeField, Tooltip("The Minimum amount of Clouds that need to be popped for the minigame to be won")] private int _minPoppedForClear = 15;
 
@@ -40,7 +41,7 @@ public class MinigameScoreScript : MonoBehaviour
 
         if(_minCloudsSpawned >= _totalCloudsPopped)
         {
-            _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 909) - 454.5f, 0);
+            _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) /_minCloudsSpawned) * (_screenStartPos*2)) - _screenStartPos, 0);
             Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " totalcloudspopped: " + _totalCloudsPopped + "thing: " + (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 316));
         }
 
