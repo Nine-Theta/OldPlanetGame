@@ -114,11 +114,6 @@ public class CityScript : MonoBehaviour
                 {
                     OnResearchThresholdReached.Invoke();
                 }
-                if (ResearchPoints >= currentUpgradeCost)
-                {
-                    //Debug.Log(ResearchPoints + "<- Research. Cost ->" + currentUpgradeCost);
-                    OnUpgradeAvailable.Invoke();
-                }
             }
         }
     }
