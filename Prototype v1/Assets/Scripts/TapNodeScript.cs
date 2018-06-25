@@ -30,9 +30,7 @@ public class TapNodeScript : MonoBehaviour
         _tapsToKill--;
         if (gameObject.name == "MinigameDoubleTapable(Clone)" && _tapsToKill == 1)
         {
-            Debug.Log("Called");
             GetComponent<Image>().sprite = (Sprite)(AssetDatabase.LoadAssetAtPath("Assets/Particle Effects/cloud.png", typeof(Sprite)));
-            Debug.Log("This is " + GetComponent<Image>().material);
         }
         if (_tapsToKill == 0)
         {

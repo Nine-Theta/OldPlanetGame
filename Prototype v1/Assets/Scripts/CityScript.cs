@@ -47,7 +47,6 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnHappinessUp;
     [SerializeField] private CustomEvent OnHappinessDown;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
-    [SerializeField] private CustomEvent OnUpgradeAvailable;
     [SerializeField] private CustomEvent OnResearchSpend;
 
     [SerializeField] private Text debugResearchText;
@@ -117,7 +116,7 @@ public class CityScript : MonoBehaviour
                 }
                 if (ResearchPoints >= currentUpgradeCost)
                 {
-                    Debug.Log(ResearchPoints + "<- Research. Cost ->" + currentUpgradeCost);
+                    //Debug.Log(ResearchPoints + "<- Research. Cost ->" + currentUpgradeCost);
                     OnUpgradeAvailable.Invoke();
                 }
             }
@@ -174,7 +173,7 @@ public class CityScript : MonoBehaviour
 
     public bool EndConditionMet()
     {
-        return (researchPointsGained >= researchPointCap);
+        return (researchPointsGained >= researchPointCap && BarrelScript.GetBarrelCount() <= 0);
     }
 
     public void CheckParticleThresholds()

@@ -64,6 +64,7 @@ public class EndConditionScript : MonoBehaviour
             default:
                 //LevelStatsScript.SetLevel();
                 //Debug.Log("Level up!");
+                instance.NPPsChecked = 0;
                 break;
         }
     }

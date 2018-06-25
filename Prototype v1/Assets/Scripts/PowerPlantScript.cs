@@ -32,6 +32,7 @@ public class PowerPlantScript : InteractableScript
 
     private bool _isBroken = false;
     private bool _winConditionMet = false;
+    private bool _upgradeEventCalled = false; //For OnUpgradeAvailable
 
     private int maxTier = 3;
     [SerializeField] private CityScript affectedCity;
@@ -43,6 +44,8 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CustomEvent OnMaintenanceAlert;
     [SerializeField] private CustomEvent OnTier2Upgrade;
     [SerializeField] private CustomEvent OnTier3Upgrade;
+    [SerializeField] private CustomEvent OnUpgradeAvailable;
+
 
     //public Text debugWasteText;
 
@@ -66,21 +69,22 @@ public class PowerPlantScript : InteractableScript
     {
         if (_currentDurability <= 0)
             return;
-        //if (_tier < 2)
+        if (!_isBroken)
+            Degrade();
+        if (!_isBroken)
+            GenerateWaste();
+        if(!_upgradeEventCalled && affectedCity.ResearchPoints >= _upgradeCost)
         {
-            if (!_isBroken)
-                Degrade();
+            _upgradeEventCalled = true;
+            OnUpgradeAvailable.Invoke();
         }
-        //if (_tier < 3)
-        {
-            if (!_isBroken)
-                GenerateWaste();
-        }
+
         if (!_winConditionMet && CheckWinConditions())
         {
+            Debug.Log(gameObject.name + " is done, sending win signal");
             EndConditionScript.SignalNPPDone();
             enabled = false;
-            _winConditionMet = false;
+            _winConditionMet = true;
         }
     }
 
@@ -115,6 +119,7 @@ public class PowerPlantScript : InteractableScript
         _repairPerTap = stats.repairPerTap;
         _repairThreshold = stats.repairThreshold;
         _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
+        _upgradeEventCalled = false;
 
         affectedCity.SetUpgradeCost(_upgradeCost);
         //Debug.Log(_upgradeCost);
