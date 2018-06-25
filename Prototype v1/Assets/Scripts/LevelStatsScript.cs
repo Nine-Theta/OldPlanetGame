@@ -90,6 +90,7 @@ public class LevelStatsScript : MonoBehaviour
         else
         {
             instance = this;
+            SetDifficulty(LeaderboardTracker.Instance.CurrentPlayer.Difficulty)
         }
     }
 
