@@ -52,6 +52,8 @@ public class CityScript : MonoBehaviour
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
 
+    private bool _researchThresholdEventCalled = false;
+
     public void SetUpgradeCost(int value)
     {
         currentUpgradeCost = value;
@@ -110,8 +112,9 @@ public class CityScript : MonoBehaviour
             {
                 if (ResearchPoints % 5 == 0)
                     OnResearchpointUp.Invoke();
-                if (ResearchPoints == researchHappinessThreshold)
+                if (!_researchThresholdEventCalled && ResearchPoints == researchHappinessThreshold)
                 {
+                    _researchThresholdEventCalled = true;
                     OnResearchThresholdReached.Invoke();
                 }
             }
