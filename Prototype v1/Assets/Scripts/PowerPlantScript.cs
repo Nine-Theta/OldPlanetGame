@@ -45,6 +45,9 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CustomEvent OnTier2Upgrade;
     [SerializeField] private CustomEvent OnTier3Upgrade;
     [SerializeField] private CustomEvent OnUpgradeAvailable;
+    [SerializeField] private CustomEvent OnInitialBarrelSpawn;
+
+    private static bool _InitialBarrelSpawned = false;
 
 
     //public Text debugWasteText;
@@ -179,6 +182,11 @@ public class PowerPlantScript : InteractableScript
                 int index = Mathf.FloorToInt(Random.Range(0.0f, _wasteBarrelSpawns.Length - 0.1f));
                 GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawns[index].position, _wasteBarrelSpawns[index].rotation, _wasteBarrelSpawns[index]);
                 //barrelRef.transform.rotation = transform.rotation;
+                if(!_InitialBarrelSpawned)
+                {
+                    OnInitialBarrelSpawn.Invoke():
+                    _InitialBarrelSpawned = true;
+                }
             }
             else
             {
