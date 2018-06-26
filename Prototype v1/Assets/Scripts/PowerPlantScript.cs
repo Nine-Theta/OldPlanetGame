@@ -184,7 +184,7 @@ public class PowerPlantScript : InteractableScript
                 //barrelRef.transform.rotation = transform.rotation;
                 if(!_InitialBarrelSpawned)
                 {
-                    OnInitialBarrelSpawn.Invoke():
+                    OnInitialBarrelSpawn.Invoke();
                     _InitialBarrelSpawned = true;
                 }
             }
