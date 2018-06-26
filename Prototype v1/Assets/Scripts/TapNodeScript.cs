@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
+//using UnityEditor;
 
 public class TapNodeScript : MonoBehaviour
 {
@@ -16,9 +16,15 @@ public class TapNodeScript : MonoBehaviour
     [SerializeField] private CustomEvent OnPopped;
     [SerializeField] private CustomEvent OnDisappear;
 
+    private static Sprite _oneTapCloud;
 
     private void Start()
     {
+        if (_oneTapCloud == null)
+        {
+            _oneTapCloud = (Sprite)(Resources.Load("cloud", typeof(Sprite)));
+        }
+
         if (_direction.magnitude != 1.0f)
         {
             _direction.Normalize();
@@ -30,7 +36,8 @@ public class TapNodeScript : MonoBehaviour
         _tapsToKill--;
         if (gameObject.name == "MinigameDoubleTapable(Clone)" && _tapsToKill == 1)
         {
-            GetComponent<Image>().sprite = (Sprite)(AssetDatabase.LoadAssetAtPath("Assets/Particle Effects/cloud.png", typeof(Sprite)));
+            //GetComponent<Image>().sprite = (Sprite)(AssetDatabase.LoadAssetAtPath("Assets/Particle Effects/cloud.png", typeof(Sprite)));
+            GetComponent<Image>().sprite = _oneTapCloud;
         }
         if (_tapsToKill == 0)
         {
