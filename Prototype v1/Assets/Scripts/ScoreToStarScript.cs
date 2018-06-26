@@ -14,7 +14,13 @@ public class ScoreToStarScript : MonoBehaviour {
 
     [SerializeField] int _level = 1;
 
-    public void CalculateStars()
+    private void Start()
+    {
+        CalculateStars();
+        SetText();
+    }
+
+    private void CalculateStars()
     {
         int score = 0;
         if (LeaderboardTracker.Exists)
@@ -46,9 +52,16 @@ public class ScoreToStarScript : MonoBehaviour {
         }
     }
 
-    public void SetText()
+    private void SetText()
     {
+        if (!LeaderboardTracker.Exists)
+        {
+            Debug.LogWarning("No LeaderboardTracker present in scene");
+            return;
+        }
+
         _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.Score.ToString();
+
         switch (_level)
         {
             case 1:

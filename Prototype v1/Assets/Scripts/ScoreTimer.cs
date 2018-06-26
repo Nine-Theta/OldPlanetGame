@@ -55,12 +55,15 @@ public class ScoreTimer : MonoBehaviour {
         {
             case 1:
                 AddScore(_timeForMaxScoreLevelOne, _timeForNoScoreLevelOne);
+                LeaderboardTracker.Instance.CurrentPlayer.TimeOne = _timer;
                 break;
             case 2:
                 AddScore(_timeForMaxScoreLevelTwo, _timeForNoScoreLevelTwo);
+                LeaderboardTracker.Instance.CurrentPlayer.TimeTwo = _timer;
                 break;
             case 3:
                 AddScore(_timeForMaxScoreLevelThree, _timeForNoScoreLevelThree);
+                LeaderboardTracker.Instance.CurrentPlayer.TimeThree = _timer;
                 break;
             default:
                 Debug.LogError("Incorrect level for ScoreTimer");
