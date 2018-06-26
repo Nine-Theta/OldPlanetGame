@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114763245431731830}
   - component: {fileID: 114572652342474878}
   - component: {fileID: 114744054031575114}
+  - component: {fileID: 114829163073184392}
   m_Layer: 0
   m_Name: GM
   m_TagString: Responder
@@ -143,6 +144,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114829163073184392}
+        m_MethodName: EndTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnLevel1Lost:
     m_PersistentCalls:
@@ -228,6 +251,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114829163073184392}
+        m_MethodName: EndTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnLevel2Lost:
     m_PersistentCalls:
@@ -236,17 +292,6 @@ MonoBehaviour:
   OnLevel3Complete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: SetTrigger
         m_Mode: 5
@@ -267,11 +312,66 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Clear 4
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114829163073184392}
+        m_MethodName: EndTimer
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -332,26 +432,26 @@ MonoBehaviour:
     easy:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.2
+        degradeRange: 0.4
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 50
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
+        wasteGenPerTick: 1
         degradeRange: 0.3
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 30
+        UpgradeCost: 50
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -375,11 +475,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.5
-        wastePenaltyPerBarrel: 0.3
+        happinessPerTick: 0.06
+        wastePenaltyPerBarrel: 0.01
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -397,7 +497,7 @@ MonoBehaviour:
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 1
-        degradeRange: 0.2
+        degradeRange: 0.3
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -430,38 +530,38 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 1
+        happinessPerTick: 0.06
         wastePenaltyPerBarrel: 0.03
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
         researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
-        researchPointPerTick: 1
+        researchPointPerTick: 0.1
         recycleThreshold: 1
     hard:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.6
+        degradeRange: 0.7
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 30
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.2
+        degradeRange: 0.4
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
+        UpgradeCost: 50
+        repairPerTap: 20
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -485,11 +585,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
+        happinessPerTick: 0.06
+        wastePenaltyPerBarrel: 0.06
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -504,20 +604,20 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 50
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0.4
+        degradeRange: 0.2
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 10
+        repairPerTap: 50
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -525,9 +625,9 @@ MonoBehaviour:
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
-        currentPollution: 0
+        currentPollution: 100
         upgradeCost: 1
-        startActive: 0
+        startActive: 1
       FossilFuelPowerPlantTier2:
         pollutionPerTick: 0.1
         currentPollution: 0
@@ -541,11 +641,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
+        happinessPerTick: 0.06
         wastePenaltyPerBarrel: 0.01
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -608,8 +708,8 @@ MonoBehaviour:
     hard:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.7
+        degradeRange: 0.6
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
@@ -617,27 +717,27 @@ MonoBehaviour:
         repairPerTap: 10
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.2
+        degradeRange: 0.5
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 20
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
+        UpgradeCost: 101
+        repairPerTap: 30
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
-        currentPollution: 0
+        currentPollution: 100
         upgradeCost: 1
-        startActive: 0
+        startActive: 1
       FossilFuelPowerPlantTier2:
         pollutionPerTick: 0.1
         currentPollution: 0
@@ -651,11 +751,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
+        happinessPerTick: 0.06
+        wastePenaltyPerBarrel: 0.06
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -665,35 +765,35 @@ MonoBehaviour:
       NuclearPowerPlantTier1:
         maxWaste: 100
         wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        degradeRange: 0.2
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0.4
+        degradeRange: 0.1
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 50
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
+        UpgradeCost: 101
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
-        currentPollution: 0
+        currentPollution: 100
         upgradeCost: 1
-        startActive: 0
+        startActive: 1
       FossilFuelPowerPlantTier2:
         pollutionPerTick: 0.1
         currentPollution: 0
@@ -707,11 +807,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
+        happinessPerTick: 0.06
         wastePenaltyPerBarrel: 0.01
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -774,36 +874,36 @@ MonoBehaviour:
     hard:
       NuclearPowerPlantTier1:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.7
+        degradeRange: 0.6
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 10
+        repairPerTap: 20
       NuclearPowerPlantTier2:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 1.2
+        degradeRange: 0.4
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
-        repairPerTap: 10
+        UpgradeCost: 50
+        repairPerTap: 39
       NuclearPowerPlantTier3:
         maxWaste: 100
-        wasteGenPerTick: 0.5
-        degradeRange: 0.3
+        wasteGenPerTick: 0
+        degradeRange: 0
         maxDurability: 200
         repairThreshold: 150
         maintenanceAlertThreshold: 150
-        UpgradeCost: 20
+        UpgradeCost: 101
         repairPerTap: 10
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 0.1
-        currentPollution: 0
+        currentPollution: 100
         upgradeCost: 1
-        startActive: 0
+        startActive: 1
       FossilFuelPowerPlantTier2:
         pollutionPerTick: 0.1
         currentPollution: 0
@@ -817,11 +917,11 @@ MonoBehaviour:
       City:
         startHappiness: 0
         maxHappiness: 100
-        happinessPerTick: 0.01
-        wastePenaltyPerBarrel: 0.01
+        happinessPerTick: 0.06
+        wastePenaltyPerBarrel: 0.06
         decayingBarrelPenalty: 1
         pollutionPenalty: 0.1
-        researchHappinessMultiplier: 1
+        researchHappinessMultiplier: 0
         researchHappinessThreshold: 20
         researchPointCap: 100
         researchPointPerTick: 0.1
@@ -983,6 +1083,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fade
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start m
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   ResponseEvent1:
     m_PersistentCalls:
@@ -1106,6 +1228,39 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Skid
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fade
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start m
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114829163073184392}
+        m_MethodName: StartTimer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -1233,6 +1388,39 @@ MonoBehaviour:
           m_StringArgument: Skid
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fade
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start m
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114829163073184392}
+        m_MethodName: StartTimer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   ResponseEvent3:
     m_PersistentCalls:
@@ -1250,3 +1438,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Minigame Level 1
+--- !u!114 &114829163073184392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757477957020528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb5e66e0f99b45459c73958e594eddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeForMaxScoreLevelOne: 30
+  _timeForNoScoreLevelOne: 300
+  _timeForMaxScoreLevelTwo: 40
+  _timeForNoScoreLevelTwo: 300
+  _timeForMaxScoreLevelThree: 45
+  _timeForNoScoreLevelThree: 300
