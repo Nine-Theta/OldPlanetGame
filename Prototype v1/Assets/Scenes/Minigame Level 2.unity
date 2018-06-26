@@ -318,7 +318,7 @@ MonoBehaviour:
   _cloudBar: {fileID: 1185843626}
   _minCloudsSpawned: 32
   _screenStartPos: 454.5
-  _minPoppedForClear: 30
+  _minPoppedForClear: 50
 --- !u!224 &419866080
 RectTransform:
   m_ObjectHideFlags: 0

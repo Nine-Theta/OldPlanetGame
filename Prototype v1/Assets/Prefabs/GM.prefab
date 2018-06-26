@@ -1460,9 +1460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb5e66e0f99b45459c73958e594eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeForMaxScoreLevelOne: 30
+  _timeForMaxScoreLevelOne: 25
   _timeForNoScoreLevelOne: 300
-  _timeForMaxScoreLevelTwo: 40
+  _timeForMaxScoreLevelTwo: 35
   _timeForNoScoreLevelTwo: 300
-  _timeForMaxScoreLevelThree: 45
+  _timeForMaxScoreLevelThree: 40
   _timeForNoScoreLevelThree: 300
