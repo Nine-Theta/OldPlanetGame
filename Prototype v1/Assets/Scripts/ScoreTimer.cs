@@ -25,19 +25,41 @@ public class ScoreTimer : MonoBehaviour {
 
     private void AddScore(float pTimeForMaxScore, float pTimeForNoScore)
     {
+        int score = 0;
+        if (!LeaderboardTracker.Exists)
+        {
+            Debug.LogWarning("No LeaderboardTracker present in scene");
+            return;
+        }
+
         if (_timer <= pTimeForMaxScore)
         {
-            LeaderboardTracker.Instance.CurrentPlayer.Score += _maxScore;
+            score = _maxScore;
         }
         else if(_timer > pTimeForNoScore)
         {
-            LeaderboardTracker.Instance.CurrentPlayer.Score += 0;
+            score = 0;
         }
         else
         {
             float deltaStarTime = pTimeForNoScore - pTimeForMaxScore;
-            int score = Mathf.CeilToInt(((deltaStarTime - (_timer - pTimeForMaxScore)) / (deltaStarTime)) * (_maxScore - 1));
-            LeaderboardTracker.Instance.CurrentPlayer.Score += score;
+            score = Mathf.CeilToInt(((deltaStarTime - (_timer - pTimeForMaxScore)) / (deltaStarTime)) * (_maxScore - 1));
+        }
+
+        switch (_currentLevel)
+        {
+            case 1:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreOne += score;
+                break;
+            case 2:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreTwo += score;
+                break;
+            case 3:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreThree += score;
+                break;
+            default:
+                Debug.LogError("Incorrect level for ScoreTimer");
+                break;
         }
     }
 

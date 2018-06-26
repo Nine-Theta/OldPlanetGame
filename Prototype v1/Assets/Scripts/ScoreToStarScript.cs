@@ -59,22 +59,23 @@ public class ScoreToStarScript : MonoBehaviour {
             Debug.LogWarning("No LeaderboardTracker present in scene");
             return;
         }
-
-        _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.Score.ToString();
-
+        
         switch (_level)
         {
             case 1:
+                _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreOne.ToString();
                 _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeOne.ToString();
                 break;
             case 2:
+                _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreTwo.ToString();
                 _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeTwo.ToString();
                 break;
             case 3:
+                _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreThree.ToString();
                 _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeThree.ToString();
                 break;
             default:
-                Debug.LogError("Incorrect level for ScoreTimer");
+                Debug.LogError("Incorrect level for StarScript");
                 break;
         }
     }

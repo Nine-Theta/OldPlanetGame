@@ -42,7 +42,7 @@ public class MinigameScoreScript : MonoBehaviour
         if(_minCloudsSpawned >= _totalCloudsPopped)
         {
             _cloudBar.position = new Vector3(_cloudBar.position.x, (((_minCloudsSpawned - _totalCloudsPopped) /_minCloudsSpawned) * (_screenStartPos*2)) - _screenStartPos, 0);
-            Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " totalcloudspopped: " + _totalCloudsPopped + "thing: " + (((_minCloudsSpawned - _totalCloudsPopped) * 0.03125f) * 316));
+            Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " totalcloudspopped: " + _totalCloudsPopped + "Where it should be: " + ((((_minCloudsSpawned - _totalCloudsPopped) / _minCloudsSpawned) * (_screenStartPos * 2)) - _screenStartPos));
         }
 
         _debugText.text = "Time left: " + Mathf.FloorToInt(_minigameTimeLeft).ToString();
