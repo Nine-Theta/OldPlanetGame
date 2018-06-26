@@ -94,9 +94,24 @@ public class MinigameScoreScript : MonoBehaviour
 
     public void AddScoreToPlayer()
     {
-        if (LeaderboardTracker.Exists)
+        if (!LeaderboardTracker.Exists){
+            Debug.LogWarning("No LeaderboardTracker present in scene");
+            return;
+        }
+
+        switch (LevelStatsScript.Level)
         {
-            LeaderboardTracker.Instance.CurrentPlayer.Score += _score;
+            case 0:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreOne += _score;
+                break;
+            case 1:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreTwo += _score;
+                break;
+            case 2:
+                LeaderboardTracker.Instance.CurrentPlayer.ScoreThree += _score;
+                break;
+            default:
+                break;
         }
     }
 
