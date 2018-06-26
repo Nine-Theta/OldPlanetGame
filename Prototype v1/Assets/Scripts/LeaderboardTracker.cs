@@ -15,7 +15,10 @@ public class PlayerStats : IComparable<PlayerStats>
     private int _score = 0;
     private DifficultyMode _difficulty = DifficultyMode.MEDIUM;
     private DateTime _date = DateTime.Today;
-    private float _time = 0.0f;
+    private float _timeOne = 0.0f;
+    private float _timeTwo = 0.0f;
+    private float _timeThree = 0.0f;
+    private float _timeTotal = 0.0f;
     private int _achievedLevel = 0;
     private string _feedback = "Needs more salt";
 
@@ -25,7 +28,10 @@ public class PlayerStats : IComparable<PlayerStats>
         _score = pScore;
         _difficulty = pDifficulty;
         _date = DateTime.Today;
-        _time = 0.0f;
+        _timeOne = 0.0f;
+        _timeTwo = 0.0f;
+        _timeThree = 0.0f;
+        _timeTotal = 0.0f;
         _achievedLevel = 0;
         _feedback = "Needs more salt";
     }
@@ -44,7 +50,7 @@ public class PlayerStats : IComparable<PlayerStats>
         int.TryParse(stats[1], out _score);
         _difficulty =  (DifficultyMode)Enum.Parse(typeof(DifficultyMode), stats[2]);
         _date = DateTime.Parse(stats[3]);
-        _time = float.Parse(stats[4]);
+        _timeTotal = float.Parse(stats[4]);
         _achievedLevel = int.Parse(stats[5]);
         _feedback = stats[6];
 
@@ -67,7 +73,16 @@ public class PlayerStats : IComparable<PlayerStats>
     { get { return _date.ToShortDateString(); } }
 
     public float Time
-    { get { return _time; } set { _time = value; } }
+    { get { return _timeTotal; } }
+
+    public float TimeOne
+    { get { return _timeOne; } set { _timeOne = value; TotalOfTime(); } }
+
+    public float TimeTwo
+    { get { return _timeTwo; } set { _timeTwo = value; TotalOfTime(); } }
+
+    public float TimeThree
+    { get { return _timeThree; } set { _timeThree = value; TotalOfTime(); } }
 
     public int AchievedLevel
     { get { return _achievedLevel; } set { _achievedLevel = value; } }
@@ -78,14 +93,19 @@ public class PlayerStats : IComparable<PlayerStats>
     public int CompareTo(PlayerStats pOther)
     {
         if (_score == pOther.Score)
-            return (_time.CompareTo(pOther.Time));
+            return (_timeTotal.CompareTo(pOther.Time));
         else
             return (_score.CompareTo(pOther.Score));
     }
 
+    private void TotalOfTime()
+    {
+        _timeTotal = _timeOne + _timeTwo + _timeThree;
+    }
+
     public override string ToString()
     {
-        return _name + "," + _score + "," + _difficulty + "," + _date + "," + _time + "," + _achievedLevel + "," + _feedback;
+        return _name + "," + _score + "," + _difficulty + "," + _date + "," + _timeTotal + "," + _achievedLevel + "," + _feedback;
     }
 }
 

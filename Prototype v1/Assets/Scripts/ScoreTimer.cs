@@ -23,10 +23,6 @@ public class ScoreTimer : MonoBehaviour {
 
     private int _currentLevel = 1;
 
-    private void Start () {
-		
-	}
-
     private void AddScore(float pTimeForMaxScore, float pTimeForNoScore)
     {
         if (_timer <= pTimeForMaxScore)
