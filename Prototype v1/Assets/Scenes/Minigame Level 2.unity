@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -316,7 +316,9 @@ MonoBehaviour:
   _sceneName: Minigame Level 2
   _debugText: {fileID: 0}
   _cloudBar: {fileID: 1185843626}
-  _minPoppedForClear: 15
+  _minCloudsSpawned: 32
+  _screenStartPos: 454.5
+  _minPoppedForClear: 30
 --- !u!224 &419866080
 RectTransform:
   m_ObjectHideFlags: 0
