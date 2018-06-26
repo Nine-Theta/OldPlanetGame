@@ -225,6 +225,7 @@ public class PowerPlantScript : InteractableScript
                 OnMaintained.Invoke();
             }
             _isBroken = false;
+            _upgradeEventCalled = false;
         }
     }
 
