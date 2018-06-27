@@ -79,7 +79,7 @@ public class MinigameScoreScript : MonoBehaviour
 
     public bool MinimumCloudsCleared()
     {
-        return _totalCloudsSpawned > _minPoppedForClear;
+        return _totalCloudsPopped > _minPoppedForClear;
     }
 
     public void ScorePoints(int value)
