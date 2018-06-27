@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class OnMouseOverScript : MonoBehaviour
+public class OnMouseOverScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private CustomEvent OnMouseOverEvent;
+    [SerializeField] private CustomEvent OnMouseEnter;
+    [SerializeField] private CustomEvent OnMouseExit;
 
     void Start()
     {
@@ -16,8 +18,13 @@ public class OnMouseOverScript : MonoBehaviour
 
     }
 
-    private void OnMouseOver()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        OnMouseOverEvent.Invoke();
+        OnMouseEnter.Invoke();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnMouseExit.Invoke();
     }
 }
