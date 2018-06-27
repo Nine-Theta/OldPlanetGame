@@ -23,7 +23,8 @@ public class PlayerStats : IComparable<PlayerStats>
     private float _timeThree = 0.0f;
     private float _timeTotal = 0.0f;
     private int _achievedLevel = 0;
-    private string _feedback = "Needs more salt";
+    private int _feedbackOpinion = 0;
+    private int _feedbackKnowledge = 0;
 
     public PlayerStats (string pName, int pScore, DifficultyMode pDifficulty)
     {
@@ -39,8 +40,9 @@ public class PlayerStats : IComparable<PlayerStats>
         _timeThree = 0.0f;
         _timeTotal = 0.0f;
         _achievedLevel = 0;
-        _feedback = "Needs more salt";
-    }
+        _feedbackOpinion = 0;
+        _feedbackKnowledge = 0;
+}
 
     public PlayerStats(string pStream)
     {
@@ -58,7 +60,8 @@ public class PlayerStats : IComparable<PlayerStats>
         _date = DateTime.Parse(stats[3]);
         _timeTotal = float.Parse(stats[4]);
         _achievedLevel = int.Parse(stats[5]);
-        _feedback = stats[6];
+        _feedbackOpinion = int.Parse(stats[6]);
+        _feedbackKnowledge = int.Parse(stats[7]);
 
         //Debug.Log("Created PlayerStats with stats: "+ pStream);
     }
@@ -102,8 +105,11 @@ public class PlayerStats : IComparable<PlayerStats>
     public int AchievedLevel
     { get { return _achievedLevel; } set { _achievedLevel = value; } }
 
-    public string Feedback
-    { get { return _feedback; } set { _feedback = value; } }
+    public int FeedbackOpinion
+    { get { return _feedbackOpinion; } set { _feedbackOpinion = value; } }
+
+    public int FeedbackKnowledge
+    { get { return _feedbackKnowledge; } set { _feedbackKnowledge = value; } }
 
     public int CompareTo(PlayerStats pOther)
     {
@@ -126,7 +132,7 @@ public class PlayerStats : IComparable<PlayerStats>
 
     public override string ToString()
     {
-        return _name + "," + _scoreTotal + "," + _difficulty + "," + _date + "," + _timeTotal + "," + _achievedLevel + "," + _feedback;
+        return _name + "," + _scoreTotal + "," + _difficulty + "," + _date + "," + _timeTotal + "," + _achievedLevel + "," + _feedbackOpinion + "," +_feedbackKnowledge;
     }
 }
 
