@@ -46,10 +46,10 @@ public class PlayerStats : IComparable<PlayerStats>
     {
         string[] stats = pStream.Split(',');
 
-        Debug.Log("stream: " + pStream);
+        //Debug.Log("stream: " + pStream);
         for (int i = 0; i < stats.Length; i++)
         {
-            Debug.Log("stats [" +i+"] : " +stats[i]);
+            //Debug.Log("stats [" +i+"] : " +stats[i]);
         }
 
         _name = stats[0];
@@ -60,13 +60,13 @@ public class PlayerStats : IComparable<PlayerStats>
         _achievedLevel = int.Parse(stats[5]);
         _feedback = stats[6];
 
-        Debug.Log("Created PlayerStats with stats: "+ pStream);
+        //Debug.Log("Created PlayerStats with stats: "+ pStream);
     }
 
     public string Name
     { get { return _name; } set { _name = value; } }
 
-    public int Score
+    public int ScoreTotal
     { get { return _scoreTotal; } }
 
     public int ScoreOne
@@ -107,10 +107,10 @@ public class PlayerStats : IComparable<PlayerStats>
 
     public int CompareTo(PlayerStats pOther)
     {
-        if (_scoreTotal == pOther.Score)
+        if (_scoreTotal == pOther.ScoreTotal)
             return (_timeTotal.CompareTo(pOther.Time));
         else
-            return (_scoreTotal.CompareTo(pOther.Score));
+            return (_scoreTotal.CompareTo(pOther.ScoreTotal));
     }
 
     private void TotalOfScore()
@@ -231,9 +231,9 @@ public class LeaderboardTracker : MonoBehaviour {
         PlayerStats defaultPlayerEasy2 = new PlayerStats("TheLegend26", 40, DifficultyMode.EASY);
         _overallBoardEasy.Add(defaultPlayerEasy);
         _overallBoardEasy.Add(defaultPlayerEasy2);
-        Debug.Log("TestRunSave");
+        //Debug.Log("TestRunSave");
         SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
-        Debug.Log("TestRunRead");
+        //Debug.Log("TestRunRead");
         _overallBoardEasy = ReadBoardFromFile(DifficultyMode.EASY);
     }
 
@@ -309,14 +309,14 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private bool CheckPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
-        return pBoard[pBoard.Count-1].Score < pPlayer.Score;
+        return pBoard[pBoard.Count-1].ScoreTotal < pPlayer.ScoreTotal;
     }
 
     private void AddPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
         for(int i = 0; i < pBoard.Count; i++)
         {
-            if (pBoard[i].Score < pPlayer.Score)
+            if (pBoard[i].ScoreTotal < pPlayer.ScoreTotal)
             {
                 pBoard.RemoveAt(pBoard.Capacity-1);
                 pBoard.Insert(i, pPlayer);

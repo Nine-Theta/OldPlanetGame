@@ -23,8 +23,25 @@ public class ScoreToStarScript : MonoBehaviour {
     private void CalculateStars()
     {
         int score = 0;
-        if (LeaderboardTracker.Exists)
-            score = LeaderboardTracker.Instance.CurrentPlayer.Score;
+
+        if (LeaderboardTracker.Exists) {
+            switch (_level)
+            {
+                case 1:
+                    score = LeaderboardTracker.Instance.CurrentPlayer.ScoreOne;
+                    break;
+                case 2:
+                    score = LeaderboardTracker.Instance.CurrentPlayer.ScoreTwo;
+                    break;
+                case 3:
+                    score = LeaderboardTracker.Instance.CurrentPlayer.ScoreThree;
+                    break;
+                default:
+                    Debug.LogError("Incorrect level for StarScript");
+                    break;
+            }
+        }
+            
 
         if(score >= 0 && score <= 5) //No stars for you;
         {

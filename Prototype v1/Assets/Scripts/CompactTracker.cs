@@ -36,7 +36,7 @@ public class CompactStats
     public CompactStats(PlayerStats pPlayer)
     {
         _name = pPlayer.Name;
-        _score = pPlayer.Score;
+        _score = pPlayer.ScoreTotal;
         _difficulty = pPlayer.Difficulty;
         _date = pPlayer.Date;
     }

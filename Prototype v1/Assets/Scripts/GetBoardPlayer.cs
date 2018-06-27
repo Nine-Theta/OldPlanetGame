@@ -21,7 +21,7 @@ public class GetBoardPlayer : MonoBehaviour {
             Debug.Log("playerdisplays length: " + _playerDisplays.Length);
             _playerDisplays[i] = fitters[i].GetComponentInChildren<Text>();
             PlayerStats p = LeaderboardTracker.Instance.GetPlayerInfo(_difficulty, i, _isDaily);
-            _playerDisplays[i].text = (p.Name + " : [" + p.Score +"]\nOp: " +p.Day);// LeaderboardTracker.Instance.GetPlayerInfo(_difficulty, i, _isDaily).ToString();
+            _playerDisplays[i].text = (p.Name + " : [" + p.ScoreTotal +"]\nOp: " +p.Day);// LeaderboardTracker.Instance.GetPlayerInfo(_difficulty, i, _isDaily).ToString();
         }
 
 
