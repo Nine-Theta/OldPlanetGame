@@ -43,7 +43,7 @@ public class ScoreTimer : MonoBehaviour {
         else
         {
             float deltaStarTime = pTimeForNoScore - pTimeForMaxScore;
-            score = Mathf.CeilToInt(((deltaStarTime - (_timer - pTimeForMaxScore)) / (deltaStarTime)) * (_maxScore - 1));
+            score = Mathf.CeilToInt(((deltaStarTime - _timer) / deltaStarTime) * (_maxScore - 1));
         }
 
         switch (_currentLevel)

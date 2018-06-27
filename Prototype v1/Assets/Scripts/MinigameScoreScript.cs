@@ -50,7 +50,7 @@ public class MinigameScoreScript : MonoBehaviour
 
     private void EndMinigame()
     {
-        if (_totalCloudsPopped > _minCloudsSpawned)
+        if (_totalCloudsPopped >= _minCloudsSpawned)
             _score = 20;
         else if (_totalCloudsPopped > _minPoppedForClear)
             _score = 10 + ((_totalCloudsPopped - _minPoppedForClear)/(_minCloudsSpawned - _minPoppedForClear) * 10);
