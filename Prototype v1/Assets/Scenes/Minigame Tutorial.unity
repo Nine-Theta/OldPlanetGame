@@ -593,7 +593,7 @@ MonoBehaviour:
   - prefabs:
     - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
     - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-    delayBeforeSpawn: 0
+    delayBeforeSpawn: 1
     baseSpawnTime: 1
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 1
@@ -613,6 +613,13 @@ MonoBehaviour:
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 1
     stopSpawningAt: 30
+  - prefabs:
+    - {fileID: 1522893027786842, guid: 0ad58d6e2f18d25419a5d5dabd906000, type: 2}
+    delayBeforeSpawn: 0
+    baseSpawnTime: 1
+    spawnTimeDecreasePerSpawn: 0
+    minSpawnTime: 1
+    stopSpawningAt: 1
   distanceFromCenter: 40
   _speed: 0
 --- !u!1 &877046695
