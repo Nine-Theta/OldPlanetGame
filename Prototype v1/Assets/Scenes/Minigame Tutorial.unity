@@ -523,9 +523,9 @@ MonoBehaviour:
   _sceneName: Minigame Tutorial
   _debugText: {fileID: 0}
   _cloudBar: {fileID: 126055873}
-  _minCloudsSpawned: 32
+  _minCloudsSpawned: 40
   _screenStartPos: 454.5
-  _minPoppedForClear: 35
+  _minPoppedForClear: 30
 --- !u!224 &419866080
 RectTransform:
   m_ObjectHideFlags: 0
