@@ -1,22 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FeedbackUIScript : MonoBehaviour {
 
-	public void PassOpinionToBoard(int pFeedback = 1)
+    [SerializeField] private Slider SliderOpinion;
+    [SerializeField] private Slider SliderKnowledge;
+
+    public void PassOpinionToBoard()
     {
         if (LeaderboardTracker.Exists)
         {
-            LeaderboardTracker.Instance.CurrentPlayer.FeedbackOpinion = pFeedback;
+            LeaderboardTracker.Instance.CurrentPlayer.FeedbackOpinion = (int)SliderOpinion.value;
         }
     }
 
-    public void PassKnowledgeToBoard(int pFeedback = 1)
+    public void PassKnowledgeToBoard()
     {
         if (LeaderboardTracker.Exists)
         {
-            LeaderboardTracker.Instance.CurrentPlayer.FeedbackKnowledge = pFeedback;
+            LeaderboardTracker.Instance.CurrentPlayer.FeedbackKnowledge = (int)SliderKnowledge.value;
         }
     }
 }
