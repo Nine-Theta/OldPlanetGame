@@ -70,13 +70,13 @@ public class PlayerStats : IComparable<PlayerStats>
     { get { return _scoreTotal; } }
 
     public int ScoreOne
-    { get { return _scoreOne; } set { _scoreOne = value; TotalOfScore(); } }
+    { get { return _scoreOne; } set { _scoreOne = value; TotalOfScore(); Debug.Log("ScoreOne increased: " + ScoreOne); } }
 
     public int ScoreTwo
-    { get { return _scoreTwo; } set { _scoreTwo = value; TotalOfScore(); } }
+    { get { return _scoreTwo; } set { _scoreTwo = value; TotalOfScore(); Debug.Log("ScoreTwo increased: " + ScoreTwo); } }
 
     public int ScoreThree
-    { get { return _scoreThree; } set { _scoreThree = value; TotalOfScore(); } }
+    { get { return _scoreThree; } set { _scoreThree = value; TotalOfScore(); Debug.Log("ScoreThree increased: " + ScoreThree); } }
 
     public DifficultyMode Difficulty
     { get { return _difficulty; } set { _difficulty = value; } }
@@ -116,6 +116,7 @@ public class PlayerStats : IComparable<PlayerStats>
     private void TotalOfScore()
     {
         _scoreTotal = _scoreOne + _scoreTwo + _scoreThree;
+        Debug.Log("ScoreTotal increased: " + ScoreTotal+ " Score 1,2,3: " + ScoreOne + " " + ScoreTwo + " " +ScoreThree);
     }
 
     private void TotalOfTime()

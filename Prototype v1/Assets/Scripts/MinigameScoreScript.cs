@@ -50,7 +50,9 @@ public class MinigameScoreScript : MonoBehaviour
 
     private void EndMinigame()
     {
-        if (_totalCloudsPopped > _minPoppedForClear)
+        if (_totalCloudsPopped > _minCloudsSpawned)
+            _score = 20;
+        else if (_totalCloudsPopped > _minPoppedForClear)
             _score = 10 + ((_totalCloudsPopped - _minPoppedForClear)/(_minCloudsSpawned - _minPoppedForClear) * 10);
         else
             _score = 0;
@@ -79,7 +81,8 @@ public class MinigameScoreScript : MonoBehaviour
 
     public void ScorePoints(int value)
     {
-        _score += value;
+        Debug.Log("[MinigameScoreScript]: ScorePoints is discontinued");
+        //_score += value;
     }
 
     public void CloudSpawned(int pCloudValue)
