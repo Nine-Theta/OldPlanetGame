@@ -48,11 +48,13 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnHappinessDown;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
     [SerializeField] private CustomEvent OnResearchSpend;
+    [SerializeField] private CustomEvent OnHappinessZero;
 
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
 
     private bool _researchThresholdEventCalled = false;
+    private bool _happinessZeroEventCalled = false;
 
     public void SetUpgradeCost(int value)
     {
@@ -141,10 +143,17 @@ public class CityScript : MonoBehaviour
         if (oldHappiness < Mathf.FloorToInt(_happiness))
         {
             OnHappinessUp.Invoke();
+            _happinessZeroEventCalled = false;
         }
         if (oldHappiness > Mathf.FloorToInt(_happiness))
         {
             OnHappinessDown.Invoke();
+
+            if (!_happinessZeroEventCalled && _happiness <= 0)
+            {
+                _happinessZeroEventCalled = true;
+                OnHappinessZero.Invoke();
+            }
         }
     }
 
