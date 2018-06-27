@@ -39,9 +39,9 @@ public class MinigameScoreScript : MonoBehaviour
             SkipMinigame();
         }
 
-        if(_minCloudsSpawned >= _totalCloudsPopped)
+        if (_minCloudsSpawned >= _totalCloudsPopped)
         {
-            _cloudBar.position = new Vector3(_cloudBar.position.x, (((float)(_minCloudsSpawned - _totalCloudsPopped) /_minCloudsSpawned) * (_screenStartPos*2)) - _screenStartPos, 0);
+            _cloudBar.position = new Vector3(_cloudBar.position.x, (((float)(_minCloudsSpawned - _totalCloudsPopped) / _minCloudsSpawned) * (_screenStartPos * 2)) - _screenStartPos, 0);
             //Debug.Log("y: "+_cloudBar.position.y+" mincloudspawned: " + _minCloudsSpawned + " ScreenStartPos: " + _screenStartPos + " totalcloudspopped: " + _totalCloudsPopped + "Where it should be: " + ((((_minCloudsSpawned - _totalCloudsPopped) / _minCloudsSpawned) * (_screenStartPos * 2)) - _screenStartPos));
         }
 
@@ -53,14 +53,17 @@ public class MinigameScoreScript : MonoBehaviour
         if (_totalCloudsPopped >= _minCloudsSpawned)
             _score = 20;
         else if (_totalCloudsPopped > _minPoppedForClear)
-            _score = 10 + ((_totalCloudsPopped - _minPoppedForClear)/(_minCloudsSpawned - _minPoppedForClear) * 10);
+            _score = 10 + ((_totalCloudsPopped - _minPoppedForClear) / (_minCloudsSpawned - _minPoppedForClear) * 10);
         else
             _score = 0;
         AddScoreToPlayer();
         if (GameObject.Find("Clouds_PS") != null)
             GameObject.Find("Clouds_PS").SetActive(false);
         Time.timeScale = 1;
-        MinigameResponseScript.MinigameWon();
+        if (MinimumCloudsCleared())
+            MinigameResponseScript.MinigameWon();
+        else
+            MinigameResponseScript.MinigameLost();
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(_sceneName);
     }
 
@@ -71,7 +74,7 @@ public class MinigameScoreScript : MonoBehaviour
 
     public float GetPercentageCloudsCleared()
     {
-        return ((float)_totalCloudsPopped/(float)_totalCloudsSpawned)*100;
+        return ((float)_totalCloudsPopped / (float)_totalCloudsSpawned) * 100;
     }
 
     public bool MinimumCloudsCleared()
@@ -97,7 +100,8 @@ public class MinigameScoreScript : MonoBehaviour
 
     public void AddScoreToPlayer()
     {
-        if (!LeaderboardTracker.Exists){
+        if (!LeaderboardTracker.Exists)
+        {
             Debug.LogWarning("No LeaderboardTracker present in scene");
             return;
         }
