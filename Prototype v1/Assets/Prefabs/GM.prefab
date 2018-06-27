@@ -460,7 +460,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 40
+        repairPerTap: 50
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 1
@@ -515,7 +515,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 30
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 1
@@ -524,7 +524,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0
@@ -579,7 +579,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 101
-        repairPerTap: 10
+        repairPerTap: 40
       FossilFuelPowerPlantTier1:
         pollutionPerTick: 1
         currentPollution: 100
@@ -681,7 +681,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 30
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.5
@@ -690,7 +690,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0
@@ -736,7 +736,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 30
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.6
@@ -745,7 +745,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0
@@ -792,7 +792,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 40
+        repairPerTap: 50
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.4
@@ -847,7 +847,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 30
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.5
@@ -856,7 +856,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0.5
@@ -902,7 +902,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 20
-        repairPerTap: 30
+        repairPerTap: 40
       NuclearPowerPlantTier2:
         maxWaste: 100
         wasteGenPerTick: 0.6
@@ -911,7 +911,7 @@ MonoBehaviour:
         repairThreshold: 150
         maintenanceAlertThreshold: 150
         UpgradeCost: 50
-        repairPerTap: 20
+        repairPerTap: 40
       NuclearPowerPlantTier3:
         maxWaste: 100
         wasteGenPerTick: 0
