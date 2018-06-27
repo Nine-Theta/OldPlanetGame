@@ -523,9 +523,9 @@ MonoBehaviour:
   _sceneName: Minigame Tutorial
   _debugText: {fileID: 0}
   _cloudBar: {fileID: 126055873}
-  _minCloudsSpawned: 40
+  _minCloudsSpawned: 50
   _screenStartPos: 454.5
-  _minPoppedForClear: 30
+  _minPoppedForClear: 40
 --- !u!224 &419866080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   - prefabs:
     - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
     - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-    delayBeforeSpawn: 1
+    delayBeforeSpawn: 2
     baseSpawnTime: 1
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 1
@@ -601,7 +601,7 @@ MonoBehaviour:
   - prefabs:
     - {fileID: 1367380591432846, guid: 78b0a4a1f4d51f146a4a4ba645a9576c, type: 2}
     - {fileID: 1405111833702730, guid: df2e47601e6b4564abc08335bb5a12d8, type: 2}
-    delayBeforeSpawn: 0
+    delayBeforeSpawn: 2
     baseSpawnTime: 1
     spawnTimeDecreasePerSpawn: 0
     minSpawnTime: 1

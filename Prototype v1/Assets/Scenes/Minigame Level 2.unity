@@ -316,7 +316,7 @@ MonoBehaviour:
   _sceneName: Minigame Level 2
   _debugText: {fileID: 0}
   _cloudBar: {fileID: 1185843626}
-  _minCloudsSpawned: 45
+  _minCloudsSpawned: 50
   _screenStartPos: 454.5
   _minPoppedForClear: 40
 --- !u!224 &419866080
