@@ -41,7 +41,6 @@ public class ScoreToStarScript : MonoBehaviour {
                     break;
             }
         }
-            
 
         if(score >= 0 && score <= 5) //No stars for you;
         {
@@ -81,15 +80,15 @@ public class ScoreToStarScript : MonoBehaviour {
         {
             case 1:
                 _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreOne.ToString();
-                _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeOne.ToString();
+                _timeText.text = Mathf.Round(LeaderboardTracker.Instance.CurrentPlayer.TimeOne).ToString();
                 break;
             case 2:
                 _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreTwo.ToString();
-                _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeTwo.ToString();
+                _timeText.text = Mathf.Round(LeaderboardTracker.Instance.CurrentPlayer.TimeTwo).ToString();
                 break;
             case 3:
                 _scoreText.text = LeaderboardTracker.Instance.CurrentPlayer.ScoreThree.ToString();
-                _timeText.text = LeaderboardTracker.Instance.CurrentPlayer.TimeThree.ToString();
+                _timeText.text = Mathf.Round(LeaderboardTracker.Instance.CurrentPlayer.TimeThree).ToString();
                 break;
             default:
                 Debug.LogError("Incorrect level for StarScript");
