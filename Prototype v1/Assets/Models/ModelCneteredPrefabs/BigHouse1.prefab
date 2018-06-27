@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4923917825421722}
   - component: {fileID: 33283417445769052}
   - component: {fileID: 23514716145283908}
+  - component: {fileID: 65241196405406622}
   m_Layer: 0
   m_Name: Big house 1
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1799399826521408}
-  m_LocalRotation: {x: -0.57697934, y: -0.66419995, z: -0.22572753, w: 0.41830656}
+  m_LocalRotation: {x: -0.6794144, y: -0.6503843, z: -0.1585832, w: 0.3004128}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4923917825421722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -51.496002, y: -151.695, z: 68.093}
+  m_LocalEulerAnglesHint: {x: -37.915, y: -167.16301, z: 88.075005}
 --- !u!4 &4923917825421722
 Transform:
   m_ObjectHideFlags: 1
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160652425823500}
   m_Mesh: {fileID: 4300000, guid: abbbfd5f1eb130f4298c6ad7f55ccf86, type: 3}
+--- !u!65 &65241196405406622
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1160652425823500}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7126838, y: 1.0300138, z: 0.7063288}
+  m_Center: {x: -0.00000033048548, y: 0.51487696, z: 0.0000013546846}

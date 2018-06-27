@@ -157,6 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4881118538947804}
   - component: {fileID: 114208026593302704}
+  - component: {fileID: 65222896828156912}
   m_Layer: 0
   m_Name: FFPP
   m_TagString: Untagged
@@ -878,6 +879,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269450808230682}
   m_Mesh: {fileID: 4300000, guid: 8300eba5a4c6b204580d898cdec145fd, type: 3}
+--- !u!65 &65222896828156912
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316471999717088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42036682, y: 0.45434147, z: 0.3222564}
+  m_Center: {x: 0.0005141377, y: 1.4938555, z: 0.020555334}
 --- !u!95 &95468076547888012
 Animator:
   serializedVersion: 3
@@ -1118,7 +1131,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316471999717088}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c0375b9a52b064a92a6bc348b784a9, type: 3}
   m_Name: 
