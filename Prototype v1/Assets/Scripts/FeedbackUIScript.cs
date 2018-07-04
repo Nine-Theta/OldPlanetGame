@@ -23,4 +23,12 @@ public class FeedbackUIScript : MonoBehaviour {
             LeaderboardTracker.Instance.CurrentPlayer.FeedbackKnowledge = (int)SliderKnowledge.value;
         }
     }
+
+    public void TryAddCurrentPlayer()
+    {
+        if (LeaderboardTracker.Exists)
+        {
+            LeaderboardTracker.Instance.TryAddCurrentPlayer();
+        }
+    }
 }

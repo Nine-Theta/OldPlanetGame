@@ -59,10 +59,6 @@ public class EndConditionScript : MonoBehaviour
                 goto default;
             case 3:
                 instance.OnLevel3Complete.Invoke();
-                if (LeaderboardTracker.Exists)
-                {
-                    LeaderboardTracker.Instance.TryAddCurrentPlayer();
-                }
                 goto default;
 
             default:
