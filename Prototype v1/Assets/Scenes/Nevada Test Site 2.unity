@@ -26698,6 +26698,11 @@ Prefab:
       propertyPath: level3.hard.City.wastePenaltyPerBarrel
       value: 0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 114829163073184392, guid: 5865af93ab2704d42bd8a6046ae3965d,
+        type: 2}
+      propertyPath: _timeForMaxScoreLevelTwo
+      value: 37
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5865af93ab2704d42bd8a6046ae3965d, type: 2}
   m_IsPrefabParent: 0
@@ -51970,6 +51975,10 @@ Prefab:
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1408174140123768, guid: cada7d0e9544c5648acbd9c15071ec0e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cada7d0e9544c5648acbd9c15071ec0e, type: 2}
   m_IsPrefabParent: 0
@@ -57069,6 +57078,10 @@ Prefab:
     - target: {fileID: 4733347223318550, guid: 23f9602134ac3994fa248802f94b10e4, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524115004091948, guid: 23f9602134ac3994fa248802f94b10e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23f9602134ac3994fa248802f94b10e4, type: 2}

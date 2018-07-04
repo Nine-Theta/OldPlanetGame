@@ -29,6 +29,7 @@ public class TekstInterpreteerder : MonoBehaviour {
 
     public void SetName()
     {
+        LeaderboardTracker.Instance.ClearPlayer();
         if (_name == "") _name = "NAAM";
         LeaderboardTracker.Instance.CurrentPlayer.Name = _name;
     }

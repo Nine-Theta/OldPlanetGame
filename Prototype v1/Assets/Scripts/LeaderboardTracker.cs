@@ -189,6 +189,15 @@ public class LeaderboardTracker : MonoBehaviour {
         get { return _currentPlayer; }
     }
 
+    public void ClearPlayer()
+    {
+        if(_currentPlayer != null)
+        {
+            _currentPlayer = null;
+        }
+        _currentPlayer = new PlayerStats("NAAM", 1, DifficultyMode.MEDIUM);
+    }
+
     private void InitializeBoards()
     {
         EmptyBoard(_dailyBoardEasy, DifficultyMode.EASY);
