@@ -1,177 +1,513 @@
 fileFormatVersion: 2
 guid: 257b77f915c99c5418e88925de2eb79a
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Sprite for arrow_0
-    21300002: Sprite for arrow_1
-    21300004: Sprite for arrow_2
-    21300006: Sprite for arrow_3
-    21300008: Sprite for arrow_4
-    21300010: Sprite for arrow_5
-    21300012: Sprite for arrow_6
-    21300014: Sprite for arrow_7
-    21300016: Sprite for arrow_8
-    21300018: Sprite for arrow_9
-    21300020: Sprite for arrow_10
-    21300022: Sprite for arrow_11
-    21300024: Sprite for arrow_12
-    21300026: Sprite for arrow_13
-    21300028: Sprite for arrow_14
-    21300030: Sprite for arrow_15
-    21300032: Sprite for arrow_16
-    21300034: Sprite for arrow_17
-    21300036: Sprite for arrow_18
-    21300038: Sprite for arrow_19
-    21300040: Sprite for arrow_20
-    21300042: Sprite for arrow_21
-    21300044: Sprite for arrow_22
-    21300046: Sprite for arrow_23
-    21300048: Sprite for arrow_24
-    21300050: Sprite for arrow_25
-    21300052: Sprite for arrow_26
-    21300054: Sprite for arrow_27
-    21300056: Sprite for arrow_28
-    21300058: Sprite for arrow_29
-    21300060: Sprite for arrow_30
-    21300062: Sprite for arrow_31
-    21300064: Sprite for arrow_32
-    21300066: Sprite for arrow_33
-    21300068: Sprite for arrow_34
-    21300070: Sprite for arrow_35
-    21300072: Sprite for arrow_36
-    21300074: Sprite for arrow_37
-    21300076: Sprite for arrow_38
-    21300078: Sprite for arrow_39
-    21300080: Sprite for arrow_40
-    21300082: Sprite for arrow_41
-    21300084: Sprite for arrow_42
-    21300086: Sprite for arrow_43
-    21300088: Sprite for arrow_44
-    21300090: Sprite for arrow_45
-    21300092: Sprite for arrow_46
-    21300094: Sprite for arrow_47
-    21300096: Sprite for arrow_48
-    21300098: Sprite for arrow_49
-    21300100: Sprite for arrow_50
-    21300102: Sprite for arrow_51
-    21300104: Sprite for arrow_52
-    21300106: Sprite for arrow_53
-    21300108: Sprite for arrow_54
-    21300110: Sprite for arrow_55
-    21300112: Sprite for arrow_56
-    21300114: Sprite for arrow_57
-    21300116: Sprite for arrow_58
-    21300118: Sprite for arrow_59
-    21300120: Sprite for arrow_60
-    21300122: Sprite for arrow_61
-    21300124: Sprite for arrow_62
-    21300126: Sprite for arrow_63
-    21300128: Sprite for arrow_64
-    21300130: Sprite for arrow_65
-    21300132: Sprite for arrow_66
-    21300134: Sprite for arrow_67
-    21300136: Sprite for arrow_68
-    21300138: Sprite for arrow_69
-    21300140: Sprite for arrow_70
-    21300142: Sprite for arrow_71
-    21300144: Sprite for arrow_72
-    21300146: Sprite for arrow_73
-    21300148: Sprite for arrow_74
-    21300150: Sprite for arrow_75
-    21300152: Sprite for arrow_76
-    21300154: Sprite for arrow_77
-    21300156: Sprite for arrow_78
-    21300158: Sprite for arrow_79
-    21300160: Sprite for arrow_80
-    21300162: Sprite for arrow_81
-    21300164: Sprite for arrow_82
-    21300166: Sprite for arrow_83
-    21300168: Sprite for arrow_84
-    21300170: Sprite for arrow_85
-    21300172: Sprite for arrow_86
-    21300174: Sprite for arrow_87
-    21300176: Sprite for arrow_88
-    21300178: Sprite for arrow_89
-    21300180: Sprite for arrow_90
-    21300182: Sprite for arrow_91
-    21300184: Sprite for arrow_92
-    21300186: Sprite for arrow_93
-    21300188: Sprite for arrow_94
-    21300190: Sprite for arrow_95
-    21300192: Sprite for arrow_96
-    21300194: Sprite for arrow_97
-    21300196: Sprite for arrow_98
-    21300198: Sprite for arrow_99
-    21300200: Sprite for arrow_100
-    21300202: Sprite for arrow_101
-    21300204: Sprite for arrow_102
-    21300206: Sprite for arrow_103
-    21300208: Sprite for arrow_104
-    21300210: Sprite for arrow_105
-    21300212: Sprite for arrow_106
-    21300214: Sprite for arrow_107
-    21300216: Sprite for arrow_108
-    21300218: Sprite for arrow_109
-    21300220: Sprite for arrow_110
-    21300222: Sprite for arrow_111
-    21300224: Sprite for arrow_112
-    21300226: Sprite for arrow_113
-    21300228: Sprite for arrow_114
-    21300230: Sprite for arrow_115
-    21300232: Sprite for arrow_116
-    21300234: Sprite for arrow_117
-    21300236: Sprite for arrow_118
-    21300238: Sprite for arrow_119
-    21300240: Sprite for arrow_120
-    21300242: Sprite for arrow_121
-    21300244: Sprite for arrow_122
-    21300246: Sprite for arrow_123
-    21300248: Sprite for arrow_124
-    21300250: Sprite for arrow_125
-    21300252: Sprite for arrow_126
-    21300254: Sprite for arrow_127
-    21300256: Sprite for arrow_128
-    21300258: Sprite for arrow_129
-    21300260: Sprite for arrow_130
-    21300262: Sprite for arrow_131
-    21300264: Sprite for arrow_132
-    21300266: Sprite for arrow_133
-    21300268: Sprite for arrow_134
-    21300270: Sprite for arrow_135
-    21300272: Sprite for arrow_136
-    21300274: Sprite for arrow_137
-    21300276: Sprite for arrow_138
-    21300278: Sprite for arrow_139
-    21300280: Sprite for arrow_140
-    21300282: Sprite for arrow_141
-    21300284: Sprite for arrow_142
-    21300286: Sprite for arrow_143
-    21300288: Sprite for arrow_144
-    21300290: Sprite for arrow_145
-    21300292: Sprite for arrow_146
-    21300294: Sprite for arrow_147
-    21300296: Sprite for arrow_148
-    21300298: Sprite for arrow_149
-    21300300: Sprite for arrow_150
-    21300302: Sprite for arrow_151
-    21300304: Sprite for arrow_152
-    21300306: Sprite for arrow_153
-    21300308: Sprite for arrow_154
-    21300310: Sprite for arrow_155
-    21300312: Sprite for arrow_156
-    21300314: Sprite for arrow_157
-    21300316: Sprite for arrow_158
-    21300318: Sprite for arrow_159
-    21300320: Sprite for arrow_160
-    21300322: Sprite for arrow_161
-    21300324: Sprite for arrow_162
-    21300326: Sprite for arrow_163
-    21300328: Sprite for arrow_164
-    21300330: Sprite for arrow_165
-    21300332: Sprite for arrow_166
-    21300334: Sprite for arrow_167
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Sprite for arrow_0
+  - first:
+      213: 21300002
+    second: Sprite for arrow_1
+  - first:
+      213: 21300004
+    second: Sprite for arrow_2
+  - first:
+      213: 21300006
+    second: Sprite for arrow_3
+  - first:
+      213: 21300008
+    second: Sprite for arrow_4
+  - first:
+      213: 21300010
+    second: Sprite for arrow_5
+  - first:
+      213: 21300012
+    second: Sprite for arrow_6
+  - first:
+      213: 21300014
+    second: Sprite for arrow_7
+  - first:
+      213: 21300016
+    second: Sprite for arrow_8
+  - first:
+      213: 21300018
+    second: Sprite for arrow_9
+  - first:
+      213: 21300020
+    second: Sprite for arrow_10
+  - first:
+      213: 21300022
+    second: Sprite for arrow_11
+  - first:
+      213: 21300024
+    second: Sprite for arrow_12
+  - first:
+      213: 21300026
+    second: Sprite for arrow_13
+  - first:
+      213: 21300028
+    second: Sprite for arrow_14
+  - first:
+      213: 21300030
+    second: Sprite for arrow_15
+  - first:
+      213: 21300032
+    second: Sprite for arrow_16
+  - first:
+      213: 21300034
+    second: Sprite for arrow_17
+  - first:
+      213: 21300036
+    second: Sprite for arrow_18
+  - first:
+      213: 21300038
+    second: Sprite for arrow_19
+  - first:
+      213: 21300040
+    second: Sprite for arrow_20
+  - first:
+      213: 21300042
+    second: Sprite for arrow_21
+  - first:
+      213: 21300044
+    second: Sprite for arrow_22
+  - first:
+      213: 21300046
+    second: Sprite for arrow_23
+  - first:
+      213: 21300048
+    second: Sprite for arrow_24
+  - first:
+      213: 21300050
+    second: Sprite for arrow_25
+  - first:
+      213: 21300052
+    second: Sprite for arrow_26
+  - first:
+      213: 21300054
+    second: Sprite for arrow_27
+  - first:
+      213: 21300056
+    second: Sprite for arrow_28
+  - first:
+      213: 21300058
+    second: Sprite for arrow_29
+  - first:
+      213: 21300060
+    second: Sprite for arrow_30
+  - first:
+      213: 21300062
+    second: Sprite for arrow_31
+  - first:
+      213: 21300064
+    second: Sprite for arrow_32
+  - first:
+      213: 21300066
+    second: Sprite for arrow_33
+  - first:
+      213: 21300068
+    second: Sprite for arrow_34
+  - first:
+      213: 21300070
+    second: Sprite for arrow_35
+  - first:
+      213: 21300072
+    second: Sprite for arrow_36
+  - first:
+      213: 21300074
+    second: Sprite for arrow_37
+  - first:
+      213: 21300076
+    second: Sprite for arrow_38
+  - first:
+      213: 21300078
+    second: Sprite for arrow_39
+  - first:
+      213: 21300080
+    second: Sprite for arrow_40
+  - first:
+      213: 21300082
+    second: Sprite for arrow_41
+  - first:
+      213: 21300084
+    second: Sprite for arrow_42
+  - first:
+      213: 21300086
+    second: Sprite for arrow_43
+  - first:
+      213: 21300088
+    second: Sprite for arrow_44
+  - first:
+      213: 21300090
+    second: Sprite for arrow_45
+  - first:
+      213: 21300092
+    second: Sprite for arrow_46
+  - first:
+      213: 21300094
+    second: Sprite for arrow_47
+  - first:
+      213: 21300096
+    second: Sprite for arrow_48
+  - first:
+      213: 21300098
+    second: Sprite for arrow_49
+  - first:
+      213: 21300100
+    second: Sprite for arrow_50
+  - first:
+      213: 21300102
+    second: Sprite for arrow_51
+  - first:
+      213: 21300104
+    second: Sprite for arrow_52
+  - first:
+      213: 21300106
+    second: Sprite for arrow_53
+  - first:
+      213: 21300108
+    second: Sprite for arrow_54
+  - first:
+      213: 21300110
+    second: Sprite for arrow_55
+  - first:
+      213: 21300112
+    second: Sprite for arrow_56
+  - first:
+      213: 21300114
+    second: Sprite for arrow_57
+  - first:
+      213: 21300116
+    second: Sprite for arrow_58
+  - first:
+      213: 21300118
+    second: Sprite for arrow_59
+  - first:
+      213: 21300120
+    second: Sprite for arrow_60
+  - first:
+      213: 21300122
+    second: Sprite for arrow_61
+  - first:
+      213: 21300124
+    second: Sprite for arrow_62
+  - first:
+      213: 21300126
+    second: Sprite for arrow_63
+  - first:
+      213: 21300128
+    second: Sprite for arrow_64
+  - first:
+      213: 21300130
+    second: Sprite for arrow_65
+  - first:
+      213: 21300132
+    second: Sprite for arrow_66
+  - first:
+      213: 21300134
+    second: Sprite for arrow_67
+  - first:
+      213: 21300136
+    second: Sprite for arrow_68
+  - first:
+      213: 21300138
+    second: Sprite for arrow_69
+  - first:
+      213: 21300140
+    second: Sprite for arrow_70
+  - first:
+      213: 21300142
+    second: Sprite for arrow_71
+  - first:
+      213: 21300144
+    second: Sprite for arrow_72
+  - first:
+      213: 21300146
+    second: Sprite for arrow_73
+  - first:
+      213: 21300148
+    second: Sprite for arrow_74
+  - first:
+      213: 21300150
+    second: Sprite for arrow_75
+  - first:
+      213: 21300152
+    second: Sprite for arrow_76
+  - first:
+      213: 21300154
+    second: Sprite for arrow_77
+  - first:
+      213: 21300156
+    second: Sprite for arrow_78
+  - first:
+      213: 21300158
+    second: Sprite for arrow_79
+  - first:
+      213: 21300160
+    second: Sprite for arrow_80
+  - first:
+      213: 21300162
+    second: Sprite for arrow_81
+  - first:
+      213: 21300164
+    second: Sprite for arrow_82
+  - first:
+      213: 21300166
+    second: Sprite for arrow_83
+  - first:
+      213: 21300168
+    second: Sprite for arrow_84
+  - first:
+      213: 21300170
+    second: Sprite for arrow_85
+  - first:
+      213: 21300172
+    second: Sprite for arrow_86
+  - first:
+      213: 21300174
+    second: Sprite for arrow_87
+  - first:
+      213: 21300176
+    second: Sprite for arrow_88
+  - first:
+      213: 21300178
+    second: Sprite for arrow_89
+  - first:
+      213: 21300180
+    second: Sprite for arrow_90
+  - first:
+      213: 21300182
+    second: Sprite for arrow_91
+  - first:
+      213: 21300184
+    second: Sprite for arrow_92
+  - first:
+      213: 21300186
+    second: Sprite for arrow_93
+  - first:
+      213: 21300188
+    second: Sprite for arrow_94
+  - first:
+      213: 21300190
+    second: Sprite for arrow_95
+  - first:
+      213: 21300192
+    second: Sprite for arrow_96
+  - first:
+      213: 21300194
+    second: Sprite for arrow_97
+  - first:
+      213: 21300196
+    second: Sprite for arrow_98
+  - first:
+      213: 21300198
+    second: Sprite for arrow_99
+  - first:
+      213: 21300200
+    second: Sprite for arrow_100
+  - first:
+      213: 21300202
+    second: Sprite for arrow_101
+  - first:
+      213: 21300204
+    second: Sprite for arrow_102
+  - first:
+      213: 21300206
+    second: Sprite for arrow_103
+  - first:
+      213: 21300208
+    second: Sprite for arrow_104
+  - first:
+      213: 21300210
+    second: Sprite for arrow_105
+  - first:
+      213: 21300212
+    second: Sprite for arrow_106
+  - first:
+      213: 21300214
+    second: Sprite for arrow_107
+  - first:
+      213: 21300216
+    second: Sprite for arrow_108
+  - first:
+      213: 21300218
+    second: Sprite for arrow_109
+  - first:
+      213: 21300220
+    second: Sprite for arrow_110
+  - first:
+      213: 21300222
+    second: Sprite for arrow_111
+  - first:
+      213: 21300224
+    second: Sprite for arrow_112
+  - first:
+      213: 21300226
+    second: Sprite for arrow_113
+  - first:
+      213: 21300228
+    second: Sprite for arrow_114
+  - first:
+      213: 21300230
+    second: Sprite for arrow_115
+  - first:
+      213: 21300232
+    second: Sprite for arrow_116
+  - first:
+      213: 21300234
+    second: Sprite for arrow_117
+  - first:
+      213: 21300236
+    second: Sprite for arrow_118
+  - first:
+      213: 21300238
+    second: Sprite for arrow_119
+  - first:
+      213: 21300240
+    second: Sprite for arrow_120
+  - first:
+      213: 21300242
+    second: Sprite for arrow_121
+  - first:
+      213: 21300244
+    second: Sprite for arrow_122
+  - first:
+      213: 21300246
+    second: Sprite for arrow_123
+  - first:
+      213: 21300248
+    second: Sprite for arrow_124
+  - first:
+      213: 21300250
+    second: Sprite for arrow_125
+  - first:
+      213: 21300252
+    second: Sprite for arrow_126
+  - first:
+      213: 21300254
+    second: Sprite for arrow_127
+  - first:
+      213: 21300256
+    second: Sprite for arrow_128
+  - first:
+      213: 21300258
+    second: Sprite for arrow_129
+  - first:
+      213: 21300260
+    second: Sprite for arrow_130
+  - first:
+      213: 21300262
+    second: Sprite for arrow_131
+  - first:
+      213: 21300264
+    second: Sprite for arrow_132
+  - first:
+      213: 21300266
+    second: Sprite for arrow_133
+  - first:
+      213: 21300268
+    second: Sprite for arrow_134
+  - first:
+      213: 21300270
+    second: Sprite for arrow_135
+  - first:
+      213: 21300272
+    second: Sprite for arrow_136
+  - first:
+      213: 21300274
+    second: Sprite for arrow_137
+  - first:
+      213: 21300276
+    second: Sprite for arrow_138
+  - first:
+      213: 21300278
+    second: Sprite for arrow_139
+  - first:
+      213: 21300280
+    second: Sprite for arrow_140
+  - first:
+      213: 21300282
+    second: Sprite for arrow_141
+  - first:
+      213: 21300284
+    second: Sprite for arrow_142
+  - first:
+      213: 21300286
+    second: Sprite for arrow_143
+  - first:
+      213: 21300288
+    second: Sprite for arrow_144
+  - first:
+      213: 21300290
+    second: Sprite for arrow_145
+  - first:
+      213: 21300292
+    second: Sprite for arrow_146
+  - first:
+      213: 21300294
+    second: Sprite for arrow_147
+  - first:
+      213: 21300296
+    second: Sprite for arrow_148
+  - first:
+      213: 21300298
+    second: Sprite for arrow_149
+  - first:
+      213: 21300300
+    second: Sprite for arrow_150
+  - first:
+      213: 21300302
+    second: Sprite for arrow_151
+  - first:
+      213: 21300304
+    second: Sprite for arrow_152
+  - first:
+      213: 21300306
+    second: Sprite for arrow_153
+  - first:
+      213: 21300308
+    second: Sprite for arrow_154
+  - first:
+      213: 21300310
+    second: Sprite for arrow_155
+  - first:
+      213: 21300312
+    second: Sprite for arrow_156
+  - first:
+      213: 21300314
+    second: Sprite for arrow_157
+  - first:
+      213: 21300316
+    second: Sprite for arrow_158
+  - first:
+      213: 21300318
+    second: Sprite for arrow_159
+  - first:
+      213: 21300320
+    second: Sprite for arrow_160
+  - first:
+      213: 21300322
+    second: Sprite for arrow_161
+  - first:
+      213: 21300324
+    second: Sprite for arrow_162
+  - first:
+      213: 21300326
+    second: Sprite for arrow_163
+  - first:
+      213: 21300328
+    second: Sprite for arrow_164
+  - first:
+      213: 21300330
+    second: Sprite for arrow_165
+  - first:
+      213: 21300332
+    second: Sprite for arrow_166
+  - first:
+      213: 21300334
+    second: Sprite for arrow_167
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -189,6 +525,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -199,7 +537,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -223,8 +561,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -235,7 +574,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -246,7 +586,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -257,7 +598,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -268,6 +610,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -287,6 +630,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: af127d45c7e494d4ea024977dc436e8e
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -307,6 +651,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ee1a080364bb8a34692877a2b19a125c
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -327,6 +672,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9f32474c071867a4a9a32ccc062ecf6b
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -347,6 +693,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fd6ac85f1827cfb4aa8a075ad9d92442
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -367,6 +714,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: da5c61a6d7b22164b92cb8908d01a498
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -387,6 +735,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 383730ba278c0c14aa3a8ff21dc0c946
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -395,11 +744,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 2f99f72d2a7e68e439a09c4866005d69
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
