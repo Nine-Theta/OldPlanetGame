@@ -31,6 +31,8 @@ public class PowerPlantScript : InteractableScript
     private float _maintenanceAlertThreshold = 150;
 
     private bool _isBroken = false;
+    private bool _winConditionMet = false;
+    private bool _upgradeEventCalled = false; //For OnUpgradeAvailable
 
     private int maxTier = 3;
     [SerializeField] private CityScript affectedCity;
@@ -42,6 +44,12 @@ public class PowerPlantScript : InteractableScript
     [SerializeField] private CustomEvent OnMaintenanceAlert;
     [SerializeField] private CustomEvent OnTier2Upgrade;
     [SerializeField] private CustomEvent OnTier3Upgrade;
+    [SerializeField] private CustomEvent OnUpgradeAvailable;
+    [SerializeField] private CustomEvent OnInitialBarrelSpawn;
+
+    private static bool _InitialBarrelSpawned = false;
+
+
     //public Text debugWasteText;
 
     private ParticleSystem _particleSystem;
@@ -64,20 +72,22 @@ public class PowerPlantScript : InteractableScript
     {
         if (_currentDurability <= 0)
             return;
-        //if (_tier < 2)
+        if (!_isBroken)
+            Degrade();
+        if (!_isBroken)
+            GenerateWaste();
+        if(!_upgradeEventCalled && affectedCity.ResearchPoints >= _upgradeCost)
         {
-            if (!_isBroken)
-                Degrade();
+            _upgradeEventCalled = true;
+            OnUpgradeAvailable.Invoke();
         }
-        //if (_tier < 3)
+
+        if (!_winConditionMet && CheckWinConditions())
         {
-            if (!_isBroken)
-                GenerateWaste();
-        }
-        if (CheckWinConditions())
-        {
-            EndConditionScript.WinLevel();
+            Debug.Log(gameObject.name + " is done, sending win signal");
+            EndConditionScript.SignalNPPDone();
             enabled = false;
+            _winConditionMet = true;
         }
     }
 
@@ -112,7 +122,9 @@ public class PowerPlantScript : InteractableScript
         _repairPerTap = stats.repairPerTap;
         _repairThreshold = stats.repairThreshold;
         _maintenanceAlertThreshold = stats.maintenanceAlertThreshold;
+        _upgradeEventCalled = false;
 
+        affectedCity.SetUpgradeCost(_upgradeCost);
         //Debug.Log(_upgradeCost);
     }
 
@@ -170,6 +182,11 @@ public class PowerPlantScript : InteractableScript
                 int index = Mathf.FloorToInt(Random.Range(0.0f, _wasteBarrelSpawns.Length - 0.1f));
                 GameObject barrelRef = Instantiate(_wasteBarrelPrefab, _wasteBarrelSpawns[index].position, _wasteBarrelSpawns[index].rotation, _wasteBarrelSpawns[index]);
                 //barrelRef.transform.rotation = transform.rotation;
+                if(!_InitialBarrelSpawned)
+                {
+                    OnInitialBarrelSpawn.Invoke();
+                    _InitialBarrelSpawned = true;
+                }
             }
             else
             {
@@ -216,6 +233,7 @@ public class PowerPlantScript : InteractableScript
                 OnMaintained.Invoke();
             }
             _isBroken = false;
+            _upgradeEventCalled = false;
         }
     }
 

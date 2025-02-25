@@ -12,50 +12,74 @@ public class PlayerStats : IComparable<PlayerStats>
     //name date time difficulty score achievedlevel feedback(?)
 
     private string _name = "uniquenameosaurus";
-    private int _score = 0;
+    private int _scoreTotal = 0;
+    private int _scoreOne = 0;
+    private int _scoreTwo = 0;
+    private int _scoreThree = 0;
     private DifficultyMode _difficulty = DifficultyMode.MEDIUM;
     private DateTime _date = DateTime.Today;
-    private float _time = 0.0f;
+    private float _timeOne = 0.0f;
+    private float _timeTwo = 0.0f;
+    private float _timeThree = 0.0f;
+    private float _timeTotal = 0.0f;
     private int _achievedLevel = 0;
-    private string _feedback = "Needs more salt";
+    private int _feedbackOpinion = 0;
+    private int _feedbackKnowledge = 0;
 
     public PlayerStats (string pName, int pScore, DifficultyMode pDifficulty)
     {
         _name = pName;
-        _score = pScore;
+        _scoreTotal = pScore;;
+        _scoreOne = 0;
+        _scoreTwo = 0;
+        _scoreThree = 0;
         _difficulty = pDifficulty;
         _date = DateTime.Today;
-        _time = 0.0f;
+        _timeOne = 0.0f;
+        _timeTwo = 0.0f;
+        _timeThree = 0.0f;
+        _timeTotal = 0.0f;
         _achievedLevel = 0;
-        _feedback = "Needs more salt";
-    }
+        _feedbackOpinion = 0;
+        _feedbackKnowledge = 0;
+}
 
     public PlayerStats(string pStream)
     {
         string[] stats = pStream.Split(',');
 
-        Debug.Log("stream: " + pStream);
+        //Debug.Log("stream: " + pStream);
         for (int i = 0; i < stats.Length; i++)
         {
-            Debug.Log("stats [" +i+"] : " +stats[i]);
+            //Debug.Log("stats [" +i+"] : " +stats[i]);
         }
 
         _name = stats[0];
-        int.TryParse(stats[1], out _score);
+        int.TryParse(stats[1], out _scoreTotal);
         _difficulty =  (DifficultyMode)Enum.Parse(typeof(DifficultyMode), stats[2]);
         _date = DateTime.Parse(stats[3]);
-        _time = float.Parse(stats[4]);
+        _timeTotal = float.Parse(stats[4]);
         _achievedLevel = int.Parse(stats[5]);
-        _feedback = stats[6];
+        _feedbackOpinion = int.Parse(stats[6]);
+        _feedbackKnowledge = int.Parse(stats[7]);
 
-        Debug.Log("Created PlayerStats with stats: "+ pStream);
+        //Debug.Log("Created PlayerStats with stats: "+ pStream);
     }
 
     public string Name
     { get { return _name; } set { _name = value; } }
 
-    public int Score
-    { get { return _score; } set { _score = value; } }
+    public int ScoreTotal
+    { get { return _scoreTotal; } }
+
+    public int ScoreOne
+    { get { return _scoreOne; } set { _scoreOne = value; TotalOfScore(); Debug.Log("ScoreOne increased: " + ScoreOne); } }
+
+    public int ScoreTwo
+    { get { return _scoreTwo; } set { _scoreTwo = value; TotalOfScore(); Debug.Log("ScoreTwo increased: " + ScoreTwo); } }
+
+    public int ScoreThree
+    { get { return _scoreThree; } set { _scoreThree = value; TotalOfScore(); Debug.Log("ScoreThree increased: " + ScoreThree); } }
 
     public DifficultyMode Difficulty
     { get { return _difficulty; } set { _difficulty = value; } }
@@ -67,25 +91,48 @@ public class PlayerStats : IComparable<PlayerStats>
     { get { return _date.ToShortDateString(); } }
 
     public float Time
-    { get { return _time; } set { _time = value; } }
+    { get { return _timeTotal; } }
+
+    public float TimeOne
+    { get { return _timeOne; } set { _timeOne = value; TotalOfTime(); } }
+
+    public float TimeTwo
+    { get { return _timeTwo; } set { _timeTwo = value; TotalOfTime(); } }
+
+    public float TimeThree
+    { get { return _timeThree; } set { _timeThree = value; TotalOfTime(); } }
 
     public int AchievedLevel
     { get { return _achievedLevel; } set { _achievedLevel = value; } }
 
-    public string Feedback
-    { get { return _feedback; } set { _feedback = value; } }
+    public int FeedbackOpinion
+    { get { return _feedbackOpinion; } set { _feedbackOpinion = value; } }
+
+    public int FeedbackKnowledge
+    { get { return _feedbackKnowledge; } set { _feedbackKnowledge = value; } }
 
     public int CompareTo(PlayerStats pOther)
     {
-        if (_score == pOther.Score)
-            return (_time.CompareTo(pOther.Time));
+        if (_scoreTotal == pOther.ScoreTotal)
+            return (_timeTotal.CompareTo(pOther.Time));
         else
-            return (_score.CompareTo(pOther.Score));
+            return (_scoreTotal.CompareTo(pOther.ScoreTotal));
+    }
+
+    private void TotalOfScore()
+    {
+        _scoreTotal = _scoreOne + _scoreTwo + _scoreThree;
+        Debug.Log("ScoreTotal increased: " + ScoreTotal+ " Score 1,2,3: " + ScoreOne + " " + ScoreTwo + " " +ScoreThree);
+    }
+
+    private void TotalOfTime()
+    {
+        _timeTotal = _timeOne + _timeTwo + _timeThree;
     }
 
     public override string ToString()
     {
-        return _name + "," + _score + "," + _difficulty + "," + _date + "," + _time + "," + _achievedLevel + "," + _feedback;
+        return _name + "," + _scoreTotal + "," + _difficulty + "," + _date + "," + _timeTotal + "," + _achievedLevel + "," + _feedbackOpinion + "," +_feedbackKnowledge;
     }
 }
 
@@ -142,6 +189,15 @@ public class LeaderboardTracker : MonoBehaviour {
         get { return _currentPlayer; }
     }
 
+    public void ClearPlayer()
+    {
+        if(_currentPlayer != null)
+        {
+            _currentPlayer = null;
+        }
+        _currentPlayer = new PlayerStats("NAAM", 1, DifficultyMode.MEDIUM);
+    }
+
     private void InitializeBoards()
     {
         EmptyBoard(_dailyBoardEasy, DifficultyMode.EASY);
@@ -191,9 +247,9 @@ public class LeaderboardTracker : MonoBehaviour {
         PlayerStats defaultPlayerEasy2 = new PlayerStats("TheLegend26", 40, DifficultyMode.EASY);
         _overallBoardEasy.Add(defaultPlayerEasy);
         _overallBoardEasy.Add(defaultPlayerEasy2);
-        Debug.Log("TestRunSave");
+        //Debug.Log("TestRunSave");
         SaveBoardToFile(_overallBoardEasy, DifficultyMode.EASY);
-        Debug.Log("TestRunRead");
+        //Debug.Log("TestRunRead");
         _overallBoardEasy = ReadBoardFromFile(DifficultyMode.EASY);
     }
 
@@ -215,6 +271,11 @@ public class LeaderboardTracker : MonoBehaviour {
             default:
                 return new PlayerStats("TheLegend27", 42, DifficultyMode.EASY); //Will never actually get called, just here to please the error CS0161.
         }
+    }
+
+    public void TryAddCurrentPlayer()
+    {
+        TryAddPlayer(_currentPlayer);
     }
 
     /// <summary>
@@ -264,14 +325,14 @@ public class LeaderboardTracker : MonoBehaviour {
 
     private bool CheckPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
-        return pBoard[pBoard.Count-1].Score < pPlayer.Score;
+        return pBoard[pBoard.Count-1].ScoreTotal < pPlayer.ScoreTotal;
     }
 
     private void AddPlayer(PlayerStats pPlayer, List<PlayerStats> pBoard)
     {
         for(int i = 0; i < pBoard.Count; i++)
         {
-            if (pBoard[i].Score < pPlayer.Score)
+            if (pBoard[i].ScoreTotal < pPlayer.ScoreTotal)
             {
                 pBoard.RemoveAt(pBoard.Capacity-1);
                 pBoard.Insert(i, pPlayer);

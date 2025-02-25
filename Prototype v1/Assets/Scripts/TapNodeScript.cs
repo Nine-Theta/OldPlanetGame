@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEditor;
 
 public class TapNodeScript : MonoBehaviour
 {
@@ -14,11 +15,17 @@ public class TapNodeScript : MonoBehaviour
     [SerializeField] private Vector2 _direction = new Vector2(1, 0);
     [SerializeField] private CustomEvent OnPopped;
     [SerializeField] private CustomEvent OnDisappear;
-    
+
+    private static Sprite _oneTapCloud;
 
     private void Start()
     {
-        if(_direction.magnitude != 1.0f)
+        if (_oneTapCloud == null)
+        {
+            _oneTapCloud = (Sprite)(Resources.Load("cloud", typeof(Sprite)));
+        }
+
+        if (_direction.magnitude != 1.0f)
         {
             _direction.Normalize();
         }
@@ -27,20 +34,29 @@ public class TapNodeScript : MonoBehaviour
     public virtual void OnTap()
     {
         _tapsToKill--;
-        if(_tapsToKill <= 0)
+        if (gameObject.name == "MinigameDoubleTapable(Clone)" && _tapsToKill == 1)
+        {
+            //GetComponent<Image>().sprite = (Sprite)(AssetDatabase.LoadAssetAtPath("Assets/Particle Effects/cloud.png", typeof(Sprite)));
+            GetComponent<Image>().sprite = _oneTapCloud;
+        }
+        if (_tapsToKill == 0)
         {
             MinigameScoreScript.instance.ScorePoints(_score);
+            MinigameScoreScript.instance.CloudPopped(1);
             OnPopped.Invoke();
+            //transform.position += new Vector3(0, 0, 5);
+            GetComponent<Button>().interactable = false;
+            GetComponent<Image>().raycastTarget = false;
             TapNodeScript[] children = gameObject.GetComponentsInChildren<TapNodeScript>(true);
             if (children.Length > 0)
             {
-                foreach(TapNodeScript child in children)
+                foreach (TapNodeScript child in children)
                 {
                     child.gameObject.SetActive(true);
                     child.transform.SetParent(transform.parent);
                 }
+                MinigameScoreScript.instance.CloudSpawned(children.Length);
             }
-            gameObject.SetActive(false);
         }
     }
 

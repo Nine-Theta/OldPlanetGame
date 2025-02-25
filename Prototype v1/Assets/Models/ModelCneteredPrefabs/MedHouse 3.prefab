@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4930672883429884}
   - component: {fileID: 33050624965256464}
   - component: {fileID: 23739582488160054}
+  - component: {fileID: 65832644863958578}
   m_Layer: 0
   m_Name: Medium house 3
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995872603199178}
-  m_LocalRotation: {x: -0.13348024, y: -0.19148038, z: -0.67233515, w: 0.702484}
-  m_LocalPosition: {x: 2.0044842, y: 1.3501844, z: -1.1436162}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalRotation: {x: -0.5054153, y: 0.5788215, z: -0.37248665, w: 0.52036023}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4930672883429884}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -26.424002, y: -5.7380004, z: -86.13901}
+  m_LocalEulerAnglesHint: {x: -5.439, y: 100.47301, z: -77.727005}
 --- !u!4 &4930672883429884
 Transform:
   m_ObjectHideFlags: 1
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567935642683608}
   m_Mesh: {fileID: 4300000, guid: 013a1c9d994bd99498482794b91862c3, type: 3}
+--- !u!65 &65832644863958578
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567935642683608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5672427, y: 0.34477764, z: 0.52617276}
+  m_Center: {x: 0.00000024355617, y: 0.17238876, z: -0.00000036790303}

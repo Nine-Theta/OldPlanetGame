@@ -11,6 +11,15 @@ public class EndConditionScript : MonoBehaviour
     [SerializeField] private CustomEvent OnLevel3Complete;
     [SerializeField] private CustomEvent OnLevel3Lost;
 
+    private int NPPsToCheck = 1;
+    private int NPPsChecked = 0;
+
+    public static int NPPCount
+    {
+        get { return instance.NPPsToCheck; }
+        set { instance.NPPsToCheck = value; }
+    }
+
     private static EndConditionScript instance;
 
     private void Start()
@@ -27,10 +36,21 @@ public class EndConditionScript : MonoBehaviour
 
     }
 
+    public static void SignalNPPDone()
+    {
+        instance.NPPsChecked++;
+        //Debug.Log(instance.NPPsChecked + " out of " + instance.NPPsToCheck);
+        if(instance.NPPsChecked >= instance.NPPsToCheck)
+        {
+            WinLevel();
+        }
+    }
+
     public static void WinLevel()
     {
         switch (LevelStatsScript.Level)
         {
+            //goto defaults for debugging and previously for setlevel, which is now to be called from the button
             case 1:
                 instance.OnLevel1Complete.Invoke();
                 goto default;
@@ -43,7 +63,8 @@ public class EndConditionScript : MonoBehaviour
 
             default:
                 //LevelStatsScript.SetLevel();
-                Debug.Log("Level up!");
+                //Debug.Log("Level up!");
+                instance.NPPsChecked = 0;
                 break;
         }
     }

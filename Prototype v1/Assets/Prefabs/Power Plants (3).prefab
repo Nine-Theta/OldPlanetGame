@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466706671895308}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90a51b934d05baa43a7abeae2ef2c8ab, type: 3}
   m_Name: 
@@ -2432,11 +2432,11 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  _partOfLevel: 1
   affectedCity: {fileID: 0}
-  debugWasteText: {fileID: 0}
   _wasteBarrelPrefab: {fileID: 1181533116279830, guid: a5ee2e3b0696dfc40bb9f756f4bc4fd1,
     type: 2}
-  _wasteBarrelSpawn: {fileID: 4808424011568772}
+  _wasteBarrelSpawns: []
   OnBreakdown:
     m_PersistentCalls:
       m_Calls:
@@ -2775,13 +2775,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399270458276358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34c0375b9a52b064a92a6bc348b784a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollutionPerTick: 0.1
-  startActive: 0
+  _partOfLevel: 1
+  OnPollutionMax:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnPollutionCleared:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnPollutionPercentageUp:
     m_PersistentCalls:
       m_Calls: []

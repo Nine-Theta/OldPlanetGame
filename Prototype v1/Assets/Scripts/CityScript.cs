@@ -30,6 +30,8 @@ public class CityScript : MonoBehaviour
     private float researchPointPerTick;
     private int recycleThreshold;
 
+    private int currentUpgradeCost = 20;
+
 
     [SerializeField] private ParticleSystem particleSystem1;
     [SerializeField] private ParticleSystem particleSystem2;
@@ -45,10 +47,19 @@ public class CityScript : MonoBehaviour
     [SerializeField] private CustomEvent OnHappinessUp;
     [SerializeField] private CustomEvent OnHappinessDown;
     [SerializeField] private CustomEvent OnResearchThresholdReached;
-    [SerializeField] private CustomEvent OnUpgradeAvailable;
+    [SerializeField] private CustomEvent OnResearchSpend;
+    [SerializeField] private CustomEvent OnHappinessZero;
 
     [SerializeField] private Text debugResearchText;
     [SerializeField] private Text debugHappyText;
+
+    private bool _researchThresholdEventCalled = false;
+    private bool _happinessZeroEventCalled = false;
+
+    public void SetUpgradeCost(int value)
+    {
+        currentUpgradeCost = value;
+    }
 
     public int ResearchPoints
     {
@@ -101,32 +112,12 @@ public class CityScript : MonoBehaviour
             researchPointsGained += researchPointPerTick;
             if (oldPoints < ResearchPoints)
             {
-                OnResearchpointUp.Invoke();
-                if (ResearchPoints == researchHappinessThreshold)
+                if (ResearchPoints % 5 == 0)
+                    OnResearchpointUp.Invoke();
+                if (!_researchThresholdEventCalled && ResearchPoints == researchHappinessThreshold)
                 {
+                    _researchThresholdEventCalled = true;
                     OnResearchThresholdReached.Invoke();
-                }
-                switch (LevelStatsScript.MostRecentTierNPPAccessed)
-                {
-                    default:
-                    case 1:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier1.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
-                    case 2:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier2.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
-                    case 3:
-                        if (ResearchPoints >= LevelStatsScript.NuclearPowerPlantStatsTier3.UpgradeCost)
-                        {
-                            OnUpgradeAvailable.Invoke();
-                        }
-                        break;
                 }
             }
         }
@@ -152,10 +143,17 @@ public class CityScript : MonoBehaviour
         if (oldHappiness < Mathf.FloorToInt(_happiness))
         {
             OnHappinessUp.Invoke();
+            _happinessZeroEventCalled = false;
         }
         if (oldHappiness > Mathf.FloorToInt(_happiness))
         {
             OnHappinessDown.Invoke();
+
+            if (!_happinessZeroEventCalled && _happiness <= 0)
+            {
+                _happinessZeroEventCalled = true;
+                OnHappinessZero.Invoke();
+            }
         }
     }
 
@@ -170,6 +168,7 @@ public class CityScript : MonoBehaviour
         if (ResearchPoints >= points)
         {
             researchPointsSpend += points;
+            OnResearchSpend.Invoke();
             return true;
         }
         else
@@ -181,7 +180,7 @@ public class CityScript : MonoBehaviour
 
     public bool EndConditionMet()
     {
-        return (researchPointsGained >= researchPointCap);
+        return (researchPointsGained >= researchPointCap && BarrelScript.GetBarrelCount() <= 0);
     }
 
     public void CheckParticleThresholds()

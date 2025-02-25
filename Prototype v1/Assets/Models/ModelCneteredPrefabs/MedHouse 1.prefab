@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4658412230606294}
   - component: {fileID: 33590788574664730}
   - component: {fileID: 23608302005694934}
+  - component: {fileID: 65491038930013278}
   m_Layer: 0
   m_Name: Medium house 1
   m_TagString: Untagged
@@ -49,14 +50,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257426589677368}
-  m_LocalRotation: {x: 0.14660627, y: -0, z: -0, w: 0.9891949}
+  m_LocalRotation: {x: 0.13381414, y: -0.024416488, z: -0.84463227, w: -0.517778}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4658412230606294}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 16.861, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -10.359, y: 348.224, z: 118.05301}
 --- !u!4 &4658412230606294
 Transform:
   m_ObjectHideFlags: 1
@@ -85,7 +86,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: b298a356718f5fe4a9b696fc88783dd5, type: 3}
+  - {fileID: 2100000, guid: c7c8ed5550ed42049a7764e186a40345, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629949765701636}
   m_Mesh: {fileID: 4300000, guid: b298a356718f5fe4a9b696fc88783dd5, type: 3}
+--- !u!65 &65491038930013278
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629949765701636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5526878, y: 0.46436074, z: 0.5194242}
+  m_Center: {x: -0.00000003021574, y: 0.23218033, z: 0.00000066044635}

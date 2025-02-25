@@ -886,11 +886,38 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1485094453962650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c20a5ac2f2c2ea64796a00d8092490b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHappiness: 0
-  happinessPerTick: 0.05
+  _partOfLevel: 1
+  particleSystem1: {fileID: 0}
+  particleSystem2: {fileID: 0}
+  particleSystem3: {fileID: 0}
+  sadParticleSystem: {fileID: 0}
+  particle1Threshold: 0
+  particle2Threshold: 30
+  particle3Threshold: 70
+  OnResearchpointUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnHappinessUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnHappinessDown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnResearchThresholdReached:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUpgradeAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: CustomEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  debugResearchText: {fileID: 0}
   debugHappyText: {fileID: 0}

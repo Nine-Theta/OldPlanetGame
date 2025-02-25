@@ -77,8 +77,7 @@ public class LevelStatsScript : MonoBehaviour
     [SerializeField] private Level level2;
     [SerializeField] private Level level3;
     private int difficultyLevel = 2; //0 = undefined, 1 = easy, 2 = medium, 3 = hard
-    private int level = 1; //0 = undefined, etc
-    private int _mostRecentTierNPPAccessed = 1;
+    private int level = 0; //0 = undefined, etc
     private static LevelStatsScript instance;
 
 
@@ -91,24 +90,24 @@ public class LevelStatsScript : MonoBehaviour
         else
         {
             instance = this;
+            if (LeaderboardTracker.Exists)
+                SetDifficulty(LeaderboardTracker.Instance.CurrentPlayer.Difficulty);
         }
     }
 
     public static bool Exists
     { get { return instance != null; } }
 
-    public static int MostRecentTierNPPAccessed
-    { get { return instance._mostRecentTierNPPAccessed; } }
 
     public static NPPStats NuclearPowerPlantStatsTier1
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 1;
             switch (instance.level)
             {
                 default:
                     Debug.Log("instance.level is not 1, 2 or 3, falling through to case 1");
+                    Debug.Log(instance.level);
                     goto case 1;
                 case 1:
                     switch (instance.difficultyLevel)
@@ -157,7 +156,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 2;
             switch (instance.level)
             {
                 default:
@@ -210,7 +208,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 3;
             switch (instance.level)
             {
                 default:
@@ -269,7 +266,6 @@ public class LevelStatsScript : MonoBehaviour
     {
         get
         {
-            instance._mostRecentTierNPPAccessed = 1;
             switch (instance.level)
             {
                 default:
@@ -486,10 +482,24 @@ public class LevelStatsScript : MonoBehaviour
     public void LevelUp()
     {
         instance.level++;
+        bool LEVELONEFIX = false;
+
         PowerPlantScript[] NPPS = (PowerPlantScript[])(Resources.FindObjectsOfTypeAll(typeof(PowerPlantScript)));
-        foreach(PowerPlantScript NPP in NPPS)
+        EndConditionScript.NPPCount = 0;
+        foreach (PowerPlantScript NPP in NPPS)
         {
+            if (LEVELONEFIX)
+            {
+                break;
+            }
             NPP.enabled = (NPP.PartOfLevel == instance.level);
+            if (NPP.enabled)
+            {
+                if (instance.level == 1)
+                    LEVELONEFIX = true;
+                Debug.Log("Level" + instance.level + ", " + NPP.PartOfLevel);
+                EndConditionScript.NPPCount++;
+            }
         }
         SiloScript[] silos = (SiloScript[])(Resources.FindObjectsOfTypeAll(typeof(SiloScript)));
         foreach (SiloScript silo in silos)
@@ -506,6 +516,7 @@ public class LevelStatsScript : MonoBehaviour
         {
             city.enabled = (city.PartOfLevel == instance.level);
         }
+        //Debug.Log(EndConditionScript.NPPCount);
     }
 
     public static void SetDifficulty(DifficultyMode pDifficulty)
